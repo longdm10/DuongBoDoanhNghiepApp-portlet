@@ -1,0 +1,400 @@
+<%@page import="com.liferay.portal.kernel.util.GetterUtil"%>
+<%@page import="vn.dtt.duongthuy.business.DuongThuyUtil"%>
+<%@page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+
+<label class="textlabel col-xs-1" for="sel1">Kính gửi:</label>
+<p class="col-xs-11 textlabel" style="padding-left:45px">
+	<%= DuongThuyUtil.renderDonViThucHienCombobox(kinhGui, 
+			"", "--- Lựa chọn ---", 
+			renderResponse.getNamespace() + DonOnline.KINH_GUI, 
+			renderResponse.getNamespace() + DonOnline.KINH_GUI, 
+			"form-control " + GetterUtil.getString(mapDonRequired.get(DonOnline.KINH_GUI)), thuTucHanhChinhId) %>
+</p>
+<div class="col-xs-4 PA0">
+	<label class="textlabel col-xs-4" for="<%= renderResponse.getNamespace() + DonOnline.TEN %>">
+		Tên tôi là: <c:if test="<%= Validator.isNotNull(mapDonRequired.get(DonOnline.TEN)) %>"><span class="red">*</span></c:if>
+	</label>
+	<p class="col-xs-8">
+		<input type="text" 
+			class='<%= "form-control " + GetterUtil.getString(mapDonRequired.get(DonOnline.TEN)) %>'
+			id="<%= renderResponse.getNamespace() + DonOnline.TEN %>" 
+			name="<%= renderResponse.getNamespace() + DonOnline.TEN %>" 
+			value="<%= tenToiLa %>">
+	</p>
+</div>
+<div class="col-xs-4 PA0">				
+	<label class="textlabel col-xs-4" for="<%= renderResponse.getNamespace() + DonOnline.QUOC_TICH %>">Quốc tịch: <c:if test="<%= Validator.isNotNull(mapDonRequired.get(DonOnline.QUOC_TICH)) %>"><span class="red">*</span></c:if></label>									
+	<p class="col-xs-8">
+		<%= DuongThuyUtil.renderDanhMucCombobox(quocTich, "", "--- Lựa chọn ---", 
+				renderResponse.getNamespace() + DonOnline.QUOC_TICH, renderResponse.getNamespace() + DonOnline.QUOC_TICH, 
+				"form-control " + GetterUtil.getString(mapDonRequired.get(DonOnline.QUOC_TICH)), DTConstants.DANH_MUC.DM_QUOCGIA) %>
+	</p>
+</div>
+<div class="col-xs-4 PA0">				
+	<label class="textlabel col-xs-4" for="<%= renderResponse.getNamespace() + DonOnline.GIOI_TINH %>">Giới tính: <c:if test="<%= Validator.isNotNull(mapDonRequired.get(DonOnline.GIOI_TINH)) %>"><span class="red">*</span></c:if></label>									
+	<p class="col-xs-8">
+		<label class="radio-inline" style="margin-top:5px">
+			<%= DuongThuyUtil.renderRadio(renderResponse.getNamespace(), 
+					DonOnline.GIOI_TINH, DonOnline.GIOI_TINH, "", "Nam", 
+					DTConstants.GIOI_TINH_NAM, Validator.isNotNull(gioiTinh) ? gioiTinh : DTConstants.GIOI_TINH_NAM) %>
+		</label>
+		<label class="radio-inline" style="margin-top:5px">
+			<%= DuongThuyUtil.renderRadio(renderResponse.getNamespace(), 
+					DonOnline.GIOI_TINH, "", "", "Nữ", 
+					DTConstants.GIOI_TINH_NU, gioiTinh) %>
+		</label>
+	</p>
+</div>
+<div class="clear"></div>
+<div class="col-xs-4 PA0 MB10">
+	<label class="textlabel col-xs-4" for="sel1">Ngày sinh: <c:if test="<%= Validator.isNotNull(mapDonRequired.get(DonOnline.NGAY_SINH)) %>"><span class="red">*</span></c:if></label>
+	<div class="col-xs-8">
+		<div class="input-group">
+			<input type="text" 
+				class='<%= "form-control ctrl-input-calendar " + GetterUtil.getString(mapDonRequired.get(DonOnline.NGAY_SINH)) %>' 
+				id="<%= renderResponse.getNamespace() + DonOnline.NGAY_SINH %>" 
+				name="<%= renderResponse.getNamespace() + DonOnline.NGAY_SINH %>"
+				value="<%= ngaySinh %>">
+			<span class="input-group-addon ctrl-input-calendar" ><i class="fa fa-calendar"></i></span>
+		</div>
+	</div>
+</div>										
+<div class="clear"></div>
+<div class="col-xs-12 PA0">
+	<label class="textlabel col-xs-1" for="sel1">Nơi cư trú: <c:if test="<%= Validator.isNotNull(mapDonRequired.get(DonOnline.NOI_CO_TRU)) %>"><span class="red">*</span></c:if></label>
+	<p class="col-xs-7" style="padding-left:45px">
+		<input type="text" 
+			class='<%= "form-control " + GetterUtil.getString(mapDonRequired.get(DonOnline.NOI_CO_TRU)) %>' 
+			id="<%= renderResponse.getNamespace() + DonOnline.NOI_CO_TRU %>" 
+			name="<%= renderResponse.getNamespace() + DonOnline.NOI_CO_TRU %>" 
+			value="<%= noiCuTru %>">
+	</p>
+</div>
+<div class="col-xs-4 PA0">
+	<label class="textlabel col-xs-4" for="sel1">Điện thoại: <c:if test="<%= Validator.isNotNull(mapDonRequired.get(DonOnline.DIEN_THOAI)) %>"><span class="red">*</span></c:if></label>
+	<p class="col-xs-8">
+		<input type="text" 
+			class='<%= "form-control " + GetterUtil.getString(mapDonRequired.get(DonOnline.DIEN_THOAI)) %>' 
+			id="<%= renderResponse.getNamespace() + DonOnline.DIEN_THOAI %>" 
+			name="<%= renderResponse.getNamespace() + DonOnline.DIEN_THOAI %>" 
+			value="<%= soDienThoai %>">
+	</p>
+</div>
+<div class="col-xs-4 PA0">
+	<label class="textlabel col-xs-4" for="sel1">Email:</label>
+	<p class="col-xs-8">
+		<input type="text" 
+			class='<%= "form-control " + GetterUtil.getString(mapDonRequired.get(DonOnline.EMAIL)) %>' 
+			id="<%= renderResponse.getNamespace() + DonOnline.EMAIL %>" 
+			name="<%= renderResponse.getNamespace() + DonOnline.EMAIL %>" 
+			value="<%= email %>">
+	</p>
+</div>
+<div class="clear"></div>
+<div class="col-xs-4 PA0">
+	<label class="col-xs-4 PAr0" for="sel1">Số CMND<br/>(Hoặc Hộ chiếu): <c:if test="<%= Validator.isNotNull(mapDonRequired.get(DonOnline.SO_CMND)) %>"><span class="red">*</span></c:if></label>
+	<p class="col-xs-8">
+		<input type="text" 
+			class='<%= "form-control " + GetterUtil.getString(mapDonRequired.get(DonOnline.SO_CMND)) %>' 
+			id="<%= renderResponse.getNamespace() + DonOnline.SO_CMND %>" 
+			name="<%= renderResponse.getNamespace() + DonOnline.SO_CMND %>" 
+			value="<%= soCMND %>">
+	</p>
+</div>
+<div class="col-xs-4 PA0">
+	<label class="col-xs-4 textlabel" for="sel1">Nơi cấp: <c:if test="<%= Validator.isNotNull(mapDonRequired.get(DonOnline.NOI_CAP_CMND)) %>"><span class="red">*</span></c:if></label>
+	<div class="col-xs-8 MB10">	
+		<%= DuongThuyUtil.renderDanhMucCombobox(noiCapCMND, "", "--- Lựa chọn ---", 
+				renderResponse.getNamespace() + DonOnline.NOI_CAP_CMND, renderResponse.getNamespace() + DonOnline.NOI_CAP_CMND, 
+				"form-control " + GetterUtil.getString(mapDonRequired.get(DonOnline.NOI_CAP_CMND)), DTConstants.DANH_MUC.DM_NOICAP) %>
+	</div>
+</div>
+<div class="col-xs-4 PA0">
+	<label class="col-xs-4 textlabel" for="sel1">Ngày cấp: <c:if test="<%= Validator.isNotNull(mapDonRequired.get(DonOnline.NGAY_CAP_CMND)) %>"><span class="red">*</span></c:if></label>
+	<div class="col-xs-8 MB10">										
+		<div class="input-group">
+			<input 
+				type="text" 
+				class='<%= "form-control ctrl-input-calendar " + GetterUtil.getString(mapDonRequired.get(DonOnline.NGAY_CAP_CMND)) %>' 
+				id="<%= renderResponse.getNamespace() + DonOnline.NGAY_CAP_CMND %>" 
+				name="<%= renderResponse.getNamespace() + DonOnline.NGAY_CAP_CMND %>"
+				value="<%= ngayCapCMND %>">
+			<span class="input-group-addon ctrl-input-calendar"><i class="fa fa-calendar"></i></span>
+		</div>
+	</div>
+</div>
+<div class="col-xs-4 PA0">
+	<label class="col-xs-4 PAr0" for="sel1">Tôi đã tốt nghiệp ngành học: <c:if test="<%= Validator.isNotNull(mapDonRequired.get(DonOnline.NGANH_TOT_NGHIEP)) %>"><span class="red">*</span></c:if></label>
+	<p class="col-xs-8">
+		<input type="text" 
+			class='<%= "form-control " + GetterUtil.getString(mapDonRequired.get(DonOnline.NGANH_TOT_NGHIEP)) %>' 
+			id="<%= renderResponse.getNamespace() + DonOnline.NGANH_TOT_NGHIEP %>" 
+			name="<%= renderResponse.getNamespace() + DonOnline.NGANH_TOT_NGHIEP %>" 
+			value="<%= nganhHoc %>">
+	</p>
+</div>
+<div class="col-xs-4 PA0">
+	<label class="col-xs-4 textlabel" for="sel1">Khóa:</label>
+	<div class="col-xs-8 MB10">
+		<input type="text" 
+			class='<%= "form-control " + GetterUtil.getString(mapDonRequired.get(DonOnline.KHOA_TOT_NGHIEP)) %>' 
+			id="<%= renderResponse.getNamespace() + DonOnline.KHOA_TOT_NGHIEP %>" 
+			name="<%= renderResponse.getNamespace() + DonOnline.KHOA_TOT_NGHIEP %>" 
+			value="<%= khoaHoc %>">
+	</div>									
+</div>
+<div class="col-xs-4 PA0">
+	<label class="col-xs-4 textlabel" for="sel1">Trường: <c:if test="<%= Validator.isNotNull(mapDonRequired.get(DonOnline.TRUONG_TOT_NGHIEP)) %>"><span class="red">*</span></c:if></label>
+	<div class="col-xs-8 MB10">											
+		<input type="text" 
+			class='<%= "form-control " + GetterUtil.getString(mapDonRequired.get(DonOnline.TRUONG_TOT_NGHIEP)) %>' 
+			id="<%= renderResponse.getNamespace() + DonOnline.TRUONG_TOT_NGHIEP %>" 
+			name="<%= renderResponse.getNamespace() + DonOnline.TRUONG_TOT_NGHIEP %>" 
+			value="<%= truongHoc %>">
+	</div>
+</div>
+<div class="col-xs-4 PA0">
+	<label class="textlabel col-xs-12" for="sel1">Đã được cấp bằng, GCNKNCM, CCCM số: <c:if test="<%= Validator.isNotNull(mapDonRequired.get(DonOnline.SO_BANG)) %>"><span class="red">*</span></c:if></label>
+</div>
+<div class="col-xs-4 PA0">
+	<p class="col-xs-8 col-xs-offset-4">
+		<input type="text" 
+			class='<%= "form-control " + GetterUtil.getString(mapDonRequired.get(DonOnline.SO_BANG)) %>' 
+			id="<%= renderResponse.getNamespace() + DonOnline.SO_BANG %>" 
+			name="<%= renderResponse.getNamespace() + DonOnline.SO_BANG %>" 
+			value="<%= soGCN %>">
+	</p>
+</div>
+<div class="col-xs-4 PA0">
+	<label class="col-xs-4 textlabel" for="sel1">Ngày cấp: <c:if test="<%= Validator.isNotNull(mapDonRequired.get(DonOnline.NGAY_CAP_BANG)) %>"><span class="red">*</span></c:if></label>
+	<div class="col-xs-8 MB10">											
+		<div class="input-group">
+			<input type="text" 
+				class='<%= "form-control ctrl-input-calendar " + GetterUtil.getString(mapDonRequired.get(DonOnline.NGAY_CAP_BANG)) %>' 
+				id="<%= renderResponse.getNamespace() + DonOnline.NGAY_CAP_BANG %>" 
+				name="<%= renderResponse.getNamespace() + DonOnline.NGAY_CAP_BANG %>"
+				value="<%= ngayCapGCN %>">
+			<span class="input-group-addon ctrl-input-calendar" ><i class="fa fa-calendar"></i></span>
+		</div>
+	</div>
+</div>
+<div class="col-xs-4 PA0">
+	<label class="textlabel col-xs-4" for="sel1">Quyết định số: <c:if test="<%= Validator.isNotNull(mapDonRequired.get(DonOnline.SO_QUYET_DINH)) %>"><span class="red">*</span></c:if></label>
+	<p class="col-xs-8">
+		<input type="text" 
+			class='<%= "form-control " + GetterUtil.getString(mapDonRequired.get(DonOnline.SO_QUYET_DINH)) %>' 
+			id="<%= renderResponse.getNamespace() + DonOnline.SO_QUYET_DINH %>" 
+			name="<%= renderResponse.getNamespace() + DonOnline.SO_QUYET_DINH %>" 
+			value="<%= quyetDinhSo %>">
+	</p>
+</div>
+<div class="col-xs-4 PA0">
+	<label class="col-xs-4 textlabel" for="sel1">Ngày: <c:if test="<%= Validator.isNotNull(mapDonRequired.get(DonOnline.NGAY_QUYET_DINH)) %>"><span class="red">*</span></c:if></label>
+	<div class="col-xs-8 MB10">
+		<div class="input-group">
+			<input type="text" 
+				class='<%= "form-control ctrl-input-calendar " + GetterUtil.getString(mapDonRequired.get(DonOnline.NGAY_QUYET_DINH)) %>' 
+				id="<%= renderResponse.getNamespace() + DonOnline.NGAY_QUYET_DINH %>" 
+				name="<%= renderResponse.getNamespace() + DonOnline.NGAY_QUYET_DINH %>"
+				value="<%= ngayQuyetDinh %>">
+			<span class="input-group-addon ctrl-input-calendar" ><i class="fa fa-calendar"></i></span>
+		</div>
+	</div>
+</div>
+<div class="col-xs-4 PA0">
+	<label class="col-xs-4 textlabel" for="sel1">Của:</label>
+	<div class="col-xs-8 MB10">
+		<input 
+			type="text" 
+			class='<%= "form-control " + GetterUtil.getString(mapDonRequired.get(DonOnline.CUA)) %>' 
+			name="<%= renderResponse.getNamespace() + DonOnline.CUA %>" 
+			value="<%= cua %>">
+	</div>
+</div>
+<label class="textlabel col-xs-12">Quá trình làm việc trên phương tiện thủy nội địa:</label>
+<div class="col-xs-12">
+	<!-- Begin: add dynamic table row -->
+	<input type="hidden" id="<portlet:namespace />rowLengthId" value="<%= listQuaTrinhLamViec.size() %>">
+	<table class="table table-striped table-bordered table-hover m-dt-table" id="<portlet:namespace/>dataTable">
+		<thead>
+			<tr>
+				<th class="text-uppercase" width="23%">Từ ... Đến ...</th>
+				<th class="text-uppercase" width="16%">Chức danh</th>
+				<th class="text-uppercase" width="18%">Nơi làm việc</th>
+				<th class="text-uppercase" width="10%">Số PTTND</th>
+				<th class="text-uppercase" width="20%">Ghi chú</th>
+				<th class="text-uppercase" width="6%">Xóa</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% 
+				for(int i = 0; i < listQuaTrinhLamViec.size(); i++) { 
+					Map<String, String> mQuaTrinhLamViec = listQuaTrinhLamViec.get(i);
+					
+					String tuNgay = GetterUtil.getString(mQuaTrinhLamViec.get(DonOnline.QTLV_TU_NGAY));
+					String denNgay = GetterUtil.getString(mQuaTrinhLamViec.get(DonOnline.QTLV_DEN_NGAY));
+					String chucDanh = GetterUtil.getString(mQuaTrinhLamViec.get(DonOnline.QTLV_CHUC_DANH));
+					String noiLamViec = GetterUtil.getString(mQuaTrinhLamViec.get(DonOnline.QTLV_NOI_LAM_VIEC));
+					String soPTTND = GetterUtil.getString(mQuaTrinhLamViec.get(DonOnline.QTLV_SO_PTTND));
+					String ghiChu = GetterUtil.getString(mQuaTrinhLamViec.get(DonOnline.QTLV_GHI_CHU));
+			%>
+				<tr>
+					<td>
+						<input type="hidden" name="<portlet:namespace />rowIndex" value="<%= i+1 %>">
+							
+						<div class="col-xs-3 textlabel MB10">Từ</div>
+						<div class="col-xs-9 MB10">
+							<div class="input-group">
+								<input type="text" 
+									class='<%= "form-control ctrl-input-calendar " + GetterUtil.getString(mapDonRequired.get(DonOnline.QTLV_TU_NGAY)) %>' 
+									name='<%= renderResponse.getNamespace() + DonOnline.QTLV_TU_NGAY + (i+1) %>' 
+									value="<%= tuNgay %>"> 
+								<span class="input-group-addon ctrl-input-calendar" ><i class="fa fa-calendar"></i></span>
+							</div>
+						</div>
+						<div class="col-xs-3 textlabel">Đến</div>
+						<div class="col-xs-9">
+							<div class="input-group">
+								<input type="text" 
+									class='<%= "form-control ctrl-input-calendar " + GetterUtil.getString(mapDonRequired.get(DonOnline.QTLV_DEN_NGAY)) %>' 
+									name='<%= renderResponse.getNamespace() + DonOnline.QTLV_DEN_NGAY + (i+1) %>' 
+									value="<%= denNgay %>"> 
+								<span class="input-group-addon ctrl-input-calendar" ><i class="fa fa-calendar"></i></span>
+							</div>
+						</div>
+					</td>
+					<td><input type="text" 
+						class='<%= "form-control " + GetterUtil.getString(mapDonRequired.get(DonOnline.QTLV_CHUC_DANH)) %>' 
+						name='<%= renderResponse.getNamespace() + DonOnline.QTLV_CHUC_DANH + (i+1) %>' 
+						value="<%= chucDanh %>"></td>
+					<td><input type="text" 
+						class='<%= "form-control " + GetterUtil.getString(mapDonRequired.get(DonOnline.QTLV_NOI_LAM_VIEC)) %>' 
+						name="<%= renderResponse.getNamespace() + DonOnline.QTLV_NOI_LAM_VIEC + (i+1) %>"
+						value="<%= noiLamViec %>"></td>
+					<td><input type="text" 
+						class='<%= "form-control " + GetterUtil.getString(mapDonRequired.get(DonOnline.QTLV_SO_PTTND)) %>' 
+						name="<%= renderResponse.getNamespace() + DonOnline.QTLV_SO_PTTND + (i+1) %>"
+						value="<%= soPTTND %>"></td>
+					<td><textarea class="form-control " rows="3" 
+						name="<%= renderResponse.getNamespace() + DonOnline.QTLV_GHI_CHU + (i+1) %>"><%= ghiChu %></textarea></td>
+					<td>
+						<input type="button" class="btn btn-primary btn-sm" onclick="deleteRow('<portlet:namespace/>dataTable', this)" value="Xóa" />
+					</td>
+				</tr>
+			<%} %>
+		</tbody>
+	</table>
+	<input type="button" class="btn btn-primary btn-sm" onclick="addRow('<portlet:namespace/>dataTable','<portlet:namespace/>rowLengthId', '<portlet:namespace />rowIndex')" value="Thêm thông tin" />
+	<script type="text/javascript">
+		function deleteRow(tableID, el) {
+			var table = document.getElementById(tableID);
+			var tbody = table.getElementsByTagName('tbody')[0];
+			var rowCount = tbody.rows.length;
+			
+			if (rowCount <= 1) {
+				alert("Không thể xóa tất cả các dòng.");
+			} else {
+				var i = el.parentNode.parentNode.rowIndex;
+				table.deleteRow(i);
+			}
+		}
+		
+		function addRow(tableID, rowLengthId, rowIndexName) {
+			var table = document.getElementById(tableID);
+			var tbody = table.getElementsByTagName('tbody')[0];
+			
+			var old_row_inc = "";
+			
+			// Lay gia tri rowIndex cua row duoc clone
+			for(var k = 0; k < tbody.rows[0].getElementsByTagName('input').length; k++) {
+				var input = tbody.rows[0].getElementsByTagName('input')[k];
+				var nameInput = tbody.rows[0].getElementsByTagName('input')[k].getAttribute('name');
+				
+				if(nameInput === rowIndexName) {
+					old_row_inc = input.value;
+					break;
+				}
+			}
+			
+			var new_row_inc = parseInt(document.getElementById(rowLengthId).value) + 1;
+			
+			document.getElementById(rowLengthId).value = new_row_inc;
+			
+			var newRow = tbody.rows[0].cloneNode(true);
+			
+			// Set lai name cho input theo dinh dang name = NAME + rowIndex
+			for(var k = 0; k < newRow.getElementsByTagName('input').length; k++) {
+				var input = newRow.getElementsByTagName('input')[k];
+				
+				var nameInput = input.getAttribute('name');
+				
+				if(nameInput) {
+					if(nameInput === rowIndexName) {
+						input.value = new_row_inc;
+					} else {
+						if(nameInput.lastIndexOf(old_row_inc) > 0) {
+							nameInput = nameInput.slice(0, nameInput.lastIndexOf(old_row_inc)) + new_row_inc;
+						}
+						
+						input.setAttribute('name',  nameInput);
+					}
+				}
+			}
+			
+			// Set lai name cho textarea theo dinh dang name = NAME + rowIndex
+			for(var k = 0; k < newRow.getElementsByTagName('textarea').length; k++) {
+				var input = newRow.getElementsByTagName('textarea')[k];
+				
+				var nameInput = input.getAttribute('name');
+				
+				if(nameInput) {
+					if(nameInput.lastIndexOf(old_row_inc) > 0) {
+						nameInput = nameInput.slice(0, nameInput.lastIndexOf(old_row_inc)) + new_row_inc;
+					}
+					
+					input.setAttribute("name", nameInput);
+				}
+			}
+			
+			tbody.appendChild(newRow);
+		}
+	</script>
+	<!-- End: add dynamic table row -->
+</div>
+<div class="clear"></div>
+<label class="textlabel col-xs-12" for="<%= renderResponse.getNamespace() + DonOnline.DIEU_KIEN %>">Đối chiếu với tiêu chuẩn, điều kiện dự học, thi, kiểm tra, cấp, cấp lại, chuyển đổi GCNKNCM, CCCM, tôi thấy đủ điều kiện:</label>
+<div class="col-xs-12">
+	<%
+	boolean flag = true;
+	int inc = 0;
+	for(DmDataItem dieuKien : listDieuKien) {
+		String selectedValue = StringPool.BLANK;
+		
+		if(Validator.isNull(doiChieu) && flag) {
+			selectedValue = dieuKien.getCode();
+			flag = false;
+		} else {
+			selectedValue = doiChieu;
+		}
+		inc++;
+	%>
+		<div class="col-xs-4">
+			<div class="radio">
+				<label>
+					<%= DuongThuyUtil.renderRadio(renderResponse.getNamespace(), DonOnline.DIEU_KIEN , 
+						DonOnline.DIEU_KIEN + inc, "", dieuKien.getName(), dieuKien.getCode(), 
+						selectedValue) %>
+				</label>
+			</div>
+		</div>
+	<% } %>
+</div>
+
+<div class="clear"></div>
+
+<div class="col-xs-12 MB10">
+	<label class="textlabel col-xs-2" >Đề nghị:</label>
+	<strong class="textlabel col-xs-4">
+		<span id='<portlet:namespace/>txtKinhGui'></span>
+	</strong>
+</div>

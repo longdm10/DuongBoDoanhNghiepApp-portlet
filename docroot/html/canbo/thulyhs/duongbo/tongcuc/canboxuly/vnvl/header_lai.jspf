@@ -1,0 +1,83 @@
+<%@page import="vn.dtt.duongbo.utils.format.FormatData"%>
+<%@page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<div id="dv1">
+	<aui:row>
+		<aui:col width="100">
+			<aui:field-wrapper label="1. Số giấy phép vận tải đường bộ quốc tế Việt - Lào do Tổng cục Đường bộ Việt Nam cấp: " cssClass="textBold" inlineField="<%=true %>" >
+				<aui:input type="text" name="<%=QlvtLienVanTerm.SO_GPKD %>" value="<%=ettThongTinHoSo.getSoDkkd() %>" label="">
+
+				</aui:input>
+			</aui:field-wrapper>
+		</aui:col>
+	</aui:row>
+	<aui:row>
+		<aui:col width="50">
+			<aui:field-wrapper label="Ngày cấp: " inlineField="<%=true %>" >
+				<aui:input prefix="date" type="text" name="<%=QlvtLienVanTerm.NGAY_CAP_GPKD %>" value="<%=ettThongTinHoSo.getNgayCapDkkd() %>" label="">
+
+				</aui:input> 
+			</aui:field-wrapper>
+		</aui:col>
+		<aui:col width="50">
+			<aui:field-wrapper label="Thời hạn: " inlineField="<%=true %>" >
+				<aui:input prefix="date" type="text" name="<%=QlvtLienVanTerm.NGAY_HET_HAN_GPVT %>" value="<%=ettThongTinHoSo.getNgayHetHanDkkd() %>" label="">
+
+				</aui:input>  
+			</aui:field-wrapper>
+		</aui:col>
+	</aui:row>
+	<aui:row>
+		<aui:col width="100">
+			<aui:field-wrapper label="2. Giấy phép liên vận Việt - Lào đã nộp lại: " cssClass="textBold" inlineField="<%=true %>" >
+			</aui:field-wrapper>
+		</aui:col>
+	</aui:row>
+	
+	<aui:row>
+		<aui:col width="50">
+			<aui:field-wrapper label="Số: " inlineField="<%=true %>" >
+				<aui:input type="text" name="<%=QlvtLienVanTerm.SO_GIAY_PHEP_LIEN_VAN %>" value="<%=gpkdvtLienVan.getSoGiayPhepLienVan()%>" label="">
+
+				</aui:input> 
+			</aui:field-wrapper>
+		</aui:col>
+		<aui:col width="50">
+			<aui:field-wrapper label="Nơi cấp: " inlineField="<%=true %>" >
+				<aui:input  type="text" name="<%=QlvtLienVanTerm.CO_QUAN_CAP_PHEP_LIEN_VAN %>" value="<%=gpkdvtLienVan.getCoQuanCapPhepLienVan()%>" label="">
+
+				</aui:input>  
+			</aui:field-wrapper>
+		</aui:col>
+	</aui:row>
+	<aui:row>
+		<aui:col width="50">
+			<aui:field-wrapper label="Ngày cấp: " inlineField="<%=true %>" >
+				<aui:input prefix="date" type="text" name="<%=QlvtLienVanTerm.NGAY_CAP_GIAY_PHEP_LIEN_VAN %>" value="<%=FormatData.parseDateToTringDDMMYYY(gpkdvtLienVan.getNgayCapGiayPhepLienVan()) %>" label="">
+				</aui:input> 
+			</aui:field-wrapper>
+		</aui:col>
+		<aui:col width="50">
+			<aui:field-wrapper label="Thời hạn: " inlineField="<%=true %>" >
+				<aui:input prefix="date" type="text" name="<%=QlvtLienVanTerm.NGAY_HET_HAN_GIAY_PHEP_LIEN_VAN %>" value="<%=FormatData.parseDateToTringDDMMYYY(gpkdvtLienVan.getNgayHetHanGiayPhepLienVan()) %>" label="">
+
+				</aui:input>  
+			</aui:field-wrapper>
+		</aui:col>
+	</aui:row>
+	<aui:row>
+		<aui:col width="50">
+			<aui:field-wrapper label="Ngày cấp lần đầu: " inlineField="<%=true %>" >
+				<aui:input prefix="date" type="text" name="<%=QlvtLienVanTerm.NGAY_CAP_LAN_DAU_GP_LV %>" value="<%=FormatData.parseDateToTringDDMMYYY(gpkdvtLienVan.getNgayCapGiayPhepLienVan_LanDau()) %>" label="">
+
+				</aui:input> 
+			</aui:field-wrapper>
+		</aui:col>
+		<aui:col width="50">
+			<aui:field-wrapper label="Cấp lần thứ: " inlineField="<%=true %>" >
+				<aui:input  type="text" name="<%=QlvtLienVanTerm.LAN_CAP_GIAY_DANG_KY_KINH_DOANH %>" value="<%=ettThongTinHoSo.getLanCapGiayDangKyKinhDoanh() %>" label="">
+
+				</aui:input>  
+			</aui:field-wrapper>
+		</aui:col>
+	</aui:row>
+</div>

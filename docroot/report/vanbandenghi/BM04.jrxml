@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BM04" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3483b4dd-fbc4-40be-a6e0-6085eb95fba8">
+	<property name="ireport.zoom" value="1.3310000000000004"/>
+	<property name="ireport.x" value="24"/>
+	<property name="ireport.y" value="336"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="dataset1" uuid="db016cde-dc81-46fe-9f01-c3b5f3dfa3dc">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="bienSoXe" class="java.lang.String">
+			<fieldDescription><![CDATA[bienSoXe]]></fieldDescription>
+		</field>
+		<field name="class" class="java.lang.Class">
+			<fieldDescription><![CDATA[class]]></fieldDescription>
+		</field>
+		<field name="mauSon" class="java.lang.String">
+			<fieldDescription><![CDATA[mauSon]]></fieldDescription>
+		</field>
+		<field name="namSX" class="java.lang.String">
+			<fieldDescription><![CDATA[namSX]]></fieldDescription>
+		</field>
+		<field name="soCho" class="java.lang.String">
+			<fieldDescription><![CDATA[soCho]]></fieldDescription>
+		</field>
+		<field name="soKhung" class="java.lang.String">
+			<fieldDescription><![CDATA[soKhung]]></fieldDescription>
+		</field>
+		<field name="soMay" class="java.lang.String">
+			<fieldDescription><![CDATA[soMay]]></fieldDescription>
+		</field>
+		<field name="tenHieu" class="java.lang.String">
+			<fieldDescription><![CDATA[tenHieu]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="dataset2" uuid="cd6334c4-99af-4f2c-abd4-40d1f740c8d6">
+		<field name="loaiHinhKinhDoanhVT" class="java.lang.String">
+			<fieldDescription><![CDATA[_THIS]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="coQuanGui" class="java.lang.String">
+		<fieldDescription><![CDATA[coQuanGui]]></fieldDescription>
+	</field>
+	<field name="danhSachXe" class="java.util.List">
+		<fieldDescription><![CDATA[danhSachXe]]></fieldDescription>
+	</field>
+	<field name="diaChi" class="java.lang.String">
+		<fieldDescription><![CDATA[diaChi]]></fieldDescription>
+	</field>
+	<field name="ngayCapGPLH" class="java.lang.String">
+		<fieldDescription><![CDATA[ngayCapGPLH]]></fieldDescription>
+	</field>
+	<field name="ngayCongVan" class="java.lang.String">
+		<fieldDescription><![CDATA[ngayCongVan]]></fieldDescription>
+	</field>
+	<field name="ngayNhan" class="java.lang.String">
+		<fieldDescription><![CDATA[ngayNhan]]></fieldDescription>
+	</field>
+	<field name="noiCapGPLH" class="java.lang.String">
+		<fieldDescription><![CDATA[noiCapGPLH]]></fieldDescription>
+	</field>
+	<field name="otoTieuChuan" class="java.lang.String">
+		<fieldDescription><![CDATA[otoTieuChuan]]></fieldDescription>
+	</field>
+	<field name="otoXacNhan" class="java.lang.String">
+		<fieldDescription><![CDATA[otoXacNhan]]></fieldDescription>
+	</field>
+	<field name="soCongVan" class="java.lang.String">
+		<fieldDescription><![CDATA[soCongVan]]></fieldDescription>
+	</field>
+	<field name="soDienThoai" class="java.lang.String">
+		<fieldDescription><![CDATA[soDienThoai]]></fieldDescription>
+	</field>
+	<field name="soFax" class="java.lang.String">
+		<fieldDescription><![CDATA[soFax]]></fieldDescription>
+	</field>
+	<field name="soGiayPhepLuHanh" class="java.lang.String">
+		<fieldDescription><![CDATA[soGiayPhepLuHanh]]></fieldDescription>
+	</field>
+	<field name="tenCongTy" class="java.lang.String">
+		<fieldDescription><![CDATA[tenCongTy]]></fieldDescription>
+	</field>
+	<field name="tenQuocTe" class="java.lang.String">
+		<fieldDescription><![CDATA[tenQuocTe]]></fieldDescription>
+	</field>
+	<field name="tinhThanh" class="java.lang.String">
+		<fieldDescription><![CDATA[tinhThanh]]></fieldDescription>
+	</field>
+	<title>
+		<band height="197" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="137" width="555" height="20" uuid="a3d67149-abab-4295-8b70-947d149fa718"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["GIẤY XÁC NHẬN"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="256" y="66" width="299" height="38" uuid="7fdf2c46-4fe5-4dee-9b5f-0eeeb6a91901"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[vn.dtt.duongbo.report.ReportUtils.getTenDmDataByCode($F{tinhThanh})+", ngày "+(vn.dtt.duongbo.report.ReportFunction.ngayVN())+" tháng "+(vn.dtt.duongbo.report.ReportFunction.thangVN())+" năm "+(vn.dtt.duongbo.report.ReportFunction.namVN())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="162" y="177" width="56" height="20" uuid="c9b95ab2-c7d7-4250-9d27-9c2e61154f16"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="false" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Kính gửi: ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="337" y="56" width="139" height="1" uuid="43b97943-f4d8-4486-9351-9ad058d1fd4a"/>
+			</line>
+			<staticText>
+				<reportElement x="256" y="9" width="299" height="19" uuid="dcfcc829-b264-4e3b-8358-91a638e3889b"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="28" width="299" height="19" uuid="cd22ce3a-2e6a-440f-be7c-7badc465001e"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="11" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Độc lập - Tự do -  Hạnh phúc]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="218" y="177" width="258" height="20" uuid="aafd6dea-6525-4724-baa2-c524b05c5d04"/>
+				<textElement markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{tenCongTy} != null && $F{tenCongTy}.trim().length() > 0) ? $F{tenCongTy} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="28" width="256" height="19" uuid="4d4b2769-3604-4271-8eb2-d84e88be1129"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["UBND "+vn.dtt.duongbo.report.ReportUtils.getTenDmDataByCode($F{coQuanGui})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="66" width="256" height="38" uuid="2d57a1e1-54a1-4607-835a-54b2e87cc54b"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Số:......................./......................"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="157" width="555" height="20" uuid="0d620d7e-4356-4961-aaf2-aafc615b3dbe"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["XE Ô TÔ VẬN CHUYỂN KHÁCH DU LỊCH"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="47" width="256" height="19" uuid="ab1054d8-f2c5-4ea5-89a8-54b0d4fe5f06"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SỞ VĂN HÓA, THỂ THAO VÀ DU LỊCH"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="250" splitType="Stretch">
+			<textField>
+				<reportElement positionType="Float" x="310" y="178" width="73" height="72" uuid="0a02fcfc-6447-4424-bf94-5441f7688287"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Số khung"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="242" y="178" width="68" height="72" uuid="7107aff7-5bbe-45fc-b0b7-3b1d824078e8"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Biển số"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="100" y="178" width="62" height="72" uuid="a6f049c3-ba3f-4db0-9e28-c47835610416"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tên hiệu xe"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="56" y="178" width="44" height="72" uuid="e610c03b-5ef2-4230-9a30-d28123faadaf"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TT"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="440" y="178" width="64" height="72" uuid="d642b994-695d-40ab-a84e-a706816a7fa8"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Số chỗ ngồi"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="162" y="178" width="80" height="72" uuid="c9a05abb-fa98-42a3-a06a-bcc2b25b0c77"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Màu sơn"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="504" y="178" width="47" height="72" uuid="7072d2f3-857f-4fac-b425-393fc242bb5f"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Năm SX"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="383" y="178" width="57" height="72" uuid="ef737c44-3ea1-4e2d-81a8-d29b19f64f2d"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Số máy"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="138" width="555" height="20" uuid="c26e7eaa-96bc-4d3e-819c-10da4ca69ccd"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+					<paragraph firstLineIndent="30" leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tổng số ô tô đề nghị xác nhận: "+(($F{otoXacNhan} != null && $F{otoXacNhan}.trim().length() > 0) ? $F{otoXacNhan} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="80" width="555" height="20" uuid="280b04fb-83a3-4c2a-aed5-439790d76ef2"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+					<paragraph firstLineIndent="30" leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Địa chỉ: "+(($F{diaChi} != null && $F{diaChi}.trim().length() > 0) ? $F{diaChi} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="40" width="555" height="20" uuid="f18de9c6-fe0e-4190-84ac-ddc55293bcd6"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+					<paragraph firstLineIndent="30" leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tên đơn vị kinh doanh: "+(($F{tenCongTy} != null && $F{tenCongTy}.trim().length() > 0) ? $F{tenCongTy} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="60" width="555" height="20" uuid="2c8d7ade-de99-413e-95b3-d9e1baf1b380"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+					<paragraph firstLineIndent="30" leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tên giao dịch quốc tế (nếu có): "+(($F{tenQuocTe} != null && $F{tenQuocTe}.trim().length() > 0) ? $F{tenQuocTe} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="555" height="20" uuid="3b5879e8-dfb5-4412-87cc-fede70d843e8"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+					<paragraph firstLineIndent="30" leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ngày "+(($F{ngayNhan} != null && $F{ngayNhan}.trim().length() > 0) ? $F{ngayNhan} : "..................................")+" Sở Văn hóa, Thể thao và Du lịch "+ vn.dtt.duongbo.report.ReportUtils.getTenDmDataByCode($F{coQuanGui})+" nhận được hồ sơ kèm theo Công văn số "+(($F{soCongVan} != null && $F{soCongVan}.trim().length() > 0) ? $F{soCongVan} : "..................................")+" ngày "+(($F{ngayCongVan} != null && $F{ngayCongVan}.trim().length() > 0) ? $F{ngayCongVan} : "..................................")+" về việc 'Đề nghị xác nhận ô tô đạt tiêu chuẩn vận chuyển khách du lịch'."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="20" width="555" height="20" uuid="b9190b60-79e4-4add-9a3b-b8dbb00b8753"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+					<paragraph firstLineIndent="30" leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Sau khi nghiên cứu hồ sơ, kiểm tra, đối chiếu các quy định hiện hành, Sở Văn hóa, Thể thao và Du lịch "+vn.dtt.duongbo.report.ReportUtils.getTenDmDataByCode($F{coQuanGui})+" xác nhận như sau: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="100" width="555" height="20" uuid="35f854dd-1114-4ee9-9c68-c2e16647b6cd"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+					<paragraph firstLineIndent="30" leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Số Điện thoại: "+(($F{soDienThoai} != null && $F{soDienThoai}.trim().length() > 0) ? $F{soDienThoai} : "..................................")+"; Số fax: "+(($F{soFax} != null && $F{soFax}.trim().length() > 0) ? $F{soFax} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="158" width="555" height="20" uuid="b0f7c4cb-88e2-4f1c-9574-1298473ef396"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+					<paragraph firstLineIndent="30" leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tổng số ô tô đạt tiêu chuẩn vận chuyển khách du lịch: "+(($F{otoTieuChuan} != null && $F{otoTieuChuan}.trim().length() > 0) ? $F{otoTieuChuan} : "..................................")+" xe (Danh sách)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="120" width="555" height="20" uuid="fd69a87c-a41d-455a-b61e-f0cd5b190380"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+					<paragraph firstLineIndent="30" leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Giấy phép kinh doanh lữ hành quốc tế (hoặc Giấy chứng nhận đăng ký kinh doanh vận chuyển hành khách) số "+(($F{soGiayPhepLuHanh} != null && $F{soGiayPhepLuHanh}.trim().length() > 0) ? $F{soGiayPhepLuHanh} : "..................................")+ ", cấp ngày "+(($F{ngayCapGPLH} != null && $F{ngayCapGPLH}.trim().length() > 0) ? $F{ngayCapGPLH} : "..................................")+", cơ quan cấp "+(($F{noiCapGPLH} != null && $F{noiCapGPLH}.trim().length() > 0) ? $F{noiCapGPLH} : "..................................")]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22">
+			<componentElement>
+				<reportElement stretchType="RelativeToTallestObject" x="56" y="0" width="495" height="22" uuid="7ec44eb6-c2c4-46c6-a88f-baa11fb95b98"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="dataset1" uuid="fc8ac1cf-b962-4cc4-870c-2fe7c5757edd">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{danhSachXe})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="22" width="495">
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="327" y="0" width="57" height="22" isPrintWhenDetailOverflows="true" uuid="445affd2-a1ef-4a78-a046-42fc8a467d02"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{soMay} != null && $F{soMay}.trim().length() > 0) ? $F{soMay} : " ")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="186" y="0" width="68" height="22" isPrintWhenDetailOverflows="true" uuid="9583669c-23ad-4e8c-9595-7a3826eb37b5"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{bienSoXe} != null && $F{bienSoXe}.trim().length() > 0) ? $F{bienSoXe} : " ")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="44" y="0" width="62" height="22" isPrintWhenDetailOverflows="true" uuid="5a7d69cd-50f6-4203-b60d-2ed1aee30f32"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA[vn.dtt.duongbo.report.ReportUtils.getTenDmDataByCode($F{tenHieu})]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="106" y="0" width="80" height="22" isPrintWhenDetailOverflows="true" uuid="c7fc3361-0776-4616-86d6-5ea30845b7b3"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{mauSon} != null && $F{mauSon}.trim().length() > 0) ? $F{mauSon} : " ")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="384" y="0" width="64" height="22" isPrintWhenDetailOverflows="true" uuid="7e4439b8-c490-4210-ac5e-88317f7143bf"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{soCho} != null && $F{soCho}.trim().length() > 0) ? $F{soCho} : " ")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="44" height="22" isPrintWhenDetailOverflows="true" uuid="1515f153-eaad-4c08-86e0-09a9743d8994"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="254" y="0" width="73" height="22" isPrintWhenDetailOverflows="true" uuid="a38bdbbc-b7e0-4bcb-855a-7219c6719a87"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{soKhung} != null && $F{soKhung}.trim().length() > 0) ? $F{soKhung} : " ")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="448" y="0" width="47" height="22" isPrintWhenDetailOverflows="true" uuid="377633c6-ff60-46b0-881d-09bf9800436a"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{namSX} != null && $F{namSX}.trim().length() > 0) ? $F{namSX} : " ")]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="40">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="555" height="20" uuid="62ad8657-262a-4680-b769-867519596eb9"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false" isItalic="false"/>
+					<paragraph firstLineIndent="30" leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Các giấy tờ liên quan kèm theo gồm: Giấy xác nhận ô tô vận chuyển khách du lịch (bản chính) (1) và các bản sao: Giấy phép kinh doanh lữ hành quốc tế hoặc Giấy chứng nhận đăng ký kinh doanh vận chuyển khách (2); Giấy chứng nhận đăng ký ô tô (3); Giấy chứng nhận kiểm định an toàn kỹ thuật và bảo vệ môi trường (4); Giấy chứng nhận Bảo hiểm trách nhiệm dân sự của chủ phương tiện (5); Giấy phép lái xe (6); Giấy chứng nhận tập huấn nghiệp vụ du lịch của lái xe (7). "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="20" width="555" height="20" uuid="cf7256d5-7667-43df-a30e-ac433f9ab457"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+					<paragraph firstLineIndent="30" leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Đơn vị kinh doanh cam kết chịu trách nhiệm về nội dung số liệu trong hồ sơ đề nghị cấp biển hiệu đính kèm./."]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="123">
+			<textField>
+				<reportElement x="258" y="19" width="297" height="19" uuid="87696003-b858-4295-b692-dc82fe99a5ae"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(HOẶC PHÓ GIÁM ĐỐC)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="36" width="258" height="19" uuid="7ce1494c-eb6e-4175-9494-508723f316db"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false" isItalic="false" isUnderline="false"/>
+					<paragraph leftIndent="30"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- Như trên;"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="17" width="258" height="19" uuid="d1b9fd8e-aee3-4f0a-94dd-a9c7b1d3f93f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="true"/>
+					<paragraph leftIndent="30"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nơi nhận:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="55" width="258" height="19" uuid="228b45f8-1630-4d54-a77a-ac5fd3db4cd2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false" isItalic="false" isUnderline="false"/>
+					<paragraph leftIndent="30"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- Tổng cục Du lịch, BVHTTDL (để b/c);"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="258" y="0" width="297" height="19" uuid="50ccc284-f5c9-49b8-a113-6d4c289a9d90"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["GIÁM ĐỐC"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="258" y="36" width="297" height="19" uuid="a9400faa-ddc2-4df2-9a0d-08f2553ab6ad"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(Ký tên, đóng dấu)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="74" width="258" height="19" uuid="76a72d67-e49d-49f1-87f6-e342b973d6a5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="false" isItalic="false" isUnderline="false"/>
+					<paragraph leftIndent="30"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- Lưu VT, Phòng DL"]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

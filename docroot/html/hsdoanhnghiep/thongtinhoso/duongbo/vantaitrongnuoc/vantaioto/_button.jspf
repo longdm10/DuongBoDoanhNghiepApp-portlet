@@ -1,0 +1,16 @@
+<%@page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+
+<button class="btn btn-primary MT90" type="button" onclick="forwardUrl('<%=backUrl%>')">Quay lại</button>
+<button class="btn btn-primary MT90" type="button" onclick="if (validateCommon()) summitForm('<%=xemTruocNoiDung%>')">Hoàn thành</button>
+
+<script type="text/javascript">
+	function forwardUrl(url) {
+		window.location = url;
+	}
+
+	function validateCommon() {
+		var diaChiDoanhNghiep = $('#diaChiDoanhNghiep').val();
+		if (diaChiDoanhNghiep == "") { alert("Địa chỉ không được để trống"); return false; }
+		return true;
+	}
+</script>

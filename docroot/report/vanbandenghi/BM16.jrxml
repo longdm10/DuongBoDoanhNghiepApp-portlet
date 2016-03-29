@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BM16" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="df1c06de-dff4-44a8-8f09-ac50a6b230ae">
+	<property name="ireport.zoom" value="1.0000000000000024"/>
+	<property name="ireport.x" value="30"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="entryPoint" class="java.lang.String">
+		<fieldDescription><![CDATA[entryPoint]]></fieldDescription>
+	</field>
+	<field name="exitPonit" class="java.lang.String">
+		<fieldDescription><![CDATA[exitPonit]]></fieldDescription>
+	</field>
+	<field name="number" class="java.lang.String">
+		<fieldDescription><![CDATA[number]]></fieldDescription>
+	</field>
+	<field name="organization" class="java.lang.String">
+		<fieldDescription><![CDATA[organization]]></fieldDescription>
+	</field>
+	<field name="registeredNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[registeredNumber]]></fieldDescription>
+	</field>
+	<field name="route" class="java.lang.String">
+		<fieldDescription><![CDATA[route]]></fieldDescription>
+	</field>
+	<field name="valid" class="java.lang.String">
+		<fieldDescription><![CDATA[valid]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="493" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="66" width="802" height="59" uuid="b49a5deb-4d46-43ae-92cb-875e38f4b536"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="48" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CROSS - BORDER"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="0" width="323" height="66" uuid="ec3d06ee-0631-4e15-9dd3-ae2862ad914f"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Number: "+(($F{number} != null && $F{number}.trim().length() > 0) ? $F{number} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="125" width="802" height="59" uuid="590365fe-f074-4018-8232-7544da079d5b"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="48" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TRANSPORT"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="184" width="802" height="59" uuid="e732f5b6-2fb5-414a-ac3d-4ff7310d18a7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="48" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["VIET NAM - CAMBODIA"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="283" width="515" height="30" uuid="0d9cba3a-7733-44a0-b9bc-f7013802734f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+					<paragraph leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Organization: "+(($F{organization} != null && $F{organization}.trim().length() > 0) ? $F{organization} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="313" width="515" height="30" uuid="52d530b0-88be-4298-8726-b1d340ab7f17"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+					<paragraph leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Registered Number: "+(($F{registeredNumber} != null && $F{registeredNumber}.trim().length() > 0) ? $F{registeredNumber} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="343" width="515" height="30" uuid="8b1f8f59-26c9-4669-b0ac-af9888e3780a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+					<paragraph leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Valid: "+(($F{valid} != null && $F{valid}.trim().length() > 0) ? $F{valid} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="373" width="515" height="30" uuid="168e2227-134c-465d-82fa-cd044b91f8b6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+					<paragraph leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Entry point: "+(($F{entryPoint} != null && $F{entryPoint}.trim().length() > 0) ? $F{entryPoint} : "..................................")+" Exit point: "+(($F{exitPonit} != null && $F{exitPonit}.trim().length() > 0) ? $F{exitPonit} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="403" width="515" height="30" uuid="6a765fae-f6e9-440e-a7ae-c3038da85963"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+					<paragraph leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Route: "+(($F{route} != null && $F{route}.trim().length() > 0) ? $F{route} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="515" y="283" width="287" height="30" uuid="16be079e-db84-4302-b1be-2d66766d9a74"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Issued office"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="515" y="313" width="287" height="30" uuid="98cde52b-f560-4cbe-823f-d1071b7fb8a6"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(Signature, Stamp)"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<custom-sql>
+	<sql id="vn.dtt.duongbo.dao.common.service.persistence.TthcDonViThucHienFinder.findByThuTucHanhChinhId">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				DM_DATAITEM
+			LEFT JOIN
+				DM_DATAGROUP ON DM_DATAGROUP.id = DM_DATAITEM.dataGroupId
+			LEFT JOIN 
+				TTHC_DONVITHUCHIEN ON TTHC_DONVITHUCHIEN.maDonVi = DM_DATAGROUP.code
+			WHERE
+				(TTHC_DONVITHUCHIEN.THUTUCHANHCHINHID = ?) 
+				AND (DM_DATAGROUP.status = 1)
+		]]>
+	</sql>
+</custom-sql>

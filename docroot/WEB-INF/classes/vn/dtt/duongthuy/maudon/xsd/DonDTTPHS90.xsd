@@ -1,0 +1,44 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="DonDTTPHS90">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="KinhGui" type="xs:string"></xs:element>
+				<xs:element name="TenToiLa" type="xs:string"></xs:element>
+				<xs:element name="QuocTich" type="xs:string"></xs:element>
+				<xs:element name="GioiTinh" type="xs:string"></xs:element>
+				<xs:element name="NgaySinh" type="xs:string"></xs:element>
+				<xs:element name="NoiCuTru" type="xs:string"></xs:element>
+				<xs:element name="SoDienThoai" type="xs:string"></xs:element>
+				<xs:element name="Email" type="xs:string"></xs:element>
+				<xs:element name="SoCmnd" type="xs:string"></xs:element>
+				<xs:element name="NoiCapCmnd" type="xs:string"></xs:element>
+				<xs:element name="NgayCapCmnd" type="xs:string"></xs:element>
+				<xs:element name="DaTotNghiepNganhHoc" type="xs:string"></xs:element>
+				<xs:element name="Khoa" type="xs:string"></xs:element>
+				<xs:element name="Truong" type="xs:string"></xs:element>
+				<xs:element name="SoGCNKMCN_CCCMDuocCapBang" type="xs:string"></xs:element>
+				<xs:element name="NgayCapGCNKMCN_CCCM" type="xs:string"></xs:element>
+				<xs:element name="QuyetDinhSo" type="xs:string"></xs:element>
+				<xs:element name="NgayQuyetDinh" type="xs:string"></xs:element>
+				<xs:element name="Cua" type="xs:string"></xs:element>
+				<xs:element name="QuaTrinhLamViecPTTND" maxOccurs="unbounded">
+				<xs:complexType>
+						<xs:sequence>
+							<xs:element name="TuNgay" type="xs:string"></xs:element>
+							<xs:element name="DenNgay" type="xs:string"></xs:element>
+							<xs:element name="ChucDanh" type="xs:string"></xs:element>
+							<xs:element name="NoiLamViec" type="xs:string"></xs:element>
+							<xs:element name="SoPTTND" type="xs:string"></xs:element>
+							<xs:element name="GhiChu" type="xs:string"></xs:element>						
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DoiChieu" type="xs:string"></xs:element>
+				<xs:element name="DeNghi" type="xs:string"></xs:element>
+				<xs:element name="NgayTao" type="xs:string"></xs:element>
+				<xs:element name="Tinh_ThanhPho" type="xs:string"></xs:element>
+				<xs:element name="Hang" type="xs:string"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

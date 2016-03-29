@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+default-destroy-method="destroy" default-init-method="afterPropertiesSet" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   <bean id="messageListener.HSTraDoanhNghiepThread_listener" class="vn.dtt.thread.trahoso.HSTraDoanhNghiepThreadImpl" />
+   <bean id="destination.thread.trahoso.HSTraDoanhNghiepThread" class="com.liferay.portal.kernel.messaging.SerialDestination">
+      <property name="name" value="destination/thread/trahoso/HSTraDoanhNghiepThread" />
+   </bean>
+   <bean id="messagingConfigurator" class="com.liferay.portal.kernel.messaging.config.PluginMessagingConfigurator">
+      <property name="messageListeners">
+         <map key-type="java.lang.String" value-type="java.util.List">
+            <entry key="destination/thread/trahoso/HSTraDoanhNghiepThread">
+               <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+                  <ref bean="messageListener.HSTraDoanhNghiepThread_listener" />
+               </list>
+            </entry>
+         </map>
+      </property>
+      <property name="destinations">
+         <list>
+            <ref bean="destination.thread.trahoso.HSTraDoanhNghiepThread" />
+         </list>
+      </property>
+   </bean>
+   
+   <bean id="messageListener.VanThuThread_listener" class="vn.dtt.thread.trahoso.VanThuThreadImpl" />
+   <bean id="destination.thread.trahoso.VanThuThread" class="com.liferay.portal.kernel.messaging.SerialDestination">
+      <property name="name" value="destination/thread/trahoso/VanThuThread" />
+   </bean>
+   
+   <bean id="messagingConfiguratorVanThuThread" class="com.liferay.portal.kernel.messaging.config.PluginMessagingConfigurator">
+      <property name="messageListeners">
+         <map key-type="java.lang.String" value-type="java.util.List">
+            <entry key="destination/thread/trahoso/VanThuThread">
+               <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+                  <ref bean="messageListener.VanThuThread_listener" />
+               </list>
+            </entry>
+         </map>
+      </property>
+      <property name="destinations">
+         <list>
+            <ref bean="destination.thread.trahoso.VanThuThread" />
+         </list>
+      </property>
+   </bean>
+   
+   
+</beans>

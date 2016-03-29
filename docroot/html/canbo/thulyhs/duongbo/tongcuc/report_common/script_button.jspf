@@ -1,0 +1,138 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="vn.dtt.duongbo.dao.motcua.service.OEPUserMgtEmployeeLocalServiceUtil"%>
+<%@page import="vn.dtt.duongbo.dao.motcua.model.OEPUserMgtEmployee"%>
+<%@page import="vn.dtt.duongbo.dao.motcua.model.OEPUserMgtWorkingUnit"%>
+<%@page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%
+List<OEPUserMgtEmployee> listEmployee = new ArrayList<OEPUserMgtEmployee>();
+try{
+	listEmployee = OEPUserMgtEmployeeLocalServiceUtil.findByF_workingUnitId_typeOfEmployee(themeDisplay.getUser().getUserId());
+}catch(Exception  e){
+	listEmployee = new ArrayList<OEPUserMgtEmployee>();
+}
+%>
+<!-- Modal -->
+		<div id="canBo_dialog" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title text-center">Chọn cán bộ xử lý hồ sơ</h4>
+					</div>
+						<div class="modal-body">
+							<div class="col-xs-12 form-group">
+							</div>
+							<div class="col-xs-12 form-group">
+								<div class="row MB10">
+									<div class="col-sm-2 lineH30">Chọn cán bộ</div>
+									<div id="cbxTenEmp" class="col-sm-10">
+										<select required="required" class="form-control" id="canBoXuLyId" name="canBoXuLyId">
+											<%
+											if (listEmployee != null && listEmployee.size() > 0) {
+												for (OEPUserMgtEmployee ett : listEmployee) {
+												%>
+												<option value="<%=ett.getUserId()%>" ><%=ett.getFullName()%></option>
+												<%
+												}
+											}
+											%>
+										</select>
+									</div>
+								</div>
+							</div>
+							
+							<div class="progress" id="progress_bar" style="display: none;">
+								<div class="progress-bar progress-bar-striped active4" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+							</div>
+							
+							<div class="clear"></div>
+						</div>
+						<div class="modal-footer">
+							<div class="col-xs-12">
+								<aui:button name="LưuCBX" value="Xác nhận" cssClass="btn btn-primary" onClick="advSubmit();"/>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<!-- End modal -->
+	
+<aui:script>
+Liferay.provide(window, 'advSubmit',
+		function(key) {
+			var A = AUI();
+			var actionURL = A.one("#<portlet:namespace/>actionURL");
+			A.io.request(
+				actionURL.val(),
+				{
+					dataType: 'json',
+					method: "POST",
+					form: {id: "<portlet:namespace />fm"},
+					on: {
+						success: function() {
+							window.location = "<%=reTurnHomeURL.toString()%>";
+						}
+					}
+				}
+			);
+		},['aui-io']
+	);
+Liferay.provide(window, 'chuyenDichDynamic',
+		function(key) {
+			var A = AUI();
+			var dkDC;
+			//alert("keyIn: "+key.includes("."));
+			if(key.includes(".")){
+				dkDC=key;
+			}else{
+				if(key == "CVYCBS"){
+		 		dkDC="Duyet.bo.sung";
+			 	}else if(key == "CVTCCGP"){
+			 		dkDC="Duyet.tu.choi";
+			 	}else if(!key.includes(".")){
+			 		dkDC="Duyet.cap.phep";
+			 	}
+			}
+		 	
+		 	//alert("dieu kien dich chuyen: "+dkDC);
+			var keyDichChuyen = A.one("#<portlet:namespace/>keyDichChuyen");
+			var actionCHK = A.one("#<portlet:namespace/>actionCHK");
+			var actionURL = A.one("#<portlet:namespace/>actionURL");
+			keyDichChuyen.val(dkDC);
+			actionCHK.val('<%=chuyenDich_chuyenXuLyURL.toString() %>');
+			A.io.request(
+				actionCHK.val(),
+				{
+					dataType: 'json',
+					method: "POST",
+					form: {id: "<portlet:namespace />fm"},
+					on: {
+						success: function() {
+							var data = this.get('responseData');
+							if (data.chuyenXuLy == '2') {
+								canBoListPopUp();
+							}else {
+								A.io.request(
+									actionURL.val(),
+									{
+										dataType: 'json',
+										method: "POST",
+										form: {id: "<portlet:namespace />fm"},
+										on: {
+											success: function() {
+												window.location = "<%=reTurnHomeURL.toString()%>";
+											}
+										}
+									}
+								);
+							}
+			          }
+			        }
+			      }
+			    );
+		},['aui-io']
+	);
+</aui:script>

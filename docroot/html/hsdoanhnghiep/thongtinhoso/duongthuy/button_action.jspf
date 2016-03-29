@@ -1,0 +1,35 @@
+<%@page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%
+PortletURL thanhPhanHoSoURL = renderResponse.createRenderURL();
+thanhPhanHoSoURL.setParameter("jspPage", "/html/hsdoanhnghiep/thongtinhoso/duongthuy/thanh_phan_ho_so.jsp");
+thanhPhanHoSoURL.setParameter(Constants.ID_THU_TUC_HANH_CHINH, String.valueOf(thuTucHanhChinhId));
+thanhPhanHoSoURL.setParameter(Constants.ID_HO_SO_THU_TUC, String.valueOf(hoSoThuTucId));
+thanhPhanHoSoURL.setParameter(Constants.ID_THANH_PHAN_HO_SO, String.valueOf(thanhPhanHoSoId));
+%>
+
+<div class="col-xs-12" style="margin-top:20px">
+	<div class="col-xs-3 pull-right">
+		<p style="text-align: right;line-height: 30px;" class="pull-right">
+			<span style="font-family: Arial">, <%=DateUtils.getCurrentDate(new Date()) %></span>
+		</p>
+	</div>
+	<div class="col-xs-3 pull-right">
+		<p class="">
+			<%= DuongThuyUtil.renderDanhMucCombobox(renderResponse.getNamespace(), DonOnline.TINH_THANH_PHO, "form-control", 
+				"", "--- Lựa chọn ---", DTConstants.DANH_MUC.DM_DVHC, mapDonValue, mapDonRequired) %>
+		</p>
+	</div>
+</div>
+<div class="clear"></div>
+
+<div class="col-xs-12 form-group">
+	<p><i>Ghi chú: Những trường thông tin có dấu "<span class="red">*</span>" là bắt buộc</i></p>
+</div>
+
+<div class="clear"></div>
+
+<div class="col-xs-12" style="margin-top:50px">
+	<button class="btn btn-primary" type="button" onclick="location.href='<%= thanhPhanHoSoURL %>'">Quay lại</button>
+	<button class="btn btn-primary" type="submit" >Hoàn thành</button>
+</div>

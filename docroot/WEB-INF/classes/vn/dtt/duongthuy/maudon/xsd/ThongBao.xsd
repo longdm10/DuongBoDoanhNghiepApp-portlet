@@ -1,0 +1,16 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="ThongBao">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TieuDe" type="xs:string"></xs:element>
+				<xs:element name="NoiDung" type="xs:string"></xs:element>
+				<xs:element name="NguoiGui" type="xs:string"></xs:element>
+				<xs:element name="DonViGui" type="xs:string"></xs:element>
+				<xs:element name="NguoiNhan" type="xs:string"></xs:element>
+				<xs:element name="NgayGui" type="xs:string"></xs:element>
+				<xs:element name="NgayHenTra" type="xs:string"></xs:element>
+				<xs:element name="PhiLePhi" type="xs:string"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

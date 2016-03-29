@@ -1,0 +1,32 @@
+<%@page import="com.liferay.portal.kernel.portlet.LiferayWindowState"%>
+<%@page import="vn.dtt.duongbo.business.Constants"%>
+<%@page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+long organizationId = 0;
+if (themeDisplay.getUser().getOrganizations() != null && themeDisplay.getUser().getOrganizations().size() > 0) {
+	organizationId = themeDisplay.getUser().getOrganizations().get(0).getOrganizationId();
+}
+%>
+<div style="margin-top: 20px;margin-bottom: 20px;">
+		<portlet:renderURL var="reLoadCurrentPage" windowState="<%=LiferayWindowState.NORMAL.toString()%>">
+			<portlet:param name="mvcPath" value="/html/canbo/thulyhs/duongbo/tongcuc/hoso_detail.jsp" />
+			<portlet:param name="<%=Constants.ID_THU_TUC_HANH_CHINH%>" value="<%=String.valueOf(idThuTucHanhChinh)%>" />
+			<portlet:param name="organizationId" value="<%=String.valueOf(organizationId)%>" />
+			<portlet:param name="<%=Constants.MA_THU_TUC_HANH_CHINH%>" value="<%=String.valueOf(maThuTucHanhChinh)%>" />
+			<portlet:param name="<%=Constants.ID_HO_SO_THU_TUC%>" value="<%=String.valueOf(hoSoThuTucId)%>" />
+			<portlet:param name="<%=Constants.ID_PHIEU_XU_LY%>" value="<%=String.valueOf(phieuXuLyId)%>" />
+			<portlet:param name="<%=Constants.ID_QUY_TRINH_THU_TUC%>" value="<%=String.valueOf(quyTrinhThuTucId)%>" />
+			<portlet:param name="<%=Constants.THANH_PHAN_XU_LY%>" value="<%=String.valueOf(thanhPhanXuLy)%>" />
+		</portlet:renderURL>
+		<portlet:renderURL var="chuyenXuLyURL" windowState="<%=LiferayWindowState.EXCLUSIVE.toString()%>">
+			<portlet:param name="mvcPath" value="/html/canbo/thulyhs/duongbo/tongcuc/canboxuly/chuyen_xu_ly_ho_so.jsp" />
+			<portlet:param name="<%=Constants.ID_THU_TUC_HANH_CHINH%>" value="<%=String.valueOf(idThuTucHanhChinh)%>" />
+			<portlet:param name="organizationId" value="<%=String.valueOf(organizationId)%>" />
+			<portlet:param name="<%=Constants.ID_HO_SO_THU_TUC%>" value="<%=String.valueOf(hoSoThuTucId)%>" />
+			<portlet:param name="<%=Constants.ID_PHIEU_XU_LY%>" value="<%=String.valueOf(phieuXuLyId)%>" />
+			<portlet:param name="<%=Constants.ID_QUY_TRINH_THU_TUC%>" value="<%=String.valueOf(quyTrinhThuTucId)%>" />
+			<portlet:param name="<%=Constants.THANH_PHAN_XU_LY%>" value="<%=String.valueOf(thanhPhanXuLy)%>" />
+		</portlet:renderURL>
+		<a class="btn btn-primary" href="<%=reLoadCurrentPage.toString()%>">Xử lý</a>
+		<button class="btn btn-primary" type="button" onclick="loadMyPageAndIdBtn('<%=chuyenXuLyURL%>')">Chuyển xử lý</button>
+	</div>

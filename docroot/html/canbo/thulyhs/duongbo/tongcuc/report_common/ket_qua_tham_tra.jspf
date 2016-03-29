@@ -1,0 +1,76 @@
+<%@page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="com.liferay.portal.kernel.util.Validator"%>
+<%@page import="vn.dtt.duongbo.dao.common.service.DmDataItemLocalServiceUtil"%>
+<%@page import="vn.dtt.duongbo.dao.common.model.DmDataItem"%>
+<%@page import="vn.dtt.duongbo.dao.nghiepvu.service.QlvtTTHCKetQuaThamTraLocalServiceUtil"%>
+<%@page import="vn.dtt.duongbo.dao.nghiepvu.model.QlvtTTHCKetQuaThamTra"%>
+<%@page import="java.util.List"%>
+<div style="overflow: hidden; padding-top: 20px; padding-bottom: 20px;">
+	<%
+		List<QlvtTTHCKetQuaThamTra> liKetQuaThamTras = QlvtTTHCKetQuaThamTraLocalServiceUtil
+				.findByToChucIdAndMaTthc(maThuTucHanhChinh, 1, 13101);
+		for (QlvtTTHCKetQuaThamTra tthcKetQuaThamTra : liKetQuaThamTras) {
+			List<DmDataItem> liDataItems = DmDataItemLocalServiceUtil
+					.findByCodeAndStatus(
+							tthcKetQuaThamTra.getMaKetQuaThamTra(), 1);
+			if (liDataItems != null && liDataItems.size() > 0) {
+				for (DmDataItem dmDataItem : liDataItems) {
+	%>
+	<input style="margin: 0px 5px 0 6%; float: left " type="radio" name="keyKetQuaThamTra"
+		onclick="displayBusiness('<%=Validator.isNotNull(dmDataItem.getNode1())?dmDataItem.getNode1():dmDataItem.getCode()%>'); getRenderPar('<%=Validator.isNotNull(dmDataItem.getNode1())?dmDataItem.getNode1():dmDataItem.getCode()%>');"
+		value="<%=Validator.isNotNull(dmDataItem.getNode1())?dmDataItem.getNode1():dmDataItem.getCode()%>" />
+		<span style="float: left;"><%=dmDataItem.getName()%></span><br/>
+	<%
+		}
+			}
+		}
+	%>
+</div>
+
+<div  id="idBtnCongVan" style="display: none">
+	<aui:row>
+		<aui:col width="100">
+			<aui:field-wrapper label="Giấy phép có hiệu lực từ ngày:" inlineField="<%=true %>" >
+				<aui:input prefix="date" type="text" name="ngayHieuLucInput" label="">
+				</aui:input>
+			</aui:field-wrapper>
+		</aui:col>
+	</aui:row>
+</div>
+
+<script type="text/javascript">
+
+function displayBusiness(data) {
+
+	if (data == 'GPLV_VL' || data == 'GPDB_VL') {
+		document.getElementById("idBtnCongVan").style.display = '';
+		//document.getElementById("_canboaction_WAR_DuongBoDoanhNghiepAppportlet_tcv").style.display = 'none';
+	} else { 
+		document.getElementById("idBtnCongVan").style.display = 'none';
+		//document.getElementById("_canboaction_WAR_DuongBoDoanhNghiepAppportlet_tcv").style.display = '';
+	}
+}
+</script>
+
+<aui:script use="aui-io-request,aui-node">
+var A = AUI();
+AUI().use(
+		  'aui-datepicker',
+		  function(A) {
+		    new A.DatePicker(
+		      {
+		        trigger: '#<portlet:namespace />ngayHieuLucInput',
+		        mask: '%m/%d/%Y',
+		        popover: {
+		          zIndex: 1
+		        },
+		        on: {
+		          selectionChange: function(event) {
+		            console.log(event.newSelection)
+		          }
+		        }
+		      }
+		    );
+		  }
+		);
+</aui:script>

@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.2.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_6_2_0.dtd">
+
+<liferay-portlet-app>
+	<portlet>
+		<portlet-name>menuaction</portlet-name>
+		<icon>/icon.png</icon>
+		<configuration-action-class>vn.dtt.duongbo.portlet.menu.MenuConfiguration</configuration-action-class>
+		<instanceable>false</instanceable>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>menuaction-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>doanhnghiepaction</portlet-name>
+		<icon>/icon.png</icon>
+		<instanceable>false</instanceable>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+		<css-class-wrapper>doanhnghiepaction-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>canboaction</portlet-name>
+		<icon>/icon.png</icon>
+		<user-notification-definitions>duong-bo-notification-definitions.xml</user-notification-definitions>
+		<user-notification-handler-class>vn.dtt.notifications.DuongBoNotificationHandler</user-notification-handler-class>
+		<instanceable>false</instanceable>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<header-portlet-css>/js/jquery.keypad.package-1.5.1/jquery.keypad.css</header-portlet-css>
+		<header-portlet-css>/js/jquery.keypad.package-1.5.1/jquery.keypad.alt.css</header-portlet-css>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/dangkydoanhnghiep/datetimepicker.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/jquery.keypad.package-1.5.1/jquery.keypad.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/specialChar.js</footer-portlet-javascript>
+		<css-class-wrapper>canboaction-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>menucbaction</portlet-name>
+		<icon>/icon.png</icon>
+		<configuration-action-class>vn.dtt.duongbo.portlet.menucb.MenuConfiguration</configuration-action-class>
+		<instanceable>false</instanceable>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>menucbaction-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>dangkydoanhnghiepaction</portlet-name>
+		<icon>/icon.png</icon>
+		<instanceable>false</instanceable>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<!-- <header-portlet-css>/css/main.css</header-portlet-css>
+		<header-portlet-css>/css/dangkydoanhnghiep/SpryTabbedPanels.css</header-portlet-css>
+		<header-portlet-css>/css/dangkydoanhnghiep/font-awesome.min.css</header-portlet-css>
+		<header-portlet-css>/css/dangkydoanhnghiep/style.css</header-portlet-css>
+		<header-portlet-css>/css/dangkydoanhnghiep/tinyscrollbar.css</header-portlet-css>
+		<header-portlet-css>/css/dangkydoanhnghiep/font_face.css</header-portlet-css> -->
+		<!-- <footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<footer-portlet-javascript>
+			/js/SpryTabbedPanels.js
+		</footer-portlet-javascript> -->
+		<!-- <footer-portlet-javascript>/js/dangkydoanhnghiep/bootstrap.min.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/dangkydoanhnghiep/datetimepicker.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/dangkydoanhnghiep/jquery-ui.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/dangkydoanhnghiep/jquery.autosize.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/dangkydoanhnghiep/jquery.form.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/dangkydoanhnghiep/jquery.min.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/dangkydoanhnghiep/main.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/dangkydoanhnghiep/npm.js</footer-portlet-javascript> -->
+		<css-class-wrapper>
+			dangkydoanhnghiepaction-portlet
+		</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>quanlydoanhnghiepaction</portlet-name>
+		<icon>/icon.png</icon>
+		<instanceable>false</instanceable>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>
+			quanlydoanhnghiepaction-portlet
+		</css-class-wrapper>
+	</portlet>
+	<role-mapper>
+		<role-name>administrator</role-name>
+		<role-link>Administrator</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>guest</role-name>
+		<role-link>Guest</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>power-user</role-name>
+		<role-link>Power User</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>user</role-name>
+		<role-link>User</role-link>
+	</role-mapper>
+</liferay-portlet-app>

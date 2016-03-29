@@ -1,0 +1,51 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- XML Schema Generated from XML Document on Tue Sep 16 2014 08:40:58 GMT+0700 (SE Asia Standard Time) -->
+	<!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+	<xs:element name="DonDTTPHS181">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="kinhGui" type="xs:string"></xs:element>
+				<xs:element name="toChucCaNhanDangKi" type="xs:string"></xs:element>
+				<xs:element name="daiDienChoCacDongSoHuu" type="xs:string"></xs:element>
+				<xs:element name="tenCoQuanDangKiTruocday" type="xs:string"></xs:element>
+				<xs:element name="truSoChinh" type="xs:string"></xs:element>
+				<xs:element name="dienThoai" type="xs:string"></xs:element>
+				<xs:element name="email" type="xs:string"></xs:element>
+				<xs:element name="tenPhuongTien" type="xs:string"></xs:element>
+				<xs:element name="soDangKy" type="xs:string"></xs:element>
+				<xs:element name="kiHieuThietKe" type="xs:string"></xs:element>
+				<xs:element name="congDung" type="xs:string"></xs:element>
+				<xs:element name="namDong" type="xs:string"></xs:element>
+				<xs:element name="noiDong" type="xs:string"></xs:element>
+				<xs:element name="capTau" type="xs:string"></xs:element>
+				<xs:element name="vatLieuVo" type="xs:string"></xs:element>
+				<xs:element name="chieuDaiThietKe" type="xs:string"></xs:element>
+				<xs:element name="chieuDaiLonNhat" type="xs:string"></xs:element>
+				<xs:element name="chieuCaoMan" type="xs:string"></xs:element>
+				<xs:element name="chieuChim" type="xs:string"></xs:element>
+				<xs:element name="chieuRongThietKe" type="xs:string"></xs:element>
+				<xs:element name="chieuRongLonNhat" type="xs:string"></xs:element>
+				<xs:element name="manKho" type="xs:string"></xs:element>
+				<xs:element name="trongTaiToanPhan" type="xs:string"></xs:element>
+				<xs:element name="soNguoiDuocPhepCho" type="xs:string"></xs:element>
+				<xs:element name="sucKeoDay" type="xs:string"></xs:element>
+				<xs:element name="soLuongMayChinh" type="xs:string"></xs:element>
+				<xs:element name="kieuMayChinh" type="xs:string"></xs:element>
+				<xs:element name="congSuatMayChinh" type="xs:string"></xs:element>
+				<xs:element name="nuocSanXuatMayChinh" type="xs:string"></xs:element>
+				<xs:element name="soLuongMayPhu" type="xs:string"></xs:element>
+				<xs:element name="kieuMayPhu" type="xs:string"></xs:element>
+				<xs:element name="congSuatMayPhu" type="xs:string"></xs:element>
+				<xs:element name="nuocSanXuatMayPhu" type="xs:string"></xs:element>
+				<xs:element name="lyDoCapLai" type="xs:string"></xs:element>
+				<xs:element name="PhuongTienNayDuocMuaLaiHayChuyenNhuong" type="xs:string"></xs:element>
+				<xs:element name="nguoiMuaLai" type="xs:string"></xs:element>
+				<xs:element name="diaChiNguoiMua" type="xs:string"></xs:element>
+				<xs:element name="chonThanhPho" type="xs:string"></xs:element>
+				<xs:element name="nhapNgay" type="xs:string"></xs:element>
+				<xs:element name="diaChiDangKyTruocDay" type="xs:string"></xs:element>
+				<xs:element name="ngayDangKyTruocday" type="xs:string"></xs:element>			
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

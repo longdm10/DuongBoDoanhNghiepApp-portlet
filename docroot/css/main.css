@@ -1,0 +1,117 @@
+/*@BEGIN: 19DVC */
+.m-dt-table td {vertical-align: middle !important}
+.m-dt-table tr td:nth-child(1) {text-align: center}
+
+.ctrl-required.validate-error {
+	border-color: red;
+}
+
+.ipt-w80 {
+	width: 48px !important;
+}
+.ipt-w90 {
+	width: 55% !important;
+}
+
+fieldset {
+	min-width: 1px !important;
+}
+
+#dv1{
+	overflow: hidden;
+	padding-bottom: 20px;
+}
+#dv2{
+	float: left;width: 350px;
+}
+#dv3{
+	float: right;width: 64%;
+}
+.control-group .textBold{
+	font-weight: bold !important;
+}
+.span6{
+	float: left !important;
+	width: 50%;
+}
+
+.control-label{
+	font-weight: normal !important; 
+}
+.lfr-search-container{
+	margin-top: -1em !important; 
+	overflow: initial !important; 
+}
+.myTextArea{
+	width: 100%;
+height: 70px;
+}
+.myButtonTop{
+	margin-top: 10px !important; 
+}
+
+.input-img {width: 100%; float: left; height: 28px; box-sizing: border-box}
+	.img-img {border-left: 1px solid #a9a9a9; cursor: pointer; float: right; height: 15px; padding: 5px; position: absolute; z-index: 1;}
+	.div-img {padding-left: 1.3%; width: 23.6%;}
+	.small {height: 0; overflow: hidden;}
+	.big {height: auto}
+
+.span4{
+	width: 33.18%;
+	float: left;
+}
+#contentMyPage{
+	overflow: hidden;
+}
+ .control-group .fixWidth{
+     width: 100% !important;
+ }
+.cssCheckList{
+	font-weight: bold;
+    padding-left: 3%;
+}
+.css0{
+	font-size: 15px;
+	margin-left: -3% !important;
+}
+.alertSuccessDB {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    margin-top: 10px;
+}
+.BGT .btn-primary{
+	margin-right: 15px;
+}
+#idBtn{
+	margin-top: 20px;
+}
+.lfr-autorow-controls {
+    top: 5px;
+    position: absolute;
+    right: 5px;
+    position: relative;
+    display: block;
+}
+
+.aui .btn:first-child {
+    background: #337AB7;
+    color: white;
+}
+.lfr-autorow-controls .btn:last-child {
+    position: absolute;
+    right: 0;
+    top: -45px;
+    background: #337AB7;
+    color: white;
+ }
+ .aui .icon-plus:before {
+    content: "Thêm";
+}
+.aui .icon-minus:before {
+    content: "Xóa";
+}

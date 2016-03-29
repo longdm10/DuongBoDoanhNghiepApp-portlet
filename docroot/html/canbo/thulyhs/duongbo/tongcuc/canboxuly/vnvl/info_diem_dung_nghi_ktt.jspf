@@ -1,0 +1,91 @@
+<%@page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<portlet:defineObjects />
+<%@ include file="/html/init.jsp"%>
+<portlet:actionURL name="addDiemDungNghi" var="addDiemDungNghi"/>
+	
+	<div id="member-fields1">
+		
+		<aui:row>
+			<aui:col width="20">
+				<aui:field-wrapper label="Tài nốt" cssClass="textBold" inlineField="<%=true %>" >
+				</aui:field-wrapper>
+			</aui:col>
+			<aui:col width="20">
+				<aui:field-wrapper label="Lượt đi/Lượt về" cssClass="textBold" inlineField="<%=true %>" >
+				</aui:field-wrapper>
+			</aui:col>
+			
+			<aui:col width="20">
+				<aui:field-wrapper label="Tên điểm dừng nghỉ" cssClass="textBold" inlineField="<%=true %>" >
+				</aui:field-wrapper>
+			</aui:col>
+			
+			<aui:col width="40">
+				<aui:field-wrapper label="Thời gian dừng nghỉ/ điểm" cssClass="textBold" inlineField="<%=true %>" >
+				</aui:field-wrapper>
+			</aui:col>
+			
+		</aui:row>
+		
+		<div class="lfr-form-row lfr-form-row-inline">
+			<div class="row-fields" style="display: flex;">
+				<aui:row>
+					<aui:col width="20">
+						1
+					</aui:col>
+					<aui:col width="20">
+							<aui:select  id="luotDiVe1" name="luotDiVe1" label=" ">
+							<aui:option value="0" label="Lượt đi"></aui:option>
+							<aui:option value="1" label="Lượt về"></aui:option>
+							</aui:select>
+					</aui:col>
+					<aui:col width="20">
+							<aui:select id="diemDungNghi1" name="diemDungNghi1" label=" ">
+								<%for (DmDataItem item : lstBenDi) {
+									%>
+									<option value="<%=item.getCode()%>" ><%=item.getName()%></option>
+									<%
+								}%>
+							</aui:select>
+					</aui:col>
+					<aui:col width="40">
+						<aui:input fieldParam='gio1' id='gio1' name="gio1" label="Giờ" value="" />
+				
+						<aui:input fieldParam='phut1' id='phut1' name="phut1" label="Phút" value="" />
+					</aui:col>
+					
+				</aui:row>
+			
+			</div>
+		</div>
+	</div>
+<aui:button cssClass="btn btn-primary" value="Lưu" onClick="submitItemFormFRN();"></aui:button>
+<aui:script>
+AUI().use('liferay-auto-fields',function(A) {
+ new Liferay.AutoFields(
+       {
+           contentBox: '#member-fields1',
+           fieldIndexes: '<portlet:namespace />rowIndexes'
+       }
+   ).render();
+   });
+</aui:script> 
+
+<aui:script use="aui-io-request,aui-node">
+var A = AUI();
+	Liferay.provide(window,'submitItemFormFRN',
+		function() {
+		alert('-----uuuuu');
+		var A = AUI();
+		A.io.request('<%=addDiemDungNghi %>',{
+			method: 'POST',
+			form: { id: '<portlet:namespace />fm' },
+			on: {
+					success: function(){
+					var json = JSON.parse(this.get('responseData'));
+  					errorBlock.set("innerHTML","");
+					}
+			}
+		});
+	});
+</aui:script>

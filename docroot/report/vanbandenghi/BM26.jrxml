@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BM26" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="df1c06de-dff4-44a8-8f09-ac50a6b230ae">
+	<property name="ireport.zoom" value="1.0000000000000024"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="bienDangKy" class="java.lang.String">
+		<fieldDescription><![CDATA[bienDangKy]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="donVi" class="java.lang.String">
+		<fieldDescription><![CDATA[donVi]]></fieldDescription>
+	</field>
+	<field name="giaTriDen" class="java.lang.String">
+		<fieldDescription><![CDATA[giaTriDen]]></fieldDescription>
+	</field>
+	<field name="so" class="java.lang.String">
+		<fieldDescription><![CDATA[so]]></fieldDescription>
+	</field>
+	<field name="soA" class="java.lang.String">
+		<fieldDescription><![CDATA[soA]]></fieldDescription>
+	</field>
+	<field name="soB" class="java.lang.String">
+		<fieldDescription><![CDATA[soB]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="441" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="79" width="802" height="59" uuid="b49a5deb-4d46-43ae-92cb-875e38f4b536"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="36" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["XE Ô TÔ VẬN CHUYỂN KHÁCH"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="13" width="323" height="66" uuid="ec3d06ee-0631-4e15-9dd3-ae2862ad914f"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Số: A"+(($F{soA} != null && $F{soA}.trim().length() > 0) ? $F{soA} : "..................................")+"/B "+(($F{soB} != null && $F{soB}.trim().length() > 0) ? $F{soB} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="138" width="802" height="97" uuid="e732f5b6-2fb5-414a-ac3d-4ff7310d18a7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="55" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["DU LỊCH"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="258" width="515" height="30" uuid="0d9cba3a-7733-44a0-b9bc-f7013802734f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+					<paragraph leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Đơn vị: "+(($F{donVi} != null && $F{donVi}.trim().length() > 0) ? $F{donVi} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="288" width="515" height="30" uuid="52d530b0-88be-4298-8726-b1d340ab7f17"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+					<paragraph leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Biển đăng ký: "+(($F{bienDangKy} != null && $F{bienDangKy}.trim().length() > 0) ? $F{bienDangKy} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="318" width="515" height="30" uuid="8b1f8f59-26c9-4669-b0ac-af9888e3780a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+					<paragraph leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Có giá trị đến: "+(($F{giaTriDen} != null && $F{giaTriDen}.trim().length() > 0) ? $F{giaTriDen} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="515" y="258" width="287" height="30" uuid="16be079e-db84-4302-b1be-2d66766d9a74"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(DẤU CỦA CƠ QUAN CẤP)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="515" y="288" width="287" height="30" uuid="98cde52b-f560-4cbe-823f-d1071b7fb8a6"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(Ký tên, đóng dấu/Signature, Seal)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="348" width="802" height="30" uuid="79748e37-fbd0-477c-9a08-ebff490f6d70"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+					<paragraph leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Biển A: Cấp cho ô tô có niên hạn sử dụng dưới 5 năm;"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="378" width="802" height="30" uuid="a982cca0-d24a-473a-9194-fed94e8bb4b9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+					<paragraph leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Biển B: Cấp cho ô tô có niên hạn sử dụng từ 5 năm đến 10 năm."]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

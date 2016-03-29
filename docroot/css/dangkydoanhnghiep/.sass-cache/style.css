@@ -1,0 +1,192 @@
+/* Dang ky */
+* {
+  box-sizing: border-box; }
+
+.register-area .row1 {
+  float: right;
+  margin-right: 0; }
+
+/* .register-area .box-register {float: left; width: 100%; margin: 20px 0 10px} */
+.register-area .box-register .row {
+  width: 100%;
+  margin-bottom: 15px;
+  overflow: hidden;
+  margin-left: 0; }
+
+.register-area .box-register .box33 {
+  width: 32%;
+  float: left;
+  margin: 0 2% 0 0; }
+
+.register-area .box-register .box33:last-child {
+  margin-right: 0; }
+
+.register-area .box-register .box50 {
+  width: 49%;
+  float: left;
+  margin: 0 2% 0 0; }
+
+.register-area .box-register .box50:last-child {
+  margin-right: 0; }
+
+.register-area .box-register .lbt {
+  font-weight: bold;
+  line-height: 32px; }
+
+.register-area .box-register input[type="text"], .register-area .box-register select {
+  width: 100%;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px; }
+
+.register-area .box-register input[type="radio"] {
+  margin-right: 5px;
+  float: left; }
+
+.help-text {
+  display: block;
+  margin: 5px 0 0px !important;
+  color: #737373;
+  font-size: 11px; }
+
+.register-area .box-register label {
+  margin: 10px 20px 0 0;
+  float: left; }
+
+.register-area .box-register .box33 > div, .register-area .box-register .box66 > div, .register-area .box-register .box40 > div {
+  position: relative; }
+
+.register-area .box-register .box33 > div img, .register-area .box-register .box66 > div img, .register-area .box-register .box40 > div img {
+  position: absolute;
+  top: 39px;
+  right: 7px;
+  cursor: pointer;
+  width: 18px;
+  height: 20px; }
+
+.register-area .box-register h3 {
+  margin: 10px 0;
+  font-size: 15px; }
+
+.register-area .box-register .row-bt {
+  width: 210px; }
+
+.register-area .box-register .row input[type="button"] {
+  text-transform: uppercase;
+  color: white;
+  border: 0;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer; }
+
+.register-area .box-register .row input[type="button"]:first-child {
+  background-color: #013eb1; }
+
+.register-area .box-register .row input[type="button"]:last-child {
+  background-color: #cecece;
+  color: #000; }
+
+.register-area .box-register .box66 {
+  width: 66%;
+  float: left; }
+
+.register-area .box-register .box20 {
+  width: 19%;
+  float: left;
+  margin-right: 2%; }
+
+.register-area .box-register .box80 {
+  width: 79%;
+  float: left; }
+
+.register-area .box-register .box30 {
+  width: 29%;
+  float: left; }
+
+.register-area .box-register .box40 {
+  width: 39%;
+  float: left; }
+
+.register-area .box-register .box60 {
+  width: 59%;
+  float: left;
+  margin-left: 2%; }
+
+.register-area .box-register .box5 {
+  width: 4%;
+  float: left;
+  margin: 0 1%; }
+
+.register-area .box-register .box10 {
+  width: 9%;
+  float: left;
+  margin: 0 1%; }
+
+.register-area .box-register .box90 {
+  width: 89%;
+  float: left; }
+
+/* Thong bao dang ky thanh cong */
+.dktc {
+  border: 1px solid black;
+  width: 40%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 30%; }
+
+.dktc .p-head {
+  border-bottom: 1px solid black;
+  background-color: #ccc;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold; }
+
+.dktc .p-content {
+  background-color: white;
+  text-align: center;
+  padding: 20px 15px; }
+
+.dktc .p-content p {
+  margin-bottom: 10px; }
+
+.dktc .p-content input[type="button"] {
+  border: 1px solid #ccc;
+  background-color: #efefef;
+  padding: 4px 12px;
+  margin-top: 20px; }
+
+.clear {
+  clear: both; }
+
+.red {
+  color: red; }
+
+.TabbedPanelsTabGroup {
+  margin: 0 !important; }
+
+.search-area input {
+  height: 31px !important; }
+
+.search-area button {
+  float: right;
+  margin-left: 5px; }
+
+.register-area .box-register .row {
+  margin-left: 0; }
+
+.box-register {
+  font-size: 0.9em; }
+
+.box-register p, .box-register input, .box-register select {
+  margin-bottom: 0 !important; }
+
+.help-text {
+  font-size: 11px !important;
+  line-height: normal !important; }
+

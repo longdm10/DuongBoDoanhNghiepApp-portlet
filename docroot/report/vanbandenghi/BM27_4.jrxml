@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BM27_4" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="df1c06de-dff4-44a8-8f09-ac50a6b230ae">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="30"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="bienDangKy" class="java.lang.String">
+		<fieldDescription><![CDATA[bienDangKy]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="donVi" class="java.lang.String">
+		<fieldDescription><![CDATA[donVi]]></fieldDescription>
+	</field>
+	<field name="giaTriDen" class="java.lang.String">
+		<fieldDescription><![CDATA[giaTriDen]]></fieldDescription>
+	</field>
+	<field name="so" class="java.lang.String">
+		<fieldDescription><![CDATA[so]]></fieldDescription>
+	</field>
+	<field name="tinhThanh" class="java.lang.String">
+		<fieldDescription><![CDATA[tinhThanh]]></fieldDescription>
+	</field>
+	<field name="tuyenHoatDong" class="java.lang.String">
+		<fieldDescription><![CDATA[tuyenHoatDong]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="441" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="10" y="298" width="515" height="30" uuid="df36552e-9445-4a24-b7c0-538825df9bd8"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+					<paragraph leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Có giá trị đến: "+(($F{giaTriDen} != null && $F{giaTriDen}.trim().length() > 0) ? $F{giaTriDen} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="86" width="802" height="83" uuid="68dbd742-6392-4773-9b8d-e8e1bc53f6f2"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="60" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["XE HỢP ĐỒNG"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="525" y="268" width="287" height="30" uuid="b4d4adb1-24d9-4824-823a-e67dfcc12049"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(Ký tên, đóng dấu)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="525" y="238" width="287" height="30" uuid="4ef62f76-903a-455f-a3c7-175294482df7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Sở GTVT"+ (($F{tinhThanh} != null && $F{tinhThanh}.trim().length() > 0) ? $F{tinhThanh} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="10" y="268" width="515" height="30" uuid="f8df6953-8183-48ab-9411-7c5c80983634"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+					<paragraph leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Biển đăng ký: "+(($F{bienDangKy} != null && $F{bienDangKy}.trim().length() > 0) ? $F{bienDangKy} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="10" y="238" width="515" height="30" uuid="60dd3ddc-d8e4-4a94-9c0b-6ebecfe4eac4"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+					<paragraph leftIndent="30" rightIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Đơn vị: "+(($F{donVi} != null && $F{donVi}.trim().length() > 0) ? $F{donVi} : "..................................")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="489" y="10" width="323" height="66" uuid="2839d556-5c12-4460-b28b-e8d31cd4c3d8"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Số: "+(($F{so} != null && $F{so}.trim().length() > 0) ? $F{so} : "..................................")]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
