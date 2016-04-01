@@ -10,4 +10,12 @@
 		<portlet id="dangkydoanhnghiepaction"></portlet>
 		<portlet id="quanlydoanhnghiepaction"></portlet>
 	</category>
+	<category name="category.sample">
+		<portlet id="menudb"></portlet>
+		<portlet id="ho-so-db"></portlet>
+		<portlet id="qlhs-phuong-tien-tnd-vao-ra-cang-bien"></portlet>
+		<portlet id="hspttdn-vao-cang-bien"></portlet>
+		<portlet id="hspttnd-ra-cang-bien"></portlet>
+		<portlet id="tt-phuong-tien-tnd"></portlet>
+	</category>
 </display>

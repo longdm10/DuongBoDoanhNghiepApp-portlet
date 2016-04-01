@@ -205,4 +205,204 @@
 			<role-name>user</role-name>
 		</security-role-ref>
 	</portlet>
+	<portlet>
+		<portlet-name>menudb</portlet-name>
+		<display-name>Menudb</display-name>
+		<portlet-class>vn.dtt.duongbien.Menudb</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/menudb/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Menudb</title>
+			<short-title>Menudb</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>ho-so-db</portlet-name>
+		<display-name>Ho So Db</display-name>
+		<portlet-class>vn.dtt.duongbien.hoso.HoSoDB</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/hosodb/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Ho So Db</title>
+			<short-title>Ho So Db</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>
+			qlhs-phuong-tien-tnd-vao-ra-cang-bien
+		</portlet-name>
+		<display-name>
+			Qlhs Phuong Tien Tnd Vao Ra Cang Bien
+		</display-name>
+		<portlet-class>
+			vn.dtt.duongbien.qlhsphuongtientndvaoracangbien.QLHSPhuongTienTNDVaoRaCangBien
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/qlhsphuongtientndvaoracangbien/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Qlhs Phuong Tien Tnd Vao Ra Cang Bien</title>
+			<short-title>
+				Qlhs Phuong Tien Tnd Vao Ra Cang Bien
+			</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>hspttdn-vao-cang-bien</portlet-name>
+		<display-name>Hspttdn Vao Cang Bien</display-name>
+		<portlet-class>
+			vn.dtt.duongbien.hspttndvaocangbien.HSPTTDNVaoCangBien
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/hspttdnvaocangbien/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Hspttdn Vao Cang Bien</title>
+			<short-title>Hspttdn Vao Cang Bien</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>hspttnd-ra-cang-bien</portlet-name>
+		<display-name>Hspttnd Ra Cang Bien</display-name>
+		<portlet-class>
+			vn.dtt.duongbien.hspttndracangbien.HSPTTNDRaCangBien
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/hspttndracangbien/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Hspttnd Ra Cang Bien</title>
+			<short-title>Hspttnd Ra Cang Bien</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>tt-phuong-tien-tnd</portlet-name>
+		<display-name>Tt Phuong Tien Tnd</display-name>
+		<portlet-class>
+			vn.dtt.duongbien.ttphuongtientnd.TTPhuongTienTND
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/ttphuongtientnd/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Tt Phuong Tien Tnd</title>
+			<short-title>Tt Phuong Tien Tnd</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
 </portlet-app>

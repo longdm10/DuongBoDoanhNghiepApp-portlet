@@ -90,6 +90,70 @@
 			quanlydoanhnghiepaction-portlet
 		</css-class-wrapper>
 	</portlet>
+	<portlet>
+		<portlet-name>menudb</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>menudb-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>ho-so-db</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>ho-so-db-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>
+			qlhs-phuong-tien-tnd-vao-ra-cang-bien
+		</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>
+			qlhs-phuong-tien-tnd-vao-ra-cang-bien-portlet
+		</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>hspttdn-vao-cang-bien</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>
+			hspttdn-vao-cang-bien-portlet
+		</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>hspttnd-ra-cang-bien</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>
+			hspttnd-ra-cang-bien-portlet
+		</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>tt-phuong-tien-tnd</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>
+			tt-phuong-tien-tnd-portlet
+		</css-class-wrapper>
+	</portlet>
 	<role-mapper>
 		<role-name>administrator</role-name>
 		<role-link>Administrator</role-link>

@@ -46,13 +46,25 @@
 		} else {
 			thanhPhanDuLieuHoSo = "javascript:void(0);";
 		}
-	%>
+	%>			
 		<c:choose>
 				<c:when test="<%= thuTucHanhChinh.getId() == 91 %>" >
 					<p><a href="http://capphep.viwa.gov.vn/dangkyvao?uid=<%=user.getEmailAddress() %>"><%=linhVucThuTuc.getNode3() + "." + (h+1) + "."%> <%=thuTucHanhChinh.getTenThuTuc()%></a></p>
 				</c:when>
 				<c:when test="<%= thuTucHanhChinh.getId() == 90 %>" >
 					<p><a href="http://capphep.viwa.gov.vn/dangkyroi?uid=<%=user.getEmailAddress() %>"><%=linhVucThuTuc.getNode3() + "." + (h+1) + "."%> <%=thuTucHanhChinh.getTenThuTuc()%></a></p>
+				</c:when>
+				<c:when test="<%= thuTucHanhChinh.getId() == 93 %>" >
+					<%
+					String url1 = "/group/doanh-nghiep/ho-so-vao-cang-bien";
+					%>
+					<p><a href="<%=url1 %>"  class="textsub list-group-item"><%=linhVucThuTuc.getNode3() + "." + (h+1) + "."%> <%=thuTucHanhChinh.getTenThuTuc()%></a></p>
+				</c:when>
+				<c:when test="<%= thuTucHanhChinh.getId() == 92 %>" >
+					<%
+					String url2 = "/group/doanh-nghiep/ho-so-roi-cang-bien";
+					%>
+					<p><a href="<%=url2 %>"  class="textsub list-group-item"><%=linhVucThuTuc.getNode3() + "." + (h+1) + "."%> <%=thuTucHanhChinh.getTenThuTuc()%></a></p>
 				</c:when>
 				<c:otherwise>
 					<p><a href="<%=thanhPhanDuLieuHoSo.toString()%>"><%=linhVucThuTuc.getNode3() + "." + (h+1) + "."%> <%=thuTucHanhChinh.getTenThuTuc()%></a></p>
