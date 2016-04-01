@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="vn.dtt.duongbo.dao.nghiepvu">
+	<author>NhanNc</author>
+	<namespace>nghiepvu</namespace>
+	
+	<entity name="QlvtKiemTraHoSo" table="nghiepvu_kiemtrahoso" local-service="true" remote-service="true" data-source="nghiepvuDataSource" session-factory="nghiepvuSessionFactory" tx-manager="nghiepvuTransactionManager" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long" primary="true" />
+        <column name="thongTinXuLyId" db-name="THONGTINXULYID" type="int"></column>
+        <column name="idNoiDungThamTra" db-name="IDNOIDUNGTHAMTRA" type="int"></column>
+        <column name="yKienThamTra" db-name="YKIENTHAMTRA" type="String"></column>
+        <column name="ketQuaXuLy" db-name="KETQUAXULY" type="int"></column>
+        <column name="maSoHoSo" db-name="MASOHOSO" type="int"></column>
+        <column name="yKienDanhGia" db-name="YKIENDANHGIA" type="String"></column>
+        <order by="asc"><order-column name="id" /></order>
+	</entity>
+	
+	<entity name="QlvtNoiDungThamTra" table="nghiepvu_noidungthamtra" local-service="true" remote-service="true" data-source="nghiepvuDataSource" session-factory="nghiepvuSessionFactory" tx-manager="nghiepvuTransactionManager" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long" primary="true" />
+        <column name="mucKiemTra" db-name="MUCKIEMTRA" type="String"></column>
+        <column name="chaId" db-name="CHAID" type="int"></column>
+        <column name="coYKien" db-name="COYKIEN" type="int"></column>
+        <column name="buocXuLy" db-name="BUOCXULY" type="int"></column>
+        <column name="thuTuHienThi" db-name="THUTUHIENTHI" type="int"></column>
+        <column name="tthcNoiDungThamTraId" db-name="TTHC_NOIDUNGTHAMTRAID" type="int"></column>
+        <column name="tienTo" db-name="TIENTO" type="String"></column>
+        <column name="thanhPhanHoSo" db-name="THANHPHANHOSO" type="String"></column>
+        <order by="asc"><order-column name="thuTuHienThi" /></order>
+       
+        <finder return-type="Collection" name="F_tthcNoiDungThamTraId"	>
+			<finder-column name="tthcNoiDungThamTraId" />
+		</finder>
+	</entity>
+	
+	<entity name="QlvtLoaiHinhHoatDongTths" table="QLVT_LOAIHINHHOATDONG_TTHS" local-service="true" remote-service="true" data-source="nghiepvuDataSource" tx-manager="nghiepvuTransactionManager" session-factory="nghiepvuSessionFactory" cache-enabled="false">
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="maLoaiHinhHoatDong" db-name="MALOAIHINHHOATDONG" type="String" />
+		<column name="thongTinHoSoId" db-name="THONGTINHOSOID" type="long" />
+		<column name="soLuongPhuongTien" db-name="SOLUONGPHUONGTIEN" type="int" />
+		<column name="thietBiGiamSatHanhTrinh" db-name="THIETBIGIAMSATHANHTRINH" type="int" />
+		<column name="tuyenTu" db-name="TUYENTU" type="String" />
+		<column name="tuyenDen" db-name="TUYENDEN" type="String" />
+		<column name="soChuyen" db-name="SOCHUYEN" type="long" />
+		<column name="mauSon" db-name="MAUSON" type="String" />
+		<column name="loaiHinhKinhDoanhCuThe" db-name="LOAIHINHKINHDOANHCUTHE" type="String" />
+		<column name="danhGia" db-name="DANHGIA" type="int" />
+		<column name="lyDoKhongDat" db-name="LYDOKHONGDAT" type="String" />
+		
+		<order by="asc"><order-column name="id" /></order>
+		
+		<finder return-type="Collection" name="ThongTinHoSoId">
+			<finder-column name="thongTinHoSoId" />
+		</finder>
+		
+	</entity>
+	
+	
+	<entity name="QlvtQuanLyFile" table="nghiepvu_quanlyfile" local-service="true" remote-service="true" data-source="nghiepvuDataSource" tx-manager="nghiepvuTransactionManager" session-factory="nghiepvuSessionFactory" cache-enabled="false">
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="tenFile" db-name="TENFILE" type="String" />
+		<column name="loaiFile" db-name="LOAIFILE" type="long" />
+		<column name="thongTinFile" db-name="THONGTINFILE" type="String" />
+		<column name="ngayTai" db-name="NGAYTAI" type="Date" />
+		<column name="ngayCap" db-name="NGAYCAP" type="Date" />
+		<column name="ngayHetHan" db-name="NGAYHETHAN" type="Date" />
+		<column name="idFile" db-name="IDFILE" type="long" />
+		<column name="trangThai" db-name="TRANGTHAI" type="String" />
+		<column name="doanhNghiepId" db-name="DOANHNGHIEPID" type="long" />
+		<column name="taiKhoan" db-name="TAIKHOAN" type="long" />
+		<column name="mieuTa" db-name="MIEUTA" type="String" />
+		
+		<order by="asc"><order-column name="id" /></order>
+		
+		<finder return-type="Collection" name="DoanhNghiepId">
+			<finder-column name="doanhNghiepId" />
+		</finder>
+		
+		<finder return-type="QuanLyFile" name="IdFile">
+			<finder-column name="idFile" />
+		</finder>
+		
+		<finder return-type="QuanLyFile" name="IdFileAndDoanhNghiepID">
+			<finder-column name="idFile" />
+			<finder-column name="doanhNghiepId" />
+		</finder>
+	</entity>
+
+	<entity name="QlvtThongTinHoSo" table="nghiepvu_thongtinhoso" local-service="true" remote-service="true"  data-source="nghiepvuDataSource" session-factory="nghiepvuSessionFactory" tx-manager="nghiepvuTransactionManager" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+        <column name="soCongVanDen" db-name="SOCONGVANDEN" type="String"></column>
+        <column name="tenDn" db-name="TENDOANHNGHIEP" type="String"></column>
+        <column name="diaChiDn" db-name="DIACHIDOANHNGHIEP" type="String"></column>
+        <column name="dienThoaiDn" db-name="DIENTHOAIDOANHNGHIEP" type="String"></column>
+        <column name="soFaxDn" db-name="SOFAXDOANHNGHIEP" type="String"></column>
+        <column name="emailDn" db-name="EMAILDOANHNGHIEP" type="String"></column>
+        <column name="webSiteDn" db-name="WEBSITEDOANHNGHIEP" type="String"></column>
+        <column name="soDkkd" db-name="SODANGKYKINHDOANH" type="String"></column>
+        <column name="ngayCapDkkd" db-name="NGAYCAPDANGKYKINHDOANH" type="Date"></column>
+        <column name="ngayHetHanDkkd" db-name="NGAYHETHANDANGKYKINHDOANH" type="Date"></column>
+        <column name="coQuanCapDkkd" db-name="COQUANCAPDANGKYKINHDOANH" type="String"></column>
+        <column name="daiDienDn" db-name="DAIDIENDOANHNGHIEP" type="String"></column>
+        <column name="coQuanGiaiQuyet" type="long" db-name="COQUANGIAIQUYET"></column>
+        <column name="diaDiemLamHoSo" type="String" db-name="DIADIEMLAMHOSO"></column>
+        <column name="phieuXuLyId" type="long" db-name="PHIEUXULYID"></column>
+        <column name="maSoHoSo" type="String" db-name="MASOHOSO"></column>
+        <column name="lyDoCapLai" type="String" db-name="LYDOCAPLAI"></column>
+        <column name="lanCapGiayDangKyKinhDoanh" type="int" db-name="LANCAPGIAYDANGKYKINHDOANH"></column>
+        <column name="soGiayPhepKinhDoanhVanTaiNoiDia" type="String" db-name="SOGIAYPHEPKINHDOANHVANTAI_NOIDIA"></column>
+        <column name="ngayCapGPKDVTNoiDia" type="Date" db-name="NGAYCAPGPKDVT_NOIDIA"></column>
+        <column name="NgayGiaHanGPKDVTNoiDia" type="Date" db-name="NGAYGIAHANGPKDVT_NOIDIA"></column>
+        <column name="NgayHetHanGPKDVTNoiDia" type="Date" db-name="NGAYHETHANGPKDVT_NOIDIA"></column>
+        <column name="lanCapGPKDVTNoiDia" type="int" db-name="LANCAPGPKDVT_NOIDIA"></column>
+        <column name="ngayGiaHanGiayDangKyKinhDoanh" type="Date" db-name="NGAYGIAHANGIAYDANGKYKINHDOAN"></column>
+        <column name="soGiayPhepKinhDoanhVanTaiQuocTe" type="String" db-name="SOGIAYPHEPKINHDOANHVANTAI_QUOCTE"></column>
+        <column name="lanCapGPKDVTQuocTe" type="int" db-name="LANCAPGPKDVT_QUOCTE"></column>
+        <column name="ngayCapGPKDVTQuocTe" type="Date" db-name="NGAYCAPGPKDVT_QUOCTE"></column>
+        <column name="ngayGiaHanGPKDVTQuocTe" type="Date" db-name="NGAYGIAHANGPKDVT_QUOCTE"></column>
+        <column name="ngayHetHanGPKDVTQuocTe" type="Date" db-name="NGAYHETHANGPKDVT_QUOCTE"></column>
+        <column name="nguoiLienHeTraKetQua" type="String" db-name="NGUOILIENHETRAKETQUA"></column>
+        <column name="soDienThoaiNguoiLienHe" type="String" db-name="SODIENTHOAI_NGUOILIENHE"></column>
+        <column name="coQuanCapGPKDVTNoiDia" type="String" db-name="GIAYPHEPKINHDOANVANTAI_NOIDIA_COQUANCAP"></column>
+        <column name="nguoiNhanKetQua" type="String" db-name="NGUOINHANKETQUA"></column>
+        <column name="thongTinTraKetQua" type="String" db-name="THONGTINTRAKETQUA"></column>
+        <column name="ngayTraKetQua" type="Date" db-name="NGAYTRAKETQUA"></column>
+        <order by="asc"><order-column name="id" /></order>
+        
+        <finder return-type="QlvtThongTinHoSo" name="MaSoHoSo">
+			<finder-column name="maSoHoSo" />
+		</finder>
+		<finder return-type="QlvtThongTinHoSo" name="phieuXuLyId">
+			<finder-column name="phieuXuLyId" />
+		</finder>
+	</entity>
+	<entity name="QlvtThongTinXuLy" table="nghiepvu_thongtinxulyso" local-service="true" remote-service="true"  data-source="nghiepvuDataSource" session-factory="nghiepvuSessionFactory" tx-manager="nghiepvuTransactionManager" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+		<column name="ketQuaXuLy" db-name="KETQUAXULY" type="String"></column>
+		<column name="thongTinHoSoId" db-name="THONGTINHOSOID" type="long"/>
+		<column name="maSoHoSo" db-name="MASOHOSO" type="String"></column>
+		<column name="canBoXuLy" db-name="CANBOXULY" type="int"></column>
+		<column name="thoiGianXuLy" db-name="THOIGIANXULY" type="Date"></column>
+        <column name="yKienCanBoXuLy" db-name="YKIENCANBOXULY" type="String"></column>
+        <column name="lanhDaoDuyet" db-name="LANHDAODUYET" type="int"></column>
+        <column name="yKienLanhDaoDuyet" db-name="YKIENLANHDAODUYET" type="String"></column>
+        <column name="thoiGianDuyet" db-name="THOIGIANDUYET" type="Date"></column>
+        <column name="ketQuaDuyet" db-name="KETQUADUYET" type="int"></column>
+        <column name="lanhDaoPheDuyet" db-name="LANHDAOPHEDUYET" type="int"></column>
+        <column name="thoiGianPheDuyet" db-name="THOIGIANPHEDUYET" type="Date"></column>
+        <column name="ketQuaPheDuyet" db-name="KETQUAPHEDUYET" type="int"></column>
+        <column name="yKienLanhDaoPheDuyet" db-name="YKIENLANHDAOPHEDUYET" type="String"></column>
+        <column name="nguoiTraKetQua" db-name="NGUOITRAKETQUA" type="int"></column>
+        <column name="thoiGianTraKetQua" db-name="THOIGIANTRAKETQUA" type="Date"></column>
+        <column name="thoiGianCapPhep" db-name="THOIGIANCAPPHEP" type="Date"></column>
+        <column name="ketQuaThamDinhXML" db-name="KETQUATHAMDINH_XML" type="String"></column>
+        
+        <order by="asc"><order-column name="id" /></order>
+        <finder return-type="QlvtThongTinXuLy" name="thongTinHoSoId">
+			<finder-column name="thongTinHoSoId" />
+		</finder>
+	</entity>
+	<entity name="QlvtYeuCauBoXung" table="nghiepvu_yeucaubosung" local-service="true" remote-service="true"  data-source="nghiepvuDataSource" session-factory="nghiepvuSessionFactory" tx-manager="nghiepvuTransactionManager" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+        <column name="noiDung" db-name="NOIDUNG" type="String"></column>
+        <column name="thongTinXuLyId" db-name="THONGTINXULYID" type="int"></column>
+        <column name="soCongVan" db-name="SOCONGVAN" type="String"></column>
+        <column name="ngayCongVan" db-name="NGAYCONGVAN" type="Date"></column>
+        <column name="fileID" db-name="FILEID" type="int"></column>
+        <order by="asc"><order-column name="id" /></order>
+	</entity>
+	<entity name="QlvtTTHCKetQuaThamTra" table="nghiepvu_tthc_ketquathamtra" local-service="true" remote-service="true"  data-source="nghiepvuDataSource" session-factory="nghiepvuSessionFactory" tx-manager="nghiepvuTransactionManager" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+        <column name="maKetQuaThamTra" db-name="MAKETQUATHAMTRA" type="String"></column>
+        <column name="maTTHC" db-name="MATTHC" type="String"></column>
+        <column name="buocXuLy" db-name="BUOCXULY" type="int"></column>
+        <column name="toChucXuLy" db-name="TOCHUCXULY" type="int"></column>
+        <order by="asc"><order-column name="id" /></order>
+        <finder return-type="Collection" name="ToChucIdAndMaTthc">
+			<finder-column name="maTTHC" />
+			<finder-column name="buocXuLy" />
+			<finder-column name="toChucXuLy" />
+		</finder>
+	</entity>
+	<entity name="QlvtTTHCNoiDungThamTra" table="nghiepvu_tthc_noidungthamtra" local-service="true" remote-service="true"  data-source="nghiepvuDataSource" session-factory="nghiepvuSessionFactory" tx-manager="nghiepvuTransactionManager" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+        <column name="maTTHC" db-name="MATTHC" type="String"></column>
+        <column name="toChucXuLy" db-name="TOCHUCXULY" type="int"></column>
+        <order by="asc"><order-column name="id" /></order>
+        <finder return-type="QlvtTTHCNoiDungThamTra" name="F_MaTTHC">
+        	<finder-column name="maTTHC"></finder-column>
+        </finder>
+	</entity>
+	<entity name="QlvtThongTinHoSoNoiDia" table="nghiepvu_thongtinhoso_qlvt_capphep_gpkdvt_bangoto_noidia" local-service="true" remote-service="true"  data-source="nghiepvuDataSource" session-factory="nghiepvuSessionFactory" tx-manager="nghiepvuTransactionManager" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+        <column name="thongtinHoSoId" db-name="nghiepvu_thongtinhosoID" type="long"></column>
+        <column name="noiDiaId" db-name="qlvt_capphep_gpkdvt_duongbo_noidiaID" type="long"></column>
+        <order by="asc"><order-column name="id" /></order>
+	</entity>
+	<entity name="QlvtThongTinHoSoQuocTe" table="nghiepvu_thongtinhoso_qlvt_capphep_gpkdvt_duongbo_quocte" local-service="true" remote-service="true"  data-source="nghiepvuDataSource" session-factory="nghiepvuSessionFactory" tx-manager="nghiepvuTransactionManager" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+        <column name="thongtinHoSoId" db-name="nghiepvu_thongtinhosoID" type="long"></column>
+        <column name="gpkdvtID" db-name="qlvt_capphep_gpkdvtID" type="long"></column>
+        <order by="asc"><order-column name="id" /></order>
+	</entity>
+	<entity name="QlvtThongTinHoSoLienVan" table="nghiepvu_thongtinhoso_qlvt_capphep_gplienvan" local-service="true" remote-service="true"  data-source="nghiepvuDataSource" session-factory="nghiepvuSessionFactory" tx-manager="nghiepvuTransactionManager" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+        <column name="thongtinHoSoId" db-name="nghiepvu_thongtinhosoID" type="long"></column>
+        <column name="gplienvanID" db-name="qlvt_capphep_gplienvanID" type="long"></column>
+        <order by="asc"><order-column name="id" /></order>
+	</entity>
+</service-builder>

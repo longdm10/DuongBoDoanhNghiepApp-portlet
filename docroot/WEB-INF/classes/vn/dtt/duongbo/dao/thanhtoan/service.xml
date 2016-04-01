@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="vn.dtt.duongbo.dao.thanhtoan">
+	<author>win_64</author>
+	<namespace>bgtvtdk</namespace>
+
+	<entity name="TthcXacNhanThanhToan" table="tthc_xacnhanthanhtoan" local-service="true" remote-service="false" data-source="tthcDataSource" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="maTuSinh" db-name="matusinh" type="String" />
+		<column name="soTien" db-name="sotien" type="long" />
+		<column name="hinhThucThanhToan" db-name="hinhthucthanhtoan" type="long" />
+		<column name="thongTinXacNhan" db-name="thongtinxacnhan" type="String" />
+		<column name="taiLieuDinhKem" db-name="tailieudinhkem" type="long" />
+		<column name="ngayTao" db-name="ngaytao" type="Date" />
+		<column name="nguoiTao" db-name="nguoitao" type="long" />
+		<column name="ngayXacNhan" db-name="ngayxacnhan" type="Date" />
+		<column name="nguoiXacNhan" db-name="nguoixacnhan" type="long" />
+		<column name="toChucQuanLy" db-name="tochucquanly" type="long" />
+		<column name="trangThaiXacNhan" db-name="trangthai" type="int" />
+		<column name="yKienXuLy" db-name="YKIENXULY" type="String" />
+		<column name="loaiPhi" db-name="LOAIPHI" type="String" />
+		<column name="tenDoanhNghiep" db-name="tendoanhnghiep" type="String" />
+		<column name="ghiChu" db-name="ghichu" type="String" />
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="ToChucQuanLy">
+			<finder-column name="toChucQuanLy" />
+		</finder>
+		
+		<finder return-type="TthcXacNhanThanhToan" name="MaTuSinh">
+			<finder-column name="maTuSinh" />
+		</finder>
+	</entity>
+
+	<entity name="TthcXacNhanThanhToanHoSo" table="tthc_xacnhanthanhtoan_hoso" local-service="true" remote-service="false" data-source="tthcDataSource" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long" primary="true" />
+
+		<column name="xacNhanThanhToanId" db-name="xacnhanthanhtoanid" type="long" />
+		<column name="hoSoThuTucId" db-name="hosothutucid" type="long" />
+		<column name="soTien" db-name="sotien" type="long" />
+		<column name="phieuXuLyId" db-name="phieuxulyid" type="long" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="XacNhanThanhToanId">
+			<finder-column name="xacNhanThanhToanId" />
+		</finder>
+		
+		<finder return-type="TthcXacNhanThanhToanHoSo" name="HoSoThuTucId">
+			<finder-column name="hoSoThuTucId" />
+		</finder>
+		
+		<finder return-type="TthcXacNhanThanhToanHoSo" name="XacNhanThanhToanIdHoSoThuTucId">
+			<finder-column name="xacNhanThanhToanId" />
+			<finder-column name="hoSoThuTucId" />
+		</finder>
+
+	</entity>
+
+	<entity name="TthcHinhThucNopPhi" table="tthc_hinhthucnopphi" local-service="true" remote-service="false" data-source="tthcDataSource">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="thuTucHanhChinhId" db-name="thutuchanhchinhid" type="long" />
+		<column name="donViThucHienId" db-name="donvithuchienid" type="long" />
+		<column name="phiNopBanDau" db-name="phinopbandau" type="long" />
+		<column name="chuyenKhoan" db-name="chuyenkhoan" type="String" />
+		<column name="keyPay" db-name="keypay" type="String" />
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="TthcHinhThucNopPhi" name="ThuTucHanhChinhId">
+			<finder-column name="thuTucHanhChinhId" />
+		</finder>
+	</entity>
+
+
+	<entity name="TthcYeuCauThanhToan" table="tthc_yeucauthanhtoan" local-service="true" remote-service="false" data-source="tthcDataSource" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long" primary="true" />
+
+		<column name="maSoYeuCau" db-name="masoyeucau" type="String" />
+
+		<column name="soTien" db-name="sotien" type="long" />
+		<column name="chiTietYeuCau" db-name="chitietyeucau" type="String" />
+		<column name="ngayTao" db-name="ngaytao" type="Date" />
+		<column name="nguoiTao" db-name="nguoitao" type="long" />
+
+		<column name="toChucQuanLy" db-name="tochucquanly" type="long" />
+		<column name="hoSoThuTucId" db-name="hosothutucid" type="long" />
+		<column name="xacNhanThanhToanId" db-name="xacnhanthanhtoanid" type="long" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+	</entity>
+
+	<entity name="ThanhToanKeyPay" local-service="true" remote-service="false" table="log_thanhtoankeypay" data-source="tthcDataSource" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="idDoanhNghiep" db-name="iddoanhnghiep" type="long" primary="true" />
+		<column name="goodCode" db-name="goodcode" type="String" />
+		<column name="amount" db-name="amount" type="long" />
+		<column name="merchantTransId" db-name="merchanttransid" type="String" />
+		<column name="merchantCode" db-name="merchantcode" type="String" />
+		<column name="responseCode" db-name="responsecode" type="String" />
+		<column name="transidKeypay" db-name="transid_keypay" type="long" />
+		<column name="netCost" db-name="net_cost" type="long" />
+		<column name="shipFee" db-name="ship_fee" type="long" />
+		<column name="currencyCode" db-name="currency_code" type="String" />
+		<column name="bankCode" db-name="bank_code" type="String" />
+		<column name="xmlDescription" db-name="xml_description" type="String" />
+		<column name="ngayXuLy" db-name="ngayxuly" type="Date" />
+		<column name="thongTinHoSo" db-name="thongtinhoso" type="String" />
+		<column name="loaiMessage" db-name="loaimessage" type="long" />
+		<column name="ipn" db-name="ipn" type="long" />
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder name="goodCode" return-type="ThanhToanKeyPay">
+			<finder-column name="goodCode" />
+		</finder>
+		<finder return-type="ThanhToanKeyPay" name="GoodCodeAndMerchantCodeAndMerchantTransIdAndLoaiMessage">
+			<finder-column name="goodCode" />
+			<finder-column name="merchantCode" />
+			<finder-column name="merchantTransId" />
+			<finder-column name="loaiMessage" />
+		</finder>
+	</entity>
+</service-builder>

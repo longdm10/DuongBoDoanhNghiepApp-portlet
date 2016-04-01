@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="vn.dtt.duongbo.dao.doanhnghiep">
+	<author>win_64</author>
+	<namespace>bgtvtdk</namespace>
+
+	<entity name="DnDoanhNghiep" table="dn_nguoilamthutuc" local-service="true" remote-service="false" data-source="tthcDataSource" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="maSoDoanhNghiep" db-name="masodoanhnghiep" type="String" />
+		<column name="tenDoanhNghiep" db-name="tendoanhnghiep" type="String" />
+		<column name="diaChi" db-name="diachi" type="String" />
+		<column name="maTinhThanh" db-name="matinhthanh" type="String" />
+		<column name="maQuanHuyen" db-name="maquanhuyen" type="String" />
+		<column name="maPhuongXa" db-name="maphuongxa" type="String" />
+		<column name="dienThoai" db-name="dienthoai" type="String" />
+		<column name="website" db-name="WEBSITE" type="String" />
+		<column name="fax" db-name="fax" type="String" />
+		<column name="email" db-name="email" type="String" />
+		<column name="master" db-name="master" type="long" />
+		<column name="ngayDangKi" db-name="ngaydangki" type="Date" />
+		<column name="hangTaiKhoan" db-name="hangtaikhoan" type="String" />
+		<column name="maKichHoat" db-name="makichhoat" type="String" />
+		<column name="ngayKichHoat" db-name="ngaykichhoat" type="Date" />
+		<column name="soDangKyKinhDoanh" db-name="SODANGKYKINHDOANH" type="String" />
+		<column name="ngayCapDkKd" db-name="NGAYCAPDKKD" type="Date" />
+		<column name="ngayHetHanDKKD" db-name="NGAYHETHANDKKD" type="Date" />
+		<column name="coQuanCapDkKd" db-name="COQUANCAPDKKD" type="String" />
+		<column name="loaiDoanhNghiep" db-name="LOAIDOANHNGHIEP" type="String" />
+		<column name="nguoiDaiDien" db-name="NGUOIDAIDIEN" type="String" />
+		<column name="soDienThoaiNguoiDaiDien" db-name="SODIENTHOAINGUOIDAIDIEN" type="String" />
+		<column name="chucVuNguoiDaiDien" db-name="CHUCVUNGUOIDAIDIEN" type="String" />
+		<column name="tenTiengAnh" db-name="TENTIENGANH" type="String" />
+		<column name="tenVietTat" db-name="TENVIETTAT" type="String" />
+		<column name="soGpkdVanTaiBangOto" db-name="SOGPKDVANTAIBANGOTO" type="String" />
+		<column name="ngayCapGpkdVanTaiBangOto" db-name="NGAYCAPGPKDVANTAIBANGOTO" type="Date" />
+		<column name="coQuanCapGpkdVanTaiBangOto" db-name="COQUANCAPGPKDVANTAIBANGOTO" type="String" />
+		<!-- Công dân  -->
+		
+		<column name="maSoCongDan" db-name="MASOCONGDAN" type="String" />
+		<column name="tenCongDan" db-name="TENCONGDAN" type="String" />
+		<column name="quocTich" db-name="QUOCTICH" type="String" />
+		<column name="gioiTinh" db-name="GIOITINH" type="String" />
+		<column name="ngayCapCMND" db-name="NGAYCAPCMND" type="Date" />
+		<column name="noiCapCMND" db-name="NOICAPCMND" type="String" />
+		<column name="loaiNguoiLamThuTuc" db-name="LOAINGUOILAMTHUTUC" type="String" />
+		<column name="namSinh" db-name="NAMSINH" type="String" />
+		<column name="ngaySinh" db-name="NGAYSINH" type="Date" />
+		<!-- Order -->
+		<order by="asc"><order-column name="id" /></order>
+		
+		<finder return-type="DnDoanhNghiep" name="DnNguoiLamThuTucID">
+			<finder-column name="id" />
+		</finder>
+		
+		<finder return-type="Collection" name="loaiNguoiLamThuTuc">
+			<finder-column name="loaiNguoiLamThuTuc" />
+		</finder>
+		
+		<finder return-type="Collection" name="Email">
+			<finder-column name="email" />
+		</finder>
+	</entity>
+	
+	
+	<entity name="DnDoanhNghiepUser" table="dn_nguoilamthutuc_user" local-service="true" remote-service="false" data-source="tthcDataSource" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="nguoiLamThuTucId" db-name="NGUOILAMTHUTUCID" type="long" />
+		<column name="userId" db-name="USERID" type="long" />
+		<column name="toChucQuanLy" db-name="TOCHUCQUANLY" type="String" />
+		<column name="master" db-name="MASTER" type="String" />
+		<column name="tenTaiKhoan" db-name="TENTAIKHOAN" type="String" />
+		<column name="tenNguoiDung" db-name="TENNGUOIDUNG" type="String" />
+		<column name="tinhTrangHoatDong" db-name="TINHTRANGHOATDONG" type="String" />
+		<column name="dienThoai" db-name="DIENTHOAI" type="String" />
+		<column name="ngayTaoTaiKhoan" db-name="NGAYTAOTAIKHOAN" type="Date" />
+		<column name="ngayMoTaiKhoan" db-name="NGAYMOTAIKHOAN" type="Date" />
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="DnDoanhNghiepUser" name="UserId">
+			<finder-column name="userId" />
+		</finder>
+		
+		<finder return-type="Collection" name="DnNguoiLamThuTucUserID">
+			<finder-column name="nguoiLamThuTucId" />
+		</finder>
+		
+	</entity>
+	
+</service-builder>

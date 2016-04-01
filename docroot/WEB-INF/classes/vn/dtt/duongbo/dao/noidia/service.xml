@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="vn.dtt.duongbo.dao.noidia">
+	<author>NoiPham</author>
+	<namespace>noidia</namespace>
+	
+	<entity name="QlvtXuLyGpkdvtBangOto" table="qlvt_xuly_gpkdvt_bangoto" local-service="true" remote-service="true" data-source="nghiepvuDataSource" session-factory="nghiepvuSessionFactory" tx-manager="nghiepvuTransactionManager" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="ID" type="long" primary="true" />
+        <column name="thongTinXuLyId" db-name="THONGTINXULYID" type="int"></column>
+        <column name="loaiHinhCap" db-name="LOAIHINHCAP" type="String"></column>
+        <column name="soGpkdVanTaiBangOto" db-name="SOGPKDVANTAIBANGOTO" type="String"></column>
+        <column name="ngayCapGpkdVanTaiBangOto" db-name="NGAYCAPGPKDVANTAIBANGOTO" type="Date"></column>
+        <column name="coQuanCapGpkdVanTaiBangOto" db-name="COQUANCAPGPKDVANTAIBANGOTO" type="String"></column>
+        <column name="ngayHetHanGpkdVanTaiBangOto" db-name="NGAYHETHANGPKDVANTAIBANGOTO" type="Date"></column>
+        <column name="nguoiTrucTiepDieuHanh" db-name="NGUOITRUCTIEPDIEUHANH" type="String"></column>
+        <column name="soCmtNguoiDieuHanh" db-name="SOCMT_NGUOIDIEUHANH" type="String"></column>
+        <column name="ngayCapNguoiDieuHanh" db-name="NGAYCAP_NGUOIDIEUHANH" type="Date"></column>
+        <column name="noiCapNguoiDieuHanh" db-name="NOICAP_NGUOIDIEUHANH" type="String"></column>
+        <column name="bangCapNguoiDieuHanh" db-name="BANGCAP_NGUOIDIEUHANH" type="String"></column>
+        <column name="thoiGianBatDauDieuHanh" db-name="THOIGIANBATDAUDIEUHANH" type="Date"></column>
+        <column name="thoiGianKetThucDieuHanh" db-name="THOIGIANKETTHUCDIEUHANH" type="Date"></column>
+        <column name="soGiayPhepNguoiDieuHanh" db-name="SOGIAYPHEP_NGUOIDIEUHANH" type="String"></column>
+        <column name="lanCapNguoiDieuHanh" db-name="LANCAP_NGUOIDIEUHANH" type="int"></column>
+        <column name="ngayCapCcDieuHanh" db-name="NGAYCAP_CCDIEUHANH" type="Date"></column>
+        <column name="ngayHetHanCcDieuHanh" db-name="NGAYHETHAN_CCDIEUHANH" type="Date"></column>
+        <column name="ketQuaXuLy" db-name="KETQUAXULY" type="String"></column>
+        <column name="lyDoKhongDat" db-name="LYDOKHONGDAT" type="String"></column>
+        
+        <order by="asc"><order-column name="id" /></order>
+        <finder return-type="QlvtXuLyGpkdvtBangOto" name="thongTinXuLyId">
+			<finder-column name="thongTinXuLyId" />
+		</finder>
+	</entity>
+	
+	<entity name="QlvtXuLyGpkdvtBangOtoLoaiHinhVanTai" table="qlvt_xuly_gpkdvt_bangoto_loaihinhvantai" local-service="true" remote-service="true" data-source="nghiepvuDataSource" session-factory="nghiepvuSessionFactory" tx-manager="nghiepvuTransactionManager" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="gpkdvtBangOtoId" db-name="GPKDVT_BANGOTOID" type="int"></column>
+		<column name="maLoaiHinhHoatDong" db-name="MALOAIHINHHOATDONG" type="String"></column>
+		<column name="loaiHinhKinhDoanhCuThe" db-name="LOAIHINHKINHDOANHCUTHE" type="String"></column>
+		<column name="soLuongPhuongTien" db-name="SOLUONGPHUONGTIEN" type="int"></column>
+		<column name="thietBiGiamSatHanhTrinh" db-name="THIETBIGIAMSATHANHTRINH" type="long"></column>
+		<column name="phamViHoatDong" db-name="PHAMVIHOATDONG" type="String"></column>
+		<column name="tuyenTu" db-name="TUYENTU" type="String"></column>
+		<column name="tuyenDen" db-name="TUYENDEN" type="String"></column>
+		<column name="soChuyen" db-name="SOCHUYEN" type="int"></column>
+		<column name="mauSon" db-name="MAUSON" type="String"></column>
+		<column name="ketQuaXuLy" db-name="KETQUAXULY" type="String"></column>
+		
+		
+		
+        <order by="asc"><order-column name="id" /></order>
+        <finder return-type="Collection" name="gpkdvtBangOtoId">
+			<finder-column name="gpkdvtBangOtoId" />
+		</finder>
+	</entity>
+	
+	
+</service-builder>
