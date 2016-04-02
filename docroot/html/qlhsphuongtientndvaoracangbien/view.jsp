@@ -4,7 +4,6 @@
 
 <%
 String type = PortalUtil.getOriginalServletRequest(request).getParameter("type");
-System.out.println("abc " );
 %>
 <table width="1600px">
 	<tr>
