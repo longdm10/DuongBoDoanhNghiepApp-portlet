@@ -2,11 +2,17 @@
 
 <portlet:defineObjects />
 
+
 <table width="1600px">
 	<tr>
 		<td width="200px" valign="top" >
 		<jsp:include page="/html/menudb/trang_menu_left.jsp"></jsp:include>
 		</td>
-		<td valign="top">qlhs</td>
+		<td valign="top">
+		
+		qlhs
+		
+		
+		</td>
 	</tr>
 </table>

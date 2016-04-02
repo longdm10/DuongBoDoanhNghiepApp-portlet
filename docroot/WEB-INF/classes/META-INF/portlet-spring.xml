@@ -573,4 +573,482 @@
 		<property name="dataSource" ref="nghiepvuDataSource" />
 		<property name="sessionFactory" ref="nghiepvuSessionFactory" />
 	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.CrewListLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.CrewListLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.CrewListService" class="vn.dtt.duongbien.dao.vrcb.service.impl.CrewListServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.CrewListPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.CrewListPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmArrivalPurposeLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmArrivalPurposeLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmArrivalPurposePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmArrivalPurposePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmCertificateLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmCertificateLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmCertificateService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmCertificateServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmCertificatePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmCertificatePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmDocTypeLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmDocTypeLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmDocTypePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmDocTypePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmEnterriseLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmEnterriseLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmEnterrisePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmEnterrisePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGoodsLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGoodsLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGoodsPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGoodsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGoodsTypeLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGoodsTypeLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGoodsTypePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGoodsTypePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGTBusinessTypeLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGTBusinessTypeLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGTBusinessTypeService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGTBusinessTypeServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGTBusinessTypePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGTBusinessTypePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGTFunctionTypeLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGTFunctionTypeLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGTFunctionTypeService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGTFunctionTypeServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGTFunctionTypePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGTFunctionTypePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGtOrganizationLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGtOrganizationLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGtOrganizationService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGtOrganizationServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGtOrganizationPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGtOrganizationPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGtReportCategoryLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGtReportCategoryLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGtReportCategoryService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGtReportCategoryServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGtReportCategoryPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGtReportCategoryPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGtReportTemplateLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGtReportTemplateLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGtReportTemplateService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGtReportTemplateServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGtReportTemplatePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGtReportTemplatePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGtRouteConfigLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGtRouteConfigLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGtRouteConfigService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGtRouteConfigServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGtRouteConfigPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGtRouteConfigPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGTShipPositionLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGTShipPositionLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGTShipPositionService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGTShipPositionServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGTShipPositionPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGTShipPositionPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGtStatusLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGtStatusLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGtStatusService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGtStatusServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGtStatusPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGtStatusPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmGtVersionLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmGtVersionLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGtVersionPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmGtVersionPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryArrivalPurposeLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryArrivalPurposeLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryArrivalPurposePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryArrivalPurposePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryDocTypeLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryDocTypeLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryDocTypePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryDocTypePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryEnterriseLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryEnterriseLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryEnterrisePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryEnterrisePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryGoodsLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryGoodsLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryGoodsPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryGoodsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryGoodsTypeLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryGoodsTypeLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryGoodsTypePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryGoodsTypePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryMaritimeLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryMaritimeLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryMaritimePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryMaritimePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryMinistryLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryMinistryLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryMinistryService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryMinistryServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryMinistryPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryMinistryPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryPackageLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryPackageLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryPackagePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryPackagePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryPassportTypeLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryPassportTypeLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryPassportTypePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryPassportTypePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryPortLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryPortLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryPortPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryPortPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryPortHarbourLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryPortHarbourLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryPortHarbourPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryPortHarbourPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryPortRegionLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryPortRegionLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryPortRegionPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryPortRegionPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryPortWharfLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryPortWharfLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryPortWharfPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryPortWharfPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryRankRatingLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryRankRatingLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryRankRatingPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryRankRatingPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryRepresentativeLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryRepresentativeLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryRepresentativePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryRepresentativePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistorySecurityLevelLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistorySecurityLevelLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistorySecurityLevelPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistorySecurityLevelPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryShipAgencyLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryShipAgencyLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryShipAgencyPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryShipAgencyPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryShipTypeLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryShipTypeLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryShipTypePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryShipTypePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryStateLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryStateLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryStatePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryStatePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmHistoryUnitGeneralLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmHistoryUnitGeneralLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryUnitGeneralPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmHistoryUnitGeneralPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmMaritimeLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmMaritimeLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmMaritimePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmMaritimePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmMinistryLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmMinistryLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmMinistryService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmMinistryServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmMinistryPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmMinistryPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmPackageLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmPackageLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmPackagePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmPackagePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmPassportTypeLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmPassportTypeLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmPassportTypePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmPassportTypePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmPortLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmPortLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmPortPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmPortPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmPortHarbourLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmPortHarbourLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmPortHarbourPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmPortHarbourPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmPortRegionLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmPortRegionLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmPortRegionPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmPortRegionPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmPortWharfLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmPortWharfLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmPortWharfPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmPortWharfPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmRankRatingLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmRankRatingLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmRankRatingPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmRankRatingPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmRepresentativeLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmRepresentativeLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmRepresentativePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmRepresentativePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmSecurityLevelLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmSecurityLevelLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmSecurityLevelPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmSecurityLevelPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmShipAgencyLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmShipAgencyLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmShipAgencyPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmShipAgencyPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmShipTypeLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmShipTypeLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmShipTypePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmShipTypePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmStateLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmStateLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmStatePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmStatePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmSyncCategoryLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmSyncCategoryLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmSyncCategoryPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmSyncCategoryPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmTestN01RequestLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmTestN01RequestLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmTestN01RequestPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmTestN01RequestPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DmUnitGeneralLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DmUnitGeneralLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DmUnitGeneralPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DmUnitGeneralPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DocumentLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DocumentLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DocumentService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DocumentServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DocumentPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DocumentPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DocumentGeneralLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DocumentGeneralLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.DocumentGeneralService" class="vn.dtt.duongbien.dao.vrcb.service.impl.DocumentGeneralServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.DocumentGeneralPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.DocumentGeneralPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.HistoryInterfaceRequestLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.HistoryInterfaceRequestLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.HistoryInterfaceRequestService" class="vn.dtt.duongbien.dao.vrcb.service.impl.HistoryInterfaceRequestServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.HistoryInterfaceRequestPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.HistoryInterfaceRequestPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.HistoryInterfaceRequestFieldLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.HistoryInterfaceRequestFieldLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.HistoryInterfaceRequestFieldService" class="vn.dtt.duongbien.dao.vrcb.service.impl.HistoryInterfaceRequestFieldServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.HistoryInterfaceRequestFieldPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.HistoryInterfaceRequestFieldPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.HistoryRmdcShipLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.HistoryRmdcShipLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.HistoryRmdcShipService" class="vn.dtt.duongbien.dao.vrcb.service.impl.HistoryRmdcShipServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.HistoryRmdcShipPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.HistoryRmdcShipPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.HistorySyncVersionLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.HistorySyncVersionLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.HistorySyncVersionPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.HistorySyncVersionPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.InterfaceRequestLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.InterfaceRequestLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.InterfaceRequestService" class="vn.dtt.duongbien.dao.vrcb.service.impl.InterfaceRequestServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.InterfaceRequestPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.InterfaceRequestPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.InterfaceRequestFieldLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.InterfaceRequestFieldLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.InterfaceRequestFieldService" class="vn.dtt.duongbien.dao.vrcb.service.impl.InterfaceRequestFieldServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.InterfaceRequestFieldPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.InterfaceRequestFieldPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.IssueAcceptanceForTransitLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.IssueAcceptanceForTransitLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.IssueAcceptanceForTransitService" class="vn.dtt.duongbien.dao.vrcb.service.impl.IssueAcceptanceForTransitServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.IssueAcceptanceForTransitPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.IssueAcceptanceForTransitPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.IssuePermissionForTransitLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.IssuePermissionForTransitLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.IssuePermissionForTransitService" class="vn.dtt.duongbien.dao.vrcb.service.impl.IssuePermissionForTransitServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.IssuePermissionForTransitPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.IssuePermissionForTransitPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.IssuePortClearanceLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.IssuePortClearanceLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.IssuePortClearanceService" class="vn.dtt.duongbien.dao.vrcb.service.impl.IssuePortClearanceServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.IssuePortClearancePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.IssuePortClearancePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.IssueShiftingOrderLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.IssueShiftingOrderLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.IssueShiftingOrderService" class="vn.dtt.duongbien.dao.vrcb.service.impl.IssueShiftingOrderServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.IssueShiftingOrderPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.IssueShiftingOrderPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.LogMessageValidationLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.LogMessageValidationLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.LogMessageValidationService" class="vn.dtt.duongbien.dao.vrcb.service.impl.LogMessageValidationServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.LogMessageValidationPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.LogMessageValidationPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.ModifyLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.ModifyLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.ModifyService" class="vn.dtt.duongbien.dao.vrcb.service.impl.ModifyServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.ModifyPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.ModifyPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.NoticeShipMessageLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.NoticeShipMessageLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.NoticeShipMessageService" class="vn.dtt.duongbien.dao.vrcb.service.impl.NoticeShipMessageServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.NoticeShipMessagePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.NoticeShipMessagePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.PassengerListLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.PassengerListLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.PassengerListService" class="vn.dtt.duongbien.dao.vrcb.service.impl.PassengerListServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.PassengerListPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.PassengerListPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.ResponseBoLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.ResponseBoLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.ResponseBoService" class="vn.dtt.duongbien.dao.vrcb.service.impl.ResponseBoServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.ResponseBoPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.ResponseBoPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.ResultCertificateLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.ResultCertificateLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.ResultCertificateService" class="vn.dtt.duongbien.dao.vrcb.service.impl.ResultCertificateServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.ResultCertificatePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.ResultCertificatePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.ResultCompetionLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.ResultCompetionLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.ResultCompetionService" class="vn.dtt.duongbien.dao.vrcb.service.impl.ResultCompetionServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.ResultCompetionPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.ResultCompetionPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.ResultDeclarationLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.ResultDeclarationLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.ResultDeclarationService" class="vn.dtt.duongbien.dao.vrcb.service.impl.ResultDeclarationServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.ResultDeclarationPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.ResultDeclarationPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.ResultHistoryMinistryLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.ResultHistoryMinistryLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.ResultHistoryMinistryService" class="vn.dtt.duongbien.dao.vrcb.service.impl.ResultHistoryMinistryServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.ResultHistoryMinistryPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.ResultHistoryMinistryPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.ResultMinistryLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.ResultMinistryLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.ResultMinistryService" class="vn.dtt.duongbien.dao.vrcb.service.impl.ResultMinistryServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.ResultMinistryPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.ResultMinistryPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.ResultNotificationLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.ResultNotificationLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.ResultNotificationService" class="vn.dtt.duongbien.dao.vrcb.service.impl.ResultNotificationServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.ResultNotificationPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.ResultNotificationPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.RmdcShipLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.RmdcShipLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.RmdcShipService" class="vn.dtt.duongbien.dao.vrcb.service.impl.RmdcShipServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.RmdcShipPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.RmdcShipPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempAnimalQuarantineLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempAnimalQuarantineLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempAnimalQuarantineService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempAnimalQuarantineServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempAnimalQuarantinePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempAnimalQuarantinePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempAttachmentDeclarationHealthLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempAttachmentDeclarationHealthLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempAttachmentDeclarationHealthService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempAttachmentDeclarationHealthServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempAttachmentDeclarationHealthPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempAttachmentDeclarationHealthPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempCargoDeclarationLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempCargoDeclarationLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempCargoDeclarationService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempCargoDeclarationServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempCargoDeclarationPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempCargoDeclarationPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempCrewDetailsLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempCrewDetailsLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempCrewDetailsService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempCrewDetailsServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempCrewDetailsPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempCrewDetailsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempCrewEffectsDeclarationLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempCrewEffectsDeclarationLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempCrewEffectsDeclarationService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempCrewEffectsDeclarationServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempCrewEffectsDeclarationPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempCrewEffectsDeclarationPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempCrewEffectsItemsLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempCrewEffectsItemsLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempCrewEffectsItemsService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempCrewEffectsItemsServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempCrewEffectsItemsPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempCrewEffectsItemsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempCrewListLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempCrewListLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempCrewListService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempCrewListServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempCrewListPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempCrewListPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempDangerousGoodsItemsLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempDangerousGoodsItemsLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempDangerousGoodsItemsService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempDangerousGoodsItemsServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempDangerousGoodsItemsPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempDangerousGoodsItemsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempDangerousGoodsNanifestLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempDangerousGoodsNanifestLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempDangerousGoodsNanifestService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempDangerousGoodsNanifestServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempDangerousGoodsNanifestPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempDangerousGoodsNanifestPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempDeclarationForAnimalQuarantineLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempDeclarationForAnimalQuarantineLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempDeclarationForAnimalQuarantineService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempDeclarationForAnimalQuarantineServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempDeclarationForAnimalQuarantinePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempDeclarationForAnimalQuarantinePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempDeclarationForPlantQuarantineLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempDeclarationForPlantQuarantineLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempDeclarationForPlantQuarantineService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempDeclarationForPlantQuarantineServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempDeclarationForPlantQuarantinePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempDeclarationForPlantQuarantinePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempDeclarationOfHealthLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempDeclarationOfHealthLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempDeclarationOfHealthService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempDeclarationOfHealthServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempDeclarationOfHealthPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempDeclarationOfHealthPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempDocumentLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempDocumentLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempDocumentService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempDocumentServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempDocumentPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempDocumentPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempGeneralDeclarationLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempGeneralDeclarationLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempGeneralDeclarationService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempGeneralDeclarationServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempGeneralDeclarationPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempGeneralDeclarationPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempGoodsItemsLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempGoodsItemsLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempGoodsItemsService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempGoodsItemsServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempGoodsItemsPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempGoodsItemsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempHealthCrewPassengerListLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempHealthCrewPassengerListLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempHealthCrewPassengerListService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempHealthCrewPassengerListServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempHealthCrewPassengerListPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempHealthCrewPassengerListPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempHealthQuestionLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempHealthQuestionLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempHealthQuestionService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempHealthQuestionServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempHealthQuestionPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempHealthQuestionPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempNoTiceShipMessageLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempNoTiceShipMessageLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempNoTiceShipMessageService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempNoTiceShipMessageServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempNoTiceShipMessagePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempNoTiceShipMessagePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempPassengerDetailsLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempPassengerDetailsLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempPassengerDetailsService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempPassengerDetailsServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempPassengerDetailsPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempPassengerDetailsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempPassengerListLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempPassengerListLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempPassengerListService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempPassengerListServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempPassengerListPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempPassengerListPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempPlantQuarantineLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempPlantQuarantineLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempPlantQuarantineService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempPlantQuarantineServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempPlantQuarantinePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempPlantQuarantinePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempShipSecurityMessageLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempShipSecurityMessageLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempShipSecurityMessageService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempShipSecurityMessageServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempShipSecurityMessagePersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempShipSecurityMessagePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempShipSecurityPortItemsLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempShipSecurityPortItemsLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempShipSecurityPortItemsService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempShipSecurityPortItemsServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempShipSecurityPortItemsPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempShipSecurityPortItemsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempShipStoresDeclarationLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempShipStoresDeclarationLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempShipStoresDeclarationService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempShipStoresDeclarationServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempShipStoresDeclarationPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempShipStoresDeclarationPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempShipStoresItemsLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempShipStoresItemsLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempShipStoresItemsService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempShipStoresItemsServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempShipStoresItemsPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempShipStoresItemsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempUnitGeneralLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempUnitGeneralLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.TempUnitGeneralService" class="vn.dtt.duongbien.dao.vrcb.service.impl.TempUnitGeneralServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.TempUnitGeneralPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.TempUnitGeneralPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.UserPortLocalService" class="vn.dtt.duongbien.dao.vrcb.service.impl.UserPortLocalServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.UserPortService" class="vn.dtt.duongbien.dao.vrcb.service.impl.UserPortServiceImpl" />
+	<bean id="vn.dtt.duongbien.dao.vrcb.service.persistence.UserPortPersistence" class="vn.dtt.duongbien.dao.vrcb.service.persistence.UserPortPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vaoracangbienDataSource" />
+	</bean>
 </beans>

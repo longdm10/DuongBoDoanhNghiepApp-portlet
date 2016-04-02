@@ -26,8 +26,7 @@
         <column name="trangThai" db-name="TRANGTHAI" type="String"></column>
         <column name="fileId" db-name="FILEID" type="int"></column>
 	</entity>
-	
-	
+		
 	<entity name="QLVTCapPhepBienHieuPhuongTien" table="qlvt_capphep_bienhieu_qlvt_phuongtienvantai" local-service="true" remote-service="false" data-source="nghiepvuDataSource" session-factory="nghiepvuSessionFactory" tx-manager="nghiepvuTransactionManager">
 		<!-- PK fields -->
 		<!-- Order -->

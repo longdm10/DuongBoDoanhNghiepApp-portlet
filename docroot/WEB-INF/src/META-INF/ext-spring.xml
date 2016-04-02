@@ -22,6 +22,15 @@
             </bean>
         </property>
 	</bean>
+	
+	<bean id="vaoracangbienDataSource" class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy">
+        <property name="targetDataSource">
+            <bean class="com.liferay.portal.dao.jdbc.util.DataSourceFactoryBean">
+                <property name="propertyPrefix" value="jdbc.vrcb." />
+            </bean>
+        </property>
+	</bean>
+	
     <bean id="liferayHibernateSessionFactory" class="com.liferay.portal.kernel.spring.util.SpringFactoryUtil" factory-method="newBean">
 		<constructor-arg value="com.liferay.portal.spring.hibernate.PortletHibernateConfiguration" />
 		<constructor-arg>

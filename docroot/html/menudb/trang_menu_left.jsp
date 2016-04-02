@@ -54,12 +54,12 @@
 				<a href="#" class="active list-group-item"><i class="MR5 fa3 fa fa-book"></i>Nộp hồ sơ</a>
 				<ul>
 					<%
-						String hsvaocangbienurl="/group/doanh-nghiep/ho-so-vao-cang-bien";
+						String hsvaocangbienurl="/group/doanh-nghiep/quan-ly-ho-so?type=5";
 					%>
 					<li><a href="<%=hsvaocangbienurl %>"  class="textsub list-group-item"><span class="badge"></span>Hồ sơ vào cảng biến</a></li>
 					
 					<%
-						String hsroicangbienurl="/group/doanh-nghiep/ho-so-roi-cang-bien";
+						String hsroicangbienurl="/group/doanh-nghiep/quan-ly-ho-so?type=6";
 					%>
 					<li><a href="<%=hsroicangbienurl %>"  class="textsub list-group-item"><span class="badge"></span>Hồ sơ rời cảng biến</a></li>
 					
