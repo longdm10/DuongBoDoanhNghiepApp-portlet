@@ -383,7 +383,7 @@ public class DmDocTypeWrapper implements DmDocType, ModelWrapper<DmDocType> {
 	}
 
 	@Override
-	public int compareTo(DmDocType dmDocType) {
+	public int compareTo(vn.dtt.duongbien.dao.vrcb.model.DmDocType dmDocType) {
 		return _dmDocType.compareTo(dmDocType);
 	}
 
@@ -393,17 +393,17 @@ public class DmDocTypeWrapper implements DmDocType, ModelWrapper<DmDocType> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmDocType> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmDocType> toCacheModel() {
 		return _dmDocType.toCacheModel();
 	}
 
 	@Override
-	public DmDocType toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmDocType toEscapedModel() {
 		return new DmDocTypeWrapper(_dmDocType.toEscapedModel());
 	}
 
 	@Override
-	public DmDocType toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmDocType toUnescapedModel() {
 		return new DmDocTypeWrapper(_dmDocType.toUnescapedModel());
 	}
 

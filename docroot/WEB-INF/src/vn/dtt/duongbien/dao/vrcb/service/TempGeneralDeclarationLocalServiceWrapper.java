@@ -289,6 +289,27 @@ public class TempGeneralDeclarationLocalServiceWrapper
 			parameterTypes, arguments);
 	}
 
+	@Override
+	public vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration addTemGeneralDeclaration(
+		java.lang.String nameOfShip, java.lang.String nameOfMaster,
+		java.lang.String portRegionCode, java.lang.String portOfArrivalCode,
+		java.lang.String portHarbourCode, java.lang.String portWharfCode,
+		int isArrival, java.lang.String voyageNumber, int numberOfCrew,
+		int numberOfPassengers, java.lang.String lastPortOfCallCode,
+		java.util.Date dateOfArrival,
+		java.lang.String taxCodeOfShipownersAgents,
+		java.lang.String nameOfShipownersAgents,
+		java.lang.String shipAgencyAddress, java.lang.String shipAgencyPhone,
+		java.lang.String shipAgencyFax, java.lang.String shipAgencyEmail)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _tempGeneralDeclarationLocalService.addTemGeneralDeclaration(nameOfShip,
+			nameOfMaster, portRegionCode, portOfArrivalCode, portHarbourCode,
+			portWharfCode, isArrival, voyageNumber, numberOfCrew,
+			numberOfPassengers, lastPortOfCallCode, dateOfArrival,
+			taxCodeOfShipownersAgents, nameOfShipownersAgents,
+			shipAgencyAddress, shipAgencyPhone, shipAgencyFax, shipAgencyEmail);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

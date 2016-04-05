@@ -334,7 +334,8 @@ public class TempShipSecurityPortItemsWrapper
 	}
 
 	@Override
-	public int compareTo(TempShipSecurityPortItems tempShipSecurityPortItems) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.TempShipSecurityPortItems tempShipSecurityPortItems) {
 		return _tempShipSecurityPortItems.compareTo(tempShipSecurityPortItems);
 	}
 
@@ -344,17 +345,17 @@ public class TempShipSecurityPortItemsWrapper
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempShipSecurityPortItems> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempShipSecurityPortItems> toCacheModel() {
 		return _tempShipSecurityPortItems.toCacheModel();
 	}
 
 	@Override
-	public TempShipSecurityPortItems toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempShipSecurityPortItems toEscapedModel() {
 		return new TempShipSecurityPortItemsWrapper(_tempShipSecurityPortItems.toEscapedModel());
 	}
 
 	@Override
-	public TempShipSecurityPortItems toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempShipSecurityPortItems toUnescapedModel() {
 		return new TempShipSecurityPortItemsWrapper(_tempShipSecurityPortItems.toUnescapedModel());
 	}
 

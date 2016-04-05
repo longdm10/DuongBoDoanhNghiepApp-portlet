@@ -1090,7 +1090,8 @@ public class IssueShiftingOrderWrapper implements IssueShiftingOrder,
 	}
 
 	@Override
-	public int compareTo(IssueShiftingOrder issueShiftingOrder) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.IssueShiftingOrder issueShiftingOrder) {
 		return _issueShiftingOrder.compareTo(issueShiftingOrder);
 	}
 
@@ -1100,17 +1101,17 @@ public class IssueShiftingOrderWrapper implements IssueShiftingOrder,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<IssueShiftingOrder> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.IssueShiftingOrder> toCacheModel() {
 		return _issueShiftingOrder.toCacheModel();
 	}
 
 	@Override
-	public IssueShiftingOrder toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.IssueShiftingOrder toEscapedModel() {
 		return new IssueShiftingOrderWrapper(_issueShiftingOrder.toEscapedModel());
 	}
 
 	@Override
-	public IssueShiftingOrder toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.IssueShiftingOrder toUnescapedModel() {
 		return new IssueShiftingOrderWrapper(_issueShiftingOrder.toUnescapedModel());
 	}
 

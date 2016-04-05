@@ -1341,7 +1341,8 @@ public class TempShipSecurityMessageWrapper implements TempShipSecurityMessage,
 	}
 
 	@Override
-	public int compareTo(TempShipSecurityMessage tempShipSecurityMessage) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.TempShipSecurityMessage tempShipSecurityMessage) {
 		return _tempShipSecurityMessage.compareTo(tempShipSecurityMessage);
 	}
 
@@ -1351,17 +1352,17 @@ public class TempShipSecurityMessageWrapper implements TempShipSecurityMessage,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempShipSecurityMessage> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempShipSecurityMessage> toCacheModel() {
 		return _tempShipSecurityMessage.toCacheModel();
 	}
 
 	@Override
-	public TempShipSecurityMessage toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempShipSecurityMessage toEscapedModel() {
 		return new TempShipSecurityMessageWrapper(_tempShipSecurityMessage.toEscapedModel());
 	}
 
 	@Override
-	public TempShipSecurityMessage toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempShipSecurityMessage toUnescapedModel() {
 		return new TempShipSecurityMessageWrapper(_tempShipSecurityMessage.toUnescapedModel());
 	}
 

@@ -601,7 +601,8 @@ public class TempDangerousGoodsItemsWrapper implements TempDangerousGoodsItems,
 	}
 
 	@Override
-	public int compareTo(TempDangerousGoodsItems tempDangerousGoodsItems) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.TempDangerousGoodsItems tempDangerousGoodsItems) {
 		return _tempDangerousGoodsItems.compareTo(tempDangerousGoodsItems);
 	}
 
@@ -611,17 +612,17 @@ public class TempDangerousGoodsItemsWrapper implements TempDangerousGoodsItems,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempDangerousGoodsItems> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempDangerousGoodsItems> toCacheModel() {
 		return _tempDangerousGoodsItems.toCacheModel();
 	}
 
 	@Override
-	public TempDangerousGoodsItems toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempDangerousGoodsItems toEscapedModel() {
 		return new TempDangerousGoodsItemsWrapper(_tempDangerousGoodsItems.toEscapedModel());
 	}
 
 	@Override
-	public TempDangerousGoodsItems toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempDangerousGoodsItems toUnescapedModel() {
 		return new TempDangerousGoodsItemsWrapper(_tempDangerousGoodsItems.toUnescapedModel());
 	}
 

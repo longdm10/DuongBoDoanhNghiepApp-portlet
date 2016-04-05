@@ -220,7 +220,7 @@ public class ResponseBoWrapper implements ResponseBo, ModelWrapper<ResponseBo> {
 	}
 
 	@Override
-	public int compareTo(ResponseBo responseBo) {
+	public int compareTo(vn.dtt.duongbien.dao.vrcb.model.ResponseBo responseBo) {
 		return _responseBo.compareTo(responseBo);
 	}
 
@@ -230,17 +230,17 @@ public class ResponseBoWrapper implements ResponseBo, ModelWrapper<ResponseBo> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<ResponseBo> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.ResponseBo> toCacheModel() {
 		return _responseBo.toCacheModel();
 	}
 
 	@Override
-	public ResponseBo toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.ResponseBo toEscapedModel() {
 		return new ResponseBoWrapper(_responseBo.toEscapedModel());
 	}
 
 	@Override
-	public ResponseBo toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.ResponseBo toUnescapedModel() {
 		return new ResponseBoWrapper(_responseBo.toUnescapedModel());
 	}
 

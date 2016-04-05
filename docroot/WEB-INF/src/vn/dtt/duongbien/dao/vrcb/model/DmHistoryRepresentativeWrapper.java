@@ -439,7 +439,8 @@ public class DmHistoryRepresentativeWrapper implements DmHistoryRepresentative,
 	}
 
 	@Override
-	public int compareTo(DmHistoryRepresentative dmHistoryRepresentative) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmHistoryRepresentative dmHistoryRepresentative) {
 		return _dmHistoryRepresentative.compareTo(dmHistoryRepresentative);
 	}
 
@@ -449,17 +450,17 @@ public class DmHistoryRepresentativeWrapper implements DmHistoryRepresentative,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmHistoryRepresentative> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmHistoryRepresentative> toCacheModel() {
 		return _dmHistoryRepresentative.toCacheModel();
 	}
 
 	@Override
-	public DmHistoryRepresentative toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryRepresentative toEscapedModel() {
 		return new DmHistoryRepresentativeWrapper(_dmHistoryRepresentative.toEscapedModel());
 	}
 
 	@Override
-	public DmHistoryRepresentative toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryRepresentative toUnescapedModel() {
 		return new DmHistoryRepresentativeWrapper(_dmHistoryRepresentative.toUnescapedModel());
 	}
 

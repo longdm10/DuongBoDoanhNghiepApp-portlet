@@ -903,7 +903,8 @@ public class IssueAcceptanceForTransitWrapper
 	}
 
 	@Override
-	public int compareTo(IssueAcceptanceForTransit issueAcceptanceForTransit) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.IssueAcceptanceForTransit issueAcceptanceForTransit) {
 		return _issueAcceptanceForTransit.compareTo(issueAcceptanceForTransit);
 	}
 
@@ -913,17 +914,17 @@ public class IssueAcceptanceForTransitWrapper
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<IssueAcceptanceForTransit> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.IssueAcceptanceForTransit> toCacheModel() {
 		return _issueAcceptanceForTransit.toCacheModel();
 	}
 
 	@Override
-	public IssueAcceptanceForTransit toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.IssueAcceptanceForTransit toEscapedModel() {
 		return new IssueAcceptanceForTransitWrapper(_issueAcceptanceForTransit.toEscapedModel());
 	}
 
 	@Override
-	public IssueAcceptanceForTransit toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.IssueAcceptanceForTransit toUnescapedModel() {
 		return new IssueAcceptanceForTransitWrapper(_issueAcceptanceForTransit.toUnescapedModel());
 	}
 

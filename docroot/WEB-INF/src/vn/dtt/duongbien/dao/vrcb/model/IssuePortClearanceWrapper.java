@@ -1277,7 +1277,8 @@ public class IssuePortClearanceWrapper implements IssuePortClearance,
 	}
 
 	@Override
-	public int compareTo(IssuePortClearance issuePortClearance) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.IssuePortClearance issuePortClearance) {
 		return _issuePortClearance.compareTo(issuePortClearance);
 	}
 
@@ -1287,17 +1288,17 @@ public class IssuePortClearanceWrapper implements IssuePortClearance,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<IssuePortClearance> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.IssuePortClearance> toCacheModel() {
 		return _issuePortClearance.toCacheModel();
 	}
 
 	@Override
-	public IssuePortClearance toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.IssuePortClearance toEscapedModel() {
 		return new IssuePortClearanceWrapper(_issuePortClearance.toEscapedModel());
 	}
 
 	@Override
-	public IssuePortClearance toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.IssuePortClearance toUnescapedModel() {
 		return new IssuePortClearanceWrapper(_issuePortClearance.toUnescapedModel());
 	}
 

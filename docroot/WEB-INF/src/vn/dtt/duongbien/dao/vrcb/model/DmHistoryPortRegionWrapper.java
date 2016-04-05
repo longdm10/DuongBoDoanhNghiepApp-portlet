@@ -438,7 +438,8 @@ public class DmHistoryPortRegionWrapper implements DmHistoryPortRegion,
 	}
 
 	@Override
-	public int compareTo(DmHistoryPortRegion dmHistoryPortRegion) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmHistoryPortRegion dmHistoryPortRegion) {
 		return _dmHistoryPortRegion.compareTo(dmHistoryPortRegion);
 	}
 
@@ -448,17 +449,17 @@ public class DmHistoryPortRegionWrapper implements DmHistoryPortRegion,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmHistoryPortRegion> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmHistoryPortRegion> toCacheModel() {
 		return _dmHistoryPortRegion.toCacheModel();
 	}
 
 	@Override
-	public DmHistoryPortRegion toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryPortRegion toEscapedModel() {
 		return new DmHistoryPortRegionWrapper(_dmHistoryPortRegion.toEscapedModel());
 	}
 
 	@Override
-	public DmHistoryPortRegion toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryPortRegion toUnescapedModel() {
 		return new DmHistoryPortRegionWrapper(_dmHistoryPortRegion.toUnescapedModel());
 	}
 

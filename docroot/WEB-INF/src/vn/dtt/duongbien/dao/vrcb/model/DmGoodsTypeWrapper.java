@@ -411,7 +411,8 @@ public class DmGoodsTypeWrapper implements DmGoodsType,
 	}
 
 	@Override
-	public int compareTo(DmGoodsType dmGoodsType) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmGoodsType dmGoodsType) {
 		return _dmGoodsType.compareTo(dmGoodsType);
 	}
 
@@ -421,17 +422,17 @@ public class DmGoodsTypeWrapper implements DmGoodsType,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmGoodsType> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmGoodsType> toCacheModel() {
 		return _dmGoodsType.toCacheModel();
 	}
 
 	@Override
-	public DmGoodsType toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmGoodsType toEscapedModel() {
 		return new DmGoodsTypeWrapper(_dmGoodsType.toEscapedModel());
 	}
 
 	@Override
-	public DmGoodsType toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmGoodsType toUnescapedModel() {
 		return new DmGoodsTypeWrapper(_dmGoodsType.toUnescapedModel());
 	}
 

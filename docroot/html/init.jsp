@@ -5,7 +5,7 @@
 <%@ taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %>
 <%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@page import ="java.util.List" %>
 <%@page import="com.liferay.portal.kernel.util.StringPool"%>
 <%@page import="com.liferay.portal.kernel.util.ParamUtil"%>
 
@@ -26,7 +26,9 @@
 <%@page import="com.liferay.portal.kernel.util.ParamUtil"%>
 
 <%@page import="com.liferay.portal.kernel.log.LogFactoryUtil"%>
-
+<%
+String currentURL = PortalUtil.getCurrentURL(request);
+%>
 <portlet:defineObjects />
 <liferay-theme:defineObjects />
 

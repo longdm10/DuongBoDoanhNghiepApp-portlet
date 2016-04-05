@@ -410,7 +410,7 @@ public class DmShipTypeWrapper implements DmShipType, ModelWrapper<DmShipType> {
 	}
 
 	@Override
-	public int compareTo(DmShipType dmShipType) {
+	public int compareTo(vn.dtt.duongbien.dao.vrcb.model.DmShipType dmShipType) {
 		return _dmShipType.compareTo(dmShipType);
 	}
 
@@ -420,17 +420,17 @@ public class DmShipTypeWrapper implements DmShipType, ModelWrapper<DmShipType> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmShipType> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmShipType> toCacheModel() {
 		return _dmShipType.toCacheModel();
 	}
 
 	@Override
-	public DmShipType toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmShipType toEscapedModel() {
 		return new DmShipTypeWrapper(_dmShipType.toEscapedModel());
 	}
 
 	@Override
-	public DmShipType toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmShipType toUnescapedModel() {
 		return new DmShipTypeWrapper(_dmShipType.toUnescapedModel());
 	}
 

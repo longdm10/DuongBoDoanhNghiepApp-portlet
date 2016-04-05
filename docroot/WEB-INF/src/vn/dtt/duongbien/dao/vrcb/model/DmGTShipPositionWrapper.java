@@ -411,7 +411,8 @@ public class DmGTShipPositionWrapper implements DmGTShipPosition,
 	}
 
 	@Override
-	public int compareTo(DmGTShipPosition dmGTShipPosition) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmGTShipPosition dmGTShipPosition) {
 		return _dmGTShipPosition.compareTo(dmGTShipPosition);
 	}
 
@@ -421,17 +422,17 @@ public class DmGTShipPositionWrapper implements DmGTShipPosition,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmGTShipPosition> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmGTShipPosition> toCacheModel() {
 		return _dmGTShipPosition.toCacheModel();
 	}
 
 	@Override
-	public DmGTShipPosition toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmGTShipPosition toEscapedModel() {
 		return new DmGTShipPositionWrapper(_dmGTShipPosition.toEscapedModel());
 	}
 
 	@Override
-	public DmGTShipPosition toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmGTShipPosition toUnescapedModel() {
 		return new DmGTShipPositionWrapper(_dmGTShipPosition.toUnescapedModel());
 	}
 

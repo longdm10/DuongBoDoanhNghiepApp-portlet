@@ -708,7 +708,8 @@ public class DmGtVersionWrapper implements DmGtVersion,
 	}
 
 	@Override
-	public int compareTo(DmGtVersion dmGtVersion) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmGtVersion dmGtVersion) {
 		return _dmGtVersion.compareTo(dmGtVersion);
 	}
 
@@ -718,17 +719,17 @@ public class DmGtVersionWrapper implements DmGtVersion,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmGtVersion> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmGtVersion> toCacheModel() {
 		return _dmGtVersion.toCacheModel();
 	}
 
 	@Override
-	public DmGtVersion toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmGtVersion toEscapedModel() {
 		return new DmGtVersionWrapper(_dmGtVersion.toEscapedModel());
 	}
 
 	@Override
-	public DmGtVersion toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmGtVersion toUnescapedModel() {
 		return new DmGtVersionWrapper(_dmGtVersion.toUnescapedModel());
 	}
 

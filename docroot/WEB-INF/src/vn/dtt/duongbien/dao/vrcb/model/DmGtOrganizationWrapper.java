@@ -411,7 +411,8 @@ public class DmGtOrganizationWrapper implements DmGtOrganization,
 	}
 
 	@Override
-	public int compareTo(DmGtOrganization dmGtOrganization) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmGtOrganization dmGtOrganization) {
 		return _dmGtOrganization.compareTo(dmGtOrganization);
 	}
 
@@ -421,17 +422,17 @@ public class DmGtOrganizationWrapper implements DmGtOrganization,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmGtOrganization> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmGtOrganization> toCacheModel() {
 		return _dmGtOrganization.toCacheModel();
 	}
 
 	@Override
-	public DmGtOrganization toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmGtOrganization toEscapedModel() {
 		return new DmGtOrganizationWrapper(_dmGtOrganization.toEscapedModel());
 	}
 
 	@Override
-	public DmGtOrganization toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmGtOrganization toUnescapedModel() {
 		return new DmGtOrganizationWrapper(_dmGtOrganization.toUnescapedModel());
 	}
 

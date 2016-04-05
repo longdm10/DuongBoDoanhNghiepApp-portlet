@@ -277,7 +277,8 @@ public class DmSyncCategoryWrapper implements DmSyncCategory,
 	}
 
 	@Override
-	public int compareTo(DmSyncCategory dmSyncCategory) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmSyncCategory dmSyncCategory) {
 		return _dmSyncCategory.compareTo(dmSyncCategory);
 	}
 
@@ -287,17 +288,17 @@ public class DmSyncCategoryWrapper implements DmSyncCategory,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmSyncCategory> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmSyncCategory> toCacheModel() {
 		return _dmSyncCategory.toCacheModel();
 	}
 
 	@Override
-	public DmSyncCategory toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmSyncCategory toEscapedModel() {
 		return new DmSyncCategoryWrapper(_dmSyncCategory.toEscapedModel());
 	}
 
 	@Override
-	public DmSyncCategory toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmSyncCategory toUnescapedModel() {
 		return new DmSyncCategoryWrapper(_dmSyncCategory.toUnescapedModel());
 	}
 

@@ -1115,7 +1115,8 @@ public class TempDocumentWrapper implements TempDocument,
 	}
 
 	@Override
-	public int compareTo(TempDocument tempDocument) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.TempDocument tempDocument) {
 		return _tempDocument.compareTo(tempDocument);
 	}
 
@@ -1125,17 +1126,17 @@ public class TempDocumentWrapper implements TempDocument,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempDocument> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempDocument> toCacheModel() {
 		return _tempDocument.toCacheModel();
 	}
 
 	@Override
-	public TempDocument toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempDocument toEscapedModel() {
 		return new TempDocumentWrapper(_tempDocument.toEscapedModel());
 	}
 
 	@Override
-	public TempDocument toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempDocument toUnescapedModel() {
 		return new TempDocumentWrapper(_tempDocument.toUnescapedModel());
 	}
 

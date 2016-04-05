@@ -518,7 +518,7 @@ public class CrewListWrapper implements CrewList, ModelWrapper<CrewList> {
 	}
 
 	@Override
-	public int compareTo(CrewList crewList) {
+	public int compareTo(vn.dtt.duongbien.dao.vrcb.model.CrewList crewList) {
 		return _crewList.compareTo(crewList);
 	}
 
@@ -528,17 +528,17 @@ public class CrewListWrapper implements CrewList, ModelWrapper<CrewList> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<CrewList> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.CrewList> toCacheModel() {
 		return _crewList.toCacheModel();
 	}
 
 	@Override
-	public CrewList toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.CrewList toEscapedModel() {
 		return new CrewListWrapper(_crewList.toEscapedModel());
 	}
 
 	@Override
-	public CrewList toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.CrewList toUnescapedModel() {
 		return new CrewListWrapper(_crewList.toUnescapedModel());
 	}
 

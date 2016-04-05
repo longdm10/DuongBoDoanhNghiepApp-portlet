@@ -465,7 +465,8 @@ public class ResultDeclarationWrapper implements ResultDeclaration,
 	}
 
 	@Override
-	public int compareTo(ResultDeclaration resultDeclaration) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.ResultDeclaration resultDeclaration) {
 		return _resultDeclaration.compareTo(resultDeclaration);
 	}
 
@@ -475,17 +476,17 @@ public class ResultDeclarationWrapper implements ResultDeclaration,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<ResultDeclaration> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.ResultDeclaration> toCacheModel() {
 		return _resultDeclaration.toCacheModel();
 	}
 
 	@Override
-	public ResultDeclaration toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.ResultDeclaration toEscapedModel() {
 		return new ResultDeclarationWrapper(_resultDeclaration.toEscapedModel());
 	}
 
 	@Override
-	public ResultDeclaration toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.ResultDeclaration toUnescapedModel() {
 		return new ResultDeclarationWrapper(_resultDeclaration.toUnescapedModel());
 	}
 

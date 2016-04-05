@@ -383,7 +383,7 @@ public class DmStateWrapper implements DmState, ModelWrapper<DmState> {
 	}
 
 	@Override
-	public int compareTo(DmState dmState) {
+	public int compareTo(vn.dtt.duongbien.dao.vrcb.model.DmState dmState) {
 		return _dmState.compareTo(dmState);
 	}
 
@@ -393,17 +393,17 @@ public class DmStateWrapper implements DmState, ModelWrapper<DmState> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmState> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmState> toCacheModel() {
 		return _dmState.toCacheModel();
 	}
 
 	@Override
-	public DmState toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmState toEscapedModel() {
 		return new DmStateWrapper(_dmState.toEscapedModel());
 	}
 
 	@Override
-	public DmState toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmState toUnescapedModel() {
 		return new DmStateWrapper(_dmState.toUnescapedModel());
 	}
 

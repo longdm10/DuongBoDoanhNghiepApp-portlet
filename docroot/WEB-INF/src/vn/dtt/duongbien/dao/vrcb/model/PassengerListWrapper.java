@@ -529,7 +529,8 @@ public class PassengerListWrapper implements PassengerList,
 	}
 
 	@Override
-	public int compareTo(PassengerList passengerList) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.PassengerList passengerList) {
 		return _passengerList.compareTo(passengerList);
 	}
 
@@ -539,17 +540,17 @@ public class PassengerListWrapper implements PassengerList,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<PassengerList> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.PassengerList> toCacheModel() {
 		return _passengerList.toCacheModel();
 	}
 
 	@Override
-	public PassengerList toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.PassengerList toEscapedModel() {
 		return new PassengerListWrapper(_passengerList.toEscapedModel());
 	}
 
 	@Override
-	public PassengerList toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.PassengerList toUnescapedModel() {
 		return new PassengerListWrapper(_passengerList.toUnescapedModel());
 	}
 

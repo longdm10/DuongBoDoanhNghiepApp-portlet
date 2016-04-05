@@ -356,7 +356,7 @@ public class DocumentWrapper implements Document, ModelWrapper<Document> {
 	}
 
 	@Override
-	public int compareTo(Document document) {
+	public int compareTo(vn.dtt.duongbien.dao.vrcb.model.Document document) {
 		return _document.compareTo(document);
 	}
 
@@ -366,17 +366,17 @@ public class DocumentWrapper implements Document, ModelWrapper<Document> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<Document> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.Document> toCacheModel() {
 		return _document.toCacheModel();
 	}
 
 	@Override
-	public Document toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.Document toEscapedModel() {
 		return new DocumentWrapper(_document.toEscapedModel());
 	}
 
 	@Override
-	public Document toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.Document toUnescapedModel() {
 		return new DocumentWrapper(_document.toUnescapedModel());
 	}
 

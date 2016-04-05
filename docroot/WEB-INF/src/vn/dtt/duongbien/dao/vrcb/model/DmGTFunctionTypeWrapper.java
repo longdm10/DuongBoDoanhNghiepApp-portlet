@@ -411,7 +411,8 @@ public class DmGTFunctionTypeWrapper implements DmGTFunctionType,
 	}
 
 	@Override
-	public int compareTo(DmGTFunctionType dmGTFunctionType) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmGTFunctionType dmGTFunctionType) {
 		return _dmGTFunctionType.compareTo(dmGTFunctionType);
 	}
 
@@ -421,17 +422,17 @@ public class DmGTFunctionTypeWrapper implements DmGTFunctionType,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmGTFunctionType> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmGTFunctionType> toCacheModel() {
 		return _dmGTFunctionType.toCacheModel();
 	}
 
 	@Override
-	public DmGTFunctionType toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmGTFunctionType toEscapedModel() {
 		return new DmGTFunctionTypeWrapper(_dmGTFunctionType.toEscapedModel());
 	}
 
 	@Override
-	public DmGTFunctionType toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmGTFunctionType toUnescapedModel() {
 		return new DmGTFunctionTypeWrapper(_dmGTFunctionType.toUnescapedModel());
 	}
 

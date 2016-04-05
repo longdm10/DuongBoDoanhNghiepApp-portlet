@@ -410,7 +410,7 @@ public class DmGtStatusWrapper implements DmGtStatus, ModelWrapper<DmGtStatus> {
 	}
 
 	@Override
-	public int compareTo(DmGtStatus dmGtStatus) {
+	public int compareTo(vn.dtt.duongbien.dao.vrcb.model.DmGtStatus dmGtStatus) {
 		return _dmGtStatus.compareTo(dmGtStatus);
 	}
 
@@ -420,17 +420,17 @@ public class DmGtStatusWrapper implements DmGtStatus, ModelWrapper<DmGtStatus> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmGtStatus> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmGtStatus> toCacheModel() {
 		return _dmGtStatus.toCacheModel();
 	}
 
 	@Override
-	public DmGtStatus toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmGtStatus toEscapedModel() {
 		return new DmGtStatusWrapper(_dmGtStatus.toEscapedModel());
 	}
 
 	@Override
-	public DmGtStatus toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmGtStatus toUnescapedModel() {
 		return new DmGtStatusWrapper(_dmGtStatus.toUnescapedModel());
 	}
 

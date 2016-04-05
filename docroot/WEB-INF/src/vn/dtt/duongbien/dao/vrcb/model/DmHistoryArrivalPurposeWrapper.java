@@ -385,7 +385,8 @@ public class DmHistoryArrivalPurposeWrapper implements DmHistoryArrivalPurpose,
 	}
 
 	@Override
-	public int compareTo(DmHistoryArrivalPurpose dmHistoryArrivalPurpose) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmHistoryArrivalPurpose dmHistoryArrivalPurpose) {
 		return _dmHistoryArrivalPurpose.compareTo(dmHistoryArrivalPurpose);
 	}
 
@@ -395,17 +396,17 @@ public class DmHistoryArrivalPurposeWrapper implements DmHistoryArrivalPurpose,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmHistoryArrivalPurpose> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmHistoryArrivalPurpose> toCacheModel() {
 		return _dmHistoryArrivalPurpose.toCacheModel();
 	}
 
 	@Override
-	public DmHistoryArrivalPurpose toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryArrivalPurpose toEscapedModel() {
 		return new DmHistoryArrivalPurposeWrapper(_dmHistoryArrivalPurpose.toEscapedModel());
 	}
 
 	@Override
-	public DmHistoryArrivalPurpose toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryArrivalPurpose toUnescapedModel() {
 		return new DmHistoryArrivalPurposeWrapper(_dmHistoryArrivalPurpose.toUnescapedModel());
 	}
 

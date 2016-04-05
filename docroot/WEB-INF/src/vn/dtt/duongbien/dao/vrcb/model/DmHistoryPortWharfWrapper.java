@@ -519,7 +519,8 @@ public class DmHistoryPortWharfWrapper implements DmHistoryPortWharf,
 	}
 
 	@Override
-	public int compareTo(DmHistoryPortWharf dmHistoryPortWharf) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmHistoryPortWharf dmHistoryPortWharf) {
 		return _dmHistoryPortWharf.compareTo(dmHistoryPortWharf);
 	}
 
@@ -529,17 +530,17 @@ public class DmHistoryPortWharfWrapper implements DmHistoryPortWharf,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmHistoryPortWharf> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmHistoryPortWharf> toCacheModel() {
 		return _dmHistoryPortWharf.toCacheModel();
 	}
 
 	@Override
-	public DmHistoryPortWharf toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryPortWharf toEscapedModel() {
 		return new DmHistoryPortWharfWrapper(_dmHistoryPortWharf.toEscapedModel());
 	}
 
 	@Override
-	public DmHistoryPortWharf toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryPortWharf toUnescapedModel() {
 		return new DmHistoryPortWharfWrapper(_dmHistoryPortWharf.toUnescapedModel());
 	}
 

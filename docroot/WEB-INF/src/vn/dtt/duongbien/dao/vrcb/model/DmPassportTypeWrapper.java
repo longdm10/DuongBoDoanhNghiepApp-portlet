@@ -411,7 +411,8 @@ public class DmPassportTypeWrapper implements DmPassportType,
 	}
 
 	@Override
-	public int compareTo(DmPassportType dmPassportType) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmPassportType dmPassportType) {
 		return _dmPassportType.compareTo(dmPassportType);
 	}
 
@@ -421,17 +422,17 @@ public class DmPassportTypeWrapper implements DmPassportType,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmPassportType> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmPassportType> toCacheModel() {
 		return _dmPassportType.toCacheModel();
 	}
 
 	@Override
-	public DmPassportType toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmPassportType toEscapedModel() {
 		return new DmPassportTypeWrapper(_dmPassportType.toEscapedModel());
 	}
 
 	@Override
-	public DmPassportType toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmPassportType toUnescapedModel() {
 		return new DmPassportTypeWrapper(_dmPassportType.toUnescapedModel());
 	}
 

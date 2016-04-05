@@ -1007,7 +1007,8 @@ public class HistoryRmdcShipWrapper implements HistoryRmdcShip,
 	}
 
 	@Override
-	public int compareTo(HistoryRmdcShip historyRmdcShip) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.HistoryRmdcShip historyRmdcShip) {
 		return _historyRmdcShip.compareTo(historyRmdcShip);
 	}
 
@@ -1017,17 +1018,17 @@ public class HistoryRmdcShipWrapper implements HistoryRmdcShip,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<HistoryRmdcShip> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.HistoryRmdcShip> toCacheModel() {
 		return _historyRmdcShip.toCacheModel();
 	}
 
 	@Override
-	public HistoryRmdcShip toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.HistoryRmdcShip toEscapedModel() {
 		return new HistoryRmdcShipWrapper(_historyRmdcShip.toEscapedModel());
 	}
 
 	@Override
-	public HistoryRmdcShip toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.HistoryRmdcShip toUnescapedModel() {
 		return new HistoryRmdcShipWrapper(_historyRmdcShip.toUnescapedModel());
 	}
 

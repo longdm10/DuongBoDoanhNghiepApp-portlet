@@ -716,7 +716,8 @@ public class TempHealthQuestionWrapper implements TempHealthQuestion,
 	}
 
 	@Override
-	public int compareTo(TempHealthQuestion tempHealthQuestion) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.TempHealthQuestion tempHealthQuestion) {
 		return _tempHealthQuestion.compareTo(tempHealthQuestion);
 	}
 
@@ -726,17 +727,17 @@ public class TempHealthQuestionWrapper implements TempHealthQuestion,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempHealthQuestion> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempHealthQuestion> toCacheModel() {
 		return _tempHealthQuestion.toCacheModel();
 	}
 
 	@Override
-	public TempHealthQuestion toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempHealthQuestion toEscapedModel() {
 		return new TempHealthQuestionWrapper(_tempHealthQuestion.toEscapedModel());
 	}
 
 	@Override
-	public TempHealthQuestion toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempHealthQuestion toUnescapedModel() {
 		return new TempHealthQuestionWrapper(_tempHealthQuestion.toUnescapedModel());
 	}
 

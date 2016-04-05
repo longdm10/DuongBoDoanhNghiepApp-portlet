@@ -600,7 +600,8 @@ public class DmHistoryPortWrapper implements DmHistoryPort,
 	}
 
 	@Override
-	public int compareTo(DmHistoryPort dmHistoryPort) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmHistoryPort dmHistoryPort) {
 		return _dmHistoryPort.compareTo(dmHistoryPort);
 	}
 
@@ -610,17 +611,17 @@ public class DmHistoryPortWrapper implements DmHistoryPort,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmHistoryPort> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmHistoryPort> toCacheModel() {
 		return _dmHistoryPort.toCacheModel();
 	}
 
 	@Override
-	public DmHistoryPort toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryPort toEscapedModel() {
 		return new DmHistoryPortWrapper(_dmHistoryPort.toEscapedModel());
 	}
 
 	@Override
-	public DmHistoryPort toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryPort toUnescapedModel() {
 		return new DmHistoryPortWrapper(_dmHistoryPort.toUnescapedModel());
 	}
 

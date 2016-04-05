@@ -492,7 +492,8 @@ public class ResultMinistryWrapper implements ResultMinistry,
 	}
 
 	@Override
-	public int compareTo(ResultMinistry resultMinistry) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.ResultMinistry resultMinistry) {
 		return _resultMinistry.compareTo(resultMinistry);
 	}
 
@@ -502,17 +503,17 @@ public class ResultMinistryWrapper implements ResultMinistry,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<ResultMinistry> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.ResultMinistry> toCacheModel() {
 		return _resultMinistry.toCacheModel();
 	}
 
 	@Override
-	public ResultMinistry toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.ResultMinistry toEscapedModel() {
 		return new ResultMinistryWrapper(_resultMinistry.toEscapedModel());
 	}
 
 	@Override
-	public ResultMinistry toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.ResultMinistry toUnescapedModel() {
 		return new ResultMinistryWrapper(_resultMinistry.toUnescapedModel());
 	}
 

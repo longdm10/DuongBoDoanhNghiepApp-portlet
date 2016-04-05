@@ -115,6 +115,17 @@ public class TempGeneralDeclarationLocalServiceClp
 		_methodName17 = "setBeanIdentifier";
 
 		_methodParameterTypes17 = new String[] { "java.lang.String" };
+
+		_methodName19 = "addTemGeneralDeclaration";
+
+		_methodParameterTypes19 = new String[] {
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"int", "java.lang.String", "int", "int", "java.lang.String",
+				"java.util.Date", "java.lang.String", "java.lang.String",
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"java.lang.String"
+			};
 	}
 
 	@Override
@@ -672,6 +683,81 @@ public class TempGeneralDeclarationLocalServiceClp
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
+	public vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration addTemGeneralDeclaration(
+		java.lang.String nameOfShip, java.lang.String nameOfMaster,
+		java.lang.String portRegionCode, java.lang.String portOfArrivalCode,
+		java.lang.String portHarbourCode, java.lang.String portWharfCode,
+		int isArrival, java.lang.String voyageNumber, int numberOfCrew,
+		int numberOfPassengers, java.lang.String lastPortOfCallCode,
+		java.util.Date dateOfArrival,
+		java.lang.String taxCodeOfShipownersAgents,
+		java.lang.String nameOfShipownersAgents,
+		java.lang.String shipAgencyAddress, java.lang.String shipAgencyPhone,
+		java.lang.String shipAgencyFax, java.lang.String shipAgencyEmail)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName19,
+					_methodParameterTypes19,
+					new Object[] {
+						ClpSerializer.translateInput(nameOfShip),
+						
+					ClpSerializer.translateInput(nameOfMaster),
+						
+					ClpSerializer.translateInput(portRegionCode),
+						
+					ClpSerializer.translateInput(portOfArrivalCode),
+						
+					ClpSerializer.translateInput(portHarbourCode),
+						
+					ClpSerializer.translateInput(portWharfCode),
+						
+					isArrival,
+						
+					ClpSerializer.translateInput(voyageNumber),
+						
+					numberOfCrew,
+						
+					numberOfPassengers,
+						
+					ClpSerializer.translateInput(lastPortOfCallCode),
+						
+					ClpSerializer.translateInput(dateOfArrival),
+						
+					ClpSerializer.translateInput(taxCodeOfShipownersAgents),
+						
+					ClpSerializer.translateInput(nameOfShipownersAgents),
+						
+					ClpSerializer.translateInput(shipAgencyAddress),
+						
+					ClpSerializer.translateInput(shipAgencyPhone),
+						
+					ClpSerializer.translateInput(shipAgencyFax),
+						
+					ClpSerializer.translateInput(shipAgencyEmail)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration)ClpSerializer.translateOutput(returnObj);
+	}
+
 	private InvokableLocalService _invokableLocalService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -709,4 +795,6 @@ public class TempGeneralDeclarationLocalServiceClp
 	private String[] _methodParameterTypes16;
 	private String _methodName17;
 	private String[] _methodParameterTypes17;
+	private String _methodName19;
+	private String[] _methodParameterTypes19;
 }

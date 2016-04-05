@@ -709,7 +709,8 @@ public class TempCargoDeclarationWrapper implements TempCargoDeclaration,
 	}
 
 	@Override
-	public int compareTo(TempCargoDeclaration tempCargoDeclaration) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.TempCargoDeclaration tempCargoDeclaration) {
 		return _tempCargoDeclaration.compareTo(tempCargoDeclaration);
 	}
 
@@ -719,17 +720,17 @@ public class TempCargoDeclarationWrapper implements TempCargoDeclaration,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempCargoDeclaration> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempCargoDeclaration> toCacheModel() {
 		return _tempCargoDeclaration.toCacheModel();
 	}
 
 	@Override
-	public TempCargoDeclaration toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempCargoDeclaration toEscapedModel() {
 		return new TempCargoDeclarationWrapper(_tempCargoDeclaration.toEscapedModel());
 	}
 
 	@Override
-	public TempCargoDeclaration toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempCargoDeclaration toUnescapedModel() {
 		return new TempCargoDeclarationWrapper(_tempCargoDeclaration.toUnescapedModel());
 	}
 

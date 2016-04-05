@@ -1019,7 +1019,8 @@ public class DocumentGeneralWrapper implements DocumentGeneral,
 	}
 
 	@Override
-	public int compareTo(DocumentGeneral documentGeneral) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DocumentGeneral documentGeneral) {
 		return _documentGeneral.compareTo(documentGeneral);
 	}
 
@@ -1029,17 +1030,17 @@ public class DocumentGeneralWrapper implements DocumentGeneral,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DocumentGeneral> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DocumentGeneral> toCacheModel() {
 		return _documentGeneral.toCacheModel();
 	}
 
 	@Override
-	public DocumentGeneral toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DocumentGeneral toEscapedModel() {
 		return new DocumentGeneralWrapper(_documentGeneral.toEscapedModel());
 	}
 
 	@Override
-	public DocumentGeneral toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DocumentGeneral toUnescapedModel() {
 		return new DocumentGeneralWrapper(_documentGeneral.toUnescapedModel());
 	}
 

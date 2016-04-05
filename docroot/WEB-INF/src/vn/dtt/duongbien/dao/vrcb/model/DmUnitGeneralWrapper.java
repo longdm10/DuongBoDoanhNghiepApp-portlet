@@ -357,7 +357,8 @@ public class DmUnitGeneralWrapper implements DmUnitGeneral,
 	}
 
 	@Override
-	public int compareTo(DmUnitGeneral dmUnitGeneral) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmUnitGeneral dmUnitGeneral) {
 		return _dmUnitGeneral.compareTo(dmUnitGeneral);
 	}
 
@@ -367,17 +368,17 @@ public class DmUnitGeneralWrapper implements DmUnitGeneral,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmUnitGeneral> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmUnitGeneral> toCacheModel() {
 		return _dmUnitGeneral.toCacheModel();
 	}
 
 	@Override
-	public DmUnitGeneral toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmUnitGeneral toEscapedModel() {
 		return new DmUnitGeneralWrapper(_dmUnitGeneral.toEscapedModel());
 	}
 
 	@Override
-	public DmUnitGeneral toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmUnitGeneral toUnescapedModel() {
 		return new DmUnitGeneralWrapper(_dmUnitGeneral.toUnescapedModel());
 	}
 

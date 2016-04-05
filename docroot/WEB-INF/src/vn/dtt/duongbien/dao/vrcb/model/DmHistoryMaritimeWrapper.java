@@ -519,7 +519,8 @@ public class DmHistoryMaritimeWrapper implements DmHistoryMaritime,
 	}
 
 	@Override
-	public int compareTo(DmHistoryMaritime dmHistoryMaritime) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmHistoryMaritime dmHistoryMaritime) {
 		return _dmHistoryMaritime.compareTo(dmHistoryMaritime);
 	}
 
@@ -529,17 +530,17 @@ public class DmHistoryMaritimeWrapper implements DmHistoryMaritime,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmHistoryMaritime> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmHistoryMaritime> toCacheModel() {
 		return _dmHistoryMaritime.toCacheModel();
 	}
 
 	@Override
-	public DmHistoryMaritime toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryMaritime toEscapedModel() {
 		return new DmHistoryMaritimeWrapper(_dmHistoryMaritime.toEscapedModel());
 	}
 
 	@Override
-	public DmHistoryMaritime toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryMaritime toUnescapedModel() {
 		return new DmHistoryMaritimeWrapper(_dmHistoryMaritime.toUnescapedModel());
 	}
 

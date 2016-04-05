@@ -655,7 +655,8 @@ public class InterfaceRequestFieldWrapper implements InterfaceRequestField,
 	}
 
 	@Override
-	public int compareTo(InterfaceRequestField interfaceRequestField) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.InterfaceRequestField interfaceRequestField) {
 		return _interfaceRequestField.compareTo(interfaceRequestField);
 	}
 
@@ -665,17 +666,17 @@ public class InterfaceRequestFieldWrapper implements InterfaceRequestField,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<InterfaceRequestField> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.InterfaceRequestField> toCacheModel() {
 		return _interfaceRequestField.toCacheModel();
 	}
 
 	@Override
-	public InterfaceRequestField toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.InterfaceRequestField toEscapedModel() {
 		return new InterfaceRequestFieldWrapper(_interfaceRequestField.toEscapedModel());
 	}
 
 	@Override
-	public InterfaceRequestField toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.InterfaceRequestField toUnescapedModel() {
 		return new InterfaceRequestFieldWrapper(_interfaceRequestField.toUnescapedModel());
 	}
 

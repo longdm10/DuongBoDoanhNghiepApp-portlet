@@ -493,7 +493,8 @@ public class ResultCertificateWrapper implements ResultCertificate,
 	}
 
 	@Override
-	public int compareTo(ResultCertificate resultCertificate) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.ResultCertificate resultCertificate) {
 		return _resultCertificate.compareTo(resultCertificate);
 	}
 
@@ -503,17 +504,17 @@ public class ResultCertificateWrapper implements ResultCertificate,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<ResultCertificate> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.ResultCertificate> toCacheModel() {
 		return _resultCertificate.toCacheModel();
 	}
 
 	@Override
-	public ResultCertificate toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.ResultCertificate toEscapedModel() {
 		return new ResultCertificateWrapper(_resultCertificate.toEscapedModel());
 	}
 
 	@Override
-	public ResultCertificate toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.ResultCertificate toUnescapedModel() {
 		return new ResultCertificateWrapper(_resultCertificate.toUnescapedModel());
 	}
 

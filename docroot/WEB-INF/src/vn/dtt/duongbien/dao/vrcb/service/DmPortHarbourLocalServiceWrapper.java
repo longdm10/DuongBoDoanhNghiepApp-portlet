@@ -287,6 +287,12 @@ public class DmPortHarbourLocalServiceWrapper
 			arguments);
 	}
 
+	@Override
+	public java.util.List getDmPortHarbour()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _dmPortHarbourLocalService.getDmPortHarbour();
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

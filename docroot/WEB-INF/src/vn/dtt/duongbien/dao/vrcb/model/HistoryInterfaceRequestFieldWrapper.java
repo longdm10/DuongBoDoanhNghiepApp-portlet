@@ -657,7 +657,7 @@ public class HistoryInterfaceRequestFieldWrapper
 
 	@Override
 	public int compareTo(
-		HistoryInterfaceRequestField historyInterfaceRequestField) {
+		vn.dtt.duongbien.dao.vrcb.model.HistoryInterfaceRequestField historyInterfaceRequestField) {
 		return _historyInterfaceRequestField.compareTo(historyInterfaceRequestField);
 	}
 
@@ -667,17 +667,17 @@ public class HistoryInterfaceRequestFieldWrapper
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<HistoryInterfaceRequestField> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.HistoryInterfaceRequestField> toCacheModel() {
 		return _historyInterfaceRequestField.toCacheModel();
 	}
 
 	@Override
-	public HistoryInterfaceRequestField toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.HistoryInterfaceRequestField toEscapedModel() {
 		return new HistoryInterfaceRequestFieldWrapper(_historyInterfaceRequestField.toEscapedModel());
 	}
 
 	@Override
-	public HistoryInterfaceRequestField toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.HistoryInterfaceRequestField toUnescapedModel() {
 		return new HistoryInterfaceRequestFieldWrapper(_historyInterfaceRequestField.toUnescapedModel());
 	}
 

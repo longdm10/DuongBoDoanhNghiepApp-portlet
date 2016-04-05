@@ -708,7 +708,8 @@ public class DmShipAgencyWrapper implements DmShipAgency,
 	}
 
 	@Override
-	public int compareTo(DmShipAgency dmShipAgency) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmShipAgency dmShipAgency) {
 		return _dmShipAgency.compareTo(dmShipAgency);
 	}
 
@@ -718,17 +719,17 @@ public class DmShipAgencyWrapper implements DmShipAgency,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmShipAgency> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmShipAgency> toCacheModel() {
 		return _dmShipAgency.toCacheModel();
 	}
 
 	@Override
-	public DmShipAgency toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmShipAgency toEscapedModel() {
 		return new DmShipAgencyWrapper(_dmShipAgency.toEscapedModel());
 	}
 
 	@Override
-	public DmShipAgency toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmShipAgency toUnescapedModel() {
 		return new DmShipAgencyWrapper(_dmShipAgency.toUnescapedModel());
 	}
 

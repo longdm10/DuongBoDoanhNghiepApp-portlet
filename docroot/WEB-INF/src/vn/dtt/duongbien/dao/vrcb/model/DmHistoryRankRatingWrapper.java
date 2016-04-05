@@ -411,7 +411,8 @@ public class DmHistoryRankRatingWrapper implements DmHistoryRankRating,
 	}
 
 	@Override
-	public int compareTo(DmHistoryRankRating dmHistoryRankRating) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmHistoryRankRating dmHistoryRankRating) {
 		return _dmHistoryRankRating.compareTo(dmHistoryRankRating);
 	}
 
@@ -421,17 +422,17 @@ public class DmHistoryRankRatingWrapper implements DmHistoryRankRating,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmHistoryRankRating> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmHistoryRankRating> toCacheModel() {
 		return _dmHistoryRankRating.toCacheModel();
 	}
 
 	@Override
-	public DmHistoryRankRating toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryRankRating toEscapedModel() {
 		return new DmHistoryRankRatingWrapper(_dmHistoryRankRating.toEscapedModel());
 	}
 
 	@Override
-	public DmHistoryRankRating toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryRankRating toUnescapedModel() {
 		return new DmHistoryRankRatingWrapper(_dmHistoryRankRating.toUnescapedModel());
 	}
 

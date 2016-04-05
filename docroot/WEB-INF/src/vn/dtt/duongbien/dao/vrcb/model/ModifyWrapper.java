@@ -383,7 +383,7 @@ public class ModifyWrapper implements Modify, ModelWrapper<Modify> {
 	}
 
 	@Override
-	public int compareTo(Modify modify) {
+	public int compareTo(vn.dtt.duongbien.dao.vrcb.model.Modify modify) {
 		return _modify.compareTo(modify);
 	}
 
@@ -393,17 +393,17 @@ public class ModifyWrapper implements Modify, ModelWrapper<Modify> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<Modify> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.Modify> toCacheModel() {
 		return _modify.toCacheModel();
 	}
 
 	@Override
-	public Modify toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.Modify toEscapedModel() {
 		return new ModifyWrapper(_modify.toEscapedModel());
 	}
 
 	@Override
-	public Modify toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.Modify toUnescapedModel() {
 		return new ModifyWrapper(_modify.toUnescapedModel());
 	}
 

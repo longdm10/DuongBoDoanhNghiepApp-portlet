@@ -712,7 +712,7 @@ public class TempDeclarationForAnimalQuarantineWrapper
 
 	@Override
 	public int compareTo(
-		TempDeclarationForAnimalQuarantine tempDeclarationForAnimalQuarantine) {
+		vn.dtt.duongbien.dao.vrcb.model.TempDeclarationForAnimalQuarantine tempDeclarationForAnimalQuarantine) {
 		return _tempDeclarationForAnimalQuarantine.compareTo(tempDeclarationForAnimalQuarantine);
 	}
 
@@ -722,17 +722,17 @@ public class TempDeclarationForAnimalQuarantineWrapper
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempDeclarationForAnimalQuarantine> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempDeclarationForAnimalQuarantine> toCacheModel() {
 		return _tempDeclarationForAnimalQuarantine.toCacheModel();
 	}
 
 	@Override
-	public TempDeclarationForAnimalQuarantine toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempDeclarationForAnimalQuarantine toEscapedModel() {
 		return new TempDeclarationForAnimalQuarantineWrapper(_tempDeclarationForAnimalQuarantine.toEscapedModel());
 	}
 
 	@Override
-	public TempDeclarationForAnimalQuarantine toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempDeclarationForAnimalQuarantine toUnescapedModel() {
 		return new TempDeclarationForAnimalQuarantineWrapper(_tempDeclarationForAnimalQuarantine.toUnescapedModel());
 	}
 

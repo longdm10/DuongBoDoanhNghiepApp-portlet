@@ -465,7 +465,8 @@ public class DmGtRouteConfigWrapper implements DmGtRouteConfig,
 	}
 
 	@Override
-	public int compareTo(DmGtRouteConfig dmGtRouteConfig) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmGtRouteConfig dmGtRouteConfig) {
 		return _dmGtRouteConfig.compareTo(dmGtRouteConfig);
 	}
 
@@ -475,17 +476,17 @@ public class DmGtRouteConfigWrapper implements DmGtRouteConfig,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmGtRouteConfig> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmGtRouteConfig> toCacheModel() {
 		return _dmGtRouteConfig.toCacheModel();
 	}
 
 	@Override
-	public DmGtRouteConfig toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmGtRouteConfig toEscapedModel() {
 		return new DmGtRouteConfigWrapper(_dmGtRouteConfig.toEscapedModel());
 	}
 
 	@Override
-	public DmGtRouteConfig toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmGtRouteConfig toUnescapedModel() {
 		return new DmGtRouteConfigWrapper(_dmGtRouteConfig.toUnescapedModel());
 	}
 

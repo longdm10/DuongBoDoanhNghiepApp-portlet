@@ -333,7 +333,8 @@ public class TempCrewEffectsItemsWrapper implements TempCrewEffectsItems,
 	}
 
 	@Override
-	public int compareTo(TempCrewEffectsItems tempCrewEffectsItems) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.TempCrewEffectsItems tempCrewEffectsItems) {
 		return _tempCrewEffectsItems.compareTo(tempCrewEffectsItems);
 	}
 
@@ -343,17 +344,17 @@ public class TempCrewEffectsItemsWrapper implements TempCrewEffectsItems,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempCrewEffectsItems> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempCrewEffectsItems> toCacheModel() {
 		return _tempCrewEffectsItems.toCacheModel();
 	}
 
 	@Override
-	public TempCrewEffectsItems toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempCrewEffectsItems toEscapedModel() {
 		return new TempCrewEffectsItemsWrapper(_tempCrewEffectsItems.toEscapedModel());
 	}
 
 	@Override
-	public TempCrewEffectsItems toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempCrewEffectsItems toUnescapedModel() {
 		return new TempCrewEffectsItemsWrapper(_tempCrewEffectsItems.toUnescapedModel());
 	}
 

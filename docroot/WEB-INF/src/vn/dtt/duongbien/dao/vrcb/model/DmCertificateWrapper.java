@@ -411,7 +411,8 @@ public class DmCertificateWrapper implements DmCertificate,
 	}
 
 	@Override
-	public int compareTo(DmCertificate dmCertificate) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmCertificate dmCertificate) {
 		return _dmCertificate.compareTo(dmCertificate);
 	}
 
@@ -421,17 +422,17 @@ public class DmCertificateWrapper implements DmCertificate,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmCertificate> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmCertificate> toCacheModel() {
 		return _dmCertificate.toCacheModel();
 	}
 
 	@Override
-	public DmCertificate toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmCertificate toEscapedModel() {
 		return new DmCertificateWrapper(_dmCertificate.toEscapedModel());
 	}
 
 	@Override
-	public DmCertificate toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmCertificate toUnescapedModel() {
 		return new DmCertificateWrapper(_dmCertificate.toUnescapedModel());
 	}
 

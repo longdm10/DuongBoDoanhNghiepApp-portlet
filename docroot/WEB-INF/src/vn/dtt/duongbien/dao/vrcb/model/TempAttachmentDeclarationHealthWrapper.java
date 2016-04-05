@@ -605,7 +605,7 @@ public class TempAttachmentDeclarationHealthWrapper
 
 	@Override
 	public int compareTo(
-		TempAttachmentDeclarationHealth tempAttachmentDeclarationHealth) {
+		vn.dtt.duongbien.dao.vrcb.model.TempAttachmentDeclarationHealth tempAttachmentDeclarationHealth) {
 		return _tempAttachmentDeclarationHealth.compareTo(tempAttachmentDeclarationHealth);
 	}
 
@@ -615,17 +615,17 @@ public class TempAttachmentDeclarationHealthWrapper
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempAttachmentDeclarationHealth> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempAttachmentDeclarationHealth> toCacheModel() {
 		return _tempAttachmentDeclarationHealth.toCacheModel();
 	}
 
 	@Override
-	public TempAttachmentDeclarationHealth toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempAttachmentDeclarationHealth toEscapedModel() {
 		return new TempAttachmentDeclarationHealthWrapper(_tempAttachmentDeclarationHealth.toEscapedModel());
 	}
 
 	@Override
-	public TempAttachmentDeclarationHealth toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempAttachmentDeclarationHealth toUnescapedModel() {
 		return new TempAttachmentDeclarationHealthWrapper(_tempAttachmentDeclarationHealth.toUnescapedModel());
 	}
 

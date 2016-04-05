@@ -1309,7 +1309,8 @@ public class IssuePermissionForTransitWrapper
 	}
 
 	@Override
-	public int compareTo(IssuePermissionForTransit issuePermissionForTransit) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.IssuePermissionForTransit issuePermissionForTransit) {
 		return _issuePermissionForTransit.compareTo(issuePermissionForTransit);
 	}
 
@@ -1319,17 +1320,17 @@ public class IssuePermissionForTransitWrapper
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<IssuePermissionForTransit> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.IssuePermissionForTransit> toCacheModel() {
 		return _issuePermissionForTransit.toCacheModel();
 	}
 
 	@Override
-	public IssuePermissionForTransit toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.IssuePermissionForTransit toEscapedModel() {
 		return new IssuePermissionForTransitWrapper(_issuePermissionForTransit.toEscapedModel());
 	}
 
 	@Override
-	public IssuePermissionForTransit toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.IssuePermissionForTransit toUnescapedModel() {
 		return new IssuePermissionForTransitWrapper(_issuePermissionForTransit.toUnescapedModel());
 	}
 

@@ -685,7 +685,8 @@ public class NoticeShipMessageWrapper implements NoticeShipMessage,
 	}
 
 	@Override
-	public int compareTo(NoticeShipMessage noticeShipMessage) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.NoticeShipMessage noticeShipMessage) {
 		return _noticeShipMessage.compareTo(noticeShipMessage);
 	}
 
@@ -695,17 +696,17 @@ public class NoticeShipMessageWrapper implements NoticeShipMessage,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<NoticeShipMessage> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.NoticeShipMessage> toCacheModel() {
 		return _noticeShipMessage.toCacheModel();
 	}
 
 	@Override
-	public NoticeShipMessage toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.NoticeShipMessage toEscapedModel() {
 		return new NoticeShipMessageWrapper(_noticeShipMessage.toEscapedModel());
 	}
 
 	@Override
-	public NoticeShipMessage toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.NoticeShipMessage toUnescapedModel() {
 		return new NoticeShipMessageWrapper(_noticeShipMessage.toUnescapedModel());
 	}
 

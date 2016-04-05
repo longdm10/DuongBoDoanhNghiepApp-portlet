@@ -1469,7 +1469,8 @@ public class TempGeneralDeclarationWrapper implements TempGeneralDeclaration,
 	}
 
 	@Override
-	public int compareTo(TempGeneralDeclaration tempGeneralDeclaration) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration tempGeneralDeclaration) {
 		return _tempGeneralDeclaration.compareTo(tempGeneralDeclaration);
 	}
 
@@ -1479,17 +1480,17 @@ public class TempGeneralDeclarationWrapper implements TempGeneralDeclaration,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempGeneralDeclaration> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration> toCacheModel() {
 		return _tempGeneralDeclaration.toCacheModel();
 	}
 
 	@Override
-	public TempGeneralDeclaration toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration toEscapedModel() {
 		return new TempGeneralDeclarationWrapper(_tempGeneralDeclaration.toEscapedModel());
 	}
 
 	@Override
-	public TempGeneralDeclaration toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration toUnescapedModel() {
 		return new TempGeneralDeclarationWrapper(_tempGeneralDeclaration.toUnescapedModel());
 	}
 

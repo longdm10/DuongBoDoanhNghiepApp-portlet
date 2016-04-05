@@ -410,7 +410,7 @@ public class DmMinistryWrapper implements DmMinistry, ModelWrapper<DmMinistry> {
 	}
 
 	@Override
-	public int compareTo(DmMinistry dmMinistry) {
+	public int compareTo(vn.dtt.duongbien.dao.vrcb.model.DmMinistry dmMinistry) {
 		return _dmMinistry.compareTo(dmMinistry);
 	}
 
@@ -420,17 +420,17 @@ public class DmMinistryWrapper implements DmMinistry, ModelWrapper<DmMinistry> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmMinistry> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmMinistry> toCacheModel() {
 		return _dmMinistry.toCacheModel();
 	}
 
 	@Override
-	public DmMinistry toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmMinistry toEscapedModel() {
 		return new DmMinistryWrapper(_dmMinistry.toEscapedModel());
 	}
 
 	@Override
-	public DmMinistry toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmMinistry toUnescapedModel() {
 		return new DmMinistryWrapper(_dmMinistry.toUnescapedModel());
 	}
 

@@ -1062,7 +1062,8 @@ public class TempDeclarationOfHealthWrapper implements TempDeclarationOfHealth,
 	}
 
 	@Override
-	public int compareTo(TempDeclarationOfHealth tempDeclarationOfHealth) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.TempDeclarationOfHealth tempDeclarationOfHealth) {
 		return _tempDeclarationOfHealth.compareTo(tempDeclarationOfHealth);
 	}
 
@@ -1072,17 +1073,17 @@ public class TempDeclarationOfHealthWrapper implements TempDeclarationOfHealth,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempDeclarationOfHealth> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempDeclarationOfHealth> toCacheModel() {
 		return _tempDeclarationOfHealth.toCacheModel();
 	}
 
 	@Override
-	public TempDeclarationOfHealth toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempDeclarationOfHealth toEscapedModel() {
 		return new TempDeclarationOfHealthWrapper(_tempDeclarationOfHealth.toEscapedModel());
 	}
 
 	@Override
-	public TempDeclarationOfHealth toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempDeclarationOfHealth toUnescapedModel() {
 		return new TempDeclarationOfHealthWrapper(_tempDeclarationOfHealth.toUnescapedModel());
 	}
 

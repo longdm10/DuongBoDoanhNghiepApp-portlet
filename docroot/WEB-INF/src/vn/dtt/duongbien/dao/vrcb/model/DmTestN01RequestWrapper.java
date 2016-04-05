@@ -525,7 +525,8 @@ public class DmTestN01RequestWrapper implements DmTestN01Request,
 	}
 
 	@Override
-	public int compareTo(DmTestN01Request dmTestN01Request) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmTestN01Request dmTestN01Request) {
 		return _dmTestN01Request.compareTo(dmTestN01Request);
 	}
 
@@ -535,17 +536,17 @@ public class DmTestN01RequestWrapper implements DmTestN01Request,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmTestN01Request> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmTestN01Request> toCacheModel() {
 		return _dmTestN01Request.toCacheModel();
 	}
 
 	@Override
-	public DmTestN01Request toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmTestN01Request toEscapedModel() {
 		return new DmTestN01RequestWrapper(_dmTestN01Request.toEscapedModel());
 	}
 
 	@Override
-	public DmTestN01Request toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmTestN01Request toUnescapedModel() {
 		return new DmTestN01RequestWrapper(_dmTestN01Request.toUnescapedModel());
 	}
 

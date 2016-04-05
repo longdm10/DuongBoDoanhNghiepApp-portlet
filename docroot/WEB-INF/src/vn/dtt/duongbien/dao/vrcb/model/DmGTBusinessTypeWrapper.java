@@ -438,7 +438,8 @@ public class DmGTBusinessTypeWrapper implements DmGTBusinessType,
 	}
 
 	@Override
-	public int compareTo(DmGTBusinessType dmGTBusinessType) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmGTBusinessType dmGTBusinessType) {
 		return _dmGTBusinessType.compareTo(dmGTBusinessType);
 	}
 
@@ -448,17 +449,17 @@ public class DmGTBusinessTypeWrapper implements DmGTBusinessType,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmGTBusinessType> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmGTBusinessType> toCacheModel() {
 		return _dmGTBusinessType.toCacheModel();
 	}
 
 	@Override
-	public DmGTBusinessType toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmGTBusinessType toEscapedModel() {
 		return new DmGTBusinessTypeWrapper(_dmGTBusinessType.toEscapedModel());
 	}
 
 	@Override
-	public DmGTBusinessType toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmGTBusinessType toUnescapedModel() {
 		return new DmGTBusinessTypeWrapper(_dmGTBusinessType.toUnescapedModel());
 	}
 

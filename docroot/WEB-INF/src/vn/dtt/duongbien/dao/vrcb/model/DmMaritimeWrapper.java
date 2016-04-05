@@ -545,7 +545,7 @@ public class DmMaritimeWrapper implements DmMaritime, ModelWrapper<DmMaritime> {
 	}
 
 	@Override
-	public int compareTo(DmMaritime dmMaritime) {
+	public int compareTo(vn.dtt.duongbien.dao.vrcb.model.DmMaritime dmMaritime) {
 		return _dmMaritime.compareTo(dmMaritime);
 	}
 
@@ -555,17 +555,17 @@ public class DmMaritimeWrapper implements DmMaritime, ModelWrapper<DmMaritime> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmMaritime> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmMaritime> toCacheModel() {
 		return _dmMaritime.toCacheModel();
 	}
 
 	@Override
-	public DmMaritime toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmMaritime toEscapedModel() {
 		return new DmMaritimeWrapper(_dmMaritime.toEscapedModel());
 	}
 
 	@Override
-	public DmMaritime toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmMaritime toUnescapedModel() {
 		return new DmMaritimeWrapper(_dmMaritime.toUnescapedModel());
 	}
 

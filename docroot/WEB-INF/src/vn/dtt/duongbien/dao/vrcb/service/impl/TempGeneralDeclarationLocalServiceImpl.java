@@ -14,6 +14,12 @@
 
 package vn.dtt.duongbien.dao.vrcb.service.impl;
 
+import java.util.Date;
+
+import com.liferay.counter.service.CounterLocalServiceUtil;
+import com.liferay.portal.kernel.exception.SystemException;
+
+import vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration;
 import vn.dtt.duongbien.dao.vrcb.service.base.TempGeneralDeclarationLocalServiceBaseImpl;
 
 /**
@@ -37,4 +43,28 @@ public class TempGeneralDeclarationLocalServiceImpl
 	 *
 	 * Never reference this interface directly. Always use {@link vn.dtt.duongbien.dao.vrcb.service.TempGeneralDeclarationLocalServiceUtil} to access the temp general declaration local service.
 	 */
+	public TempGeneralDeclaration addTemGeneralDeclaration(String nameOfShip, String nameOfMaster, String portRegionCode, String portOfArrivalCode, String portHarbourCode, String portWharfCode, int isArrival, String voyageNumber, int numberOfCrew, int numberOfPassengers, String lastPortOfCallCode, Date dateOfArrival, String taxCodeOfShipownersAgents, String nameOfShipownersAgents, String shipAgencyAddress, String shipAgencyPhone, String shipAgencyFax, String shipAgencyEmail) throws SystemException{
+		long itemId = CounterLocalServiceUtil.increment(TempGeneralDeclaration.class.getName());
+		TempGeneralDeclaration tgd = tempGeneralDeclarationPersistence.create(itemId);
+		tgd.setNameOfShip(nameOfShip);
+		tgd.setNameOfMaster(nameOfMaster);
+		tgd.setPortRegionCode(portRegionCode);
+		tgd.setPortOfArrivalCode(portOfArrivalCode);
+		tgd.setPortHarbourCode(portHarbourCode);
+		tgd.setPortWharfCode(portWharfCode);
+		tgd.setIsArrival(isArrival);
+		tgd.setVoyageNumber(voyageNumber);
+		tgd.setNumberOfCrew(numberOfCrew);
+		tgd.setNumberOfPassengers(numberOfPassengers);
+		tgd.setLastPortOfCallCode(lastPortOfCallCode);
+		tgd.setDateOfArrival(dateOfArrival);
+		tgd.setTaxCodeOfShipownersAgents(taxCodeOfShipownersAgents);
+		tgd.setNameOfShipownersAgents(nameOfShipownersAgents);
+		tgd.setShipAgencyAddress(shipAgencyAddress);
+		tgd.setShipAgencyPhone(shipAgencyPhone);
+		tgd.setShipAgencyFax(shipAgencyFax);
+		tgd.setShipAgencyEmail(shipAgencyEmail);
+		tempGeneralDeclarationPersistence.update(tgd);
+		return tgd;
+	}
 }

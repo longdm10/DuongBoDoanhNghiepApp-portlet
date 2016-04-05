@@ -113,6 +113,17 @@ public class TempGeneralDeclarationLocalServiceClpInvoker {
 		_methodName569 = "setBeanIdentifier";
 
 		_methodParameterTypes569 = new String[] { "java.lang.String" };
+
+		_methodName574 = "addTemGeneralDeclaration";
+
+		_methodParameterTypes574 = new String[] {
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"int", "java.lang.String", "int", "int", "java.lang.String",
+				"java.util.Date", "java.lang.String", "java.lang.String",
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"java.lang.String"
+			};
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -216,6 +227,24 @@ public class TempGeneralDeclarationLocalServiceClpInvoker {
 			return null;
 		}
 
+		if (_methodName574.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes574, parameterTypes)) {
+			return TempGeneralDeclarationLocalServiceUtil.addTemGeneralDeclaration((java.lang.String)arguments[0],
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
+				(java.lang.String)arguments[3], (java.lang.String)arguments[4],
+				(java.lang.String)arguments[5],
+				((Integer)arguments[6]).intValue(),
+				(java.lang.String)arguments[7],
+				((Integer)arguments[8]).intValue(),
+				((Integer)arguments[9]).intValue(),
+				(java.lang.String)arguments[10], (java.util.Date)arguments[11],
+				(java.lang.String)arguments[12],
+				(java.lang.String)arguments[13],
+				(java.lang.String)arguments[14],
+				(java.lang.String)arguments[15],
+				(java.lang.String)arguments[16], (java.lang.String)arguments[17]);
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -255,4 +284,6 @@ public class TempGeneralDeclarationLocalServiceClpInvoker {
 	private String[] _methodParameterTypes568;
 	private String _methodName569;
 	private String[] _methodParameterTypes569;
+	private String _methodName574;
+	private String[] _methodParameterTypes574;
 }

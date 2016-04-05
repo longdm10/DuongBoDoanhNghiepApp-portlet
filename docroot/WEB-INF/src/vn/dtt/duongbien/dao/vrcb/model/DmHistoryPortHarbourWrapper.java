@@ -493,7 +493,8 @@ public class DmHistoryPortHarbourWrapper implements DmHistoryPortHarbour,
 	}
 
 	@Override
-	public int compareTo(DmHistoryPortHarbour dmHistoryPortHarbour) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmHistoryPortHarbour dmHistoryPortHarbour) {
 		return _dmHistoryPortHarbour.compareTo(dmHistoryPortHarbour);
 	}
 
@@ -503,17 +504,17 @@ public class DmHistoryPortHarbourWrapper implements DmHistoryPortHarbour,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmHistoryPortHarbour> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmHistoryPortHarbour> toCacheModel() {
 		return _dmHistoryPortHarbour.toCacheModel();
 	}
 
 	@Override
-	public DmHistoryPortHarbour toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryPortHarbour toEscapedModel() {
 		return new DmHistoryPortHarbourWrapper(_dmHistoryPortHarbour.toEscapedModel());
 	}
 
 	@Override
-	public DmHistoryPortHarbour toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryPortHarbour toUnescapedModel() {
 		return new DmHistoryPortHarbourWrapper(_dmHistoryPortHarbour.toUnescapedModel());
 	}
 

@@ -356,7 +356,8 @@ public class TempShipStoresItemsWrapper implements TempShipStoresItems,
 	}
 
 	@Override
-	public int compareTo(TempShipStoresItems tempShipStoresItems) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.TempShipStoresItems tempShipStoresItems) {
 		return _tempShipStoresItems.compareTo(tempShipStoresItems);
 	}
 
@@ -366,17 +367,17 @@ public class TempShipStoresItemsWrapper implements TempShipStoresItems,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempShipStoresItems> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempShipStoresItems> toCacheModel() {
 		return _tempShipStoresItems.toCacheModel();
 	}
 
 	@Override
-	public TempShipStoresItems toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempShipStoresItems toEscapedModel() {
 		return new TempShipStoresItemsWrapper(_tempShipStoresItems.toEscapedModel());
 	}
 
 	@Override
-	public TempShipStoresItems toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempShipStoresItems toUnescapedModel() {
 		return new TempShipStoresItemsWrapper(_tempShipStoresItems.toUnescapedModel());
 	}
 

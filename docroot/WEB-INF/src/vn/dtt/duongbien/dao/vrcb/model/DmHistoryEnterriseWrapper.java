@@ -739,7 +739,8 @@ public class DmHistoryEnterriseWrapper implements DmHistoryEnterrise,
 	}
 
 	@Override
-	public int compareTo(DmHistoryEnterrise dmHistoryEnterrise) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmHistoryEnterrise dmHistoryEnterrise) {
 		return _dmHistoryEnterrise.compareTo(dmHistoryEnterrise);
 	}
 
@@ -749,17 +750,17 @@ public class DmHistoryEnterriseWrapper implements DmHistoryEnterrise,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmHistoryEnterrise> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmHistoryEnterrise> toCacheModel() {
 		return _dmHistoryEnterrise.toCacheModel();
 	}
 
 	@Override
-	public DmHistoryEnterrise toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryEnterrise toEscapedModel() {
 		return new DmHistoryEnterriseWrapper(_dmHistoryEnterrise.toEscapedModel());
 	}
 
 	@Override
-	public DmHistoryEnterrise toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryEnterrise toUnescapedModel() {
 		return new DmHistoryEnterriseWrapper(_dmHistoryEnterrise.toUnescapedModel());
 	}
 

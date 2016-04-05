@@ -385,7 +385,8 @@ public class DmHistorySecurityLevelWrapper implements DmHistorySecurityLevel,
 	}
 
 	@Override
-	public int compareTo(DmHistorySecurityLevel dmHistorySecurityLevel) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmHistorySecurityLevel dmHistorySecurityLevel) {
 		return _dmHistorySecurityLevel.compareTo(dmHistorySecurityLevel);
 	}
 
@@ -395,17 +396,17 @@ public class DmHistorySecurityLevelWrapper implements DmHistorySecurityLevel,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmHistorySecurityLevel> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmHistorySecurityLevel> toCacheModel() {
 		return _dmHistorySecurityLevel.toCacheModel();
 	}
 
 	@Override
-	public DmHistorySecurityLevel toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistorySecurityLevel toEscapedModel() {
 		return new DmHistorySecurityLevelWrapper(_dmHistorySecurityLevel.toEscapedModel());
 	}
 
 	@Override
-	public DmHistorySecurityLevel toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistorySecurityLevel toUnescapedModel() {
 		return new DmHistorySecurityLevelWrapper(_dmHistorySecurityLevel.toUnescapedModel());
 	}
 

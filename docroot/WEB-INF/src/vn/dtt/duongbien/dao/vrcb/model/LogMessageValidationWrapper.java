@@ -385,7 +385,8 @@ public class LogMessageValidationWrapper implements LogMessageValidation,
 	}
 
 	@Override
-	public int compareTo(LogMessageValidation logMessageValidation) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.LogMessageValidation logMessageValidation) {
 		return _logMessageValidation.compareTo(logMessageValidation);
 	}
 
@@ -395,17 +396,17 @@ public class LogMessageValidationWrapper implements LogMessageValidation,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<LogMessageValidation> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.LogMessageValidation> toCacheModel() {
 		return _logMessageValidation.toCacheModel();
 	}
 
 	@Override
-	public LogMessageValidation toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.LogMessageValidation toEscapedModel() {
 		return new LogMessageValidationWrapper(_logMessageValidation.toEscapedModel());
 	}
 
 	@Override
-	public LogMessageValidation toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.LogMessageValidation toUnescapedModel() {
 		return new LogMessageValidationWrapper(_logMessageValidation.toUnescapedModel());
 	}
 

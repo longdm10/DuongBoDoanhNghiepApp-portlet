@@ -573,7 +573,8 @@ public class ResultNotificationWrapper implements ResultNotification,
 	}
 
 	@Override
-	public int compareTo(ResultNotification resultNotification) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.ResultNotification resultNotification) {
 		return _resultNotification.compareTo(resultNotification);
 	}
 
@@ -583,17 +584,17 @@ public class ResultNotificationWrapper implements ResultNotification,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<ResultNotification> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.ResultNotification> toCacheModel() {
 		return _resultNotification.toCacheModel();
 	}
 
 	@Override
-	public ResultNotification toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.ResultNotification toEscapedModel() {
 		return new ResultNotificationWrapper(_resultNotification.toEscapedModel());
 	}
 
 	@Override
-	public ResultNotification toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.ResultNotification toUnescapedModel() {
 		return new ResultNotificationWrapper(_resultNotification.toUnescapedModel());
 	}
 

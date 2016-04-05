@@ -274,6 +274,11 @@ public class DmPortHarbourLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static java.util.List getDmPortHarbour()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getDmPortHarbour();
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

@@ -14,6 +14,10 @@
 
 package vn.dtt.duongbien.dao.vrcb.service.impl;
 
+import java.util.List;
+
+import com.liferay.portal.kernel.exception.SystemException;
+
 import vn.dtt.duongbien.dao.vrcb.service.base.DmPortWharfLocalServiceBaseImpl;
 
 /**
@@ -36,4 +40,8 @@ public class DmPortWharfLocalServiceImpl extends DmPortWharfLocalServiceBaseImpl
 	 *
 	 * Never reference this interface directly. Always use {@link vn.dtt.duongbien.dao.vrcb.service.DmPortWharfLocalServiceUtil} to access the dm port wharf local service.
 	 */
+	
+	public List getDmPortWharf() throws SystemException{
+		return dmPortWharfPersistence.findAll();
+	}
 }

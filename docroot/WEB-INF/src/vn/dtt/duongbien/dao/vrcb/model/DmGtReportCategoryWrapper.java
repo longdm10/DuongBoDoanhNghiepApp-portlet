@@ -384,7 +384,8 @@ public class DmGtReportCategoryWrapper implements DmGtReportCategory,
 	}
 
 	@Override
-	public int compareTo(DmGtReportCategory dmGtReportCategory) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmGtReportCategory dmGtReportCategory) {
 		return _dmGtReportCategory.compareTo(dmGtReportCategory);
 	}
 
@@ -394,17 +395,17 @@ public class DmGtReportCategoryWrapper implements DmGtReportCategory,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmGtReportCategory> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmGtReportCategory> toCacheModel() {
 		return _dmGtReportCategory.toCacheModel();
 	}
 
 	@Override
-	public DmGtReportCategory toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmGtReportCategory toEscapedModel() {
 		return new DmGtReportCategoryWrapper(_dmGtReportCategory.toEscapedModel());
 	}
 
 	@Override
-	public DmGtReportCategory toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmGtReportCategory toUnescapedModel() {
 		return new DmGtReportCategoryWrapper(_dmGtReportCategory.toUnescapedModel());
 	}
 

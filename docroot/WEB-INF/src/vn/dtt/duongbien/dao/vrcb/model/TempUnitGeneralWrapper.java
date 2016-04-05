@@ -712,7 +712,8 @@ public class TempUnitGeneralWrapper implements TempUnitGeneral,
 	}
 
 	@Override
-	public int compareTo(TempUnitGeneral tempUnitGeneral) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.TempUnitGeneral tempUnitGeneral) {
 		return _tempUnitGeneral.compareTo(tempUnitGeneral);
 	}
 
@@ -722,17 +723,17 @@ public class TempUnitGeneralWrapper implements TempUnitGeneral,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempUnitGeneral> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempUnitGeneral> toCacheModel() {
 		return _tempUnitGeneral.toCacheModel();
 	}
 
 	@Override
-	public TempUnitGeneral toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempUnitGeneral toEscapedModel() {
 		return new TempUnitGeneralWrapper(_tempUnitGeneral.toEscapedModel());
 	}
 
 	@Override
-	public TempUnitGeneral toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempUnitGeneral toUnescapedModel() {
 		return new TempUnitGeneralWrapper(_tempUnitGeneral.toUnescapedModel());
 	}
 

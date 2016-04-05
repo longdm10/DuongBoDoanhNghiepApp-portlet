@@ -357,7 +357,8 @@ public class HistorySyncVersionWrapper implements HistorySyncVersion,
 	}
 
 	@Override
-	public int compareTo(HistorySyncVersion historySyncVersion) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.HistorySyncVersion historySyncVersion) {
 		return _historySyncVersion.compareTo(historySyncVersion);
 	}
 
@@ -367,17 +368,17 @@ public class HistorySyncVersionWrapper implements HistorySyncVersion,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<HistorySyncVersion> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.HistorySyncVersion> toCacheModel() {
 		return _historySyncVersion.toCacheModel();
 	}
 
 	@Override
-	public HistorySyncVersion toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.HistorySyncVersion toEscapedModel() {
 		return new HistorySyncVersionWrapper(_historySyncVersion.toEscapedModel());
 	}
 
 	@Override
-	public HistorySyncVersion toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.HistorySyncVersion toUnescapedModel() {
 		return new HistorySyncVersionWrapper(_historySyncVersion.toUnescapedModel());
 	}
 

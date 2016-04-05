@@ -523,7 +523,8 @@ public class TempPassengerDetailsWrapper implements TempPassengerDetails,
 	}
 
 	@Override
-	public int compareTo(TempPassengerDetails tempPassengerDetails) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.TempPassengerDetails tempPassengerDetails) {
 		return _tempPassengerDetails.compareTo(tempPassengerDetails);
 	}
 
@@ -533,17 +534,17 @@ public class TempPassengerDetailsWrapper implements TempPassengerDetails,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempPassengerDetails> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempPassengerDetails> toCacheModel() {
 		return _tempPassengerDetails.toCacheModel();
 	}
 
 	@Override
-	public TempPassengerDetails toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempPassengerDetails toEscapedModel() {
 		return new TempPassengerDetailsWrapper(_tempPassengerDetails.toEscapedModel());
 	}
 
 	@Override
-	public TempPassengerDetails toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempPassengerDetails toUnescapedModel() {
 		return new TempPassengerDetailsWrapper(_tempPassengerDetails.toUnescapedModel());
 	}
 

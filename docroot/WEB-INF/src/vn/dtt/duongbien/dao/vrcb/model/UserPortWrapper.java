@@ -297,7 +297,7 @@ public class UserPortWrapper implements UserPort, ModelWrapper<UserPort> {
 	}
 
 	@Override
-	public int compareTo(UserPort userPort) {
+	public int compareTo(vn.dtt.duongbien.dao.vrcb.model.UserPort userPort) {
 		return _userPort.compareTo(userPort);
 	}
 
@@ -307,17 +307,17 @@ public class UserPortWrapper implements UserPort, ModelWrapper<UserPort> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<UserPort> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.UserPort> toCacheModel() {
 		return _userPort.toCacheModel();
 	}
 
 	@Override
-	public UserPort toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.UserPort toEscapedModel() {
 		return new UserPortWrapper(_userPort.toEscapedModel());
 	}
 
 	@Override
-	public UserPort toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.UserPort toUnescapedModel() {
 		return new UserPortWrapper(_userPort.toUnescapedModel());
 	}
 

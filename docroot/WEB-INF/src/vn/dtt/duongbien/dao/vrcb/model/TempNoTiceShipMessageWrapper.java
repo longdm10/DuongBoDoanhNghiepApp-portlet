@@ -1939,7 +1939,8 @@ public class TempNoTiceShipMessageWrapper implements TempNoTiceShipMessage,
 	}
 
 	@Override
-	public int compareTo(TempNoTiceShipMessage tempNoTiceShipMessage) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.TempNoTiceShipMessage tempNoTiceShipMessage) {
 		return _tempNoTiceShipMessage.compareTo(tempNoTiceShipMessage);
 	}
 
@@ -1949,17 +1950,17 @@ public class TempNoTiceShipMessageWrapper implements TempNoTiceShipMessage,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempNoTiceShipMessage> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempNoTiceShipMessage> toCacheModel() {
 		return _tempNoTiceShipMessage.toCacheModel();
 	}
 
 	@Override
-	public TempNoTiceShipMessage toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempNoTiceShipMessage toEscapedModel() {
 		return new TempNoTiceShipMessageWrapper(_tempNoTiceShipMessage.toEscapedModel());
 	}
 
 	@Override
-	public TempNoTiceShipMessage toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempNoTiceShipMessage toUnescapedModel() {
 		return new TempNoTiceShipMessageWrapper(_tempNoTiceShipMessage.toUnescapedModel());
 	}
 

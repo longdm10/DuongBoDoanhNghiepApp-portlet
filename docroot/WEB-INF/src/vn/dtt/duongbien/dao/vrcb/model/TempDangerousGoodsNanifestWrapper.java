@@ -739,7 +739,8 @@ public class TempDangerousGoodsNanifestWrapper
 	}
 
 	@Override
-	public int compareTo(TempDangerousGoodsNanifest tempDangerousGoodsNanifest) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.TempDangerousGoodsNanifest tempDangerousGoodsNanifest) {
 		return _tempDangerousGoodsNanifest.compareTo(tempDangerousGoodsNanifest);
 	}
 
@@ -749,17 +750,17 @@ public class TempDangerousGoodsNanifestWrapper
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempDangerousGoodsNanifest> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempDangerousGoodsNanifest> toCacheModel() {
 		return _tempDangerousGoodsNanifest.toCacheModel();
 	}
 
 	@Override
-	public TempDangerousGoodsNanifest toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempDangerousGoodsNanifest toEscapedModel() {
 		return new TempDangerousGoodsNanifestWrapper(_tempDangerousGoodsNanifest.toEscapedModel());
 	}
 
 	@Override
-	public TempDangerousGoodsNanifest toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempDangerousGoodsNanifest toUnescapedModel() {
 		return new TempDangerousGoodsNanifestWrapper(_tempDangerousGoodsNanifest.toUnescapedModel());
 	}
 

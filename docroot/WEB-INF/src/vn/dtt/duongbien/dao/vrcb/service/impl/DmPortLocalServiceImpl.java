@@ -14,6 +14,10 @@
 
 package vn.dtt.duongbien.dao.vrcb.service.impl;
 
+import java.util.List;
+
+import com.liferay.portal.kernel.exception.SystemException;
+
 import vn.dtt.duongbien.dao.vrcb.service.base.DmPortLocalServiceBaseImpl;
 
 /**
@@ -36,4 +40,7 @@ public class DmPortLocalServiceImpl extends DmPortLocalServiceBaseImpl {
 	 *
 	 * Never reference this interface directly. Always use {@link vn.dtt.duongbien.dao.vrcb.service.DmPortLocalServiceUtil} to access the dm port local service.
 	 */
+	public List getDmPort() throws SystemException{
+		return dmPortPersistence.findAll();
+	}
 }

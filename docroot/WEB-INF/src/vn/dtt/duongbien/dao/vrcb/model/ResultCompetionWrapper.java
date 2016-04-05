@@ -1033,7 +1033,8 @@ public class ResultCompetionWrapper implements ResultCompetion,
 	}
 
 	@Override
-	public int compareTo(ResultCompetion resultCompetion) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.ResultCompetion resultCompetion) {
 		return _resultCompetion.compareTo(resultCompetion);
 	}
 
@@ -1043,17 +1044,17 @@ public class ResultCompetionWrapper implements ResultCompetion,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<ResultCompetion> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.ResultCompetion> toCacheModel() {
 		return _resultCompetion.toCacheModel();
 	}
 
 	@Override
-	public ResultCompetion toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.ResultCompetion toEscapedModel() {
 		return new ResultCompetionWrapper(_resultCompetion.toEscapedModel());
 	}
 
 	@Override
-	public ResultCompetion toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.ResultCompetion toUnescapedModel() {
 		return new ResultCompetionWrapper(_resultCompetion.toUnescapedModel());
 	}
 

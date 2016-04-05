@@ -113,6 +113,10 @@ public class DmPortRegionLocalServiceClpInvoker {
 		_methodName569 = "setBeanIdentifier";
 
 		_methodParameterTypes569 = new String[] { "java.lang.String" };
+
+		_methodName574 = "getDmPortRegion";
+
+		_methodParameterTypes574 = new String[] {  };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -216,6 +220,11 @@ public class DmPortRegionLocalServiceClpInvoker {
 			return null;
 		}
 
+		if (_methodName574.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes574, parameterTypes)) {
+			return DmPortRegionLocalServiceUtil.getDmPortRegion();
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -255,4 +264,6 @@ public class DmPortRegionLocalServiceClpInvoker {
 	private String[] _methodParameterTypes568;
 	private String _methodName569;
 	private String[] _methodParameterTypes569;
+	private String _methodName574;
+	private String[] _methodParameterTypes574;
 }

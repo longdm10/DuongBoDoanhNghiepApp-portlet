@@ -792,7 +792,8 @@ public class TempPlantQuarantineWrapper implements TempPlantQuarantine,
 	}
 
 	@Override
-	public int compareTo(TempPlantQuarantine tempPlantQuarantine) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.TempPlantQuarantine tempPlantQuarantine) {
 		return _tempPlantQuarantine.compareTo(tempPlantQuarantine);
 	}
 
@@ -802,17 +803,17 @@ public class TempPlantQuarantineWrapper implements TempPlantQuarantine,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempPlantQuarantine> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempPlantQuarantine> toCacheModel() {
 		return _tempPlantQuarantine.toCacheModel();
 	}
 
 	@Override
-	public TempPlantQuarantine toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempPlantQuarantine toEscapedModel() {
 		return new TempPlantQuarantineWrapper(_tempPlantQuarantine.toEscapedModel());
 	}
 
 	@Override
-	public TempPlantQuarantine toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempPlantQuarantine toUnescapedModel() {
 		return new TempPlantQuarantineWrapper(_tempPlantQuarantine.toUnescapedModel());
 	}
 

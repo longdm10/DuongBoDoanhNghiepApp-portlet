@@ -418,7 +418,7 @@ public class TempHealthCrewPassengerListWrapper
 
 	@Override
 	public int compareTo(
-		TempHealthCrewPassengerList tempHealthCrewPassengerList) {
+		vn.dtt.duongbien.dao.vrcb.model.TempHealthCrewPassengerList tempHealthCrewPassengerList) {
 		return _tempHealthCrewPassengerList.compareTo(tempHealthCrewPassengerList);
 	}
 
@@ -428,17 +428,17 @@ public class TempHealthCrewPassengerListWrapper
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempHealthCrewPassengerList> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempHealthCrewPassengerList> toCacheModel() {
 		return _tempHealthCrewPassengerList.toCacheModel();
 	}
 
 	@Override
-	public TempHealthCrewPassengerList toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempHealthCrewPassengerList toEscapedModel() {
 		return new TempHealthCrewPassengerListWrapper(_tempHealthCrewPassengerList.toEscapedModel());
 	}
 
 	@Override
-	public TempHealthCrewPassengerList toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempHealthCrewPassengerList toUnescapedModel() {
 		return new TempHealthCrewPassengerListWrapper(_tempHealthCrewPassengerList.toUnescapedModel());
 	}
 

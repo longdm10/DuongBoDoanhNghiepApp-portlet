@@ -708,7 +708,8 @@ public class TempCrewListWrapper implements TempCrewList,
 	}
 
 	@Override
-	public int compareTo(TempCrewList tempCrewList) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.TempCrewList tempCrewList) {
 		return _tempCrewList.compareTo(tempCrewList);
 	}
 
@@ -718,17 +719,17 @@ public class TempCrewListWrapper implements TempCrewList,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempCrewList> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempCrewList> toCacheModel() {
 		return _tempCrewList.toCacheModel();
 	}
 
 	@Override
-	public TempCrewList toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempCrewList toEscapedModel() {
 		return new TempCrewListWrapper(_tempCrewList.toEscapedModel());
 	}
 
 	@Override
-	public TempCrewList toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempCrewList toUnescapedModel() {
 		return new TempCrewListWrapper(_tempCrewList.toUnescapedModel());
 	}
 

@@ -795,7 +795,7 @@ public class TempDeclarationForPlantQuarantineWrapper
 
 	@Override
 	public int compareTo(
-		TempDeclarationForPlantQuarantine tempDeclarationForPlantQuarantine) {
+		vn.dtt.duongbien.dao.vrcb.model.TempDeclarationForPlantQuarantine tempDeclarationForPlantQuarantine) {
 		return _tempDeclarationForPlantQuarantine.compareTo(tempDeclarationForPlantQuarantine);
 	}
 
@@ -805,17 +805,17 @@ public class TempDeclarationForPlantQuarantineWrapper
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TempDeclarationForPlantQuarantine> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.TempDeclarationForPlantQuarantine> toCacheModel() {
 		return _tempDeclarationForPlantQuarantine.toCacheModel();
 	}
 
 	@Override
-	public TempDeclarationForPlantQuarantine toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempDeclarationForPlantQuarantine toEscapedModel() {
 		return new TempDeclarationForPlantQuarantineWrapper(_tempDeclarationForPlantQuarantine.toEscapedModel());
 	}
 
 	@Override
-	public TempDeclarationForPlantQuarantine toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.TempDeclarationForPlantQuarantine toUnescapedModel() {
 		return new TempDeclarationForPlantQuarantineWrapper(_tempDeclarationForPlantQuarantine.toUnescapedModel());
 	}
 

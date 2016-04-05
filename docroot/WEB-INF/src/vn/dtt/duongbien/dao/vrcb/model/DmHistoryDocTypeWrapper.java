@@ -384,7 +384,8 @@ public class DmHistoryDocTypeWrapper implements DmHistoryDocType,
 	}
 
 	@Override
-	public int compareTo(DmHistoryDocType dmHistoryDocType) {
+	public int compareTo(
+		vn.dtt.duongbien.dao.vrcb.model.DmHistoryDocType dmHistoryDocType) {
 		return _dmHistoryDocType.compareTo(dmHistoryDocType);
 	}
 
@@ -394,17 +395,17 @@ public class DmHistoryDocTypeWrapper implements DmHistoryDocType,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<DmHistoryDocType> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<vn.dtt.duongbien.dao.vrcb.model.DmHistoryDocType> toCacheModel() {
 		return _dmHistoryDocType.toCacheModel();
 	}
 
 	@Override
-	public DmHistoryDocType toEscapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryDocType toEscapedModel() {
 		return new DmHistoryDocTypeWrapper(_dmHistoryDocType.toEscapedModel());
 	}
 
 	@Override
-	public DmHistoryDocType toUnescapedModel() {
+	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryDocType toUnescapedModel() {
 		return new DmHistoryDocTypeWrapper(_dmHistoryDocType.toUnescapedModel());
 	}
 
