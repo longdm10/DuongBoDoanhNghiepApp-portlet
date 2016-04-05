@@ -286,6 +286,7 @@
 			<mime-type>text/html</mime-type>
 			<portlet-mode>view</portlet-mode>
 		</supports>
+        <resource-bundle>content.Language_vaoracangben</resource-bundle>
 		<portlet-info>
 			<title>Qlhs Phuong Tien Tnd Vao Ra Cang Bien</title>
 			<short-title>
@@ -321,6 +322,7 @@
 			<mime-type>text/html</mime-type>
 			<portlet-mode>view</portlet-mode>
 		</supports>
+		<resource-bundle>content.Language_vaoracangben</resource-bundle>
 		<portlet-info>
 			<title>Hspttdn Vao Cang Bien</title>
 			<short-title>Hspttdn Vao Cang Bien</short-title>
