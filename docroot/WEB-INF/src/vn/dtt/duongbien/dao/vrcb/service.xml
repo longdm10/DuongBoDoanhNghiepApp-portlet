@@ -4,7 +4,7 @@
 	<author>longdm</author>
     <namespace>nsbrcb</namespace>
 
-	<entity name="UserPort" table="user_port" local-service="true" remote-service="true" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="UserPort" table="user_port" local-service="true" remote-service="true" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<!-- PK fields -->
 		<column name="id" db-name="id" type="long" primary="true" />
@@ -29,7 +29,7 @@
 	</entity>
 
 
-	<entity name="LogMessageValidation" table="LOG_MESSAGE_VALIDATION" local-service="true" remote-service="true" data-source="vaoracangbienDataSource"   cache-enabled="false">
+	<entity name="LogMessageValidation" table="LOG_MESSAGE_VALIDATION" local-service="true" remote-service="true" data-source="vaoracangbienDataSource"   cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<!-- PK fields -->
 		<column name="id" db-name="id" type="long" primary="true" />
@@ -55,7 +55,7 @@
 		</finder>
 	</entity>
 
-	<entity name="RmdcShip" table="dmdc_ship" local-service="true" remote-service="true" cache-enabled="false" data-source="vaoracangbienDataSource" >
+	<entity name="RmdcShip" table="dmdc_ship" local-service="true" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager" data-source="vaoracangbienDataSource" >
 
 		<!-- PK fields -->
 		<column name="id" db-name="id" type="long" primary="true" />
@@ -105,7 +105,7 @@
 		</finder>
 	</entity>
 
-	<entity name="HistoryRmdcShip" table="history_dmdc_ship" local-service="true" remote-service="true" data-source="vaoracangbienDataSource"   cache-enabled="false">
+	<entity name="HistoryRmdcShip" table="history_dmdc_ship" local-service="true" remote-service="true" data-source="vaoracangbienDataSource"   cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 
 		<!-- PK fields -->
@@ -157,7 +157,7 @@
 		</finder>
 	</entity>
 
-	<entity name="HistorySyncVersion" table="history_sync_version" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"   cache-enabled="false">
+	<entity name="HistorySyncVersion" table="history_sync_version" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"   cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<!-- PK fields -->
 		<column name="id" db-name="id" type="long" primary="true" />
@@ -182,7 +182,7 @@
 
 	</entity>
 
-	<entity name="DmSyncCategory" table="dm_sync_category" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"   cache-enabled="false">
+	<entity name="DmSyncCategory" table="dm_sync_category" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"   cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<!-- PK fields -->
 		<column name="id" db-name="id" type="long" primary="true" />
@@ -200,7 +200,7 @@
 		</order>
 	</entity>
 
-	<entity name="DmEnterrise" table="dm_enterprise" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"   cache-enabled="false">
+	<entity name="DmEnterrise" table="dm_enterprise" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"   cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="enterpriseCode" db-name="enterprisecode" type="String" />
@@ -240,7 +240,7 @@
 	</entity>
 
 
-	<entity name="DmHistoryEnterrise" table="dm_history_enterprise" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"   cache-enabled="false">
+	<entity name="DmHistoryEnterrise" table="dm_history_enterprise" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"   cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="enterpriseCode" db-name="enterprisecode" type="String" />
@@ -282,7 +282,7 @@
 
 	</entity>
 
-	<entity name="DmState" table="dm_state" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"   cache-enabled="false">
+	<entity name="DmState" table="dm_state" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"   cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="stateCode" db-name="statecode" type="String" />
 		<column name="stateName" db-name="statename" type="String" />
@@ -304,7 +304,7 @@
 
 	</entity>
 
-	<entity name="DmHistoryState" table="dm_history_state" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmHistoryState" table="dm_history_state" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="stateCode" db-name="statecode" type="String" />
 		<column name="stateName" db-name="statename" type="String" />
@@ -331,7 +331,7 @@
 
 
 
-	<entity name="DmTestN01Request" table="dm_test_n01_request" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmTestN01Request" table="dm_test_n01_request" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="requestID" db-name="requestid" type="int" primary="true" />
 		<column name="enterpriseCode" db-name="enterprisecode" type="String" />
 		<column name="tenDuAn" db-name="ten_du_an" type="String" />
@@ -354,7 +354,7 @@
 
 
 
-	<entity name="DmArrivalPurpose" table="DM_ARRIVAL_PURPOSE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmArrivalPurpose" table="DM_ARRIVAL_PURPOSE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="purposeCode" db-name="PurposeCode" type="String" />
 		<column name="purposeName" db-name="PurposeName" type="String" />
@@ -377,7 +377,7 @@
 	</entity>
 
 
-	<entity name="DmHistoryArrivalPurpose" table="DM_HISTORY_ARRIVAL_PURPOSE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmHistoryArrivalPurpose" table="DM_HISTORY_ARRIVAL_PURPOSE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="purposeCode" db-name="PurposeCode" type="String" />
 		<column name="purposeName" db-name="PurposeName" type="String" />
@@ -403,7 +403,7 @@
 
 
 
-	<entity name="DmShipAgency" table="DM_SHIP_AGENCY" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmShipAgency" table="DM_SHIP_AGENCY" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="shipAgencyCode" db-name="ShipAgencyCode" type="String" />
 		<column name="shipAgencyName" db-name="ShipAgencyName" type="String" />
@@ -437,7 +437,7 @@
 	</entity>
 
 
-	<entity name="DmHistoryShipAgency" table="DM_HISTORY_SHIP_AGENCY" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmHistoryShipAgency" table="DM_HISTORY_SHIP_AGENCY" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="shipAgencyCode" db-name="ShipAgencyCode" type="String" />
 		<column name="shipAgencyName" db-name="ShipAgencyName" type="String" />
@@ -475,7 +475,7 @@
 	</entity>
 
 
-	<entity name="DmShipType" table="DM_SHIP_TYPE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmShipType" table="DM_SHIP_TYPE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="shipTypeCode" db-name="ShipTypeCode" type="String" />
 		<column name="shipTypeName" db-name="ShipTypeName" type="String" />
@@ -499,7 +499,7 @@
 
 
 
-	<entity name="DmHistoryShipType" table="DM_HISTORY_SHIP_TYPE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmHistoryShipType" table="DM_HISTORY_SHIP_TYPE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="shipTypeCode" db-name="ShipTypeCode" type="String" />
 		<column name="shipTypeName" db-name="ShipTypeName" type="String" />
@@ -529,7 +529,7 @@
 
 
 
-	<entity name="DmPortRegion" table="DM_PORT_REGION" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmPortRegion" table="DM_PORT_REGION" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="portRegionCode" db-name="PortRegionCode" type="String" />
 		<column name="portRegionName" db-name="PortRegionName" type="String" />
@@ -558,7 +558,7 @@
 	</entity>
 
 
-	<entity name="DmHistoryPortRegion" table="DM_HISTORY_PORT_REGION" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmHistoryPortRegion" table="DM_HISTORY_PORT_REGION" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="portRegionCode" db-name="PortRegionCode" type="String" />
 		<column name="portRegionName" db-name="PortRegionName" type="String" />
@@ -589,7 +589,7 @@
 
 
 
-	<entity name="DmPortWharf" table="DM_PORT_WHARF" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmPortWharf" table="DM_PORT_WHARF" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="portWharfCode" db-name="PortWharfCode" type="String" />
 		<column name="portWharfName" db-name="PortWharfName" type="String" />
@@ -625,7 +625,7 @@
 
 
 
-	<entity name="DmHistoryPortWharf" table="DM_HISTORY_PORT_WHARF" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmHistoryPortWharf" table="DM_HISTORY_PORT_WHARF" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="portWharfCode" db-name="PortWharfCode" type="String" />
 		<column name="portWharfName" db-name="PortWharfName" type="String" />
@@ -656,7 +656,7 @@
 	</entity>
 
 
-	<entity name="DmPortHarbour" table="DM_PORT_HARBOUR" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmPortHarbour" table="DM_PORT_HARBOUR" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="portHarbourCode" db-name="PortHarbourCode" type="String" />
 		<column name="portHarbourName" db-name="PortHarbourName" type="String" />
@@ -688,7 +688,7 @@
 
 
 
-	<entity name="DmHistoryPortHarbour" table="DM_HISTORY_PORT_HARBOUR" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmHistoryPortHarbour" table="DM_HISTORY_PORT_HARBOUR" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="portHarbourCode" db-name="PortHarbourCode" type="String" />
 		<column name="portHarbourName" db-name="PortHarbourName" type="String" />
@@ -725,7 +725,7 @@
 
 
 
-	<entity name="DmPort" table="DM_PORT" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmPort" table="DM_PORT" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="portCode" db-name="PortCode" type="String" />
 		<column name="loCode" db-name="LoCode" type="String" />
@@ -757,7 +757,7 @@
 	</entity>
 
 
-	<entity name="DmHistoryPort" table="DM_HISTORY_PORT" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmHistoryPort" table="DM_HISTORY_PORT" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="portCode" db-name="PortCode" type="String" />
 		<column name="loCode" db-name="LoCode" type="String" />
@@ -791,7 +791,7 @@
 
 
 
-	<entity name="DmUnitGeneral" table="DM_UNIT_GENERAL" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmUnitGeneral" table="DM_UNIT_GENERAL" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="unitCode" db-name="UnitCode" type="String" />
 		<column name="unitName" db-name="UnitName" type="String" />
@@ -815,7 +815,7 @@
 		</finder>
 	</entity>
 
-	<entity name="DmHistoryUnitGeneral" table="DM_HISTORY_UNIT_GENERAL" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmHistoryUnitGeneral" table="DM_HISTORY_UNIT_GENERAL" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="unitCode" db-name="UnitCode" type="String" />
 		<column name="unitName" db-name="UnitName" type="String" />
@@ -839,7 +839,7 @@
 		</finder>
 	</entity>
 
-	<entity name="DmDocType" table="DM_DOC_TYPE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmDocType" table="DM_DOC_TYPE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 
 		<column name="documentTypeCode" db-name="DocumentTypeCode" type="String" />
@@ -861,7 +861,7 @@
 		</finder>
 	</entity>
 
-	<entity name="DmHistoryDocType" table="DM_HISTORY_DOC_TYPE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmHistoryDocType" table="DM_HISTORY_DOC_TYPE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 
 		<column name="documentTypeCode" db-name="DocumentTypeCode" type="String" />
@@ -887,7 +887,7 @@
 		</finder>
 	</entity>
 
-	<entity name="DmPassportType" table="DM_PASSPORT_TYPE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmPassportType" table="DM_PASSPORT_TYPE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 
 		<column name="passportTypeCode" db-name="PassportTypeCode" type="String" />
@@ -911,7 +911,7 @@
 	</entity>
 
 
-	<entity name="DmHistoryPassportType" table="DM_HISTORY_PASSPORT_TYPE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmHistoryPassportType" table="DM_HISTORY_PASSPORT_TYPE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 
 		<column name="passportTypeCode" db-name="PassportTypeCode" type="String" />
@@ -939,7 +939,7 @@
 	</entity>
 
 
-	<entity name="DmSecurityLevel" table="DM_SECURITY_LEVEL" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmSecurityLevel" table="DM_SECURITY_LEVEL" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="securityLevelCode" db-name="SecurityLevelCode" type="String" />
 		<column name="securityLevel" db-name="SecurityLevel" type="String" />
@@ -966,7 +966,7 @@
 	</entity>
 
 
-	<entity name="DmHistorySecurityLevel" table="DM_HISTORY_SECURITY_LEVEL" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmHistorySecurityLevel" table="DM_HISTORY_SECURITY_LEVEL" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 		<column name="securityLevelCode" db-name="SecurityLevelCode" type="String" />
 		<column name="securityLevel" db-name="SecurityLevel" type="String" />
@@ -995,7 +995,7 @@
 
 
 
-	<entity name="DmGoodsType" table="DM_GOODS_TYPE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmGoodsType" table="DM_GOODS_TYPE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 
 		<column name="goodsTypeCode" db-name="GoodsTypeCode" type="String" />
@@ -1022,7 +1022,7 @@
 
 
 
-	<entity name="DmHistoryGoodsType" table="DM_HISTORY_GOODS_TYPE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"   cache-enabled="false">
+	<entity name="DmHistoryGoodsType" table="DM_HISTORY_GOODS_TYPE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"   cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 
 		<column name="goodsTypeCode" db-name="GoodsTypeCode" type="String" />
@@ -1051,7 +1051,7 @@
 	</entity>
 
 
-	<entity name="DmMaritime" table="DM_MARITIME" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmMaritime" table="DM_MARITIME" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 
 		<column name="maritimeCode" db-name="MaritimeCode" type="String" />
@@ -1077,7 +1077,7 @@
 		</finder>
 	</entity>
 
-	<entity name="DmHistoryMaritime" table="DM_HISTORY_MARITIME" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmHistoryMaritime" table="DM_HISTORY_MARITIME" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 
 		<column name="maritimeCode" db-name="MaritimeCode" type="String" />
@@ -1111,7 +1111,7 @@
 	</entity>
 
 
-	<entity name="DmRankRating" table="DM_RANK_RATING" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmRankRating" table="DM_RANK_RATING" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 
 		<column name="rankCode" db-name="RankCode" type="String" />
@@ -1138,7 +1138,7 @@
 	</entity>
 
 
-	<entity name="DmHistoryRankRating" table="DM_HISTORY_RANK_RATING" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmHistoryRankRating" table="DM_HISTORY_RANK_RATING" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 
 		<column name="rankCode" db-name="RankCode" type="String" />
@@ -1164,7 +1164,7 @@
 	</entity>
 
 
-	<entity name="DmGoods" table="DM_GOODS" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmGoods" table="DM_GOODS" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 
 		<column name="goodsItemCode" db-name="GoodsItemCode" type="String" />
@@ -1192,7 +1192,7 @@
 	</entity>
 
 
-	<entity name="DmHistoryGoods" table="DM_HISTORY_GOODS" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmHistoryGoods" table="DM_HISTORY_GOODS" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 
 		<column name="goodsItemCode" db-name="GoodsItemCode" type="String" />
@@ -1224,7 +1224,7 @@
 	</entity>
 
 
-	<entity name="DmPackage" table="DM_PACKAGE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmPackage" table="DM_PACKAGE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 
 		<column name="packageCode" db-name="PackageCode" type="String" />
@@ -1248,7 +1248,7 @@
 	</entity>
 
 
-	<entity name="DmHistoryPackage" table="DM_HISTORY_PACKAGE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmHistoryPackage" table="DM_HISTORY_PACKAGE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 
 		<column name="packageCode" db-name="PackageCode" type="String" />
@@ -1275,7 +1275,7 @@
 		</finder>
 	</entity>
 
-	<entity name="DmRepresentative" table="DM_REPRESENTATIVE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmRepresentative" table="DM_REPRESENTATIVE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 
 		<column name="repCode" db-name="RepCode" type="String" />
@@ -1303,7 +1303,7 @@
 	</entity>
 
 
-	<entity name="DmHistoryRepresentative" table="DM_HISTORY_REPRESENTATIVE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false">
+	<entity name="DmHistoryRepresentative" table="DM_HISTORY_REPRESENTATIVE" local-service="true" remote-service="false" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 
 		<column name="repCode" db-name="RepCode" type="String" />
@@ -1330,7 +1330,7 @@
 	</entity>
 
 	
-	<entity name="DmGtStatus" table="DM_GT_STATUS" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false">
+	<entity name="DmGtStatus" table="DM_GT_STATUS" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<!-- PK fields -->
 		<column name="id" db-name="id" type="long" primary="true" />
@@ -1364,7 +1364,7 @@
 
 
 	<entity name="DmGTBusinessType" table="DM_GT_BUSINESS_TYPE" local-service="true" remote-service="true" data-source="vaoracangbienDataSource"
-		cache-enabled="false">
+		cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<!-- PK fields -->
 		<column name="id" db-name="id" type="long" primary="true" />
@@ -1392,7 +1392,7 @@
 
 
 	<entity name="DmGTFunctionType" table="DM_GT_FUNCTION_TYPE" local-service="true" remote-service="true" data-source="vaoracangbienDataSource"
-		cache-enabled="false">
+		cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<!-- PK fields -->
 		<column name="id" db-name="id" type="long" primary="true" />
@@ -1418,7 +1418,7 @@
 	</entity>
 
 	<entity name="DmGTShipPosition" table="DM_GT_SHIP_POSITION" local-service="true" remote-service="true" data-source="vaoracangbienDataSource"
-		cache-enabled="false">
+		cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<!-- PK fields -->
 		<column name="id" db-name="id" type="long" primary="true" />
@@ -1446,7 +1446,7 @@
 
 
 	<entity name="DmGtReportTemplate" table="DM_GT_REPORT_TEMPLATE" local-service="true" remote-service="true" data-source="vaoracangbienDataSource"
-		cache-enabled="false">
+		cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -1476,7 +1476,7 @@
 	</entity>
 
 	<entity name="DmGtReportCategory" table="DM_GT_REPORT_CATEGORY" local-service="true" remote-service="true" data-source="vaoracangbienDataSource"
-		cache-enabled="false">
+		cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -1496,7 +1496,7 @@
 	</entity>
 
 	<entity name="DmGtOrganization" table="DM_GT_ORGANIZATION" local-service="true" remote-service="true" data-source="vaoracangbienDataSource"
-		cache-enabled="false">
+		cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -1523,7 +1523,7 @@
 
 
 
-	<entity name="DmGtRouteConfig" table="DM_GT_ROUTE_CONFIG" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false">
+	<entity name="DmGtRouteConfig" table="DM_GT_ROUTE_CONFIG" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -1553,7 +1553,7 @@
 
 	</entity>
 
-	<entity name="DmGtVersion" table="DM_GT_VERSION" local-service="true" remote-service="false" data-source="vaoracangbienDataSource" cache-enabled="false">
+	<entity name="DmGtVersion" table="DM_GT_VERSION" local-service="true" remote-service="false" data-source="vaoracangbienDataSource" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="id" type="int" primary="true" />
 
 		<column name="versionName" db-name="VersionName" type="String" />
@@ -1582,7 +1582,7 @@
 		</order>
 	</entity>
 
-	<entity name="DmCertificate" table="DM_CERTIFICATE" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false">
+	<entity name="DmCertificate" table="DM_CERTIFICATE" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -1610,7 +1610,7 @@
 	</entity>
 
 	<entity name="DmHistoryMinistry" table="DM_HISTORY_MINISTRY" local-service="true" remote-service="true" data-source="vaoracangbienDataSource"
-		cache-enabled="false">
+		cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -1635,7 +1635,7 @@
 	</entity>
 
 
-	<entity name="DmMinistry" table="DM_MINISTRY" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false">
+	<entity name="DmMinistry" table="DM_MINISTRY" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -1661,7 +1661,7 @@
 	</entity>
 
 
-	<entity name="ResponseBo" table="responsebo" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="ResponseBo" table="responsebo" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<!-- PK fields -->
 		<column name="id" db-name="id" type="long" primary="true" />
@@ -1669,7 +1669,7 @@
 		<column name="errorMessage" db-name="errormessage" type="String" />
 	</entity>
 
-	<entity name="DocumentGeneral" table="document_general" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="DocumentGeneral" table="document_general" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<!-- PK fields -->
 		<column name="id" db-name="id" type="long" primary="true" />
@@ -1712,7 +1712,7 @@
 			<order-column name="createDate" />
 		</order>
 	</entity>
-	<entity name="CrewList" table="crew_list" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="CrewList" table="crew_list" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<!-- PK fields -->
 		<column name="id" db-name="id" type="long" primary="true" />
@@ -1738,7 +1738,7 @@
 		</order>
 	</entity>
 
-	<entity name="PassengerList" table="passenger_list" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="PassengerList" table="passenger_list" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<!-- PK fields -->
 		<column name="id" db-name="id" type="long" primary="true" />
@@ -1765,7 +1765,7 @@
 		</order>
 	</entity>
 
-	<entity name="Document" table="document" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="Document" table="document" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<!-- PK fields -->
 
@@ -1782,7 +1782,7 @@
 
 	</entity>
 
-	<entity name="NoticeShipMessage" table="notice_ship_message" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false">
+	<entity name="NoticeShipMessage" table="notice_ship_message" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<!-- PK fields -->
 		<column name="id" db-name="id" type="long" primary="true" />
@@ -1815,7 +1815,7 @@
 		</order>
 	</entity>
 
-	<entity name="TempShipSecurityMessage" table="TEMP_SHIP_SECURITY_MESSAGE" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempShipSecurityMessage" table="TEMP_SHIP_SECURITY_MESSAGE" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 		<column name="requestCode" db-name="RequestCode" type="String" />
@@ -1892,7 +1892,7 @@
 		</finder>
 	</entity>
 
-	<entity name="TempShipSecurityPortItems" table="TEMP_SHIP_SECURITY_PORT_ITEMS" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempShipSecurityPortItems" table="TEMP_SHIP_SECURITY_PORT_ITEMS" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -1916,7 +1916,7 @@
 
 
 
-	<entity name="TempNoTiceShipMessage" table="TEMP_NOTICE_SHIP_MESSAGE" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempNoTiceShipMessage" table="TEMP_NOTICE_SHIP_MESSAGE" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 		<column name="requestCode" db-name="RequestCode" type="String" />
@@ -2014,7 +2014,7 @@
 
 
 
-	<entity name="TempCargoDeclaration" table="TEMP_CARGO_DECLARATION" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempCargoDeclaration" table="TEMP_CARGO_DECLARATION" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 		<column name="requestCode" db-name="RequestCode" type="String" />
@@ -2060,7 +2060,7 @@
 
 
 
-	<entity name="TempGoodsItems" table="TEMP_GOODS_ITEMS" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempGoodsItems" table="TEMP_GOODS_ITEMS" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 		<column name="requestCode" db-name="RequestCode" type="String" />
@@ -2085,7 +2085,7 @@
 	</entity>
 
 
-	<entity name="TempCrewList" table="TEMP_CREW_LIST" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempCrewList" table="TEMP_CREW_LIST" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -2131,7 +2131,7 @@
 	</entity>
 
 
-	<entity name="TempCrewDetails" table="TEMP_CREW_DETAILS" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempCrewDetails" table="TEMP_CREW_DETAILS" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -2163,7 +2163,7 @@
 
 
 
-	<entity name="TempPassengerList" table="TEMP_PASSENGER_LIST" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempPassengerList" table="TEMP_PASSENGER_LIST" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -2207,7 +2207,7 @@
 	</entity>
 
 
-	<entity name="TempPassengerDetails" table="TEMP_PASSENGER_DETAILS" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempPassengerDetails" table="TEMP_PASSENGER_DETAILS" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -2243,7 +2243,7 @@
 
 
 	<entity name="TempDangerousGoodsNanifest" table="TEMP_DANGEROUS_GOODS_MANIFEST" local-service="true" data-source="vaoracangbienDataSource"
-		remote-service="true" cache-enabled="false">
+		remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 		<column name="requestCode" db-name="RequestCode" type="String" />
@@ -2289,7 +2289,7 @@
 
 
 
-	<entity name="TempDangerousGoodsItems" table="TEMP_DANGEROUS_GOODS_ITEMS" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempDangerousGoodsItems" table="TEMP_DANGEROUS_GOODS_ITEMS" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -2323,7 +2323,7 @@
 
 
 
-	<entity name="TempShipStoresDeclaration" table="TEMP_SHIP_STORES_DECLARATION" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempShipStoresDeclaration" table="TEMP_SHIP_STORES_DECLARATION" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -2375,7 +2375,7 @@
 		</finder>
 	</entity>
 
-	<entity name="TempShipStoresItems" table="TEMP_SHIP_STORES_ITEMS" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempShipStoresItems" table="TEMP_SHIP_STORES_ITEMS" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -2400,7 +2400,7 @@
 
 
 
-	<entity name="TempCrewEffectsDeclaration" table="TEMP_CREW_EFFECTS_DECLARATION" local-service="true" data-source="vaoracangbienDataSource"  cache-enabled="false"
+	<entity name="TempCrewEffectsDeclaration" table="TEMP_CREW_EFFECTS_DECLARATION" local-service="true" data-source="vaoracangbienDataSource"  cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager"
 		remote-service="true">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
@@ -2444,7 +2444,7 @@
 
 
 
-	<entity name="TempCrewEffectsItems" table="TEMP_CREW_EFFECTS_ITEMS" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempCrewEffectsItems" table="TEMP_CREW_EFFECTS_ITEMS" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -2468,7 +2468,7 @@
 
 
 
-	<entity name="TempDeclarationForPlantQuarantine" table="temp_plant_quarantine" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempDeclarationForPlantQuarantine" table="temp_plant_quarantine" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -2519,7 +2519,7 @@
 	</entity>
 
 
-	<entity name="TempDeclarationForAnimalQuarantine" table="temp_animal_quarantine" local-service="true" data-source="vaoracangbienDataSource" cache-enabled="false"
+	<entity name="TempDeclarationForAnimalQuarantine" table="temp_animal_quarantine" local-service="true" data-source="vaoracangbienDataSource" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager"
 		remote-service="true">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
@@ -2568,7 +2568,7 @@
 
 
 
-	<entity name="TempDeclarationOfHealth" table="TEMP_DECLARATION_OF_HEALTH" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempDeclarationOfHealth" table="TEMP_DECLARATION_OF_HEALTH" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -2630,7 +2630,7 @@
 
 
 
-	<entity name="TempHealthCrewPassengerList" table="TEMP_HEALTH_CREW_PAX_LIST" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempHealthCrewPassengerList" table="TEMP_HEALTH_CREW_PAX_LIST" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -2657,7 +2657,7 @@
 
 
 
-	<entity name="TempHealthQuestion" table="TEMP_HEALTH_QUESTION" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempHealthQuestion" table="TEMP_HEALTH_QUESTION" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -2696,7 +2696,7 @@
 
 
 
-	<entity name="TempAttachmentDeclarationHealth" table="TEMP_ATT_DECLARATION_HEALTH" local-service="true" data-source="vaoracangbienDataSource" cache-enabled="false"
+	<entity name="TempAttachmentDeclarationHealth" table="TEMP_ATT_DECLARATION_HEALTH" local-service="true" data-source="vaoracangbienDataSource" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager"
 		remote-service="true">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
@@ -2734,7 +2734,7 @@
 
 
 
-	<entity name="TempGeneralDeclaration" table="TEMP_GENERAL_DECLARATION" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempGeneralDeclaration" table="TEMP_GENERAL_DECLARATION" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 		<column name="requestCode" db-name="RequestCode" type="String" />
@@ -2820,7 +2820,7 @@
 
 
 
-	<entity name="TempUnitGeneral" table="TEMP_UNIT_GENERAL" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempUnitGeneral" table="TEMP_UNIT_GENERAL" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -2858,7 +2858,7 @@
 		</finder>
 	</entity>
 
-	<entity name="TempAnimalQuarantine" table="TEMP_ANIMAL_QUARANTINE" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempAnimalQuarantine" table="TEMP_ANIMAL_QUARANTINE" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 		<column name="requestCode" db-name="RequestCode" type="String" />
@@ -2904,7 +2904,7 @@
 	</entity>
 
 
-	<entity name="TempPlantQuarantine" table="TEMP_PLANT_QUARANTINE" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempPlantQuarantine" table="TEMP_PLANT_QUARANTINE" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 		<column name="requestCode" db-name="RequestCode" type="String" />
@@ -2956,7 +2956,7 @@
 
 
 
-	<entity name="TempDocument" table="TEMP_DOCUMENT" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="TempDocument" table="TEMP_DOCUMENT" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 		<column name="requestCode" db-name="RequestCode" type="String" />
@@ -3019,7 +3019,7 @@
 
 
 
-	<entity name="IssuePortClearance" table="ISSUE_PORT_CLEARANCE" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="IssuePortClearance" table="ISSUE_PORT_CLEARANCE" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 		<column name="requestCode" db-name="RequestCode" type="String" />
@@ -3087,7 +3087,7 @@
 
 
 
-	<entity name="IssuePermissionForTransit" table="ISSUE_PERMISSION_FOR_TRANSIT" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="IssuePermissionForTransit" table="ISSUE_PERMISSION_FOR_TRANSIT" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -3169,7 +3169,7 @@
 	</entity>
 
 
-	<entity name="IssueAcceptanceForTransit" table="ISSUE_ACCEPTANCE_FOR_TRANSIT" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="IssueAcceptanceForTransit" table="ISSUE_ACCEPTANCE_FOR_TRANSIT" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -3217,7 +3217,7 @@
 
 
 
-	<entity name="IssueShiftingOrder" table="ISSUE_SHIFTING_ORDER" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="IssueShiftingOrder" table="ISSUE_SHIFTING_ORDER" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 		<column name="requestCode" db-name="RequestCode" type="String" />
@@ -3288,7 +3288,7 @@
 
 
 
-	<entity name="InterfaceRequest" table="INTERFACE_REQUEST" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="InterfaceRequest" table="INTERFACE_REQUEST" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -3334,7 +3334,7 @@
 	</entity>
 	
 	
-	<entity name="InterfaceRequestField" table="INTERFACE_REQUEST" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="InterfaceRequestField" table="INTERFACE_REQUEST" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -3378,7 +3378,7 @@
 		</finder>
 	</entity>
 	
-	<entity name="HistoryInterfaceRequest" table="HISTORY_INTERFACE_REQUEST" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="HistoryInterfaceRequest" table="HISTORY_INTERFACE_REQUEST" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -3423,7 +3423,7 @@
 
 
 
-	<entity name="HistoryInterfaceRequestField" table="HISTORY_INTERFACE_REQUEST" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="HistoryInterfaceRequestField" table="HISTORY_INTERFACE_REQUEST" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 
@@ -3465,7 +3465,7 @@
 		</finder>
 	</entity>
 	
-	<entity name="Modify" table="gt_modify" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="Modify" table="gt_modify" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<column name="id" db-name="ID" type="long" primary="true" />
 		<column name="modifyCode" db-name="modifycode" type="String" />
@@ -3487,7 +3487,7 @@
 	</entity>
 
 	
-	<entity name="ResultCompetion" table="RESULT_COMPLETION" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false">
+	<entity name="ResultCompetion" table="RESULT_COMPLETION" local-service="true" data-source="vaoracangbienDataSource" remote-service="true" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<!-- PK fields -->
 		<column name="id" db-name="id" type="long" primary="true" />
@@ -3538,7 +3538,7 @@
 		</finder>
 
 	</entity>
-	<entity name="ResultDeclaration" table="RESULT_DECLARATION" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false">
+	<entity name="ResultDeclaration" table="RESULT_DECLARATION" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 
 		<!-- PK fields -->
 		<column name="id" db-name="id" type="long" primary="true" />
@@ -3600,7 +3600,7 @@
 		</finder>
 	</entity>
 
-	<entity name="ResultCertificate" table="result_certificate" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false">
+	<entity name="ResultCertificate" table="result_certificate" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="ID" type="long" primary="true" />
 
 		<column name="documentName" db-name="DocumentName" type="long" />
@@ -3636,7 +3636,7 @@
 		</finder>
 	</entity>
 
-	<entity name="ResultNotification" table="result_notification" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false">
+	<entity name="ResultNotification" table="result_notification" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="ID" type="long" primary="true" />
 		<column name="requestCode" db-name="RequestCode" type="String" />
 		<column name="requestState" db-name="RequestState" type="int" />
@@ -3675,7 +3675,7 @@
 
 
 
-	<entity name="ResultMinistry" table="RESULT_MINISTRY" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false">
+	<entity name="ResultMinistry" table="RESULT_MINISTRY" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="ID" type="long" primary="true" />
 
 		<column name="requestCode" db-name="RequestCode" type="String" />
@@ -3722,7 +3722,7 @@
 	</entity>
 
 
-	<entity name="ResultHistoryMinistry" table="RESULT_HISTORY_MINISTRY" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false">
+	<entity name="ResultHistoryMinistry" table="RESULT_HISTORY_MINISTRY" local-service="true" remote-service="true" data-source="vaoracangbienDataSource" cache-enabled="false" session-factory="ravaocangbienSessionFactory" tx-manager="ravaocangbienTransactionManager">
 		<column name="id" db-name="ID" type="long" primary="true" />
 
 		<column name="requestCode" db-name="RequestCode" type="String" />
