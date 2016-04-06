@@ -16,6 +16,7 @@ package vn.dtt.duongbien.dao.vrcb.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface DmGoodsTypeLocalService extends BaseLocalService,
 	* @return the dm goods type that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.duongbien.dao.vrcb.model.DmGoodsType addDmGoodsType(
 		vn.dtt.duongbien.dao.vrcb.model.DmGoodsType dmGoodsType)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -72,6 +74,7 @@ public interface DmGoodsTypeLocalService extends BaseLocalService,
 	* @throws PortalException if a dm goods type with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.duongbien.dao.vrcb.model.DmGoodsType deleteDmGoodsType(int id)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
@@ -83,6 +86,7 @@ public interface DmGoodsTypeLocalService extends BaseLocalService,
 	* @return the dm goods type that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.duongbien.dao.vrcb.model.DmGoodsType deleteDmGoodsType(
 		vn.dtt.duongbien.dao.vrcb.model.DmGoodsType dmGoodsType)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -222,6 +226,7 @@ public interface DmGoodsTypeLocalService extends BaseLocalService,
 	* @return the dm goods type that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.duongbien.dao.vrcb.model.DmGoodsType updateDmGoodsType(
 		vn.dtt.duongbien.dao.vrcb.model.DmGoodsType dmGoodsType)
 		throws com.liferay.portal.kernel.exception.SystemException;

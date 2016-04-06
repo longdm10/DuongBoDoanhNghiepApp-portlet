@@ -646,6 +646,10 @@ public class DmTestN01RequestClp extends BaseModelImpl<DmTestN01Request>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey();
@@ -773,4 +777,5 @@ public class DmTestN01RequestClp extends BaseModelImpl<DmTestN01Request>
 	private Date _authorizedDate;
 	private String _authorizedUser;
 	private BaseModel<?> _dmTestN01RequestRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

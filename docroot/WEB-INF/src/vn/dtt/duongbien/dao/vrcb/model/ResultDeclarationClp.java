@@ -575,6 +575,10 @@ public class ResultDeclarationClp extends BaseModelImpl<ResultDeclaration>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -688,4 +692,5 @@ public class ResultDeclarationClp extends BaseModelImpl<ResultDeclaration>
 	private String _remainingTime;
 	private String _remarks;
 	private BaseModel<?> _resultDeclarationRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

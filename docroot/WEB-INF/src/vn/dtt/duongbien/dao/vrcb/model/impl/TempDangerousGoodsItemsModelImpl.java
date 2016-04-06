@@ -86,8 +86,8 @@ public class TempDangerousGoodsItemsModelImpl extends BaseModelImpl<TempDangerou
 	public static final String ORDER_BY_JPQL = " ORDER BY tempDangerousGoodsItems.id ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY TEMP_DANGEROUS_GOODS_ITEMS.ID ASC";
 	public static final String DATA_SOURCE = "vaoracangbienDataSource";
-	public static final String SESSION_FACTORY = "liferaySessionFactory";
-	public static final String TX_MANAGER = "liferayTransactionManager";
+	public static final String SESSION_FACTORY = "ravaocangbienSessionFactory";
+	public static final String TX_MANAGER = "ravaocangbienTransactionManager";
 	public static final boolean ENTITY_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.entity.cache.enabled.vn.dtt.duongbien.dao.vrcb.model.TempDangerousGoodsItems"),
 			false);

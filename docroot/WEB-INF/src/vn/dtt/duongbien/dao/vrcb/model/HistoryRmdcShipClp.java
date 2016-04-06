@@ -1197,6 +1197,10 @@ public class HistoryRmdcShipClp extends BaseModelImpl<HistoryRmdcShip>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1450,4 +1454,5 @@ public class HistoryRmdcShipClp extends BaseModelImpl<HistoryRmdcShip>
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _historyRmdcShipRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

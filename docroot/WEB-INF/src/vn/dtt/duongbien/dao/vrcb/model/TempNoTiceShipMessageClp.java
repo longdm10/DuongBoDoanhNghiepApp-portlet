@@ -2301,6 +2301,10 @@ public class TempNoTiceShipMessageClp extends BaseModelImpl<TempNoTiceShipMessag
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -2792,4 +2796,5 @@ public class TempNoTiceShipMessageClp extends BaseModelImpl<TempNoTiceShipMessag
 	private int _documentYear;
 	private String _nameOfShipAgent;
 	private BaseModel<?> _tempNoTiceShipMessageRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

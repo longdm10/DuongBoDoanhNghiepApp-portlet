@@ -447,6 +447,10 @@ public class HistorySyncVersionClp extends BaseModelImpl<HistorySyncVersion>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -532,4 +536,5 @@ public class HistorySyncVersionClp extends BaseModelImpl<HistorySyncVersion>
 	private String _syncVersion;
 	private Date _latestValueDate;
 	private BaseModel<?> _historySyncVersionRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

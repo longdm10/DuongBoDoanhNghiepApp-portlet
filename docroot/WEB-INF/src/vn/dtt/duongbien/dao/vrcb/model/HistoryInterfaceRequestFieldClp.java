@@ -811,6 +811,10 @@ public class HistoryInterfaceRequestFieldClp extends BaseModelImpl<HistoryInterf
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -974,4 +978,5 @@ public class HistoryInterfaceRequestFieldClp extends BaseModelImpl<HistoryInterf
 	private String _receiverIdentify;
 	private String _remarks;
 	private BaseModel<?> _historyInterfaceRequestFieldRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

@@ -1301,6 +1301,10 @@ public class IssueShiftingOrderClp extends BaseModelImpl<IssueShiftingOrder>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1575,4 +1579,5 @@ public class IssueShiftingOrderClp extends BaseModelImpl<IssueShiftingOrder>
 	private int _stampStatus;
 	private long _attachedFile;
 	private BaseModel<?> _issueShiftingOrderRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

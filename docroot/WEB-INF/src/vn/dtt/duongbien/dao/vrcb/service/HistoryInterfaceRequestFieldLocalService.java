@@ -16,6 +16,7 @@ package vn.dtt.duongbien.dao.vrcb.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface HistoryInterfaceRequestFieldLocalService
 	* @return the history interface request field that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.duongbien.dao.vrcb.model.HistoryInterfaceRequestField addHistoryInterfaceRequestField(
 		vn.dtt.duongbien.dao.vrcb.model.HistoryInterfaceRequestField historyInterfaceRequestField)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface HistoryInterfaceRequestFieldLocalService
 	* @throws PortalException if a history interface request field with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.duongbien.dao.vrcb.model.HistoryInterfaceRequestField deleteHistoryInterfaceRequestField(
 		long id)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -85,6 +88,7 @@ public interface HistoryInterfaceRequestFieldLocalService
 	* @return the history interface request field that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.duongbien.dao.vrcb.model.HistoryInterfaceRequestField deleteHistoryInterfaceRequestField(
 		vn.dtt.duongbien.dao.vrcb.model.HistoryInterfaceRequestField historyInterfaceRequestField)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -225,6 +229,7 @@ public interface HistoryInterfaceRequestFieldLocalService
 	* @return the history interface request field that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.duongbien.dao.vrcb.model.HistoryInterfaceRequestField updateHistoryInterfaceRequestField(
 		vn.dtt.duongbien.dao.vrcb.model.HistoryInterfaceRequestField historyInterfaceRequestField)
 		throws com.liferay.portal.kernel.exception.SystemException;

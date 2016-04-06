@@ -604,6 +604,10 @@ public class ResultMinistryClp extends BaseModelImpl<ResultMinistry>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -724,4 +728,5 @@ public class ResultMinistryClp extends BaseModelImpl<ResultMinistry>
 	private String _response;
 	private String _remarks;
 	private BaseModel<?> _resultMinistryRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

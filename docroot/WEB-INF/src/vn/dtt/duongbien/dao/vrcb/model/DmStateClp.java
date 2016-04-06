@@ -475,6 +475,10 @@ public class DmStateClp extends BaseModelImpl<DmState> implements DmState {
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey();
@@ -567,4 +571,5 @@ public class DmStateClp extends BaseModelImpl<DmState> implements DmState {
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmStateRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

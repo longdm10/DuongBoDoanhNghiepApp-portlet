@@ -852,6 +852,10 @@ public class TempCrewListClp extends BaseModelImpl<TempCrewList>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1028,4 +1032,5 @@ public class TempCrewListClp extends BaseModelImpl<TempCrewList>
 	private int _masterSignedImage;
 	private long _attachedFile;
 	private BaseModel<?> _tempCrewListRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

@@ -283,6 +283,10 @@ public class ResponseBoClp extends BaseModelImpl<ResponseBo>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -333,4 +337,5 @@ public class ResponseBoClp extends BaseModelImpl<ResponseBo>
 	private int _isSuccess;
 	private String _errorMessage;
 	private BaseModel<?> _responseBoRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

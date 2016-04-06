@@ -542,6 +542,10 @@ public class TempCrewDetailsClp extends BaseModelImpl<TempCrewDetails>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -648,4 +652,5 @@ public class TempCrewDetailsClp extends BaseModelImpl<TempCrewDetails>
 	private String _passportNumber;
 	private String _passportTypeCode;
 	private BaseModel<?> _tempCrewDetailsRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

@@ -475,6 +475,10 @@ public class ModifyClp extends BaseModelImpl<Modify> implements Modify {
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -567,4 +571,5 @@ public class ModifyClp extends BaseModelImpl<Modify> implements Modify {
 	private long _documentName;
 	private long _documentYear;
 	private BaseModel<?> _modifyRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

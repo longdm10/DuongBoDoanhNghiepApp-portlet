@@ -826,6 +826,10 @@ public class InterfaceRequestClp extends BaseModelImpl<InterfaceRequest>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -995,4 +999,5 @@ public class InterfaceRequestClp extends BaseModelImpl<InterfaceRequest>
 	private String _receiverIdentify;
 	private String _remarks;
 	private BaseModel<?> _interfaceRequestRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

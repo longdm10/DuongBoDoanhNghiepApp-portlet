@@ -513,6 +513,10 @@ public class DmGtOrganizationClp extends BaseModelImpl<DmGtOrganization>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -612,4 +616,5 @@ public class DmGtOrganizationClp extends BaseModelImpl<DmGtOrganization>
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmGtOrganizationRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

@@ -506,6 +506,10 @@ public class DmPackageClp extends BaseModelImpl<DmPackage> implements DmPackage 
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey();
@@ -605,4 +609,5 @@ public class DmPackageClp extends BaseModelImpl<DmPackage> implements DmPackage 
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmPackageRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

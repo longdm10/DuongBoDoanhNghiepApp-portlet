@@ -477,6 +477,10 @@ public class DmDocTypeClp extends BaseModelImpl<DmDocType> implements DmDocType 
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey();
@@ -569,4 +573,5 @@ public class DmDocTypeClp extends BaseModelImpl<DmDocType> implements DmDocType 
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmDocTypeRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

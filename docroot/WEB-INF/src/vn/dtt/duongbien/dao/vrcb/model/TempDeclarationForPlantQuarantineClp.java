@@ -977,6 +977,10 @@ public class TempDeclarationForPlantQuarantineClp extends BaseModelImpl<TempDecl
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1175,4 +1179,5 @@ public class TempDeclarationForPlantQuarantineClp extends BaseModelImpl<TempDecl
 	private long _attachedFile;
 	private int _documentYear;
 	private BaseModel<?> _tempDeclarationForPlantQuarantineRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

@@ -507,6 +507,10 @@ public class DmGtStatusClp extends BaseModelImpl<DmGtStatus>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -606,4 +610,5 @@ public class DmGtStatusClp extends BaseModelImpl<DmGtStatus>
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmGtStatusRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

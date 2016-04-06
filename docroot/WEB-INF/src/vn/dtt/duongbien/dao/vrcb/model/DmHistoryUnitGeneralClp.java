@@ -447,6 +447,10 @@ public class DmHistoryUnitGeneralClp extends BaseModelImpl<DmHistoryUnitGeneral>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey();
@@ -532,4 +536,5 @@ public class DmHistoryUnitGeneralClp extends BaseModelImpl<DmHistoryUnitGeneral>
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmHistoryUnitGeneralRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

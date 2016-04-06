@@ -16,6 +16,7 @@ package vn.dtt.duongbien.dao.vrcb.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface DmHistoryShipAgencyLocalService extends BaseLocalService,
 	* @return the dm history ship agency that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryShipAgency addDmHistoryShipAgency(
 		vn.dtt.duongbien.dao.vrcb.model.DmHistoryShipAgency dmHistoryShipAgency)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface DmHistoryShipAgencyLocalService extends BaseLocalService,
 	* @throws PortalException if a dm history ship agency with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryShipAgency deleteDmHistoryShipAgency(
 		int id)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -85,6 +88,7 @@ public interface DmHistoryShipAgencyLocalService extends BaseLocalService,
 	* @return the dm history ship agency that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryShipAgency deleteDmHistoryShipAgency(
 		vn.dtt.duongbien.dao.vrcb.model.DmHistoryShipAgency dmHistoryShipAgency)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -225,6 +229,7 @@ public interface DmHistoryShipAgencyLocalService extends BaseLocalService,
 	* @return the dm history ship agency that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.duongbien.dao.vrcb.model.DmHistoryShipAgency updateDmHistoryShipAgency(
 		vn.dtt.duongbien.dao.vrcb.model.DmHistoryShipAgency dmHistoryShipAgency)
 		throws com.liferay.portal.kernel.exception.SystemException;

@@ -441,6 +441,10 @@ public class DocumentClp extends BaseModelImpl<Document> implements Document {
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -526,4 +530,5 @@ public class DocumentClp extends BaseModelImpl<Document> implements Document {
 	private Date _createdDate;
 	private Date _lastModifiedDate;
 	private BaseModel<?> _documentRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

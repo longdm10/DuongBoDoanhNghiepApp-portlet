@@ -72,4 +72,24 @@
 	</bean>
 	<bean id="nghiepvuTransactionManager" class="com.liferay.portal.kernel.util.InfrastructureUtil" factory-method="getTransactionManager" />
 	
+	<!-- 	vao ra cang bien datasource -->
+	<bean id="ravaocangbienHibernateSessionFactory" class="com.liferay.portal.kernel.spring.util.SpringFactoryUtil" factory-method="newBean">
+		<constructor-arg value="com.liferay.portal.spring.hibernate.PortletHibernateConfiguration" />
+		<constructor-arg>
+			<map>
+				<entry key="dataSource" value-ref="vaoracangbienDataSource" />
+			</map>
+		</constructor-arg>
+	</bean>
+	<bean id="ravaocangbienSessionFactory" class="com.liferay.portal.kernel.spring.util.SpringFactoryUtil" factory-method="newBean">
+		<constructor-arg value="com.liferay.portal.dao.orm.hibernate.PortletSessionFactoryImpl" />
+		<constructor-arg>
+			<map>
+				<entry key="dataSource" value-ref="vaoracangbienDataSource" />
+				<entry key="sessionFactoryClassLoader" value-ref="portletClassLoader" />
+				<entry key="sessionFactoryImplementor" value-ref="ravaocangbienHibernateSessionFactory" />
+			</map>
+		</constructor-arg>
+	</bean>
+	<bean id="ravaocangbienTransactionManager" class="com.liferay.portal.kernel.util.InfrastructureUtil" factory-method="getTransactionManager" />
 </beans>

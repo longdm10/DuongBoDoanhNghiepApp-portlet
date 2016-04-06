@@ -572,6 +572,10 @@ public class DmGtRouteConfigClp extends BaseModelImpl<DmGtRouteConfig>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -685,4 +689,5 @@ public class DmGtRouteConfigClp extends BaseModelImpl<DmGtRouteConfig>
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmGtRouteConfigRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

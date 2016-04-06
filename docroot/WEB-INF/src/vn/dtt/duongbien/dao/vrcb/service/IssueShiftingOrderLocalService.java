@@ -16,6 +16,7 @@ package vn.dtt.duongbien.dao.vrcb.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface IssueShiftingOrderLocalService extends BaseLocalService,
 	* @return the issue shifting order that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.duongbien.dao.vrcb.model.IssueShiftingOrder addIssueShiftingOrder(
 		vn.dtt.duongbien.dao.vrcb.model.IssueShiftingOrder issueShiftingOrder)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface IssueShiftingOrderLocalService extends BaseLocalService,
 	* @throws PortalException if a issue shifting order with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.duongbien.dao.vrcb.model.IssueShiftingOrder deleteIssueShiftingOrder(
 		long id)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -85,6 +88,7 @@ public interface IssueShiftingOrderLocalService extends BaseLocalService,
 	* @return the issue shifting order that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.duongbien.dao.vrcb.model.IssueShiftingOrder deleteIssueShiftingOrder(
 		vn.dtt.duongbien.dao.vrcb.model.IssueShiftingOrder issueShiftingOrder)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -225,6 +229,7 @@ public interface IssueShiftingOrderLocalService extends BaseLocalService,
 	* @return the issue shifting order that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.duongbien.dao.vrcb.model.IssueShiftingOrder updateIssueShiftingOrder(
 		vn.dtt.duongbien.dao.vrcb.model.IssueShiftingOrder issueShiftingOrder)
 		throws com.liferay.portal.kernel.exception.SystemException;

@@ -607,6 +607,10 @@ public class DmHistoryPortHarbourClp extends BaseModelImpl<DmHistoryPortHarbour>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey();
@@ -727,4 +731,5 @@ public class DmHistoryPortHarbourClp extends BaseModelImpl<DmHistoryPortHarbour>
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmHistoryPortHarbourRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

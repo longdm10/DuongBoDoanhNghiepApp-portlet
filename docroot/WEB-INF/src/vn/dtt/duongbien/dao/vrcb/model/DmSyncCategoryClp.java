@@ -356,6 +356,10 @@ public class DmSyncCategoryClp extends BaseModelImpl<DmSyncCategory>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -420,4 +424,5 @@ public class DmSyncCategoryClp extends BaseModelImpl<DmSyncCategory>
 	private String _modifiedUser;
 	private Date _modifiedDate;
 	private BaseModel<?> _dmSyncCategoryRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

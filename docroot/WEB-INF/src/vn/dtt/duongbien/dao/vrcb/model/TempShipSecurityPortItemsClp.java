@@ -422,6 +422,10 @@ public class TempShipSecurityPortItemsClp extends BaseModelImpl<TempShipSecurity
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -500,4 +504,5 @@ public class TempShipSecurityPortItemsClp extends BaseModelImpl<TempShipSecurity
 	private Date _dateDeparture;
 	private String _securityLevelCode;
 	private BaseModel<?> _tempShipSecurityPortItemsRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

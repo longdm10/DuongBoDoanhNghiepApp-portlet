@@ -507,6 +507,10 @@ public class DmRankRatingClp extends BaseModelImpl<DmRankRating>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey();
@@ -606,4 +610,5 @@ public class DmRankRatingClp extends BaseModelImpl<DmRankRating>
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmRankRatingRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

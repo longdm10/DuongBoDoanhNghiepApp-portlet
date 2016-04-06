@@ -635,6 +635,10 @@ public class DmHistoryMaritimeClp extends BaseModelImpl<DmHistoryMaritime>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey();
@@ -762,4 +766,5 @@ public class DmHistoryMaritimeClp extends BaseModelImpl<DmHistoryMaritime>
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmHistoryMaritimeRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

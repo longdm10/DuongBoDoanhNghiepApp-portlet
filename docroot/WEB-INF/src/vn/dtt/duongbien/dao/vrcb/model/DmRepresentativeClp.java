@@ -540,6 +540,10 @@ public class DmRepresentativeClp extends BaseModelImpl<DmRepresentative>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey();
@@ -646,4 +650,5 @@ public class DmRepresentativeClp extends BaseModelImpl<DmRepresentative>
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmRepresentativeRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

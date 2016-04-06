@@ -509,6 +509,10 @@ public class DmGTShipPositionClp extends BaseModelImpl<DmGTShipPosition>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -608,4 +612,5 @@ public class DmGTShipPositionClp extends BaseModelImpl<DmGTShipPosition>
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmGTShipPositionRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

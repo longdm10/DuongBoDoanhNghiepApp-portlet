@@ -750,6 +750,10 @@ public class TempAttachmentDeclarationHealthClp extends BaseModelImpl<TempAttach
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -899,4 +903,5 @@ public class TempAttachmentDeclarationHealthClp extends BaseModelImpl<TempAttach
 	private String _medicinesOrOther;
 	private String _comments;
 	private BaseModel<?> _tempAttachmentDeclarationHealthRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

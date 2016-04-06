@@ -829,6 +829,10 @@ public class NoticeShipMessageClp extends BaseModelImpl<NoticeShipMessage>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -998,4 +1002,5 @@ public class NoticeShipMessageClp extends BaseModelImpl<NoticeShipMessage>
 	private int _otherPersons;
 	private String _remarks;
 	private BaseModel<?> _noticeShipMessageRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

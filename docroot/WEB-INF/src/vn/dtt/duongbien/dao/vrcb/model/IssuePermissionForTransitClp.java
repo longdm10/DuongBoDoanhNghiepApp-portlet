@@ -1565,6 +1565,10 @@ public class IssuePermissionForTransitClp extends BaseModelImpl<IssuePermissionF
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1895,4 +1899,5 @@ public class IssuePermissionForTransitClp extends BaseModelImpl<IssuePermissionF
 	private long _stampStatus;
 	private long _attachedFile;
 	private BaseModel<?> _issuePermissionForTransitRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

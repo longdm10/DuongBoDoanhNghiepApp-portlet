@@ -610,6 +610,10 @@ public class ResultCertificateClp extends BaseModelImpl<ResultCertificate>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -730,4 +734,5 @@ public class ResultCertificateClp extends BaseModelImpl<ResultCertificate>
 	private int _isExamined;
 	private int _mandatory;
 	private BaseModel<?> _resultCertificateRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

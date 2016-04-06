@@ -480,6 +480,10 @@ public class LogMessageValidationClp extends BaseModelImpl<LogMessageValidation>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -572,4 +576,5 @@ public class LogMessageValidationClp extends BaseModelImpl<LogMessageValidation>
 	private String _tagProperty;
 	private String _dataValidation;
 	private BaseModel<?> _logMessageValidationRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

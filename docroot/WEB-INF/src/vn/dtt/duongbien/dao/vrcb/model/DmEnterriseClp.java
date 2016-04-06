@@ -893,6 +893,10 @@ public class DmEnterriseClp extends BaseModelImpl<DmEnterrise>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey();
@@ -1076,4 +1080,5 @@ public class DmEnterriseClp extends BaseModelImpl<DmEnterrise>
 	private String _syncVersion;
 	private String _modifiedUser;
 	private BaseModel<?> _dmEnterriseRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

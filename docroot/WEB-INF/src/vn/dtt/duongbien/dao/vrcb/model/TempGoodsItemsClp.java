@@ -577,6 +577,10 @@ public class TempGoodsItemsClp extends BaseModelImpl<TempGoodsItems>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -690,4 +694,5 @@ public class TempGoodsItemsClp extends BaseModelImpl<TempGoodsItems>
 	private double _measurement;
 	private String _measurementUnit;
 	private BaseModel<?> _tempGoodsItemsRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

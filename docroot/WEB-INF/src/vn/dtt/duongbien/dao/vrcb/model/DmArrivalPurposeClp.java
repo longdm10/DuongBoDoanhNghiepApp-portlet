@@ -478,6 +478,10 @@ public class DmArrivalPurposeClp extends BaseModelImpl<DmArrivalPurpose>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey();
@@ -570,4 +574,5 @@ public class DmArrivalPurposeClp extends BaseModelImpl<DmArrivalPurpose>
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmArrivalPurposeRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

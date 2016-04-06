@@ -478,6 +478,10 @@ public class DmGtReportCategoryClp extends BaseModelImpl<DmGtReportCategory>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -570,4 +574,5 @@ public class DmGtReportCategoryClp extends BaseModelImpl<DmGtReportCategory>
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmGtReportCategoryRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

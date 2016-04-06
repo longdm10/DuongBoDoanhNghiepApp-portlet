@@ -1323,6 +1323,10 @@ public class TempDocumentClp extends BaseModelImpl<TempDocument>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1604,4 +1608,5 @@ public class TempDocumentClp extends BaseModelImpl<TempDocument>
 	private Date _shipDateFrom;
 	private Date _shipDateTo;
 	private BaseModel<?> _tempDocumentRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

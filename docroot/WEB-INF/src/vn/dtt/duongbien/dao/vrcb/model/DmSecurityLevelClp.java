@@ -480,6 +480,10 @@ public class DmSecurityLevelClp extends BaseModelImpl<DmSecurityLevel>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey();
@@ -572,4 +576,5 @@ public class DmSecurityLevelClp extends BaseModelImpl<DmSecurityLevel>
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmSecurityLevelRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

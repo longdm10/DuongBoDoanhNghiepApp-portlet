@@ -16,6 +16,7 @@ package vn.dtt.duongbien.dao.vrcb.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface IssuePortClearanceLocalService extends BaseLocalService,
 	* @return the issue port clearance that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.duongbien.dao.vrcb.model.IssuePortClearance addIssuePortClearance(
 		vn.dtt.duongbien.dao.vrcb.model.IssuePortClearance issuePortClearance)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface IssuePortClearanceLocalService extends BaseLocalService,
 	* @throws PortalException if a issue port clearance with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.duongbien.dao.vrcb.model.IssuePortClearance deleteIssuePortClearance(
 		long id)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -85,6 +88,7 @@ public interface IssuePortClearanceLocalService extends BaseLocalService,
 	* @return the issue port clearance that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.duongbien.dao.vrcb.model.IssuePortClearance deleteIssuePortClearance(
 		vn.dtt.duongbien.dao.vrcb.model.IssuePortClearance issuePortClearance)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -225,6 +229,7 @@ public interface IssuePortClearanceLocalService extends BaseLocalService,
 	* @return the issue port clearance that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.duongbien.dao.vrcb.model.IssuePortClearance updateIssuePortClearance(
 		vn.dtt.duongbien.dao.vrcb.model.IssuePortClearance issuePortClearance)
 		throws com.liferay.portal.kernel.exception.SystemException;

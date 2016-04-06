@@ -24,10 +24,10 @@ DmPortRegion portRegion=null;
 DmPort port = null;
 DmPortHarbour portHarbour = null;
 DmPortWharf portWharf = null;
-/*List listDmPortRegin = DmPortRegionLocalServiceUtil.getDmPortRegion();
+List listDmPortRegin = DmPortRegionLocalServiceUtil.getDmPortRegion();
 List listDmPortHabour = DmPortHarbourLocalServiceUtil.getDmPortHarbour();
 List listDmPort = DmPortLocalServiceUtil.getDmPort();
-List listDmWharf = DmPortWharfLocalServiceUtil.getDmPortWharf();*/
+List listDmWharf = DmPortWharfLocalServiceUtil.getDmPortWharf();
 Calendar today = Calendar.getInstance();
 %>
 <portlet:actionURL var="addVaoCangBenUrl" name="addVaoCangBen">
@@ -50,13 +50,19 @@ Calendar today = Calendar.getInstance();
 							<td style="padding:10px 10px;">Khu vực hàng hải <font color="red">*</font><br>(Port region)</td>
 							<td>
 							<select name="<portlet:namespace />typeId" id="<portlet:namespace />portRegionCode" style="width:100%;">
-								
+								<%	for(int i=0; i<listDmPortRegin.size();i++)	{
+										portRegion = (DmPortRegion)listDmPortRegin.get(i);	 %>
+										<option value="<%= portRegion.getPortRegionCode()%>"><%= portRegion.getPortRegionNameVN()%></option>
+								<%	}	%>
 							</select>
 							<br>Tải danh mục</td>
 							<td style="padding:10px 10px;">Cảng đến<br>(Port of arrival)</td>
 							<td>
 								<select name="<portlet:namespace />typeId" id="<portlet:namespace />portOfArrivalCode" style="width:100%;">
-									
+									<%	for(int i=0; i<listDmPort.size();i++)	{
+										port = (DmPort)listDmPort.get(i);	 %>
+										<option value="<%= port.getPortCode()%>"><%= port.getPortName()%></option>
+									<%	}	%>
 								</select>
 								<br>&nbsp;
 							</td>
@@ -65,12 +71,18 @@ Calendar today = Calendar.getInstance();
 							<td style="padding:10px 10px;">Bến cảng <font color="red">*</font><br>(Port harbour)</td>
 							<td>
 								<select name="<portlet:namespace />typeId" id="<portlet:namespace />portHarbourCode" style="width:100%;">
-										
+									<%	for(int i=0; i<listDmPortHabour.size();i++)	{
+											portHarbour = (DmPortHarbour)listDmPortHabour.get(i);	 %>
+											<option value="<%= portHarbour.getPortCode()%>"><%= portHarbour.getPortHarbourNameVN()%></option>
+										<%	}	%>
 								</select>
 							<td style="padding:10px 10px;">Cầu cảng neo đậu <br>(Anchoring port wharf)</td>
 							<td>
 								<select name="<portlet:namespace />typeId" id="<portlet:namespace />portWharfCode" style="width:100%;">
-											
+									<%	for(int i=0; i<listDmWharf.size();i++)	{
+											portWharf = (DmPortWharf)listDmWharf.get(i);	 %>
+											<option value="<%= portWharf.getPortCode()%>"><%= portWharf.getPortWharfNameVN()%></option>
+										<%	}	%>	
 								</select>
 							</td>
 						</tr>

@@ -1193,6 +1193,10 @@ public class RmdcShipClp extends BaseModelImpl<RmdcShip> implements RmdcShip {
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1446,4 +1450,5 @@ public class RmdcShipClp extends BaseModelImpl<RmdcShip> implements RmdcShip {
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _rmdcShipRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

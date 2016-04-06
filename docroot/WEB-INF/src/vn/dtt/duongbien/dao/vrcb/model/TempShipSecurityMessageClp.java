@@ -1608,6 +1608,10 @@ public class TempShipSecurityMessageClp extends BaseModelImpl<TempShipSecurityMe
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1945,4 +1949,5 @@ public class TempShipSecurityMessageClp extends BaseModelImpl<TempShipSecurityMe
 	private String _arrivalPortCode;
 	private String _portHarbourCode;
 	private BaseModel<?> _tempShipSecurityMessageRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

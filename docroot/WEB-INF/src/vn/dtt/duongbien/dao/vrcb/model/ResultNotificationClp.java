@@ -697,6 +697,10 @@ public class ResultNotificationClp extends BaseModelImpl<ResultNotification>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -838,4 +842,5 @@ public class ResultNotificationClp extends BaseModelImpl<ResultNotification>
 	private int _isReply;
 	private Date _responseTime;
 	private BaseModel<?> _resultNotificationRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

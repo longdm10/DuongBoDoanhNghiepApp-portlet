@@ -525,6 +525,10 @@ public class TempHealthCrewPassengerListClp extends BaseModelImpl<TempHealthCrew
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -624,4 +628,5 @@ public class TempHealthCrewPassengerListClp extends BaseModelImpl<TempHealthCrew
 	private Date _fromDate;
 	private Date _toDate;
 	private BaseModel<?> _tempHealthCrewPassengerListRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

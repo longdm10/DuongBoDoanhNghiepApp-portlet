@@ -853,6 +853,10 @@ public class TempCargoDeclarationClp extends BaseModelImpl<TempCargoDeclaration>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1029,4 +1033,5 @@ public class TempCargoDeclarationClp extends BaseModelImpl<TempCargoDeclaration>
 	private long _attachedFile;
 	private int _documentYear;
 	private BaseModel<?> _tempCargoDeclarationRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

@@ -771,6 +771,10 @@ public class TempCrewEffectsDeclarationClp extends BaseModelImpl<TempCrewEffects
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -926,4 +930,5 @@ public class TempCrewEffectsDeclarationClp extends BaseModelImpl<TempCrewEffects
 	private long _attachedFile;
 	private int _documentYear;
 	private BaseModel<?> _tempCrewEffectsDeclarationRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

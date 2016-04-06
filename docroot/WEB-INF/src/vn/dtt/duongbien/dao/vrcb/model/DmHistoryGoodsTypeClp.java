@@ -510,6 +510,10 @@ public class DmHistoryGoodsTypeClp extends BaseModelImpl<DmHistoryGoodsType>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey();
@@ -609,4 +613,5 @@ public class DmHistoryGoodsTypeClp extends BaseModelImpl<DmHistoryGoodsType>
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmHistoryGoodsTypeRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

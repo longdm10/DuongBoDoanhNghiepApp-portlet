@@ -870,6 +870,10 @@ public class TempHealthQuestionClp extends BaseModelImpl<TempHealthQuestion>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1046,4 +1050,5 @@ public class TempHealthQuestionClp extends BaseModelImpl<TempHealthQuestion>
 	private String _joinShip;
 	private int _isAnimal;
 	private BaseModel<?> _tempHealthQuestionRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

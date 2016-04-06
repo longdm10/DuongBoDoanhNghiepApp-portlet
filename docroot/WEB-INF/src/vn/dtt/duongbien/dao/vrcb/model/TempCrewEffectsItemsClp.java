@@ -422,6 +422,10 @@ public class TempCrewEffectsItemsClp extends BaseModelImpl<TempCrewEffectsItems>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -500,4 +504,5 @@ public class TempCrewEffectsItemsClp extends BaseModelImpl<TempCrewEffectsItems>
 	private String _rankOrratingCode;
 	private String _effectsIneligibleForRelief;
 	private BaseModel<?> _tempCrewEffectsItemsRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

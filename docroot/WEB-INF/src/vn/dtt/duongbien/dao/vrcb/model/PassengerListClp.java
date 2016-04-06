@@ -634,6 +634,10 @@ public class PassengerListClp extends BaseModelImpl<PassengerList>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -761,4 +765,5 @@ public class PassengerListClp extends BaseModelImpl<PassengerList>
 	private Date _createDate;
 	private Date _modifyDate;
 	private BaseModel<?> _passengerListRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

@@ -723,6 +723,10 @@ public class DmPortClp extends BaseModelImpl<DmPort> implements DmPort {
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey();
@@ -871,4 +875,5 @@ public class DmPortClp extends BaseModelImpl<DmPort> implements DmPort {
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmPortRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

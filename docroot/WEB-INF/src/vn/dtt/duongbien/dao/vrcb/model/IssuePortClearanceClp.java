@@ -1513,6 +1513,10 @@ public class IssuePortClearanceClp extends BaseModelImpl<IssuePortClearance>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1836,4 +1840,5 @@ public class IssuePortClearanceClp extends BaseModelImpl<IssuePortClearance>
 	private long _stampStatus;
 	private long _attachedFile;
 	private BaseModel<?> _issuePortClearanceRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

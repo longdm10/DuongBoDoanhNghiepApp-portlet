@@ -1229,6 +1229,10 @@ public class ResultCompetionClp extends BaseModelImpl<ResultCompetion>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1489,4 +1493,5 @@ public class ResultCompetionClp extends BaseModelImpl<ResultCompetion>
 	private String _responseTV;
 	private String _responseCVHH;
 	private BaseModel<?> _resultCompetionRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

@@ -864,6 +864,10 @@ public class TempAnimalQuarantineClp extends BaseModelImpl<TempAnimalQuarantine>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1040,4 +1044,5 @@ public class TempAnimalQuarantineClp extends BaseModelImpl<TempAnimalQuarantine>
 	private int _masterSignedImage;
 	private long _attachedFile;
 	private BaseModel<?> _tempAnimalQuarantineRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

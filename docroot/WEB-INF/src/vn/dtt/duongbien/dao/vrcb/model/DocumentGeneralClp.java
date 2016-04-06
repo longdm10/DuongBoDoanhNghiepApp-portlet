@@ -1215,6 +1215,10 @@ public class DocumentGeneralClp extends BaseModelImpl<DocumentGeneral>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1468,4 +1472,5 @@ public class DocumentGeneralClp extends BaseModelImpl<DocumentGeneral>
 	private Date _createDate;
 	private Date _modifyDate;
 	private BaseModel<?> _documentGeneralRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

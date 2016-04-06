@@ -507,6 +507,10 @@ public class DmGoodsClp extends BaseModelImpl<DmGoods> implements DmGoods {
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey();
@@ -606,4 +610,5 @@ public class DmGoodsClp extends BaseModelImpl<DmGoods> implements DmGoods {
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmGoodsRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

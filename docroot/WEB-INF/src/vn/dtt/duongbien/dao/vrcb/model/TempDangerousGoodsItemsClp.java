@@ -742,6 +742,10 @@ public class TempDangerousGoodsItemsClp extends BaseModelImpl<TempDangerousGoods
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -890,4 +894,5 @@ public class TempDangerousGoodsItemsClp extends BaseModelImpl<TempDangerousGoods
 	private long _grossWeight;
 	private String _ems;
 	private BaseModel<?> _tempDangerousGoodsItemsRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

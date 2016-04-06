@@ -512,6 +512,10 @@ public class DmPassportTypeClp extends BaseModelImpl<DmPassportType>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey();
@@ -611,4 +615,5 @@ public class DmPassportTypeClp extends BaseModelImpl<DmPassportType>
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmPassportTypeRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

@@ -449,6 +449,10 @@ public class TempShipStoresItemsClp extends BaseModelImpl<TempShipStoresItems>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -534,4 +538,5 @@ public class TempShipStoresItemsClp extends BaseModelImpl<TempShipStoresItems>
 	private String _locationOnBoat;
 	private int _useInBoat;
 	private BaseModel<?> _tempShipStoresItemsRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

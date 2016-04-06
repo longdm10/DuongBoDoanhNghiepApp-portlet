@@ -863,6 +863,10 @@ public class TempUnitGeneralClp extends BaseModelImpl<TempUnitGeneral>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1039,4 +1043,5 @@ public class TempUnitGeneralClp extends BaseModelImpl<TempUnitGeneral>
 	private String _unitDO;
 	private String _unitSludgeOil;
 	private BaseModel<?> _tempUnitGeneralRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

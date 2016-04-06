@@ -508,6 +508,10 @@ public class DmMinistryClp extends BaseModelImpl<DmMinistry>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -607,4 +611,5 @@ public class DmMinistryClp extends BaseModelImpl<DmMinistry>
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmMinistryRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

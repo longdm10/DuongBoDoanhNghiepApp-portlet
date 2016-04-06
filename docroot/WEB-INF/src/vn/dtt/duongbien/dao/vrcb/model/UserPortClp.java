@@ -362,6 +362,10 @@ public class UserPortClp extends BaseModelImpl<UserPort> implements UserPort {
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -427,4 +431,5 @@ public class UserPortClp extends BaseModelImpl<UserPort> implements UserPort {
 	private Date _createDate;
 	private int _status;
 	private BaseModel<?> _userPortRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

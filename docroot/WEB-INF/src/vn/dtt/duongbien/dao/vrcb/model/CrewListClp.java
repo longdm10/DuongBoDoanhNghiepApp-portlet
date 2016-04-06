@@ -624,6 +624,10 @@ public class CrewListClp extends BaseModelImpl<CrewList> implements CrewList {
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -751,4 +755,5 @@ public class CrewListClp extends BaseModelImpl<CrewList> implements CrewList {
 	private Date _createDate;
 	private Date _modifyDate;
 	private BaseModel<?> _crewListRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

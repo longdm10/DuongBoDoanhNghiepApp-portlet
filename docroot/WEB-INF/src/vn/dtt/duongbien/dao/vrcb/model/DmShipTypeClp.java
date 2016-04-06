@@ -508,6 +508,10 @@ public class DmShipTypeClp extends BaseModelImpl<DmShipType>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey();
@@ -607,4 +611,5 @@ public class DmShipTypeClp extends BaseModelImpl<DmShipType>
 	private Date _requestedDate;
 	private String _syncVersion;
 	private BaseModel<?> _dmShipTypeRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

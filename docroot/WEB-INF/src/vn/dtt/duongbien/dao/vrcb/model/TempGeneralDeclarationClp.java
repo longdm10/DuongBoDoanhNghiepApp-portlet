@@ -1759,6 +1759,10 @@ public class TempGeneralDeclarationClp extends BaseModelImpl<TempGeneralDeclarat
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -2124,4 +2128,5 @@ public class TempGeneralDeclarationClp extends BaseModelImpl<TempGeneralDeclarat
 	private int _masterSigned;
 	private int _masterSignedImage;
 	private BaseModel<?> _tempGeneralDeclarationRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

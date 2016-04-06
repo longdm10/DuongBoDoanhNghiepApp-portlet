@@ -957,6 +957,10 @@ public class TempPlantQuarantineClp extends BaseModelImpl<TempPlantQuarantine>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1154,4 +1158,5 @@ public class TempPlantQuarantineClp extends BaseModelImpl<TempPlantQuarantine>
 	private int _masterSignedImage;
 	private long _attachedFile;
 	private BaseModel<?> _tempPlantQuarantineRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }
