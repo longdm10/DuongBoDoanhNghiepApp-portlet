@@ -1,3 +1,4 @@
+<%@page import="com.liferay.portal.kernel.util.StringUtil"%>
 <%@page import="java.util.Calendar"%>
 <%@page import="vn.dtt.duongbien.dao.vrcb.model.DmPortWharf"%>
 <%@page import="vn.dtt.duongbien.dao.vrcb.model.DmPortHarbour"%>
@@ -49,19 +50,19 @@ Calendar today = Calendar.getInstance();
 						<tr>
 							<td style="padding:10px 10px;">Khu vực hàng hải <font color="red">*</font><br>(Port region)</td>
 							<td>
-							<select name="<portlet:namespace />typeId" id="<portlet:namespace />portRegionCode" style="width:100%;">
+							<select name="<portlet:namespace />portRegionCode" style="width:100%;">
 								<%	for(int i=0; i<listDmPortRegin.size();i++)	{
 										portRegion = (DmPortRegion)listDmPortRegin.get(i);	 %>
-										<option value="<%= portRegion.getPortRegionCode()%>"><%= portRegion.getPortRegionNameVN()%></option>
+										<option value="<%= portRegion.getPortRegionCode()%>" title="<%=portRegion.getPortRegionNameVN()%>"><%=StringUtil.shorten(portRegion.getPortRegionNameVN(),45,"")%></option>
 								<%	}	%>
 							</select>
 							<br>Tải danh mục</td>
 							<td style="padding:10px 10px;">Cảng đến<br>(Port of arrival)</td>
 							<td>
-								<select name="<portlet:namespace />typeId" id="<portlet:namespace />portOfArrivalCode" style="width:100%;">
+								<select name="<portlet:namespace />portOfArrivalCode" style="width:100%;">
 									<%	for(int i=0; i<listDmPort.size();i++)	{
 										port = (DmPort)listDmPort.get(i);	 %>
-										<option value="<%= port.getPortCode()%>"><%= port.getPortName()%></option>
+										<option value="<%= port.getPortCode()%>" title="<%=port.getPortName()%>"><%= port.getPortName()%></option>
 									<%	}	%>
 								</select>
 								<br>&nbsp;
@@ -70,18 +71,18 @@ Calendar today = Calendar.getInstance();
 						<tr>
 							<td style="padding:10px 10px;">Bến cảng <font color="red">*</font><br>(Port harbour)</td>
 							<td>
-								<select name="<portlet:namespace />typeId" id="<portlet:namespace />portHarbourCode" style="width:100%;">
+								<select  name="<portlet:namespace />portHarbourCode" style="width:100%;">
 									<%	for(int i=0; i<listDmPortHabour.size();i++)	{
 											portHarbour = (DmPortHarbour)listDmPortHabour.get(i);	 %>
-											<option value="<%= portHarbour.getPortCode()%>"><%= portHarbour.getPortHarbourNameVN()%></option>
+											<option value="<%= portHarbour.getPortHarbourCode()%>" title="<%=portHarbour.getPortHarbourNameVN() %>"><%=StringUtil.shorten(portHarbour.getPortHarbourNameVN(),45,"")%></option>
 										<%	}	%>
 								</select>
 							<td style="padding:10px 10px;">Cầu cảng neo đậu <br>(Anchoring port wharf)</td>
 							<td>
-								<select name="<portlet:namespace />typeId" id="<portlet:namespace />portWharfCode" style="width:100%;">
+								<select  name="<portlet:namespace />portWharfCode" style="width:100%;">
 									<%	for(int i=0; i<listDmWharf.size();i++)	{
 											portWharf = (DmPortWharf)listDmWharf.get(i);	 %>
-											<option value="<%= portWharf.getPortCode()%>"><%= portWharf.getPortWharfNameVN()%></option>
+											<option value="<%= portWharf.getPortWharfCode()%>" title="<%= portWharf.getPortWharfNameVN()%>"><%= portWharf.getPortWharfNameVN()%></option>
 										<%	}	%>	
 								</select>
 							</td>
@@ -89,22 +90,22 @@ Calendar today = Calendar.getInstance();
 						<tr>
 							<td style="padding:10px 10px;">Loại hồ sơ <br>(Type of Document)</td>
 							<td>
-								<select name="<portlet:namespace />typeId" id="<portlet:namespace />isArrival" style="width:100%;">
+								<select name="<portlet:namespace />isArrival" style="width:100%;">
 									<option value="1">Vào cảng</option>
 								</select>
 							</td>
 							<td style="padding:10px 10px;">Số chuyến đi <font color="red">*</font> <br>(Voyage Number)</td>
-							<td><input type="text" name="<portlet:namespace />voyageNumber" onkeypress="return isNumberKey(event)" size="50"/></td>
+							<td><input type="text" name="<portlet:namespace />voyageNumber" onkeypress="return isNumberKey(event)" size="50" maxlength="30"/></td>
 						</tr>
 						<tr>
 							<td style="padding:10px 10px;">Số thuyền viên (gồm cả thuyền trưởng) <font color="red">*</font><br>(Number of crew (inc. master))</td>
-							<td><input type="text" name="<portlet:namespace />numberOfCrew" onkeypress="return isNumberKey(event)" size="50"/></td>
+							<td><input type="text" name="<portlet:namespace />numberOfCrew" onkeypress="return isNumberKey(event)" size="50" maxlength="9"/></td>
 							<td style="padding:10px 10px;">Số hành khách <font color="red">*</font> <br>(Number of passengers)</td>
-							<td><input type="text" name="<portlet:namespace />numberOfPassengers" onkeypress="return isNumberKey(event)" size="50"/></td>
+							<td><input type="text" name="<portlet:namespace />numberOfPassengers" onkeypress="return isNumberKey(event)" size="50" maxlength="9"/></td>
 						</tr>
 						<tr>
 							<td style="padding:10px 10px;">Cảng rời cuối cùng <font color="red">*</font><br>(Last port of call)</td>
-							<td><input type="text" name="<portlet:namespace />lastPortOfCallCode" size="50"/></td>
+							<td><input type="text" name="<portlet:namespace />lastPortOfCallCode" size="5" maxlength="5"/></td>
 							<td style="padding:10px 10px;">Thời gian đến cảng <font color="red">*</font> <br>(Time of arrival)</td>
 							<td>
 								<liferay-ui:input-date name="dateOfArrival" disableNamespace="<%= false %>"	disabled="false" 
