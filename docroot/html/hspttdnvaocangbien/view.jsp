@@ -1,3 +1,10 @@
+<%@page import="com.liferay.portal.kernel.dao.search.ResultRow"%>
+<%@page import="vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration"%>
+<%@page import="com.liferay.portal.kernel.dao.search.TextSearchEntry"%>
+<%@page import="com.liferay.portal.kernel.dao.search.RowChecker"%>
+<%@page import="vn.dtt.duongbien.dao.vrcb.service.TempGeneralDeclarationLocalServiceUtil"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="javax.portlet.WindowState"%>
 <%@page import="com.liferay.portal.kernel.util.StringUtil"%>
 <%@page import="java.util.Calendar"%>
 <%@page import="vn.dtt.duongbien.dao.vrcb.model.DmPortWharf"%>
@@ -12,141 +19,178 @@
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 <%@ include file="/html/init.jsp"%>
 <%@page import="com.liferay.portal.kernel.language.LanguageUtil"%>
-<script type="text/javascript">
-	function isNumberKey(evt){
-	var charCode = (evt.which) ? evt.which : event.keyCode
-	if (charCode > 31 && (charCode < 48 || charCode > 57))
-		return false;
-	return true;
-	}
-</script>
 <%
-DmPortRegion portRegion=null;
-DmPort port = null;
-DmPortHarbour portHarbour = null;
-DmPortWharf portWharf = null;
-List listDmPortRegin = DmPortRegionLocalServiceUtil.getDmPortRegion();
-List listDmPortHabour = DmPortHarbourLocalServiceUtil.getDmPortHarbour();
-List listDmPort = DmPortLocalServiceUtil.getDmPort();
-List listDmWharf = DmPortWharfLocalServiceUtil.getDmPortWharf();
-Calendar today = Calendar.getInstance();
+PortletURL portletURL = renderResponse.createRenderURL();
+portletURL.setWindowState(WindowState.MAXIMIZED);
+portletURL.setParameter("jspPage", "/html/hspttdnvaocangbien/view.jsp");
+
+PortletURL addUrl = renderResponse.createRenderURL();
+addUrl.setWindowState(WindowState.MAXIMIZED);
+addUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/edit.jsp");
+
+
+PortletURL editUrl = renderResponse.createRenderURL();
+editUrl.setWindowState(WindowState.MAXIMIZED);
+editUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/edit.jsp");
+
+List headerNames = new ArrayList();
+headerNames.add("Số Thứ tự");
+headerNames.add("Lịch sử");
+headerNames.add("Số khai báo");
+headerNames.add("Số chuyến đi");
+headerNames.add("Loại hồ sơ");
+headerNames.add("Tên tàu");
+headerNames.add("Cảng đến");
+headerNames.add("Thời gian đến");
+headerNames.add("Ngày tạo");
+headerNames.add("Người tạo");
+headerNames.add("Cảng vụ HH");
+headerNames.add("Thông báo");
+headerNames.add("Gửi hồ sơ");
+headerNames.add("Yêu cầu sửa đổi");
+headerNames.add("Xem giấy phép");
+headerNames.add("Hủy");
+
+SearchContainer searchCtn = new SearchContainer(renderRequest, null, null, SearchContainer.DEFAULT_CUR_PARAM, ParamUtil.getInteger(renderRequest,SearchContainer.DEFAULT_DELTA_PARAM), portletURL, headerNames, null);	
+searchCtn.setEmptyResultsMessage("Không có hồ sơ vào cảng");
+List results = new ArrayList();
+int total = 0;
+results =TempGeneralDeclarationLocalServiceUtil.getTempGeneralDeclarations(searchCtn.getStart(), searchCtn.getEnd());
+total = TempGeneralDeclarationLocalServiceUtil.getTempGeneralDeclarationsCount();
+
+searchCtn.setTotal(total);	
+searchCtn.setResults(results);
+searchCtn.setDelta(ParamUtil.getInteger(renderRequest,SearchContainer.DEFAULT_DELTA_PARAM));
+searchCtn.setRowChecker(new RowChecker(renderResponse));
+
+List resultRows = searchCtn.getResultRows();
+for (int i = 0; i < results.size(); i++) {
+	StringBuilder sb =new StringBuilder();
+	
+	TempGeneralDeclaration item = (TempGeneralDeclaration)results.get(i);
+	ResultRow row = new ResultRow(item, item.getId(), i);
+	
+	//STT
+	TextSearchEntry rowTextEntry =  new TextSearchEntry();
+	rowTextEntry.setName(String.valueOf(item.getNameOfShip()));
+	row.addText(rowTextEntry);
+	
+	//link history
+	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
+	PortletURL historyUrl = renderResponse.createRenderURL();
+	historyUrl.setWindowState(WindowState.MAXIMIZED);
+	historyUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/history.jsp");
+	historyUrl.setParameter("redirect", currentURL);
+	sb.append("<a href=\"" +historyUrl.toString() + "\">test</a>");
+	rowTextEntry.setName(sb.toString());
+	row.addText(rowTextEntry);
+	
+	//so khai bao
+	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
+	rowTextEntry.setName(item.getRequestCode());
+	row.addText(rowTextEntry);
+	
+	//so chuyen di
+	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
+	rowTextEntry.setName(item.getVoyageNumber());
+	row.addText(rowTextEntry);
+	
+	//template
+	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
+	if(item.getIsArrival()==1)
+		rowTextEntry.setName("Vào cảng");
+	else
+		rowTextEntry.setName("Ra cảng");
+	row.addText(rowTextEntry);
+	
+	//ten tau
+	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
+	rowTextEntry.setName(item.getNameOfShip());
+	row.addText(rowTextEntry);
+	
+	//cang den
+	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
+	rowTextEntry.setName(item.getPortOfArrivalCode());
+	row.addText(rowTextEntry);
+	
+	//thoi gian den
+	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
+	rowTextEntry.setName(String.valueOf(item.getDateOfArrival()));
+	row.addText(rowTextEntry);
+	
+	//ngay tao
+	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
+	rowTextEntry.setName("");
+	row.addText(rowTextEntry);
+	
+	//nguoi tao
+	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
+	rowTextEntry.setName(item.getUserCreated());
+	row.addText(rowTextEntry);
+	
+	//cang vu hang hai
+	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
+	rowTextEntry.setName("");
+	row.addText(rowTextEntry);
+	
+	//thong bao
+	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
+	rowTextEntry.setName("");
+	row.addText(rowTextEntry);
+	
+	//gui ho so
+	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
+	rowTextEntry.setName("");
+	row.addText(rowTextEntry);
+	
+	//yeu cau sua doi
+	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
+	rowTextEntry.setName("");
+	row.addText(rowTextEntry);
+	
+	//xem giay phep
+	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
+	PortletURL certificateUrl = renderResponse.createRenderURL();
+	certificateUrl.setWindowState(WindowState.MAXIMIZED);
+	certificateUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/certificate.jsp");
+	certificateUrl.setParameter("redirect", currentURL);
+	sb = new StringBuilder();
+	sb.append("<a href=\"" +certificateUrl.toString() + "\">link</a>");
+	rowTextEntry.setName(sb.toString());
+	row.addText(rowTextEntry);
+	
+	//huy
+	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
+	PortletURL deleteUrl = renderResponse.createRenderURL();
+	deleteUrl.setWindowState(WindowState.MAXIMIZED);
+	deleteUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/certificate.jsp");
+	deleteUrl.setParameter("redirect", currentURL);
+	deleteUrl.setParameter("id",String.valueOf(item.getId()));
+	sb = new StringBuilder();
+	sb.append("<a href=\"" +deleteUrl.toString() + "\">link</a>");
+	rowTextEntry.setName(sb.toString());
+	row.addText(rowTextEntry);
+	
+	//template
+	//rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
+	//rowTextEntry.setName("");
+	//row.addText(rowTextEntry);
+	
+	resultRows.add(row);
+}
 %>
-<portlet:actionURL var="addVaoCangBenUrl" name="addVaoCangBen">
-</portlet:actionURL>
-<form action="<%= addVaoCangBenUrl.toString() %>" method="post" name="<portlet:namespace />fm" >
+
+<form action="<%= portletURL.toString() %>" method="post" name="<portlet:namespace />fm" >
 	<table width="1600px">
 		<tr>
 			<td width="200px" valign="top" >
 				<jsp:include page="/html/menudb/trang_menu_left.jsp"></jsp:include>
 			</td>
-				<td valign="top">
-					<table>
-						<tr>
-							<td style="padding:10px 10px;">Tên tàu <font color="red">*</font> <br>(Name of ship)</td>
-							<td><input type="text" name="<portlet:namespace />nameOfShip" size="50"/><br>Nhập tên tàu</td>
-							<td style="padding:10px 10px;">Tên thuyền trưởng <br>(Name of master)</td>
-							<td><input type="text" name="<portlet:namespace />nameOfMaster" size="50"/><br>&nbsp;</td>
-						</tr>
-						<tr>
-							<td style="padding:10px 10px;">Khu vực hàng hải <font color="red">*</font><br>(Port region)</td>
-							<td>
-							<select name="<portlet:namespace />portRegionCode" style="width:100%;">
-								<%	for(int i=0; i<listDmPortRegin.size();i++)	{
-										portRegion = (DmPortRegion)listDmPortRegin.get(i);	 %>
-										<option value="<%= portRegion.getPortRegionCode()%>" title="<%=portRegion.getPortRegionNameVN()%>"><%=StringUtil.shorten(portRegion.getPortRegionNameVN(),45,"")%></option>
-								<%	}	%>
-							</select>
-							<br>Tải danh mục</td>
-							<td style="padding:10px 10px;">Cảng đến<br>(Port of arrival)</td>
-							<td>
-								<select name="<portlet:namespace />portOfArrivalCode" style="width:100%;">
-									<%	for(int i=0; i<listDmPort.size();i++)	{
-										port = (DmPort)listDmPort.get(i);	 %>
-										<option value="<%= port.getPortCode()%>" title="<%=port.getPortName()%>"><%= port.getPortName()%></option>
-									<%	}	%>
-								</select>
-								<br>&nbsp;
-							</td>
-						</tr>
-						<tr>
-							<td style="padding:10px 10px;">Bến cảng <font color="red">*</font><br>(Port harbour)</td>
-							<td>
-								<select  name="<portlet:namespace />portHarbourCode" style="width:100%;">
-									<%	for(int i=0; i<listDmPortHabour.size();i++)	{
-											portHarbour = (DmPortHarbour)listDmPortHabour.get(i);	 %>
-											<option value="<%= portHarbour.getPortHarbourCode()%>" title="<%=portHarbour.getPortHarbourNameVN() %>"><%=StringUtil.shorten(portHarbour.getPortHarbourNameVN(),45,"")%></option>
-										<%	}	%>
-								</select>
-							<td style="padding:10px 10px;">Cầu cảng neo đậu <br>(Anchoring port wharf)</td>
-							<td>
-								<select  name="<portlet:namespace />portWharfCode" style="width:100%;">
-									<%	for(int i=0; i<listDmWharf.size();i++)	{
-											portWharf = (DmPortWharf)listDmWharf.get(i);	 %>
-											<option value="<%= portWharf.getPortWharfCode()%>" title="<%= portWharf.getPortWharfNameVN()%>"><%= portWharf.getPortWharfNameVN()%></option>
-										<%	}	%>	
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td style="padding:10px 10px;">Loại hồ sơ <br>(Type of Document)</td>
-							<td>
-								<select name="<portlet:namespace />isArrival" style="width:100%;">
-									<option value="1">Vào cảng</option>
-								</select>
-							</td>
-							<td style="padding:10px 10px;">Số chuyến đi <font color="red">*</font> <br>(Voyage Number)</td>
-							<td><input type="text" name="<portlet:namespace />voyageNumber" onkeypress="return isNumberKey(event)" size="50" maxlength="30"/></td>
-						</tr>
-						<tr>
-							<td style="padding:10px 10px;">Số thuyền viên (gồm cả thuyền trưởng) <font color="red">*</font><br>(Number of crew (inc. master))</td>
-							<td><input type="text" name="<portlet:namespace />numberOfCrew" onkeypress="return isNumberKey(event)" size="50" maxlength="9"/></td>
-							<td style="padding:10px 10px;">Số hành khách <font color="red">*</font> <br>(Number of passengers)</td>
-							<td><input type="text" name="<portlet:namespace />numberOfPassengers" onkeypress="return isNumberKey(event)" size="50" maxlength="9"/></td>
-						</tr>
-						<tr>
-							<td style="padding:10px 10px;">Cảng rời cuối cùng <font color="red">*</font><br>(Last port of call)</td>
-							<td><input type="text" name="<portlet:namespace />lastPortOfCallCode" size="5" maxlength="5"/></td>
-							<td style="padding:10px 10px;">Thời gian đến cảng <font color="red">*</font> <br>(Time of arrival)</td>
-							<td>
-								<liferay-ui:input-date name="dateOfArrival" disableNamespace="<%= false %>"	disabled="false" 
-									dayValue="<%= today.get(Calendar.DAY_OF_MONTH) %>" dayParam="dobDay"
-							        monthValue="<%= today.get(Calendar.MONTH) %>" monthParam="dobMonth"
-							        yearValue="<%= today.get(Calendar.YEAR) %>" yearParam="dobYear"
-				        			/>
-			        		</td>
-						</tr>
-						<tr>
-							<td align="center" colspan="4" style="padding:10px 10px;margin:0px auto;">
-								<fieldset>
-									  <legend style="font-size:15px;">Thông tin đại lý</legend>
-									  <table>
-									  	<tr>
-									  		<td style="padding:10px 10px;">Mst đại lý <font color="red">*</font><br>(Tax code)</td>
-											<td><input type="text" name="<portlet:namespace />taxCodeOfShipownersAgents" size="50"/></td>
-											<td style="padding:10px 10px;">Tên đại lý <font color="red">*</font> <br>(Name)</td>
-											<td><input type="text" name="<portlet:namespace />nameOfShipownersAgents" size="50"/></td>
-									  	</tr>
-									  	<tr>
-									  		<td style="padding:10px 10px;">Địa chỉ đại lý <font color="red">*</font><br>(Address)</td>
-											<td><input type="text" name="<portlet:namespace />shipAgencyAddress" size="50"/></td>
-											<td style="padding:10px 10px;">Điện thoại đại lý <font color="red">*</font> <br>(Phone)</td>
-											<td><input type="text" name="<portlet:namespace />shipAgencyPhone" onkeypress="return isNumberKey(event)" size="50"/></td>
-									  	</tr>
-									  	<tr>
-									  		<td style="padding:10px 10px;">Fax đại lý <font color="red">*</font><br>(Fax)</td>
-											<td><input type="text" name="<portlet:namespace />shipAgencyFax" onkeypress="return isNumberKey(event)" size="50"/></td>
-											<td style="padding:10px 10px;">Email đại lý <font color="red">*</font> <br>(Email)</td>
-											<td><input type="text" name="<portlet:namespace />shipAgencyEmail" size="50"/></td>
-									  	</tr>
-									  </table>
-								 </fieldset>
-							</td>
-						</tr>
-						<tr>
-							<td colspan="4" align="center"><input type="submit" value="Thêm mới hồ sơ" style="height: 40px;widows: 50px;"/></td>
-						</tr>
-					</table>
-				</td>
+			<td valign="top">
+				<input type="button" value="Thêm mới hồ sơ" onclick="javascript:document.location='<%=addUrl.toString()%>'" style="font-size:15px;color:white;background-color:#337ab7;height:40px;width: 150px;"/>
+				<liferay-ui:search-iterator searchContainer="<%= searchCtn %>" />
+				<input type="button" value="Thêm mới hồ sơ" onclick="javascript:document.location="<%=addUrl.toString()%>" style="font-size:15px;color:white;background-color:#337ab7;height:40px;width: 150px;"/>
+			</td>
 		</tr>
 	</table>
 </form>
