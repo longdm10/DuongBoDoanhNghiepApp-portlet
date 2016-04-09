@@ -117,6 +117,10 @@ public class DmPortLocalServiceClpInvoker {
 		_methodName574 = "getDmPort";
 
 		_methodParameterTypes574 = new String[] {  };
+
+		_methodName575 = "findByPortCode";
+
+		_methodParameterTypes575 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -225,6 +229,11 @@ public class DmPortLocalServiceClpInvoker {
 			return DmPortLocalServiceUtil.getDmPort();
 		}
 
+		if (_methodName575.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes575, parameterTypes)) {
+			return DmPortLocalServiceUtil.findByPortCode((java.lang.String)arguments[0]);
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -266,4 +275,6 @@ public class DmPortLocalServiceClpInvoker {
 	private String[] _methodParameterTypes569;
 	private String _methodName574;
 	private String[] _methodParameterTypes574;
+	private String _methodName575;
+	private String[] _methodParameterTypes575;
 }

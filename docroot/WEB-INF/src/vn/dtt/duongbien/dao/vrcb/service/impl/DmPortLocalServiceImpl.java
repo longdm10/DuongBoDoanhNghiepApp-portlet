@@ -18,7 +18,9 @@ import java.util.List;
 
 import com.liferay.portal.kernel.exception.SystemException;
 
+import vn.dtt.duongbien.dao.vrcb.model.DmPort;
 import vn.dtt.duongbien.dao.vrcb.service.base.DmPortLocalServiceBaseImpl;
+import vn.dtt.duongbien.dao.vrcb.service.persistence.DmPortPersistence;
 
 /**
  * The implementation of the dm port local service.
@@ -42,5 +44,9 @@ public class DmPortLocalServiceImpl extends DmPortLocalServiceBaseImpl {
 	 */
 	public List getDmPort() throws SystemException{
 		return dmPortPersistence.findAll();
+	}
+	
+	public List findByPortCode(String portCode) throws SystemException{
+		return dmPortPersistence.findByPortCode(portCode);
 	}
 }

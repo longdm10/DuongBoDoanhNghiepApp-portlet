@@ -276,6 +276,11 @@ public class DmPortLocalServiceUtil {
 		return getService().getDmPort();
 	}
 
+	public static java.util.List findByPortCode(java.lang.String portCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().findByPortCode(portCode);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

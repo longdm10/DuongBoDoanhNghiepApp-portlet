@@ -22,6 +22,9 @@
 	}
 </script>
 <%
+String redirect = ParamUtil.getString(request, "redirect");		
+String itemIdTemp = ParamUtil.getString(request, "id");
+
 DmPortRegion portRegion=null;
 DmPort port = null;
 DmPortHarbour portHarbour = null;

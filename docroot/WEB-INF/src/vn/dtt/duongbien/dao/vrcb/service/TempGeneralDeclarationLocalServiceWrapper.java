@@ -300,14 +300,23 @@ public class TempGeneralDeclarationLocalServiceWrapper
 		java.lang.String taxCodeOfShipownersAgents,
 		java.lang.String nameOfShipownersAgents,
 		java.lang.String shipAgencyAddress, java.lang.String shipAgencyPhone,
-		java.lang.String shipAgencyFax, java.lang.String shipAgencyEmail)
+		java.lang.String shipAgencyFax, java.lang.String shipAgencyEmail,
+		java.util.Date signDate)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _tempGeneralDeclarationLocalService.addTemGeneralDeclaration(nameOfShip,
 			nameOfMaster, portRegionCode, portOfArrivalCode, portHarbourCode,
 			portWharfCode, isArrival, voyageNumber, numberOfCrew,
 			numberOfPassengers, lastPortOfCallCode, dateOfArrival,
 			taxCodeOfShipownersAgents, nameOfShipownersAgents,
-			shipAgencyAddress, shipAgencyPhone, shipAgencyFax, shipAgencyEmail);
+			shipAgencyAddress, shipAgencyPhone, shipAgencyFax, shipAgencyEmail,
+			signDate);
+	}
+
+	@Override
+	public void deletTempGeneral(long itemId)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			vn.dtt.duongbien.dao.vrcb.NoSuchTempGeneralDeclarationException {
+		_tempGeneralDeclarationLocalService.deletTempGeneral(itemId);
 	}
 
 	/**

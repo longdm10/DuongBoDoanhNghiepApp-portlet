@@ -286,6 +286,12 @@ public class DmPortLocalServiceWrapper implements DmPortLocalService,
 		return _dmPortLocalService.getDmPort();
 	}
 
+	@Override
+	public java.util.List findByPortCode(java.lang.String portCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _dmPortLocalService.findByPortCode(portCode);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

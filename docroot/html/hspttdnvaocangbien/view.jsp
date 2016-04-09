@@ -1,3 +1,10 @@
+<%@page import="vn.dtt.duongbien.dao.vrcb.service.InterfaceRequestLocalServiceUtil"%>
+<%@page import="com.liferay.portal.kernel.dao.orm.PropertyFactoryUtil"%>
+<%@page import="com.liferay.portal.kernel.dao.orm.ProjectionFactoryUtil"%>
+<%@page import="com.liferay.portal.kernel.util.PortalClassLoaderUtil"%>
+<%@page import="vn.dtt.duongbien.dao.vrcb.model.InterfaceRequest"%>
+<%@page import="com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil"%>
+<%@page import="com.liferay.portal.kernel.dao.orm.DynamicQuery"%>
 <%@page import="com.liferay.portal.kernel.dao.search.ResultRow"%>
 <%@page import="vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration"%>
 <%@page import="com.liferay.portal.kernel.dao.search.TextSearchEntry"%>
@@ -19,7 +26,24 @@
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 <%@ include file="/html/init.jsp"%>
 <%@page import="com.liferay.portal.kernel.language.LanguageUtil"%>
+<portlet:actionURL var="deleteVaoCangBenUrl" name="deleteVaoCangBien">
+</portlet:actionURL>
 <%
+
+//https://mvmn.wordpress.com/2011/06/23/liferay-6-webcontent-query-dynamic/
+
+//DynamicQuery subQuery = DynamicQueryFactoryUtil.forClass(InterfaceRequest.class, "requestSub", PortalClassLoaderUtil.getClassLoader()).setProjection(ProjectionFactoryUtil.max("id"));
+//List listSubQuery = InterfaceRequestLocalServiceUtil.dynamicQuery(subQuery);
+//Long maxId = (Long)listSubQuery.get(0);
+//DynamicQuery query = DynamicQueryFactoryUtil.forClass(InterfaceRequest.class, "requestParent", PortalClassLoaderUtil.getClassLoader()).add(PropertyFactoryUtil.forName("id").eq(maxId));
+//query.setProjection(ProjectionFactoryUtil.property("requestCode"));
+//List listQuery = InterfaceRequestLocalServiceUtil.dynamicQuery(query);
+//for(InterfaceRequest student:journalArticles){
+//	out.println(student.getRequestCode()+"<br/>");
+//}
+//String iR = (String)listQuery.get(0);
+//test.getRequestCode();
+//System.out.println(iR);
 PortletURL portletURL = renderResponse.createRenderURL();
 portletURL.setWindowState(WindowState.MAXIMIZED);
 portletURL.setParameter("jspPage", "/html/hspttdnvaocangbien/view.jsp");
@@ -49,6 +73,7 @@ headerNames.add("Thông báo");
 headerNames.add("Gửi hồ sơ");
 headerNames.add("Yêu cầu sửa đổi");
 headerNames.add("Xem giấy phép");
+headerNames.add("Sửa");
 headerNames.add("Hủy");
 
 SearchContainer searchCtn = new SearchContainer(renderRequest, null, null, SearchContainer.DEFAULT_CUR_PARAM, ParamUtil.getInteger(renderRequest,SearchContainer.DEFAULT_DELTA_PARAM), portletURL, headerNames, null);	
@@ -87,7 +112,7 @@ for (int i = 0; i < results.size(); i++) {
 	
 	//so khai bao
 	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
-	rowTextEntry.setName(item.getRequestCode());
+	rowTextEntry.setName(String.valueOf(item.getDocumentName()));
 	row.addText(rowTextEntry);
 	
 	//so chuyen di
@@ -110,7 +135,7 @@ for (int i = 0; i < results.size(); i++) {
 	
 	//cang den
 	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
-	rowTextEntry.setName(item.getPortOfArrivalCode());
+	rowTextEntry.setName(((DmPort)DmPortLocalServiceUtil.findByPortCode(item.getPortOfArrivalCode()).get(0)).getPortName());
 	row.addText(rowTextEntry);
 	
 	//thoi gian den
@@ -159,15 +184,27 @@ for (int i = 0; i < results.size(); i++) {
 	rowTextEntry.setName(sb.toString());
 	row.addText(rowTextEntry);
 	
+	//sua chi tiet
+	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
+	PortletURL editDetailUrl = renderResponse.createRenderURL();
+	editDetailUrl.setWindowState(WindowState.MAXIMIZED);
+	editDetailUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/edit.jsp");
+	editDetailUrl.setParameter("redirect", currentURL);
+	editDetailUrl.setParameter("id",String.valueOf(item.getId()));
+	sb = new StringBuilder();
+	sb.append("<a href=\"" +editDetailUrl.toString() + "\">sửa</a>");
+	rowTextEntry.setName(sb.toString());
+	row.addText(rowTextEntry);
+		
 	//huy
 	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
-	PortletURL deleteUrl = renderResponse.createRenderURL();
-	deleteUrl.setWindowState(WindowState.MAXIMIZED);
-	deleteUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/certificate.jsp");
-	deleteUrl.setParameter("redirect", currentURL);
-	deleteUrl.setParameter("id",String.valueOf(item.getId()));
 	sb = new StringBuilder();
-	sb.append("<a href=\"" +deleteUrl.toString() + "\">link</a>");
+	PortletURL deletelUrl = renderResponse.createActionURL();
+	deletelUrl.setWindowState(WindowState.MAXIMIZED);
+	deletelUrl.setParameter("javax.portlet.action", "deleteVaoCangBien");
+	deletelUrl.setParameter("redirect", currentURL);
+	deletelUrl.setParameter("id",String.valueOf(item.getId()));
+	sb.append("<a href=\"" +deletelUrl.toString() + "\">Xóa</a>");
 	rowTextEntry.setName(sb.toString());
 	row.addText(rowTextEntry);
 	
@@ -188,6 +225,7 @@ for (int i = 0; i < results.size(); i++) {
 			</td>
 			<td valign="top">
 				<input type="button" value="Thêm mới hồ sơ" onclick="javascript:document.location='<%=addUrl.toString()%>'" style="font-size:15px;color:white;background-color:#337ab7;height:40px;width: 150px;"/>
+				<input type="button" value="Thêm mới chi tiết hồ sơ" onclick="javascript:document.location='<%=addUrl.toString()%>'" style="font-size:15px;color:white;background-color:#337ab7;height:40px;width: 150px;"/>
 				<liferay-ui:search-iterator searchContainer="<%= searchCtn %>" />
 				<input type="button" value="Thêm mới hồ sơ" onclick="javascript:document.location="<%=addUrl.toString()%>" style="font-size:15px;color:white;background-color:#337ab7;height:40px;width: 150px;"/>
 			</td>

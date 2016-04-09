@@ -253,4 +253,7 @@ public interface DmPortLocalService extends BaseLocalService,
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List getDmPort()
 		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public java.util.List findByPortCode(java.lang.String portCode)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

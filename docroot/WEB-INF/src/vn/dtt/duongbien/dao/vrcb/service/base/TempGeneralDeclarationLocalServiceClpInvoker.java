@@ -122,8 +122,12 @@ public class TempGeneralDeclarationLocalServiceClpInvoker {
 				"int", "java.lang.String", "int", "int", "java.lang.String",
 				"java.util.Date", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"java.lang.String"
+				"java.lang.String", "java.util.Date"
 			};
+
+		_methodName575 = "deletTempGeneral";
+
+		_methodParameterTypes575 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -242,7 +246,15 @@ public class TempGeneralDeclarationLocalServiceClpInvoker {
 				(java.lang.String)arguments[13],
 				(java.lang.String)arguments[14],
 				(java.lang.String)arguments[15],
-				(java.lang.String)arguments[16], (java.lang.String)arguments[17]);
+				(java.lang.String)arguments[16],
+				(java.lang.String)arguments[17], (java.util.Date)arguments[18]);
+		}
+
+		if (_methodName575.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes575, parameterTypes)) {
+			TempGeneralDeclarationLocalServiceUtil.deletTempGeneral(((Long)arguments[0]).longValue());
+
+			return null;
 		}
 
 		throw new UnsupportedOperationException();
@@ -286,4 +298,6 @@ public class TempGeneralDeclarationLocalServiceClpInvoker {
 	private String[] _methodParameterTypes569;
 	private String _methodName574;
 	private String[] _methodParameterTypes574;
+	private String _methodName575;
+	private String[] _methodParameterTypes575;
 }

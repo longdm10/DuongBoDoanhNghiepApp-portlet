@@ -13,6 +13,7 @@ import vn.dtt.duongbien.dao.vrcb.service.TempAnimalQuarantineLocalServiceUtil;
 import vn.dtt.duongbien.dao.vrcb.service.TempGeneralDeclarationLocalServiceUtil;
 import vn.dtt.duongbien.qlhsphuongtientndvaoracangbien.QLHSPhuongTienTNDVaoRaCangBien;
 
+import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
@@ -68,8 +69,25 @@ public class HSPTTDNVaoCangBien extends MVCPortlet {
 		String shipAgencyPhone = ParamUtil.getString(actionRequest, "shipAgencyPhone");
 		String shipAgencyFax = ParamUtil.getString(actionRequest, "shipAgencyFax");
 		String shipAgencyEmail = ParamUtil.getString(actionRequest, "shipAgencyEmail");
-		TempGeneralDeclarationLocalServiceUtil.addTemGeneralDeclaration(nameOfShip, nameOfMaster, portRegionCode, portOfArrivalCode, portHarbourCode, portWharfCode, isArrival, voyageNumber, numberOfCrew, numberOfPassengers, lastPortOfCallCode, dateOfArrival, taxCodeOfShipownersAgents, nameOfShipownersAgents, shipAgencyAddress, shipAgencyPhone, shipAgencyFax, shipAgencyEmail);
+		Date signDate = new Date();
+		TempGeneralDeclarationLocalServiceUtil.addTemGeneralDeclaration(nameOfShip, nameOfMaster, portRegionCode, portOfArrivalCode, portHarbourCode, portWharfCode, isArrival, voyageNumber, numberOfCrew, numberOfPassengers, lastPortOfCallCode, dateOfArrival, taxCodeOfShipownersAgents, nameOfShipownersAgents, shipAgencyAddress, shipAgencyPhone, shipAgencyFax, shipAgencyEmail, signDate );
 		} catch (SystemException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteVaoCangBien(ActionRequest actionRequest, ActionResponse actionResponse) {
+		try {
+			String id = ParamUtil.getString(actionRequest, "id");
+			TempGeneralDeclarationLocalServiceUtil.deleteTempGeneralDeclaration(Long.valueOf(id));
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (PortalException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

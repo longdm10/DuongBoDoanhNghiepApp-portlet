@@ -263,6 +263,11 @@ public interface TempGeneralDeclarationLocalService extends BaseLocalService,
 		java.lang.String taxCodeOfShipownersAgents,
 		java.lang.String nameOfShipownersAgents,
 		java.lang.String shipAgencyAddress, java.lang.String shipAgencyPhone,
-		java.lang.String shipAgencyFax, java.lang.String shipAgencyEmail)
+		java.lang.String shipAgencyFax, java.lang.String shipAgencyEmail,
+		java.util.Date signDate)
 		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public void deletTempGeneral(long itemId)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			vn.dtt.duongbien.dao.vrcb.NoSuchTempGeneralDeclarationException;
 }

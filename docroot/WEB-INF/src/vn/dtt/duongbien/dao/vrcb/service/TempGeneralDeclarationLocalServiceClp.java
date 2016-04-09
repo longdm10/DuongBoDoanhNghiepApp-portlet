@@ -124,8 +124,12 @@ public class TempGeneralDeclarationLocalServiceClp
 				"int", "java.lang.String", "int", "int", "java.lang.String",
 				"java.util.Date", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"java.lang.String"
+				"java.lang.String", "java.util.Date"
 			};
+
+		_methodName20 = "deletTempGeneral";
+
+		_methodParameterTypes20 = new String[] { "long" };
 	}
 
 	@Override
@@ -694,7 +698,8 @@ public class TempGeneralDeclarationLocalServiceClp
 		java.lang.String taxCodeOfShipownersAgents,
 		java.lang.String nameOfShipownersAgents,
 		java.lang.String shipAgencyAddress, java.lang.String shipAgencyPhone,
-		java.lang.String shipAgencyFax, java.lang.String shipAgencyEmail)
+		java.lang.String shipAgencyFax, java.lang.String shipAgencyEmail,
+		java.util.Date signDate)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
@@ -736,7 +741,9 @@ public class TempGeneralDeclarationLocalServiceClp
 						
 					ClpSerializer.translateInput(shipAgencyFax),
 						
-					ClpSerializer.translateInput(shipAgencyEmail)
+					ClpSerializer.translateInput(shipAgencyEmail),
+						
+					ClpSerializer.translateInput(signDate)
 					});
 		}
 		catch (Throwable t) {
@@ -756,6 +763,35 @@ public class TempGeneralDeclarationLocalServiceClp
 		}
 
 		return (vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public void deletTempGeneral(long itemId)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			vn.dtt.duongbien.dao.vrcb.NoSuchTempGeneralDeclarationException {
+		try {
+			_invokableLocalService.invokeMethod(_methodName20,
+				_methodParameterTypes20, new Object[] { itemId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof vn.dtt.duongbien.dao.vrcb.NoSuchTempGeneralDeclarationException) {
+				throw (vn.dtt.duongbien.dao.vrcb.NoSuchTempGeneralDeclarationException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
 	}
 
 	private InvokableLocalService _invokableLocalService;
@@ -797,4 +833,6 @@ public class TempGeneralDeclarationLocalServiceClp
 	private String[] _methodParameterTypes17;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
+	private String _methodName20;
+	private String[] _methodParameterTypes20;
 }
