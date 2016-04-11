@@ -127,9 +127,20 @@ public class TempGeneralDeclarationLocalServiceClp
 				"java.lang.String", "java.util.Date"
 			};
 
-		_methodName20 = "deletTempGeneral";
+		_methodName20 = "updateTemGeneralDeclaration";
 
-		_methodParameterTypes20 = new String[] { "long" };
+		_methodParameterTypes20 = new String[] {
+				"java.lang.Long", "java.lang.String", "java.lang.String",
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"java.lang.String", "int", "java.lang.String", "int", "int",
+				"java.lang.String", "java.util.Date", "java.lang.String",
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"java.lang.String", "java.lang.String", "java.util.Date"
+			};
+
+		_methodName21 = "deletTempGeneral";
+
+		_methodParameterTypes21 = new String[] { "long" };
 	}
 
 	@Override
@@ -766,12 +777,98 @@ public class TempGeneralDeclarationLocalServiceClp
 	}
 
 	@Override
+	public vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration updateTemGeneralDeclaration(
+		java.lang.Long id, java.lang.String nameOfShip,
+		java.lang.String nameOfMaster, java.lang.String portRegionCode,
+		java.lang.String portOfArrivalCode, java.lang.String portHarbourCode,
+		java.lang.String portWharfCode, int isArrival,
+		java.lang.String voyageNumber, int numberOfCrew,
+		int numberOfPassengers, java.lang.String lastPortOfCallCode,
+		java.util.Date dateOfArrival,
+		java.lang.String taxCodeOfShipownersAgents,
+		java.lang.String nameOfShipownersAgents,
+		java.lang.String shipAgencyAddress, java.lang.String shipAgencyPhone,
+		java.lang.String shipAgencyFax, java.lang.String shipAgencyEmail,
+		java.util.Date signDate)
+		throws com.liferay.portal.NoSuchModelException,
+			com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName20,
+					_methodParameterTypes20,
+					new Object[] {
+						ClpSerializer.translateInput(id),
+						
+					ClpSerializer.translateInput(nameOfShip),
+						
+					ClpSerializer.translateInput(nameOfMaster),
+						
+					ClpSerializer.translateInput(portRegionCode),
+						
+					ClpSerializer.translateInput(portOfArrivalCode),
+						
+					ClpSerializer.translateInput(portHarbourCode),
+						
+					ClpSerializer.translateInput(portWharfCode),
+						
+					isArrival,
+						
+					ClpSerializer.translateInput(voyageNumber),
+						
+					numberOfCrew,
+						
+					numberOfPassengers,
+						
+					ClpSerializer.translateInput(lastPortOfCallCode),
+						
+					ClpSerializer.translateInput(dateOfArrival),
+						
+					ClpSerializer.translateInput(taxCodeOfShipownersAgents),
+						
+					ClpSerializer.translateInput(nameOfShipownersAgents),
+						
+					ClpSerializer.translateInput(shipAgencyAddress),
+						
+					ClpSerializer.translateInput(shipAgencyPhone),
+						
+					ClpSerializer.translateInput(shipAgencyFax),
+						
+					ClpSerializer.translateInput(shipAgencyEmail),
+						
+					ClpSerializer.translateInput(signDate)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.NoSuchModelException) {
+				throw (com.liferay.portal.NoSuchModelException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
 	public void deletTempGeneral(long itemId)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			vn.dtt.duongbien.dao.vrcb.NoSuchTempGeneralDeclarationException {
 		try {
-			_invokableLocalService.invokeMethod(_methodName20,
-				_methodParameterTypes20, new Object[] { itemId });
+			_invokableLocalService.invokeMethod(_methodName21,
+				_methodParameterTypes21, new Object[] { itemId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -835,4 +932,6 @@ public class TempGeneralDeclarationLocalServiceClp
 	private String[] _methodParameterTypes19;
 	private String _methodName20;
 	private String[] _methodParameterTypes20;
+	private String _methodName21;
+	private String[] _methodParameterTypes21;
 }

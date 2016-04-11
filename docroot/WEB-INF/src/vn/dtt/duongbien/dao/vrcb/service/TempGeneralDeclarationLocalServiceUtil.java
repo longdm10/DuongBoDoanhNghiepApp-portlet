@@ -296,6 +296,30 @@ public class TempGeneralDeclarationLocalServiceUtil {
 			shipAgencyFax, shipAgencyEmail, signDate);
 	}
 
+	public static vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration updateTemGeneralDeclaration(
+		java.lang.Long id, java.lang.String nameOfShip,
+		java.lang.String nameOfMaster, java.lang.String portRegionCode,
+		java.lang.String portOfArrivalCode, java.lang.String portHarbourCode,
+		java.lang.String portWharfCode, int isArrival,
+		java.lang.String voyageNumber, int numberOfCrew,
+		int numberOfPassengers, java.lang.String lastPortOfCallCode,
+		java.util.Date dateOfArrival,
+		java.lang.String taxCodeOfShipownersAgents,
+		java.lang.String nameOfShipownersAgents,
+		java.lang.String shipAgencyAddress, java.lang.String shipAgencyPhone,
+		java.lang.String shipAgencyFax, java.lang.String shipAgencyEmail,
+		java.util.Date signDate)
+		throws com.liferay.portal.NoSuchModelException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .updateTemGeneralDeclaration(id, nameOfShip, nameOfMaster,
+			portRegionCode, portOfArrivalCode, portHarbourCode, portWharfCode,
+			isArrival, voyageNumber, numberOfCrew, numberOfPassengers,
+			lastPortOfCallCode, dateOfArrival, taxCodeOfShipownersAgents,
+			nameOfShipownersAgents, shipAgencyAddress, shipAgencyPhone,
+			shipAgencyFax, shipAgencyEmail, signDate);
+	}
+
 	public static void deletTempGeneral(long itemId)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			vn.dtt.duongbien.dao.vrcb.NoSuchTempGeneralDeclarationException {

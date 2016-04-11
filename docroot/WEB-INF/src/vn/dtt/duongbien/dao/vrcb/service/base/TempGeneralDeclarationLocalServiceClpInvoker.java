@@ -125,9 +125,20 @@ public class TempGeneralDeclarationLocalServiceClpInvoker {
 				"java.lang.String", "java.util.Date"
 			};
 
-		_methodName575 = "deletTempGeneral";
+		_methodName575 = "updateTemGeneralDeclaration";
 
-		_methodParameterTypes575 = new String[] { "long" };
+		_methodParameterTypes575 = new String[] {
+				"java.lang.Long", "java.lang.String", "java.lang.String",
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"java.lang.String", "int", "java.lang.String", "int", "int",
+				"java.lang.String", "java.util.Date", "java.lang.String",
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"java.lang.String", "java.lang.String", "java.util.Date"
+			};
+
+		_methodName576 = "deletTempGeneral";
+
+		_methodParameterTypes576 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -252,6 +263,25 @@ public class TempGeneralDeclarationLocalServiceClpInvoker {
 
 		if (_methodName575.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes575, parameterTypes)) {
+			return TempGeneralDeclarationLocalServiceUtil.updateTemGeneralDeclaration((java.lang.Long)arguments[0],
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
+				(java.lang.String)arguments[3], (java.lang.String)arguments[4],
+				(java.lang.String)arguments[5], (java.lang.String)arguments[6],
+				((Integer)arguments[7]).intValue(),
+				(java.lang.String)arguments[8],
+				((Integer)arguments[9]).intValue(),
+				((Integer)arguments[10]).intValue(),
+				(java.lang.String)arguments[11], (java.util.Date)arguments[12],
+				(java.lang.String)arguments[13],
+				(java.lang.String)arguments[14],
+				(java.lang.String)arguments[15],
+				(java.lang.String)arguments[16],
+				(java.lang.String)arguments[17],
+				(java.lang.String)arguments[18], (java.util.Date)arguments[19]);
+		}
+
+		if (_methodName576.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes576, parameterTypes)) {
 			TempGeneralDeclarationLocalServiceUtil.deletTempGeneral(((Long)arguments[0]).longValue());
 
 			return null;
@@ -300,4 +330,6 @@ public class TempGeneralDeclarationLocalServiceClpInvoker {
 	private String[] _methodParameterTypes574;
 	private String _methodName575;
 	private String[] _methodParameterTypes575;
+	private String _methodName576;
+	private String[] _methodParameterTypes576;
 }

@@ -14,10 +14,12 @@
 
 package vn.dtt.duongbien.dao.vrcb.service.impl;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 import com.liferay.counter.service.CounterLocalServiceUtil;
+import com.liferay.portal.NoSuchModelException;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
 import com.liferay.portal.kernel.dao.orm.ProjectionFactoryUtil;
@@ -74,14 +76,32 @@ public class TempGeneralDeclarationLocalServiceImpl
 		tgd.setShipAgencyFax(shipAgencyFax);
 		tgd.setShipAgencyEmail(shipAgencyEmail);
 		tgd.setSignDate(signDate);
-		//DynamicQuery subQuery = DynamicQueryFactoryUtil.forClass(InterfaceRequest.class, "requestSub", PortalClassLoaderUtil.getClassLoader()).setProjection(ProjectionFactoryUtil.max("id"));
-		//List listSubQuery = InterfaceRequestLocalServiceUtil.dynamicQuery(subQuery);
-		//Long maxId = (Long)listSubQuery.get(0);
-		//DynamicQuery query = DynamicQueryFactoryUtil.forClass(InterfaceRequest.class, "requestParent", PortalClassLoaderUtil.getClassLoader()).add(PropertyFactoryUtil.forName("id").eq(maxId));
-		//query.setProjection(ProjectionFactoryUtil.property("requestCode"));
-		//List listQuery = InterfaceRequestLocalServiceUtil.dynamicQuery(query);
-		//String requestCode = (String)listQuery.get(0);
-		//tgd.setRequestCode(requestCode);
+		tempGeneralDeclarationPersistence.update(tgd);
+		return tgd;
+	}
+	
+	public TempGeneralDeclaration updateTemGeneralDeclaration(Long id,String nameOfShip, String nameOfMaster, String portRegionCode, String portOfArrivalCode, String portHarbourCode, String portWharfCode, int isArrival, String voyageNumber, int numberOfCrew, int numberOfPassengers, String lastPortOfCallCode, Date dateOfArrival, String taxCodeOfShipownersAgents, String nameOfShipownersAgents, String shipAgencyAddress, String shipAgencyPhone, String shipAgencyFax, String shipAgencyEmail, Date signDate) throws SystemException, NoSuchModelException{
+		//long itemId = CounterLocalServiceUtil.increment(TempGeneralDeclaration.class.getName());
+		TempGeneralDeclaration tgd = tempGeneralDeclarationPersistence.findByPrimaryKey(id);
+		tgd.setNameOfShip(nameOfShip);
+		tgd.setNameOfMaster(nameOfMaster);
+		tgd.setPortRegionCode(portRegionCode);
+		tgd.setPortOfArrivalCode(portOfArrivalCode);
+		tgd.setPortHarbourCode(portHarbourCode);
+		tgd.setPortWharfCode(portWharfCode);
+		tgd.setIsArrival(isArrival);
+		tgd.setVoyageNumber(voyageNumber);
+		tgd.setNumberOfCrew(numberOfCrew);
+		tgd.setNumberOfPassengers(numberOfPassengers);
+		tgd.setLastPortOfCallCode(lastPortOfCallCode);
+		tgd.setDateOfArrival(dateOfArrival);
+		tgd.setTaxCodeOfShipownersAgents(taxCodeOfShipownersAgents);
+		tgd.setNameOfShipownersAgents(nameOfShipownersAgents);
+		tgd.setShipAgencyAddress(shipAgencyAddress);
+		tgd.setShipAgencyPhone(shipAgencyPhone);
+		tgd.setShipAgencyFax(shipAgencyFax);
+		tgd.setShipAgencyEmail(shipAgencyEmail);
+		tgd.setSignDate(signDate);
 		tempGeneralDeclarationPersistence.update(tgd);
 		return tgd;
 	}
