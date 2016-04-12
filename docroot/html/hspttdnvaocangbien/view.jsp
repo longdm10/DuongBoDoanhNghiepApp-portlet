@@ -28,8 +28,15 @@
 <%@page import="com.liferay.portal.kernel.language.LanguageUtil"%>
 <portlet:actionURL var="deleteVaoCangBenUrl" name="deleteVaoCangBien">
 </portlet:actionURL>
+<script type="text/javascript">
+function deleteVaoCangBien(delete_id){
+	if(confirm("Bạn có chắc chắn muốn xóa hồ sơ không")){
+		document.<portlet:namespace />fm.<portlet:namespace />id.value = delete_id;
+		submitForm(document.<portlet:namespace />fm, '<%=deleteVaoCangBenUrl.toString()%>');
+	}
+}
+</script>
 <%
-
 //https://mvmn.wordpress.com/2011/06/23/liferay-6-webcontent-query-dynamic/
 
 //DynamicQuery subQuery = DynamicQueryFactoryUtil.forClass(InterfaceRequest.class, "requestSub", PortalClassLoaderUtil.getClassLoader()).setProjection(ProjectionFactoryUtil.max("id"));
@@ -59,6 +66,7 @@ editUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/edit.jsp");
 
 List headerNames = new ArrayList();
 headerNames.add("Số Thứ tự");
+headerNames.add("Tên tàu");
 headerNames.add("Lịch sử");
 headerNames.add("Số khai báo");
 headerNames.add("Số chuyến đi");
@@ -86,7 +94,7 @@ total = TempGeneralDeclarationLocalServiceUtil.getTempGeneralDeclarationsCount()
 searchCtn.setTotal(total);	
 searchCtn.setResults(results);
 searchCtn.setDelta(ParamUtil.getInteger(renderRequest,SearchContainer.DEFAULT_DELTA_PARAM));
-searchCtn.setRowChecker(new RowChecker(renderResponse));
+//searchCtn.setRowChecker(new RowChecker(renderResponse));
 
 List resultRows = searchCtn.getResultRows();
 for (int i = 0; i < results.size(); i++) {
@@ -97,6 +105,11 @@ for (int i = 0; i < results.size(); i++) {
 	
 	//STT
 	TextSearchEntry rowTextEntry =  new TextSearchEntry();
+	rowTextEntry.setName(String.valueOf(i+1));
+	row.addText(rowTextEntry);
+	
+	//Ten tau
+	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
 	rowTextEntry.setName(String.valueOf(item.getNameOfShip()));
 	row.addText(rowTextEntry);
 	
@@ -192,7 +205,7 @@ for (int i = 0; i < results.size(); i++) {
 	editDetailUrl.setParameter("redirect", currentURL);
 	editDetailUrl.setParameter("id",String.valueOf(item.getId()));
 	sb = new StringBuilder();
-	sb.append("<a href=\"" +editDetailUrl.toString() + "\">sửa</a>");
+	sb.append("<a href=\"" +editDetailUrl.toString() + "\">Sửa</a>");
 	rowTextEntry.setName(sb.toString());
 	row.addText(rowTextEntry);
 		
@@ -204,7 +217,7 @@ for (int i = 0; i < results.size(); i++) {
 	deletelUrl.setParameter("javax.portlet.action", "deleteVaoCangBien");
 	deletelUrl.setParameter("redirect", currentURL);
 	deletelUrl.setParameter("id",String.valueOf(item.getId()));
-	sb.append("<a href=\"" +deletelUrl.toString() + "\">Xóa</a>");
+	sb.append("<a href='javascript:void(0)' onclick='deleteVaoCangBien(" + item.getId() + ")'>Xóa</a>");
 	rowTextEntry.setName(sb.toString());
 	row.addText(rowTextEntry);
 	
@@ -224,10 +237,11 @@ for (int i = 0; i < results.size(); i++) {
 				<jsp:include page="/html/menudb/trang_menu_left.jsp"></jsp:include>
 			</td>
 			<td valign="top">
+				<input type="hidden" name="<portlet:namespace />id" value=""/>
 				<input type="button" value="Thêm mới hồ sơ" onclick="javascript:document.location='<%=addUrl.toString()%>'" style="font-size:15px;color:white;background-color:#337ab7;height:40px;width: 150px;"/>
-				<input type="button" value="Thêm mới chi tiết hồ sơ" onclick="javascript:document.location='<%=addUrl.toString()%>'" style="font-size:15px;color:white;background-color:#337ab7;height:40px;width: 150px;"/>
+				<!--<input type="button" value="Thêm mới chi tiết hồ sơ" onclick="javascript:document.location='<%=addUrl.toString()%>'" style="font-size:15px;color:white;background-color:#337ab7;height:40px;width: 150px;"/> -->
 				<liferay-ui:search-iterator searchContainer="<%= searchCtn %>" />
-				<input type="button" value="Thêm mới hồ sơ" onclick="javascript:document.location="<%=addUrl.toString()%>" style="font-size:15px;color:white;background-color:#337ab7;height:40px;width: 150px;"/>
+				<input type="button" value="Thêm mới hồ sơ" onclick="javascript:document.location='<%=addUrl.toString()%>'" style="font-size:15px;color:white;background-color:#337ab7;height:40px;width: 150px;"/>
 			</td>
 		</tr>
 	</table>

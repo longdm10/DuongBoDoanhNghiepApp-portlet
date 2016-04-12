@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <%@page import="vn.dtt.duongbien.dao.vrcb.service.TempGeneralDeclarationLocalServiceUtil"%>
 <%@page import="vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration"%>
 <%@page import="javax.portlet.WindowState"%>
@@ -27,8 +28,12 @@
 String redirect = ParamUtil.getString(request, "redirect");		
 String itemIdTemp = ParamUtil.getString(request, "id");
 TempGeneralDeclaration tempGeneral = null;
-if(itemIdTemp != null)	
+Calendar today = Calendar.getInstance();
+if(itemIdTemp != null){
 	tempGeneral = TempGeneralDeclarationLocalServiceUtil.getTempGeneralDeclaration(Long.valueOf(itemIdTemp));
+	Date temp = tempGeneral.getDateOfArrival();
+	today.setTime(temp);
+}
 DmPortRegion portRegion=null;
 DmPort port = null;
 DmPortHarbour portHarbour = null;
@@ -37,8 +42,6 @@ List listDmPortRegin = DmPortRegionLocalServiceUtil.getDmPortRegion();
 List listDmPortHabour = DmPortHarbourLocalServiceUtil.getDmPortHarbour();
 List listDmPort = DmPortLocalServiceUtil.getDmPort();
 List listDmWharf = DmPortWharfLocalServiceUtil.getDmPortWharf();
-Calendar today = Calendar.getInstance();
-
 PortletURL listUrl = renderResponse.createRenderURL();
 listUrl.setWindowState(WindowState.MAXIMIZED);
 listUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/view.jsp");
@@ -69,7 +72,7 @@ listUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/view.jsp");
 								<%	}	%>
 							</select>
 							<br>Tải danh mục</td>
-							<td style="padding:10px 10px;">Cảng đến<br>(Port of arrival)</td>
+							<td style="padding:10px 10px;">Cảng (đến/rời)<br>(Port of arrival)</td>
 							<td>
 								<select name="<portlet:namespace />portOfArrivalCode" style="width:100%;">
 									<%	for(int i=0; i<listDmPort.size();i++)	{
@@ -103,7 +106,8 @@ listUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/view.jsp");
 							<td style="padding:10px 10px;">Loại hồ sơ <br>(Type of Document)</td>
 							<td>
 								<select name="<portlet:namespace />isArrival" style="width:100%;">
-									<option value="1">Vào cảng</option>
+									<option value="1" <%= (tempGeneral.getIsArrival()==1) ? "selected" : "" %> >Vào cảng</option>
+									<option value="0" <%= (tempGeneral.getIsArrival()==0) ? "selected" : "" %> >Ra cảng</option>
 								</select>
 							</td>
 							<td style="padding:10px 10px;">Số chuyến đi <font color="red">*</font> <br>(Voyage Number)</td>
@@ -116,9 +120,9 @@ listUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/view.jsp");
 							<td><input type="text" name="<portlet:namespace />numberOfPassengers" onkeypress="return isNumberKey(event)" size="50" maxlength="9" value="<%= (tempGeneral != null) ? tempGeneral.getNumberOfPassengers() : "" %>"/></td>
 						</tr>
 						<tr>
-							<td style="padding:10px 10px;">Cảng rời cuối cùng <font color="red">*</font><br>(Last port of call)</td>
+							<td style="padding:10px 10px;">Cảng rời cuối cùng/Cảng đích <font color="red">*</font><br>(Last port of call)</td>
 							<td><input type="text" name="<portlet:namespace />lastPortOfCallCode" size="5" maxlength="5" value="<%= (tempGeneral != null) ? tempGeneral.getLastPortOfCallCode() : "" %>"/></td>
-							<td style="padding:10px 10px;">Thời gian đến cảng <font color="red">*</font> <br>(Time of arrival)</td>
+							<td style="padding:10px 10px;">Thời gian (đến/rời) cảng <font color="red">*</font> <br>(Time of arrival)</td>
 							<td>
 								<liferay-ui:input-date name="dateOfArrival" disableNamespace="<%= false %>"	disabled="false" 
 									dayValue="<%= today.get(Calendar.DAY_OF_MONTH) %>" dayParam="dobDay"

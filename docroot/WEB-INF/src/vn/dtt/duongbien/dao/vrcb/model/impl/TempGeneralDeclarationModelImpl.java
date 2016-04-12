@@ -115,8 +115,8 @@ public class TempGeneralDeclarationModelImpl extends BaseModelImpl<TempGeneralDe
 		};
 	public static final String TABLE_SQL_CREATE = "create table TEMP_GENERAL_DECLARATION (ID LONG not null primary key,RequestCode VARCHAR(75) null,RequestState INTEGER,DocumentName LONG,DocumentYear INTEGER,UserCreated VARCHAR(75) null,IsArrival INTEGER,NameOfShip VARCHAR(75) null,ShipTypeCode VARCHAR(75) null,IMONumber VARCHAR(75) null,CallSign VARCHAR(75) null,VoyageNumber VARCHAR(75) null,PortOfArrivalCode VARCHAR(75) null,DateOfArrival DATE null,PortHarbourCode VARCHAR(75) null,PortRegionCode VARCHAR(75) null,PortWharfCode VARCHAR(75) null,FlagStateOfShip VARCHAR(75) null,NameOfMaster VARCHAR(75) null,LastPortOfCallCode VARCHAR(75) null,CertificateOfRegistryNumber VARCHAR(75) null,CertificateOfRegistryDate DATE null,CertificateOfRegistryPortName VARCHAR(75) null,TaxCodeOfShipownersAgents VARCHAR(75) null,NameOfShipownersAgents VARCHAR(75) null,ShipAgencyAddress VARCHAR(75) null,ShipAgencyPhone VARCHAR(75) null,ShipAgencyFax VARCHAR(75) null,ShipAgencyEmail VARCHAR(75) null,GrossTonnage DOUBLE,NetTonnage DOUBLE,PositionOfShipInPort VARCHAR(75) null,BriefParticularsOfVoyage VARCHAR(75) null,BriefDescriptionOfTheCargo VARCHAR(75) null,NumberOfCrew INTEGER,NumberOfPassengers INTEGER,ShipRequirementsInTermsOfWaste VARCHAR(75) null,Remarks VARCHAR(75) null,NumberCargoDeclaration VARCHAR(75) null,NumberShipStoreDeclaration VARCHAR(75) null,NumberCrewList VARCHAR(75) null,NumberPassengerList VARCHAR(75) null,NumberCrewEffects VARCHAR(75) null,NumberHealthMaritime VARCHAR(75) null,SignPlace VARCHAR(75) null,SignDate DATE null,MasterSigned INTEGER,MasterSignedImage INTEGER)";
 	public static final String TABLE_SQL_DROP = "drop table TEMP_GENERAL_DECLARATION";
-	public static final String ORDER_BY_JPQL = " ORDER BY tempGeneralDeclaration.id ASC";
-	public static final String ORDER_BY_SQL = " ORDER BY TEMP_GENERAL_DECLARATION.ID ASC";
+	public static final String ORDER_BY_JPQL = " ORDER BY tempGeneralDeclaration.id DESC";
+	public static final String ORDER_BY_SQL = " ORDER BY TEMP_GENERAL_DECLARATION.ID DESC";
 	public static final String DATA_SOURCE = "vaoracangbienDataSource";
 	public static final String SESSION_FACTORY = "ravaocangbienSessionFactory";
 	public static final String TX_MANAGER = "ravaocangbienTransactionManager";
@@ -1473,6 +1473,8 @@ public class TempGeneralDeclarationModelImpl extends BaseModelImpl<TempGeneralDe
 		else {
 			value = 0;
 		}
+
+		value = value * -1;
 
 		if (value != 0) {
 			return value;
