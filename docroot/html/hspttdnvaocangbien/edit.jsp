@@ -1,3 +1,4 @@
+<%@page import="vn.dtt.duongbien.dao.vrcb.model.impl.TempGeneralDeclarationImpl"%>
 <%@page import="java.util.Date"%>
 <%@page import="vn.dtt.duongbien.dao.vrcb.service.TempGeneralDeclarationLocalServiceUtil"%>
 <%@page import="vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration"%>
@@ -27,9 +28,9 @@
 <%
 String redirect = ParamUtil.getString(request, "redirect");		
 String itemIdTemp = ParamUtil.getString(request, "id");
-TempGeneralDeclaration tempGeneral = null;
+TempGeneralDeclaration tempGeneral = new TempGeneralDeclarationImpl();
 Calendar today = Calendar.getInstance();
-if(itemIdTemp != null){
+if(!itemIdTemp.equals("")){
 	tempGeneral = TempGeneralDeclarationLocalServiceUtil.getTempGeneralDeclaration(Long.valueOf(itemIdTemp));
 	Date temp = tempGeneral.getDateOfArrival();
 	today.setTime(temp);
