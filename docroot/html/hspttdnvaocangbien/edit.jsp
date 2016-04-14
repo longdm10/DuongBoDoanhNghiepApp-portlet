@@ -98,7 +98,7 @@ listUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/view.jsp");
 								<select  name="<portlet:namespace />portWharfCode" style="width:100%;">
 									<%	for(int i=0; i<listDmWharf.size();i++)	{
 											portWharf = (DmPortWharf)listDmWharf.get(i);	 %>
-											<option value="<%= portWharf.getPortWharfCode()%>" title="<%= portWharf.getPortWharfNameVN()%>" <%= (tempGeneral.getPortWharfCode().equals(portWharf.getPortHarbourCode())) ? "selected" : "" %> ><%= portWharf.getPortWharfNameVN()%></option>
+											<option value="<%= portWharf.getPortWharfCode()%>" title="<%= portWharf.getPortWharfNameVN()%>" <%= (tempGeneral.getPortWharfCode().equals(portWharf.getPortWharfCode())) ? "selected" : "" %> ><%= portWharf.getPortWharfNameVN()%></option>
 										<%	}	%>	
 								</select>
 							</td>
