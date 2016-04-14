@@ -211,7 +211,7 @@
 		<portlet-class>vn.dtt.duongbien.Menudb</portlet-class>
 		<init-param>
 			<name>view-template</name>
-			<value>/html/menudb/view.jsp</value>
+			<value>/html/menudb/trang_menu_left.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
