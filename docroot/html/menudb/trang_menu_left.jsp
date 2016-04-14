@@ -64,7 +64,7 @@
 					<li><a href="<%=hsroicangbienurl %>"  class="textsub list-group-item"><span class="badge"></span>Hồ sơ rời cảng biến</a></li>
 					
 					<%
-						String hstauurl="/group/doanh-nghiep/thong-tin-phuong-tien";
+						String hstauurl="/group/doanh-nghiep/quan-ly-ho-so?type=7";
 					%>
 					<li><a href="<%=hstauurl %>"  class="textsub list-group-item"><span class="badge"></span>Khai báo phương tiện</a></li>
 				</ul>

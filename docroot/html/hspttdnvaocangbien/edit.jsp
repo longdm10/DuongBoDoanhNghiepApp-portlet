@@ -55,7 +55,7 @@ listUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/view.jsp");
 	<table width="1600px">
 		<tr>
 				<td valign="top">
-					<input type="button" value="Danh sách hố sơ" onclick="javascript:document.location='<%=listUrl.toString()%>'" style="font-size:15px;color:white;background-color:#337ab7;height:40px;width: 150px;"/>
+<%-- 					<input type="button" value="Danh sách hố sơ" onclick="javascript:document.location='<%=listUrl.toString()%>'" style="font-size:15px;color:white;background-color:#337ab7;height:40px;width: 150px;"/> --%>
 					<table>
 						<tr>
 							<td style="padding:10px 10px;">Tên tàu <font color="red">*</font> <br>(Name of ship)</td>
