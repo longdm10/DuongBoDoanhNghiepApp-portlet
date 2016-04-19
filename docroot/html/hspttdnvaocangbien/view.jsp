@@ -86,10 +86,11 @@ function deleteVaoCangBien(delete_id){
 	//headerNames.add("Ngày tạo");
 	//headerNames.add("Người tạo");
 	headerNames.add("Cảng vụ HH");
-	headerNames.add("Thông báo");
+	//headerNames.add("Thông báo");
 	//headerNames.add("Gửi hồ sơ");
 	//headerNames.add("Yêu cầu sửa đổi");
 	//headerNames.add("Xem giấy phép");
+	headerNames.add("Trạng thái");
 	headerNames.add("Sửa");
 	headerNames.add("Hủy");
 
@@ -192,10 +193,10 @@ function deleteVaoCangBien(delete_id){
 		rowTextEntry.setName("");
 		row.addText(rowTextEntry);
 
-		//thong bao
-		rowTextEntry = (TextSearchEntry) rowTextEntry.clone();
-		rowTextEntry.setName("");
-		row.addText(rowTextEntry);
+// 		//thong bao
+// 		rowTextEntry = (TextSearchEntry) rowTextEntry.clone();
+// 		rowTextEntry.setName("");
+// 		row.addText(rowTextEntry);
 
 // 		//gui ho so
 // 		rowTextEntry = (TextSearchEntry) rowTextEntry.clone();
@@ -220,6 +221,11 @@ function deleteVaoCangBien(delete_id){
 // 		rowTextEntry.setName(sb.toString());
 // 		row.addText(rowTextEntry);
 
+		//Trạng thái
+		rowTextEntry = (TextSearchEntry) rowTextEntry.clone();
+		rowTextEntry.setName("");
+		row.addText(rowTextEntry);
+		
 		//sua chi tiet
 		rowTextEntry = (TextSearchEntry) rowTextEntry.clone();
 		PortletURL editDetailUrl = renderResponse.createRenderURL();

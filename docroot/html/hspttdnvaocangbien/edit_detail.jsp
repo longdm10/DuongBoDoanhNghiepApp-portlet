@@ -32,7 +32,7 @@ String tabsNames = "info1,general,crew,passengers,permission,attachfile";
 String tabsValues = "Thông báo11,Thông tin chung12,crew,passengers,permission,attachfile";
 %>
 <form action="<%= portletURL.toString() %>" method="post" name="<portlet:namespace />fm">
-<table width="1600px">
+<table width="100%">
 	<tr>
 		<td>
 			<liferay-ui:tabs names="<%= tabsNames %>" url="<%= portletURL.toString() %>" tabsValues="tabsValues">
