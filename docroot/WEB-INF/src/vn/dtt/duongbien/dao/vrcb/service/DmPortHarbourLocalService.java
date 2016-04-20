@@ -256,4 +256,8 @@ public interface DmPortHarbourLocalService extends BaseLocalService,
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List getDmPortHarbour()
 		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public java.util.List findByPortHarbourCode(
+		java.lang.String portHarbourCode)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

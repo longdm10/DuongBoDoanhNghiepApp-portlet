@@ -117,6 +117,10 @@ public class DmPortWharfLocalServiceClpInvoker {
 		_methodName574 = "getDmPortWharf";
 
 		_methodParameterTypes574 = new String[] {  };
+
+		_methodName575 = "findByPortWharfCode";
+
+		_methodParameterTypes575 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -225,6 +229,11 @@ public class DmPortWharfLocalServiceClpInvoker {
 			return DmPortWharfLocalServiceUtil.getDmPortWharf();
 		}
 
+		if (_methodName575.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes575, parameterTypes)) {
+			return DmPortWharfLocalServiceUtil.findByPortWharfCode((java.lang.String)arguments[0]);
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -266,4 +275,6 @@ public class DmPortWharfLocalServiceClpInvoker {
 	private String[] _methodParameterTypes569;
 	private String _methodName574;
 	private String[] _methodParameterTypes574;
+	private String _methodName575;
+	private String[] _methodParameterTypes575;
 }

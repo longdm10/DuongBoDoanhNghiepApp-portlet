@@ -31,7 +31,7 @@
 <script type="text/javascript">
 function deleteVaoCangBien(delete_id){
 	if(confirm("Bạn có chắc chắn muốn xóa hồ sơ không")){
-		document.<portlet:namespace />fm.<portlet:namespace />id.value = delete_id;
+		document.<portlet:namespace />fm.<portlet:namespace />ids.value = delete_id;
 		submitForm(document.<portlet:namespace />fm, '<%=deleteVaoCangBenUrl.toString()%>');
 	}
 }
@@ -201,7 +201,7 @@ for (int i = 0; i < results.size(); i++) {
 	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
 	PortletURL editDetailUrl = renderResponse.createRenderURL();
 	editDetailUrl.setWindowState(WindowState.MAXIMIZED);
-	editDetailUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/edit.jsp");
+	editDetailUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/edit_detail.jsp");
 	editDetailUrl.setParameter("redirect", currentURL);
 	editDetailUrl.setParameter("id",String.valueOf(item.getId()));
 	sb = new StringBuilder();
@@ -237,7 +237,7 @@ for (int i = 0; i < results.size(); i++) {
 				<jsp:include page="/html/menudb/trang_menu_left.jsp"></jsp:include>
 			</td>
 			<td valign="top">
-				<input type="hidden" name="<portlet:namespace />id" value=""/>
+				<input type="hidden" name="<portlet:namespace />ids" value=""/>
 				<input type="button" value="Thêm mới hồ sơ" onclick="javascript:document.location='<%=addUrl.toString()%>'" style="font-size:15px;color:white;background-color:#337ab7;height:40px;width: 150px;"/>
 				<!--<input type="button" value="Thêm mới chi tiết hồ sơ" onclick="javascript:document.location='<%=addUrl.toString()%>'" style="font-size:15px;color:white;background-color:#337ab7;height:40px;width: 150px;"/> -->
 				<liferay-ui:search-iterator searchContainer="<%= searchCtn %>" />

@@ -279,6 +279,12 @@ public class DmPortWharfLocalServiceUtil {
 		return getService().getDmPortWharf();
 	}
 
+	public static java.util.List findByPortWharfCode(
+		java.lang.String portWharfCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().findByPortWharfCode(portWharfCode);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

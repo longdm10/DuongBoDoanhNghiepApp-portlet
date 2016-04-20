@@ -44,4 +44,8 @@ public class DmPortWharfLocalServiceImpl extends DmPortWharfLocalServiceBaseImpl
 	public List getDmPortWharf() throws SystemException{
 		return dmPortWharfPersistence.findAll();
 	}
+	
+	public List findByPortWharfCode(String portWharfCode) throws SystemException{
+		return dmPortWharfPersistence.findByPortWharfCode(portWharfCode);
+	}
 }

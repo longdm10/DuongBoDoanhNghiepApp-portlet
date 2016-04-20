@@ -253,4 +253,7 @@ public interface DmPortWharfLocalService extends BaseLocalService,
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List getDmPortWharf()
 		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public java.util.List findByPortWharfCode(java.lang.String portWharfCode)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

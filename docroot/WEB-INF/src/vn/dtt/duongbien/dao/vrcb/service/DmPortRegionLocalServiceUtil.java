@@ -279,6 +279,12 @@ public class DmPortRegionLocalServiceUtil {
 		return getService().getDmPortRegion();
 	}
 
+	public static java.util.List findByPortRegionCode(
+		java.lang.String portRegionCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().findByPortRegionCode(portRegionCode);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

@@ -44,4 +44,8 @@ public class DmPortHarbourLocalServiceImpl
 	public List getDmPortHarbour() throws SystemException{
 		return dmPortHarbourPersistence.findAll();
 	}
+	
+	public List findByPortHarbourCode(String portHarbourCode) throws SystemException{
+		return dmPortHarbourPersistence.findByPortHarbourCode(portHarbourCode);
+	}
 }

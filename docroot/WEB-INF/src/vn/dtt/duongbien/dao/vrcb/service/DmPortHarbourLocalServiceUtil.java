@@ -279,6 +279,12 @@ public class DmPortHarbourLocalServiceUtil {
 		return getService().getDmPortHarbour();
 	}
 
+	public static java.util.List findByPortHarbourCode(
+		java.lang.String portHarbourCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().findByPortHarbourCode(portHarbourCode);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

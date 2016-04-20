@@ -289,6 +289,12 @@ public class DmPortWharfLocalServiceWrapper implements DmPortWharfLocalService,
 		return _dmPortWharfLocalService.getDmPortWharf();
 	}
 
+	@Override
+	public java.util.List findByPortWharfCode(java.lang.String portWharfCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _dmPortWharfLocalService.findByPortWharfCode(portWharfCode);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

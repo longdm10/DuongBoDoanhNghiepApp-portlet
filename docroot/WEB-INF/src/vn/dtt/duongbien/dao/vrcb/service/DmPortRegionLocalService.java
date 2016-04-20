@@ -255,4 +255,7 @@ public interface DmPortRegionLocalService extends BaseLocalService,
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List getDmPortRegion()
 		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public java.util.List findByPortRegionCode(java.lang.String portRegionCode)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

@@ -44,4 +44,8 @@ public class DmPortRegionLocalServiceImpl
 	public List getDmPortRegion() throws SystemException{
 		return dmPortRegionPersistence.findAll();
 	}
+	
+	public List findByPortRegionCode(String portRegionCode) throws SystemException{
+		return dmPortRegionPersistence.findByPortRegionCode(portRegionCode);
+	}
 }

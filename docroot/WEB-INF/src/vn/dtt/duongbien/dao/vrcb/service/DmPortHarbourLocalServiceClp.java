@@ -118,6 +118,10 @@ public class DmPortHarbourLocalServiceClp implements DmPortHarbourLocalService {
 		_methodName19 = "getDmPortHarbour";
 
 		_methodParameterTypes19 = new String[] {  };
+
+		_methodName20 = "findByPortHarbourCode";
+
+		_methodParameterTypes20 = new String[] { "java.lang.String" };
 	}
 
 	@Override
@@ -697,6 +701,36 @@ public class DmPortHarbourLocalServiceClp implements DmPortHarbourLocalService {
 		return (java.util.List)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
+	public java.util.List findByPortHarbourCode(
+		java.lang.String portHarbourCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName20,
+					_methodParameterTypes20,
+					new Object[] { ClpSerializer.translateInput(portHarbourCode) });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List)ClpSerializer.translateOutput(returnObj);
+	}
+
 	private InvokableLocalService _invokableLocalService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -736,4 +770,6 @@ public class DmPortHarbourLocalServiceClp implements DmPortHarbourLocalService {
 	private String[] _methodParameterTypes17;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
+	private String _methodName20;
+	private String[] _methodParameterTypes20;
 }

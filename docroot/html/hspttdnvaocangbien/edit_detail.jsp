@@ -12,6 +12,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 <%@ include file="/html/init.jsp"%>
+<%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
 <%@page import="com.liferay.portal.kernel.language.LanguageUtil"%>
 <script type="text/javascript">
 	function isNumberKey(evt){
@@ -22,22 +23,65 @@
 	}
 </script>
 <%
+String itemId = ParamUtil.getString(request, "id");
+TempGeneralDeclaration tempGD = new TempGeneralDeclarationImpl();
+if(!itemId.equals("")){
+	tempGD = TempGeneralDeclarationLocalServiceUtil.getTempGeneralDeclaration(Long.valueOf(itemId));
+}
 String tabs1 = ParamUtil.getString(request, "tabs1", "info");
 PortletURL portletURL = renderResponse.createRenderURL();
 portletURL.setWindowState(WindowState.MAXIMIZED);
 portletURL.setParameter("jspPage", "/html/hspttdnvaocangbien/edit_detail.jsp");
 portletURL.setParameter("tabs1", tabs1);
+portletURL.setParameter("id", itemId);
+String tabsNames = "Thông báo,Thông tin chung,Danh sách thuyền viên,Danh sách hành khách,Gán quyền khai bổ sung,Danh sách tài liệu đính kèm";
+String tabsValues = "Thông báo,Thông tin chung,Danh sách thuyền viên,Danh sách hành khách,Gán quyền khai bổ sung,Danh sách tài liệu đính kèm";
 
-String tabsNames = "info1,general,crew,passengers,permission,attachfile";
-String tabsValues = "Thông báo11,Thông tin chung12,crew,passengers,permission,attachfile";
 %>
 <form action="<%= portletURL.toString() %>" method="post" name="<portlet:namespace />fm">
 <table width="1600px">
 	<tr>
 		<td>
+			<table>
+				<tr>
+					<td style="padding:10px 10px;">Tên hồ sơ :</td>
+					<td style="padding:10px 10px;"><%=tempGD.getDocumentName() %></td>
+					<td style="padding:10px 10px;">Tên tàu</td>
+					<td style="padding:10px 10px;"><%=tempGD.getNameOfShip() %></td>
+					<td style="padding:10px 10px;">Tên thuyền trưởng : </td>
+					<td style="padding:10px 10px;"><%=tempGD.getNameOfMaster() %></td>
+				</tr>
+				<tr>
+					<td style="padding:10px 10px;">Khu vực hàng hải :</td>
+					<td><%=((DmPortRegion)(DmPortRegionLocalServiceUtil.findByPortRegionCode(tempGD.getPortRegionCode()).get(0))).getPortRegionNameVN() %></td>
+					<td>Cảng đến/rời :</td>
+					<td><%=((DmPort)DmPortLocalServiceUtil.findByPortCode(tempGD.getPortOfArrivalCode()).get(0)).getPortName() %></td>
+					<td>Bến cảng :</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td style="padding:10px 10px;">Cầu cảng neo đậu :</td>
+					<td></td>
+					<td>Thời gian đến/rời :</td>
+					<td><%=tempGD.getDateOfArrival() %></td>
+					<td>Thời gian khai :</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td style="padding:10px 10px;">Loại hồ sơ :<% %></td>
+					<td><%= (tempGD.getIsArrival()==1) ? "Vào cảng" : "Ra cảng" %></td>
+					<td>Số chuyến đi :</td>
+					<td><%=tempGD.getVoyageNumber() %></td>
+					<td>Người tạo :</td>
+					<td><%=tempGD.getUserCreated() %></td>
+				</tr>
+			</table>
+		</td>
+	<tr>
+		<td>
 			<liferay-ui:tabs names="<%= tabsNames %>" url="<%= portletURL.toString() %>" tabsValues="tabsValues">
 				<liferay-ui:section>
-		        	<%@ include file="/html/hspttdnvaocangbien/info.jsp" %>	
+		        	<%@ include file="/html/hspttdnvaocangbien/info.jsp" %>
 			    </liferay-ui:section>
 			    <liferay-ui:section>
 			        <%@ include file="/html/hspttdnvaocangbien/general.jsp" %>	

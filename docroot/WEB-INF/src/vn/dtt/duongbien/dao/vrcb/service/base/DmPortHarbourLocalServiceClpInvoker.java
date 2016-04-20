@@ -117,6 +117,10 @@ public class DmPortHarbourLocalServiceClpInvoker {
 		_methodName574 = "getDmPortHarbour";
 
 		_methodParameterTypes574 = new String[] {  };
+
+		_methodName575 = "findByPortHarbourCode";
+
+		_methodParameterTypes575 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -225,6 +229,11 @@ public class DmPortHarbourLocalServiceClpInvoker {
 			return DmPortHarbourLocalServiceUtil.getDmPortHarbour();
 		}
 
+		if (_methodName575.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes575, parameterTypes)) {
+			return DmPortHarbourLocalServiceUtil.findByPortHarbourCode((java.lang.String)arguments[0]);
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -266,4 +275,6 @@ public class DmPortHarbourLocalServiceClpInvoker {
 	private String[] _methodParameterTypes569;
 	private String _methodName574;
 	private String[] _methodParameterTypes574;
+	private String _methodName575;
+	private String[] _methodParameterTypes575;
 }

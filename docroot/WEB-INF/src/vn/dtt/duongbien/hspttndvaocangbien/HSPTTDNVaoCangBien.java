@@ -51,7 +51,7 @@ public class HSPTTDNVaoCangBien extends MVCPortlet {
 	public void addVaoCangBen(ActionRequest actionRequest, ActionResponse actionResponse) {
 		
 		try {
-			Long id = ParamUtil.getLong(actionRequest, "id");
+			Long id = ParamUtil.getLong(actionRequest, "ids");
 			String nameOfShip = ParamUtil.getString(actionRequest, "nameOfShip");
 			String nameOfMaster = ParamUtil.getString(actionRequest, "nameOfMaster");
 			String portRegionCode = ParamUtil.getString(actionRequest, "portRegionCode");

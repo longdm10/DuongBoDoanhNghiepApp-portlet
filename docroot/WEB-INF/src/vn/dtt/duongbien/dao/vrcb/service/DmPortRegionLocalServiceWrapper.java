@@ -291,6 +291,12 @@ public class DmPortRegionLocalServiceWrapper implements DmPortRegionLocalService
 		return _dmPortRegionLocalService.getDmPortRegion();
 	}
 
+	@Override
+	public java.util.List findByPortRegionCode(java.lang.String portRegionCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _dmPortRegionLocalService.findByPortRegionCode(portRegionCode);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */
