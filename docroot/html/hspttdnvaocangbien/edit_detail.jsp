@@ -39,7 +39,7 @@ String tabsValues = "Thông báo,Thông tin chung,Danh sách thuyền viên,Danh
 
 %>
 <form action="<%= portletURL.toString() %>" method="post" name="<portlet:namespace />fm">
-<table width="1600px">
+<table width="100%">
 	<tr>
 		<td>
 			<table>
