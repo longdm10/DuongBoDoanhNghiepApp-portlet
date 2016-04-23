@@ -289,6 +289,15 @@ public class TempPassengerDetailsLocalServiceWrapper
 			parameterTypes, arguments);
 	}
 
+	@Override
+	public vn.dtt.duongbien.dao.vrcb.model.TempPassengerDetails addTempPassengerDetails(
+		java.lang.String passengerCode, java.lang.String familyName,
+		java.lang.String givenName)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _tempPassengerDetailsLocalService.addTempPassengerDetails(passengerCode,
+			familyName, givenName);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

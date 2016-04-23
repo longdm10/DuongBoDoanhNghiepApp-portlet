@@ -274,6 +274,14 @@ public class TempPassengerDetailsLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static vn.dtt.duongbien.dao.vrcb.model.TempPassengerDetails addTempPassengerDetails(
+		java.lang.String passengerCode, java.lang.String familyName,
+		java.lang.String givenName)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .addTempPassengerDetails(passengerCode, familyName, givenName);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

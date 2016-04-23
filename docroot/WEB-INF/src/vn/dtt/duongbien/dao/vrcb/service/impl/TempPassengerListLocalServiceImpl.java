@@ -14,6 +14,12 @@
 
 package vn.dtt.duongbien.dao.vrcb.service.impl;
 
+import java.util.Date;
+
+import com.liferay.counter.service.CounterLocalServiceUtil;
+import com.liferay.portal.kernel.exception.SystemException;
+
+import vn.dtt.duongbien.dao.vrcb.model.TempPassengerList;
 import vn.dtt.duongbien.dao.vrcb.service.base.TempPassengerListLocalServiceBaseImpl;
 
 /**
@@ -37,4 +43,19 @@ public class TempPassengerListLocalServiceImpl
 	 *
 	 * Never reference this interface directly. Always use {@link vn.dtt.duongbien.dao.vrcb.service.TempPassengerListLocalServiceUtil} to access the temp passenger list local service.
 	 */
+	
+	public TempPassengerList addTempPassengerList(long documentName, int documentYear, String userCreated, int isArrival, String nameOfShip, String portOfArrivalCode, Date dateOfArrival, String imoNumber, String voyageNumber) throws SystemException{
+		long itemID = CounterLocalServiceUtil.increment(TempPassengerList.class.getName());
+		TempPassengerList item = tempPassengerListPersistence.create(itemID);
+		item.setDocumentName(documentName);
+		item.setDocumentYear(documentYear);
+		item.setUserCreated(userCreated);
+		item.setIsArrival(isArrival);
+		item.setNameOfShip(nameOfShip);
+		item.setPortOfArrivalCode(portOfArrivalCode);
+		item.setDateOfArrival(dateOfArrival);
+		item.setImoNumber(imoNumber);
+		item.setVoyageNumber(voyageNumber);
+		return item;
+	}
 }

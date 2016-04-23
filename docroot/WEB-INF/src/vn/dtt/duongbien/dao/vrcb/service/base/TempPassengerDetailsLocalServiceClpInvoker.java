@@ -113,6 +113,12 @@ public class TempPassengerDetailsLocalServiceClpInvoker {
 		_methodName569 = "setBeanIdentifier";
 
 		_methodParameterTypes569 = new String[] { "java.lang.String" };
+
+		_methodName574 = "addTempPassengerDetails";
+
+		_methodParameterTypes574 = new String[] {
+				"java.lang.String", "java.lang.String", "java.lang.String"
+			};
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -216,6 +222,12 @@ public class TempPassengerDetailsLocalServiceClpInvoker {
 			return null;
 		}
 
+		if (_methodName574.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes574, parameterTypes)) {
+			return TempPassengerDetailsLocalServiceUtil.addTempPassengerDetails((java.lang.String)arguments[0],
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2]);
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -255,4 +267,6 @@ public class TempPassengerDetailsLocalServiceClpInvoker {
 	private String[] _methodParameterTypes568;
 	private String _methodName569;
 	private String[] _methodParameterTypes569;
+	private String _methodName574;
+	private String[] _methodParameterTypes574;
 }
