@@ -1,3 +1,4 @@
+<%@page import="com.liferay.portal.kernel.portlet.LiferayWindowState"%>
 <%@page import="javax.portlet.WindowState"%>
 <%@page import="com.liferay.portal.kernel.util.StringUtil"%>
 <%@page import="java.util.Calendar"%>
@@ -80,12 +81,13 @@ String tabsValues = "Thông báo,Thông tin chung,Danh sách thuyền viên,Danh
 	<tr>
 		<td>
 			<liferay-ui:tabs names="<%= tabsNames %>" url="<%= portletURL.toString() %>" tabsValues="tabsValues">
+			 	<%@ include file="/html/hspttdnvaocangbien/upload_document.jsp" %>
 				<liferay-ui:section>
-		        	<%@ include file="/html/hspttdnvaocangbien/info.jsp" %>
+					<%@ include file="/html/hspttdnvaocangbien/info.jsp" %>	
 			    </liferay-ui:section>
 			    <liferay-ui:section>
-			        <%@ include file="/html/hspttdnvaocangbien/general.jsp" %>	
-			    </liferay-ui:section>
+	     			 <%@ include file="/html/hspttdnvaocangbien/general.jsp" %>
+				 </liferay-ui:section>
 			    <liferay-ui:section>
 			        <%@ include file="/html/hspttdnvaocangbien/crew.jsp" %>
 			    </liferay-ui:section>

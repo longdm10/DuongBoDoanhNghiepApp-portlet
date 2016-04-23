@@ -100,4 +100,24 @@ public class HSPTTDNVaoCangBien extends MVCPortlet {
 			e.printStackTrace();
 		}
 	}
+
+	public void updateGeneralDoc(ActionRequest actionRequest, ActionResponse actionResponse) {
+		try {
+			Long id = ParamUtil.getLong(actionRequest, "id");
+			if(id>0){
+				
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	public void updateAttachfile(ActionRequest actionRequest, ActionResponse actionResponse) {
+	}
+
+	public void updateCrew(ActionRequest actionRequest, ActionResponse actionResponse) {
+	}
+
+	public void updatePassengers(ActionRequest actionRequest, ActionResponse actionResponse) {
+	}
 }

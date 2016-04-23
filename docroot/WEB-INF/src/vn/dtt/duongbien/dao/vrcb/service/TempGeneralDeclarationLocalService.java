@@ -286,4 +286,9 @@ public interface TempGeneralDeclarationLocalService extends BaseLocalService,
 	public void deletTempGeneral(long itemId)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			vn.dtt.duongbien.dao.vrcb.NoSuchTempGeneralDeclarationException;
+
+	public void updateTempGeneral(long itemId,
+		java.lang.String briefDescriptionOfTheCargo, double grossTonnage)
+		throws com.liferay.portal.NoSuchModelException,
+			com.liferay.portal.kernel.exception.SystemException;
 }

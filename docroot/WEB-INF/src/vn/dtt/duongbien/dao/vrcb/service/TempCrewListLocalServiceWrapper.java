@@ -285,6 +285,18 @@ public class TempCrewListLocalServiceWrapper implements TempCrewListLocalService
 			arguments);
 	}
 
+	@Override
+	public vn.dtt.duongbien.dao.vrcb.model.TempCrewList addTemCrewList(
+		long documentName, int documentYear, java.lang.String userCreated,
+		int isArrival, java.lang.String nameOfShip, java.lang.String imoNumber,
+		java.lang.String voyageNumber, java.lang.String portOfArrivalCode,
+		java.util.Date dateOfArrival, java.lang.String lastPortOfCallCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _tempCrewListLocalService.addTemCrewList(documentName,
+			documentYear, userCreated, isArrival, nameOfShip, imoNumber,
+			voyageNumber, portOfArrivalCode, dateOfArrival, lastPortOfCallCode);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

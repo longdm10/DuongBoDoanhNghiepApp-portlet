@@ -326,6 +326,14 @@ public class TempGeneralDeclarationLocalServiceUtil {
 		getService().deletTempGeneral(itemId);
 	}
 
+	public static void updateTempGeneral(long itemId,
+		java.lang.String briefDescriptionOfTheCargo, double grossTonnage)
+		throws com.liferay.portal.NoSuchModelException,
+			com.liferay.portal.kernel.exception.SystemException {
+		getService()
+			.updateTempGeneral(itemId, briefDescriptionOfTheCargo, grossTonnage);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

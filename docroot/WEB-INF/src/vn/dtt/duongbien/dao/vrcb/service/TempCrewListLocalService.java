@@ -251,4 +251,11 @@ public interface TempCrewListLocalService extends BaseLocalService,
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
+
+	public vn.dtt.duongbien.dao.vrcb.model.TempCrewList addTemCrewList(
+		long documentName, int documentYear, java.lang.String userCreated,
+		int isArrival, java.lang.String nameOfShip, java.lang.String imoNumber,
+		java.lang.String voyageNumber, java.lang.String portOfArrivalCode,
+		java.util.Date dateOfArrival, java.lang.String lastPortOfCallCode)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

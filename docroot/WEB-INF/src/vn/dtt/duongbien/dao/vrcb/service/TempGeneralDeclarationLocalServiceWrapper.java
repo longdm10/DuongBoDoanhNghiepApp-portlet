@@ -344,6 +344,15 @@ public class TempGeneralDeclarationLocalServiceWrapper
 		_tempGeneralDeclarationLocalService.deletTempGeneral(itemId);
 	}
 
+	@Override
+	public void updateTempGeneral(long itemId,
+		java.lang.String briefDescriptionOfTheCargo, double grossTonnage)
+		throws com.liferay.portal.NoSuchModelException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_tempGeneralDeclarationLocalService.updateTempGeneral(itemId,
+			briefDescriptionOfTheCargo, grossTonnage);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

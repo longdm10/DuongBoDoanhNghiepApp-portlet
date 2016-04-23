@@ -110,4 +110,11 @@ public class TempGeneralDeclarationLocalServiceImpl
 		TempGeneralDeclaration item = tempGeneralDeclarationPersistence.findByPrimaryKey(itemId);
 		tempGeneralDeclarationPersistence.remove(itemId);
 	}
+	
+	public void updateTempGeneral(long itemId, String briefDescriptionOfTheCargo, double grossTonnage) throws NoSuchModelException, SystemException{
+		TempGeneralDeclaration item = tempGeneralDeclarationPersistence.findByPrimaryKey(itemId);
+		item.setBriefDescriptionOfTheCargo(briefDescriptionOfTheCargo);
+		item.setGrossTonnage(grossTonnage);
+		tempGeneralDeclarationPersistence.update(item);
+	}
 }

@@ -1,3 +1,4 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="com.liferay.portal.kernel.portlet.LiferayWindowState"%>
 <%@page import="javax.portlet.WindowState"%>
 <%@page import="javax.portlet.PortletURL"%>
@@ -5,82 +6,25 @@
 <%@page import="vn.dtt.duongbien.dao.vrcb.model.impl.TempGeneralDeclarationImpl"%>
 <%@page import="vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration"%>
 <%@page import="com.liferay.portal.kernel.util.ParamUtil"%>
-<%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
 <%
 String itemIdTemp = ParamUtil.getString(request, "id");
+String tabs = ParamUtil.getString(request,"tabs1");
 TempGeneralDeclaration tempGeneral = new TempGeneralDeclarationImpl();
 if(!itemIdTemp.equals("")){
 	tempGeneral = TempGeneralDeclarationLocalServiceUtil.getTempGeneralDeclaration(Long.valueOf(itemIdTemp));
 }
 PortletURL dialogUrl = renderResponse.createRenderURL();
-dialogUrl.setWindowState(LiferayWindowState.POP_UP);
 dialogUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/general_popup.jsp");
+dialogUrl.setParameter("redirect", ParamUtil.getString(request, "redirect"));
+dialogUrl.setParameter("tabs1", tabs);
+dialogUrl.setParameter("id", itemIdTemp);
 %>
-<aui:script>
-
-  function showPopup() {
-  AUI().use( 'aui-io',
-     'aui-dialog',
-     function(A) {
-     
-     Liferay.Util.openWindow(
-             {
-                  dialog: {
-                       centered: true,
-                       destroyOnClose: true,
-                      cache: false,
-                      width: 500,
-                       height: 300,
-                      modal: true
-                 },
-                 title: 'Sample Popup',
-                    id:'<portlet:namespace/>popUpDialog',            
-                 uri:'<%=dialogUrl.toString()%>'
-              });
-              
-              
-              Liferay.provide(
-                    window,
-                    '<portlet:namespace/>closePopup',
-                    function(popupIdToClose) {
-                     var popupDialog = Liferay.Util.Window.getById(popupIdToClose);
-                     popupDialog.destroy();
-                    }, 
-                    ['liferay-util-window']
-               );
-
-   });  
-  }
- </aui:script>
-
-<div>
-	<fieldset>
-		  <legend style="font-size:15px;">Upload</legend>
-		  <table>
-			  	<tr>
-			  		<td>Bản khai mẫu hồ sơ tải về</td>
-			  		<td colspan="4">&nbsp;</td>
-			  	</tr>
-			  	<tr>
-			  		<td>File</td>
-			  		<td colspan="3"><input type="file" name="<portlet:namespace />file2" ></input></td>
-			  		<td>import</td>
-			  	</tr>
-			  	<tr>
-			  		<td>Trạng thái</td>
-			  		<td>Thêm <input type="radio" name="doc_action" value="add"/></td>
-			  		<td>Sửa <input type="radio" name="doc_action" value="edit"/></td>
-			  		<td>Xóa <input type="radio" name="doc_action" value="delete"/></td>
-			  		<td>&nbsp;</td>
-			  	</tr>
-		  </table>
-	</fieldset>
-</div>
+ <%@page import="com.liferay.portal.kernel.portlet.LiferayWindowState"%>
 <div>
 	<fieldset>
 		  <legend style="font-size:15px;">Thao tác</legend>
 		  <div>
-		  	<input type="button" onclick="showPopup();" value="Sửa bản khai" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/>
+		  	<a href="<%=dialogUrl.toString() %>"><input type="button"  value="Sửa bản khai" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/></a>
 		  </div>
 	  </fieldset>
 </div>
@@ -125,6 +69,7 @@ dialogUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/general_popup.jsp");
 			<td colspan="3">9. Ghi chú:
 				<br/>
 				Dung tích tàu : 1.00
+				<br/>
 				<textarea rows="6" cols="50"></textarea>
 			</td>
 		</tr>

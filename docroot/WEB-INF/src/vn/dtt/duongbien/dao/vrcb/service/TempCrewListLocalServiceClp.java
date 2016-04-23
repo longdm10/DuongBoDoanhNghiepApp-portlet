@@ -114,6 +114,14 @@ public class TempCrewListLocalServiceClp implements TempCrewListLocalService {
 		_methodName17 = "setBeanIdentifier";
 
 		_methodParameterTypes17 = new String[] { "java.lang.String" };
+
+		_methodName19 = "addTemCrewList";
+
+		_methodParameterTypes19 = new String[] {
+				"long", "int", "java.lang.String", "int", "java.lang.String",
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"java.util.Date", "java.lang.String"
+			};
 	}
 
 	@Override
@@ -664,6 +672,59 @@ public class TempCrewListLocalServiceClp implements TempCrewListLocalService {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
+	public vn.dtt.duongbien.dao.vrcb.model.TempCrewList addTemCrewList(
+		long documentName, int documentYear, java.lang.String userCreated,
+		int isArrival, java.lang.String nameOfShip, java.lang.String imoNumber,
+		java.lang.String voyageNumber, java.lang.String portOfArrivalCode,
+		java.util.Date dateOfArrival, java.lang.String lastPortOfCallCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName19,
+					_methodParameterTypes19,
+					new Object[] {
+						documentName,
+						
+					documentYear,
+						
+					ClpSerializer.translateInput(userCreated),
+						
+					isArrival,
+						
+					ClpSerializer.translateInput(nameOfShip),
+						
+					ClpSerializer.translateInput(imoNumber),
+						
+					ClpSerializer.translateInput(voyageNumber),
+						
+					ClpSerializer.translateInput(portOfArrivalCode),
+						
+					ClpSerializer.translateInput(dateOfArrival),
+						
+					ClpSerializer.translateInput(lastPortOfCallCode)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (vn.dtt.duongbien.dao.vrcb.model.TempCrewList)ClpSerializer.translateOutput(returnObj);
+	}
+
 	private InvokableLocalService _invokableLocalService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -701,4 +762,6 @@ public class TempCrewListLocalServiceClp implements TempCrewListLocalService {
 	private String[] _methodParameterTypes16;
 	private String _methodName17;
 	private String[] _methodParameterTypes17;
+	private String _methodName19;
+	private String[] _methodParameterTypes19;
 }

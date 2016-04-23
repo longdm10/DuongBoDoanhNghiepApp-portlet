@@ -14,6 +14,13 @@
 
 package vn.dtt.duongbien.dao.vrcb.service.impl;
 
+import java.util.Date;
+
+import com.liferay.counter.service.CounterLocalServiceUtil;
+import com.liferay.portal.kernel.exception.SystemException;
+
+import vn.dtt.duongbien.dao.vrcb.model.TempCrewList;
+import vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration;
 import vn.dtt.duongbien.dao.vrcb.service.base.TempCrewListLocalServiceBaseImpl;
 
 /**
@@ -37,4 +44,20 @@ public class TempCrewListLocalServiceImpl
 	 *
 	 * Never reference this interface directly. Always use {@link vn.dtt.duongbien.dao.vrcb.service.TempCrewListLocalServiceUtil} to access the temp crew list local service.
 	 */
+	public TempCrewList addTemCrewList(long documentName, int documentYear, String userCreated, int isArrival, String nameOfShip, String imoNumber, String voyageNumber, String portOfArrivalCode, Date dateOfArrival, String lastPortOfCallCode) throws SystemException{
+		long itemId = CounterLocalServiceUtil.increment(TempCrewList.class.getName());
+		TempCrewList item = tempCrewListPersistence.create(itemId);
+		item.setDocumentName(documentName);
+		item.setDocumentYear(documentYear);
+		item.setUserCreated(userCreated);
+		item.setIsArrival(isArrival);
+		item.setNameOfShip(nameOfShip);
+		item.setImoNumber(imoNumber);
+		item.setVoyageNumber(voyageNumber);
+		item.setPortOfArrivalCode(portOfArrivalCode);
+		item.setDateOfArrival(dateOfArrival);
+		item.setLastPortOfCallCode(lastPortOfCallCode);
+		tempCrewListPersistence.update(item);
+		return item;
+	}
 }

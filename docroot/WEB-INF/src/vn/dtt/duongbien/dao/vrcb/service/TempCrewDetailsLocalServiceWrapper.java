@@ -288,6 +288,15 @@ public class TempCrewDetailsLocalServiceWrapper
 			arguments);
 	}
 
+	@Override
+	public vn.dtt.duongbien.dao.vrcb.model.TempCrewDetails addTempCrewDetails(
+		java.lang.String crewcode, java.lang.String familyName,
+		java.lang.String givenName, java.lang.String rankCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _tempCrewDetailsLocalService.addTempCrewDetails(crewcode,
+			familyName, givenName, rankCode);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

@@ -274,6 +274,11 @@ public class DmRankRatingLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static java.util.List getAllDmRankRating()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getAllDmRankRating();
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

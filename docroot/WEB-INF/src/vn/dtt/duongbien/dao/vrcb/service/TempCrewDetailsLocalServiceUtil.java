@@ -274,6 +274,14 @@ public class TempCrewDetailsLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static vn.dtt.duongbien.dao.vrcb.model.TempCrewDetails addTempCrewDetails(
+		java.lang.String crewcode, java.lang.String familyName,
+		java.lang.String givenName, java.lang.String rankCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .addTempCrewDetails(crewcode, familyName, givenName, rankCode);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

@@ -252,4 +252,9 @@ public interface TempCrewDetailsLocalService extends BaseLocalService,
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
+
+	public vn.dtt.duongbien.dao.vrcb.model.TempCrewDetails addTempCrewDetails(
+		java.lang.String crewcode, java.lang.String familyName,
+		java.lang.String givenName, java.lang.String rankCode)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

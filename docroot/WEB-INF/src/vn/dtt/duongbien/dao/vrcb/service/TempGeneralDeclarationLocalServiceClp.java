@@ -141,6 +141,12 @@ public class TempGeneralDeclarationLocalServiceClp
 		_methodName21 = "deletTempGeneral";
 
 		_methodParameterTypes21 = new String[] { "long" };
+
+		_methodName22 = "updateTempGeneral";
+
+		_methodParameterTypes22 = new String[] {
+				"long", "java.lang.String", "double"
+			};
 	}
 
 	@Override
@@ -891,6 +897,43 @@ public class TempGeneralDeclarationLocalServiceClp
 		}
 	}
 
+	@Override
+	public void updateTempGeneral(long itemId,
+		java.lang.String briefDescriptionOfTheCargo, double grossTonnage)
+		throws com.liferay.portal.NoSuchModelException,
+			com.liferay.portal.kernel.exception.SystemException {
+		try {
+			_invokableLocalService.invokeMethod(_methodName22,
+				_methodParameterTypes22,
+				new Object[] {
+					itemId,
+					
+				ClpSerializer.translateInput(briefDescriptionOfTheCargo),
+					
+				grossTonnage
+				});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.NoSuchModelException) {
+				throw (com.liferay.portal.NoSuchModelException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
 	private InvokableLocalService _invokableLocalService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -934,4 +977,6 @@ public class TempGeneralDeclarationLocalServiceClp
 	private String[] _methodParameterTypes20;
 	private String _methodName21;
 	private String[] _methodParameterTypes21;
+	private String _methodName22;
+	private String[] _methodParameterTypes22;
 }

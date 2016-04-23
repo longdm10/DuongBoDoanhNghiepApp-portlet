@@ -115,6 +115,13 @@ public class TempCrewDetailsLocalServiceClp
 		_methodName17 = "setBeanIdentifier";
 
 		_methodParameterTypes17 = new String[] { "java.lang.String" };
+
+		_methodName19 = "addTempCrewDetails";
+
+		_methodParameterTypes19 = new String[] {
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"java.lang.String"
+			};
 	}
 
 	@Override
@@ -666,6 +673,45 @@ public class TempCrewDetailsLocalServiceClp
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
+	public vn.dtt.duongbien.dao.vrcb.model.TempCrewDetails addTempCrewDetails(
+		java.lang.String crewcode, java.lang.String familyName,
+		java.lang.String givenName, java.lang.String rankCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName19,
+					_methodParameterTypes19,
+					new Object[] {
+						ClpSerializer.translateInput(crewcode),
+						
+					ClpSerializer.translateInput(familyName),
+						
+					ClpSerializer.translateInput(givenName),
+						
+					ClpSerializer.translateInput(rankCode)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (vn.dtt.duongbien.dao.vrcb.model.TempCrewDetails)ClpSerializer.translateOutput(returnObj);
+	}
+
 	private InvokableLocalService _invokableLocalService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -703,4 +749,6 @@ public class TempCrewDetailsLocalServiceClp
 	private String[] _methodParameterTypes16;
 	private String _methodName17;
 	private String[] _methodParameterTypes17;
+	private String _methodName19;
+	private String[] _methodParameterTypes19;
 }

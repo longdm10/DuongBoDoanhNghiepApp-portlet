@@ -14,6 +14,10 @@
 
 package vn.dtt.duongbien.dao.vrcb.service.impl;
 
+import java.util.List;
+
+import com.liferay.portal.kernel.exception.SystemException;
+
 import vn.dtt.duongbien.dao.vrcb.service.base.DmRankRatingLocalServiceBaseImpl;
 
 /**
@@ -37,4 +41,7 @@ public class DmRankRatingLocalServiceImpl
 	 *
 	 * Never reference this interface directly. Always use {@link vn.dtt.duongbien.dao.vrcb.service.DmRankRatingLocalServiceUtil} to access the dm rank rating local service.
 	 */
+	public List getAllDmRankRating() throws SystemException{
+		return dmRankRatingPersistence.findAll();
+	}
 }
