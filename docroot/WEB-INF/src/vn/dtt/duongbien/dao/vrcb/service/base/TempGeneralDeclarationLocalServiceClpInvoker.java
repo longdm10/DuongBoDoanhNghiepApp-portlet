@@ -145,6 +145,10 @@ public class TempGeneralDeclarationLocalServiceClpInvoker {
 		_methodParameterTypes577 = new String[] {
 				"long", "java.lang.String", "double"
 			};
+
+		_methodName578 = "updateRemarks";
+
+		_methodParameterTypes578 = new String[] { "long", "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -302,6 +306,14 @@ public class TempGeneralDeclarationLocalServiceClpInvoker {
 			return null;
 		}
 
+		if (_methodName578.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes578, parameterTypes)) {
+			TempGeneralDeclarationLocalServiceUtil.updateRemarks(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1]);
+
+			return null;
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -349,4 +361,6 @@ public class TempGeneralDeclarationLocalServiceClpInvoker {
 	private String[] _methodParameterTypes576;
 	private String _methodName577;
 	private String[] _methodParameterTypes577;
+	private String _methodName578;
+	private String[] _methodParameterTypes578;
 }

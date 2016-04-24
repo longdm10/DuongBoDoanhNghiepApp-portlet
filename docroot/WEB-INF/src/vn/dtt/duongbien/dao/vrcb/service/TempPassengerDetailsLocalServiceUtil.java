@@ -276,10 +276,12 @@ public class TempPassengerDetailsLocalServiceUtil {
 
 	public static vn.dtt.duongbien.dao.vrcb.model.TempPassengerDetails addTempPassengerDetails(
 		java.lang.String passengerCode, java.lang.String familyName,
-		java.lang.String givenName)
+		java.lang.String givenName, java.util.Date birthDay,
+		java.lang.String birthPlace, java.lang.String serialNumberOfIdentity)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getService()
-				   .addTempPassengerDetails(passengerCode, familyName, givenName);
+				   .addTempPassengerDetails(passengerCode, familyName,
+			givenName, birthDay, birthPlace, serialNumberOfIdentity);
 	}
 
 	public static void clearService() {

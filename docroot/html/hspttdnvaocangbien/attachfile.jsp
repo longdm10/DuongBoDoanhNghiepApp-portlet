@@ -12,7 +12,7 @@ if(!itemIdTemp.equals("")){
 	tempGeneral = TempGeneralDeclarationLocalServiceUtil.getTempGeneralDeclaration(Long.valueOf(itemIdTemp));
 }
 PortletURL dialogAttackfile = renderResponse.createRenderURL();
-dialogAttackfile.setParameter("jspPage", "/html/hspttdnvaocangbien/crew_popup.jsp");
+dialogAttackfile.setParameter("jspPage", "/html/hspttdnvaocangbien/attachfile_popup.jsp");
 dialogAttackfile.setParameter("redirect", ParamUtil.getString(request, "redirect"));
 dialogAttackfile.setParameter("tabs1", tabs);
 dialogAttackfile.setParameter("id", itemIdTemp);

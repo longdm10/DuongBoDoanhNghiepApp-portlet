@@ -1,3 +1,4 @@
+<%@page import="com.liferay.portal.util.PortalUtil"%>
 <%@page import="javax.portlet.PortletURL"%>
 <%@page import="vn.dtt.duongbien.dao.vrcb.service.TempGeneralDeclarationLocalServiceUtil"%>
 <%@page import="vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration"%>
@@ -28,18 +29,26 @@ backPasengersUrl.setParameter("id", itemIdTemp);
 %>
 <portlet:actionURL var="updatePassengersUrl" name="updatePassengers">
 </portlet:actionURL>
-<div>
-	<fieldset>
-		  <legend style="font-size:15px;">Thao tác</legend>
-	  </fieldset>
-</div>
-<div>
-	<table>
-		<tr>
-		</tr>
-	</table>
-</div>
-<div style="text-align: center;">
-  	<a href="<%=updatePassengersUrl.toString() %>"><input type="button"  value="Sửa bản khai" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/></a>
-  	<a href="<%=backPasengersUrl.toString()%>"><input type="button"  value="Bỏ qua" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/></a> 
- </div>
+<aui:form method="post" action="<%=updatePassengersUrl.toString() %>">
+	<div>
+		<aui:input name="redirect" value="<%=backPasengersUrl.toString() %>" type="hidden"></aui:input>
+		<aui:input name="currentUrl" value="<%=PortalUtil.getCurrentCompleteURL(request)%>" type="hidden"></aui:input>
+		<aui:input name="id" type="hidden" value="<%=itemIdTemp %>"></aui:input>
+		<aui:input name="familyName" label="Họ"  type="text">
+			<aui:validator name="required" errorMessage="Họ không được để trống"></aui:validator>
+		</aui:input>
+		<aui:input name="givenName" label="Tên" type="text"></aui:input>
+		<br/>
+		Ngày Sinh
+		<liferay-ui:input-date name="birthDay" yearValue="1980"
+						disableNamespace="<%=false%>" disabled="false" dayParam="dobDay"
+						 monthParam="dobMonth"
+						yearParam="dobYear" />
+		<aui:input name="birthPlace" label="Nơi sinh"></aui:input>
+		<aui:input name="serialNumberOfIdentity" label="Số hộ chiếu"></aui:input>
+	</div>
+	<div style="text-align: center;">
+	  	<input type="submit"  value="Thêm mới hành khách" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 200px;"/>
+	  	<a href="<%=backPasengersUrl.toString()%>"><input type="button"  value="Bỏ qua" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/></a> 
+	 </div>
+ </aui:form>

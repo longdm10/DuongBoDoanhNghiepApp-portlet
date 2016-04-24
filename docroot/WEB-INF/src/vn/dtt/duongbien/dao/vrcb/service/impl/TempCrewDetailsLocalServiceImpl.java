@@ -49,6 +49,7 @@ public class TempCrewDetailsLocalServiceImpl
 		item.setFamilyName(familyName);
 		item.setGivenName(givenName);
 		item.setRankCode(rankCode);
+		tempCrewDetailsPersistence.update(item);
 		return item;
 	}
 }

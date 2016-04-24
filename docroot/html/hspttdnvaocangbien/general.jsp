@@ -20,14 +20,11 @@ dialogUrl.setParameter("tabs1", tabs);
 dialogUrl.setParameter("id", itemIdTemp);
 %>
  <%@page import="com.liferay.portal.kernel.portlet.LiferayWindowState"%>
-<div>
-	<fieldset>
-		  <legend style="font-size:15px;">Thao tác</legend>
-		  <div>
-		  	<a href="<%=dialogUrl.toString() %>"><input type="button"  value="Sửa bản khai" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/></a>
-		  </div>
-	  </fieldset>
-</div>
+
+ <div>
+ 	<a href="<%=dialogUrl.toString() %>"><input type="button"  value="Sửa bản khai" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/></a>
+ </div>
+
 <div>
 	<table>
 		<tr>
@@ -62,7 +59,7 @@ dialogUrl.setParameter("id", itemIdTemp);
 		<tr>
 			<td colspan="3">8. Số lượng và loại hàng hóa vận chuyển trên tàu
 				<br/>
-				<textarea rows="6" cols="50"></textarea>
+				<textarea rows="3" cols="50" name="<portlet:namespace />briefDescriptionOfTheCargo"  readonly="readonly"><%=tempGeneral.getBriefDescriptionOfTheCargo() %></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -70,7 +67,7 @@ dialogUrl.setParameter("id", itemIdTemp);
 				<br/>
 				Dung tích tàu : 1.00
 				<br/>
-				<textarea rows="6" cols="50"></textarea>
+				<textarea rows="3" cols="50" name="<portlet:namespace />grossTonnage" readonly="readonly"><%=tempGeneral.getGrossTonnage() %></textarea>
 			</td>
 		</tr>
 	</table>

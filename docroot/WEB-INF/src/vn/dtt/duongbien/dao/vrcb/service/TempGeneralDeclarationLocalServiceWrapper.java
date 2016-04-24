@@ -353,6 +353,13 @@ public class TempGeneralDeclarationLocalServiceWrapper
 			briefDescriptionOfTheCargo, grossTonnage);
 	}
 
+	@Override
+	public void updateRemarks(long itemId, java.lang.String remarks)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			vn.dtt.duongbien.dao.vrcb.NoSuchTempGeneralDeclarationException {
+		_tempGeneralDeclarationLocalService.updateRemarks(itemId, remarks);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

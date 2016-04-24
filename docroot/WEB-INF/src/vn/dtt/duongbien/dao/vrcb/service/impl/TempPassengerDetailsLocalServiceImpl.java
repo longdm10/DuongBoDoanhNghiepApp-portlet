@@ -14,6 +14,8 @@
 
 package vn.dtt.duongbien.dao.vrcb.service.impl;
 
+import java.util.Date;
+
 import com.liferay.counter.service.CounterLocalServiceUtil;
 import com.liferay.portal.kernel.exception.SystemException;
 
@@ -42,12 +44,15 @@ public class TempPassengerDetailsLocalServiceImpl
 	 * Never reference this interface directly. Always use {@link vn.dtt.duongbien.dao.vrcb.service.TempPassengerDetailsLocalServiceUtil} to access the temp passenger details local service.
 	 */
 	
-	public TempPassengerDetails addTempPassengerDetails(String passengerCode, String familyName, String givenName) throws SystemException{
+	public TempPassengerDetails addTempPassengerDetails(String passengerCode, String familyName, String givenName, Date birthDay, String birthPlace, String serialNumberOfIdentity) throws SystemException{
 		long itemId = CounterLocalServiceUtil.increment(TempPassengerDetails.class.getName());
 		TempPassengerDetails item = tempPassengerDetailsPersistence.create(itemId);
 		item.setPassengerCode(passengerCode);
 		item.setFamilyName(familyName);
 		item.setGivenName(givenName);
+		item.setBirthDay(birthDay);
+		item.setBirthPlace(birthPlace);
+		item.setSerialNumberOfIdentity(serialNumberOfIdentity);
 		tempPassengerDetailsPersistence.update(item);
 		return item;
 	}

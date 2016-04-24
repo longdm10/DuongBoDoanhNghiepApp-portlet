@@ -117,4 +117,10 @@ public class TempGeneralDeclarationLocalServiceImpl
 		item.setGrossTonnage(grossTonnage);
 		tempGeneralDeclarationPersistence.update(item);
 	}
+	
+	public void updateRemarks(long itemId,String remarks) throws NoSuchTempGeneralDeclarationException, SystemException{
+		TempGeneralDeclaration item = tempGeneralDeclarationPersistence.findByPrimaryKey(itemId);
+		item.setRemarks(remarks);
+		tempGeneralDeclarationPersistence.update(item);
+	}
 }

@@ -56,6 +56,7 @@ public class TempPassengerListLocalServiceImpl
 		item.setDateOfArrival(dateOfArrival);
 		item.setImoNumber(imoNumber);
 		item.setVoyageNumber(voyageNumber);
+		tempPassengerListPersistence.update(item);
 		return item;
 	}
 }

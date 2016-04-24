@@ -29,59 +29,63 @@ backUrl.setParameter("id", itemIdTemp);
 %>
 <portlet:actionURL var="updateGeneralDocUrl" name="updateGeneralDoc">
 </portlet:actionURL>
-<div>
-	<fieldset>
-		  <legend style="font-size:15px;">Sửa thông tin bản khai</legend>
-	  </fieldset>
-</div>
-<div>
-	<table>
-		<tr>
-			<td>1. Tên tàu : <%=tempGeneral.getNameOfShip() %></td>
-			<td rowspan="2">3. Cảng đến/rời
-			<br/>  
-			<%=tempGeneral.getPortOfArrivalCode() %></td>
-			<td rowspan="2">4. Thời gian đến/rời <%=tempGeneral.getDateOfArrival() %></td>
-		</tr>
-		<tr>
-			<td>2. Hô hiệu	</td>
-		</tr>
-		<tr>
-			<td colspan="1">5. Tên thuyền trưởng : <%=tempGeneral.getNameOfMaster() %></td>
-			<td colspan="2">6. Cảng rời cuối cùng/cảng đích: 
-				<br/>
-				<%=tempGeneral.getLastPortOfCallCode() %>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="3">7. Tên vào địa chỉ liên lạc của đại lý (nếu có)
-				<br/>
-				<%=tempGeneral.getNameOfShipownersAgents()%>
-				<br/>
-				<%=tempGeneral.getShipAgencyAddress()%>
-				<br/>
-				Tel : <%=tempGeneral.getShipAgencyPhone()%> - Fax: <%=tempGeneral.getShipAgencyFax()%>
-				<br/>
-				Email : <%=tempGeneral.getShipAgencyEmail()%>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="3">8. Số lượng và loại hàng hóa vận chuyển trên tàu
-				<br/>
-				<textarea rows="6" cols="50"></textarea>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="3">9. Ghi chú:
-				<br/>
-				Dung tích tàu : 1.00
-				<br/>
-				<textarea rows="6" cols="50"></textarea>
-			</td>
-		</tr>
-	</table>
-</div>
-<div style="text-align: center;">
-  	<a href="<%=updateGeneralDocUrl.toString() %>"><input type="button"  value="Sửa bản khai" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/></a>
-  	<a href="<%=backUrl.toString()%>"><input type="button"  value="Bỏ qua" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/></a> 
- </div>
+<form name='<portlet:namespace/>fm' method="post" action="<%=updateGeneralDocUrl.toString()%>"> 
+	<div>
+		<fieldset>
+			  <legend style="font-size:15px;">Sửa thông tin bản khai</legend>
+		  </fieldset>
+	</div>
+	<div>
+		<input type="hidden" name='<portlet:namespace/>id' value="<%=itemIdTemp %>" />
+		<input type="hidden" name='<portlet:namespace/>redirect' value="<%=backUrl.toString() %>" />
+		<table>
+			<tr>
+				<td>1. Tên tàu : <%=tempGeneral.getNameOfShip() %></td>
+				<td rowspan="2">3. Cảng đến/rời
+				<br/>  
+				<%=tempGeneral.getPortOfArrivalCode() %></td>
+				<td rowspan="2">4. Thời gian đến/rời <%=tempGeneral.getDateOfArrival() %></td>
+			</tr>
+			<tr>
+				<td>2. Hô hiệu	</td>
+			</tr>
+			<tr>
+				<td colspan="1">5. Tên thuyền trưởng : <%=tempGeneral.getNameOfMaster() %></td>
+				<td colspan="2">6. Cảng rời cuối cùng/cảng đích: 
+					<br/>
+					<%=tempGeneral.getLastPortOfCallCode() %>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">7. Tên vào địa chỉ liên lạc của đại lý (nếu có)
+					<br/>
+					<%=tempGeneral.getNameOfShipownersAgents()%>
+					<br/>
+					<%=tempGeneral.getShipAgencyAddress()%>
+					<br/>
+					Tel : <%=tempGeneral.getShipAgencyPhone()%> - Fax: <%=tempGeneral.getShipAgencyFax()%>
+					<br/>
+					Email : <%=tempGeneral.getShipAgencyEmail()%>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">8. Số lượng và loại hàng hóa vận chuyển trên tàu
+					<br/>
+					<textarea rows="3" cols="50" name="<portlet:namespace />briefDescriptionOfTheCargo"><%=tempGeneral.getBriefDescriptionOfTheCargo() %></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">9. Ghi chú:
+					<br/>
+					Dung tích tàu : 1.00
+					<br/>
+					<textarea rows="3" cols="50" name="<portlet:namespace />grossTonnage"><%=tempGeneral.getGrossTonnage() %></textarea>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="text-align: center;">
+	  	<input type="submit"  value="Sửa bản khai" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/></a>
+	  	<a href="<%=backUrl.toString()%>"><input type="button"  value="Bỏ qua" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/></a> 
+	 </div>
+ </form>

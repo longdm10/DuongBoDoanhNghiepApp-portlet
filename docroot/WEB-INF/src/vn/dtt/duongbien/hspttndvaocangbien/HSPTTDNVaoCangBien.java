@@ -8,9 +8,18 @@ import javax.portlet.ActionResponse;
 import javax.portlet.PortletConfig;
 import javax.portlet.PortletPreferences;
 
+import vn.dtt.duongbien.dao.vrcb.model.TempCrewDetails;
+import vn.dtt.duongbien.dao.vrcb.model.TempCrewList;
+import vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration;
+import vn.dtt.duongbien.dao.vrcb.model.TempPassengerDetails;
+import vn.dtt.duongbien.dao.vrcb.model.TempPassengerList;
 import vn.dtt.duongbien.dao.vrcb.service.DmPortRegionLocalServiceUtil;
 import vn.dtt.duongbien.dao.vrcb.service.TempAnimalQuarantineLocalServiceUtil;
+import vn.dtt.duongbien.dao.vrcb.service.TempCrewDetailsLocalServiceUtil;
+import vn.dtt.duongbien.dao.vrcb.service.TempCrewListLocalServiceUtil;
 import vn.dtt.duongbien.dao.vrcb.service.TempGeneralDeclarationLocalServiceUtil;
+import vn.dtt.duongbien.dao.vrcb.service.TempPassengerDetailsLocalServiceUtil;
+import vn.dtt.duongbien.dao.vrcb.service.TempPassengerListLocalServiceUtil;
 import vn.dtt.duongbien.qlhsphuongtientndvaoracangbien.QLHSPhuongTienTNDVaoRaCangBien;
 
 import com.liferay.portal.NoSuchModelException;
@@ -89,26 +98,23 @@ public class HSPTTDNVaoCangBien extends MVCPortlet {
 		try {
 			String id = ParamUtil.getString(actionRequest, "id");
 			TempGeneralDeclarationLocalServiceUtil.deleteTempGeneralDeclaration(Long.valueOf(id));
-		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (PortalException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SystemException e) {
-			// TODO Auto-generated catch block
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	public void updateGeneralDoc(ActionRequest actionRequest, ActionResponse actionResponse) {
 		try {
-			Long id = ParamUtil.getLong(actionRequest, "id");
+			long id = ParamUtil.getLong(actionRequest, "id");
+			String redirect = ParamUtil.getString(actionRequest, "redirect");
 			if(id>0){
-				
+				String briefDescriptionOfTheCargo = ParamUtil.getString(actionRequest, "briefDescriptionOfTheCargo");
+				double grossTonnage = ParamUtil.getDouble(actionRequest, "grossTonnage");
+				TempGeneralDeclarationLocalServiceUtil.updateTempGeneral(id, briefDescriptionOfTheCargo, grossTonnage);
+				actionResponse.sendRedirect(redirect);
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 	}
 
@@ -116,8 +122,63 @@ public class HSPTTDNVaoCangBien extends MVCPortlet {
 	}
 
 	public void updateCrew(ActionRequest actionRequest, ActionResponse actionResponse) {
+		try {
+			long id = ParamUtil.getLong(actionRequest, "id");
+			String redirect = ParamUtil.getString(actionRequest, "redirect");
+			String currentUrl = ParamUtil.getString(actionRequest, "currentUrl");
+			if(id>0){
+				String familyName = ParamUtil.getString(actionRequest, "familyName");
+				String givenName = ParamUtil.getString(actionRequest, "givenName");
+				String rankCode = ParamUtil.getString(actionRequest, "rankCode");
+				TempGeneralDeclaration tempGD = TempGeneralDeclarationLocalServiceUtil.fetchTempGeneralDeclaration(id);
+				TempCrewList tempCL = TempCrewListLocalServiceUtil.addTemCrewList(tempGD.getDocumentName(), tempGD.getDocumentYear(), tempGD.getUserCreated(), tempGD.getIsArrival(), tempGD.getNameOfShip(), tempGD.getImoNumber(), tempGD.getVoyageNumber(), tempGD.getPortOfArrivalCode(), tempGD.getDateOfArrival(), tempGD.getLastPortOfCallCode());
+				TempCrewDetails tempCD = TempCrewDetailsLocalServiceUtil.addTempCrewDetails(null, familyName, givenName, rankCode);
+				actionResponse.sendRedirect(currentUrl);
+			}else{
+				actionResponse.sendRedirect(redirect);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void updatePassengers(ActionRequest actionRequest, ActionResponse actionResponse) {
+		try {
+			Long id = ParamUtil.getLong(actionRequest, "id");
+			String redirect = ParamUtil.getString(actionRequest, "redirect");
+			String currentUrl = ParamUtil.getString(actionRequest, "currentUrl");
+			if(id>0){
+				String familyName = ParamUtil.getString(actionRequest, "familyName");
+				String givenName = ParamUtil.getString(actionRequest, "givenName");
+				Date birthDay = ParamUtil.getDate(actionRequest, "birthDay", new SimpleDateFormat("dd/MM/yyyy"));
+				String birthPlace = ParamUtil.getString(actionRequest, "birthPlace");;
+				String serialNumberOfIdentity = ParamUtil.getString(actionRequest, "serialNumberOfIdentity");;
+				TempGeneralDeclaration tempGD = TempGeneralDeclarationLocalServiceUtil.fetchTempGeneralDeclaration(id);
+				TempPassengerList tempPL =  TempPassengerListLocalServiceUtil.addTempPassengerList(tempGD.getDocumentName(), tempGD.getDocumentYear(), tempGD.getUserCreated(), tempGD.getIsArrival(), tempGD.getNameOfShip(), tempGD.getPortOfArrivalCode(), tempGD.getDateOfArrival(), tempGD.getImoNumber(), tempGD.getVoyageNumber());
+				TempPassengerDetails tempPD = TempPassengerDetailsLocalServiceUtil.addTempPassengerDetails(null, familyName, givenName,birthDay,birthPlace,serialNumberOfIdentity);
+				actionResponse.sendRedirect(currentUrl);
+			}else{
+				actionResponse.sendRedirect(redirect);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void updateRemarks(ActionRequest actionRequest, ActionResponse actionResponse) {
+		try {
+			long id = ParamUtil.getLong(actionRequest, "id");
+			String redirect = ParamUtil.getString(actionRequest, "redirect");
+			String currentUrl = ParamUtil.getString(actionRequest, "currentUrl");
+			String remarks = ParamUtil.getString(actionRequest, "remarks");
+			if(id>0){
+				TempGeneralDeclarationLocalServiceUtil.updateRemarks(id, remarks);
+				actionResponse.sendRedirect(currentUrl);
+			}else{
+				actionResponse.sendRedirect(redirect);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

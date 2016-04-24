@@ -334,6 +334,12 @@ public class TempGeneralDeclarationLocalServiceUtil {
 			.updateTempGeneral(itemId, briefDescriptionOfTheCargo, grossTonnage);
 	}
 
+	public static void updateRemarks(long itemId, java.lang.String remarks)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			vn.dtt.duongbien.dao.vrcb.NoSuchTempGeneralDeclarationException {
+		getService().updateRemarks(itemId, remarks);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

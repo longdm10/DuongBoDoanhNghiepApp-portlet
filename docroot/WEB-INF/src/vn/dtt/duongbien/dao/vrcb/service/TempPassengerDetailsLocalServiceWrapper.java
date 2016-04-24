@@ -292,10 +292,11 @@ public class TempPassengerDetailsLocalServiceWrapper
 	@Override
 	public vn.dtt.duongbien.dao.vrcb.model.TempPassengerDetails addTempPassengerDetails(
 		java.lang.String passengerCode, java.lang.String familyName,
-		java.lang.String givenName)
+		java.lang.String givenName, java.util.Date birthDay,
+		java.lang.String birthPlace, java.lang.String serialNumberOfIdentity)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _tempPassengerDetailsLocalService.addTempPassengerDetails(passengerCode,
-			familyName, givenName);
+			familyName, givenName, birthDay, birthPlace, serialNumberOfIdentity);
 	}
 
 	/**

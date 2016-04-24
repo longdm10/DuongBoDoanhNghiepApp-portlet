@@ -119,7 +119,8 @@ public class TempPassengerDetailsLocalServiceClp
 		_methodName19 = "addTempPassengerDetails";
 
 		_methodParameterTypes19 = new String[] {
-				"java.lang.String", "java.lang.String", "java.lang.String"
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"java.util.Date", "java.lang.String", "java.lang.String"
 			};
 	}
 
@@ -681,7 +682,8 @@ public class TempPassengerDetailsLocalServiceClp
 	@Override
 	public vn.dtt.duongbien.dao.vrcb.model.TempPassengerDetails addTempPassengerDetails(
 		java.lang.String passengerCode, java.lang.String familyName,
-		java.lang.String givenName)
+		java.lang.String givenName, java.util.Date birthDay,
+		java.lang.String birthPlace, java.lang.String serialNumberOfIdentity)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
@@ -693,7 +695,13 @@ public class TempPassengerDetailsLocalServiceClp
 						
 					ClpSerializer.translateInput(familyName),
 						
-					ClpSerializer.translateInput(givenName)
+					ClpSerializer.translateInput(givenName),
+						
+					ClpSerializer.translateInput(birthDay),
+						
+					ClpSerializer.translateInput(birthPlace),
+						
+					ClpSerializer.translateInput(serialNumberOfIdentity)
 					});
 		}
 		catch (Throwable t) {

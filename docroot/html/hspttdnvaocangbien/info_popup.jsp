@@ -1,3 +1,4 @@
+<%@page import="com.liferay.portal.util.PortalUtil"%>
 <%@page import="javax.portlet.PortletURL"%>
 <%@page import="vn.dtt.duongbien.dao.vrcb.service.TempGeneralDeclarationLocalServiceUtil"%>
 <%@page import="vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration"%>
@@ -21,25 +22,23 @@ TempGeneralDeclaration tempGeneral = new TempGeneralDeclarationImpl();
 if(!itemIdTemp.equals("")){
 	tempGeneral = TempGeneralDeclarationLocalServiceUtil.getTempGeneralDeclaration(Long.valueOf(itemIdTemp));
 }
-PortletURL backAccachfileUrl = renderResponse.createRenderURL();
-backAccachfileUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/edit_detail.jsp");
-backAccachfileUrl.setParameter("tabs1", tabsBack);
-backAccachfileUrl.setParameter("id", itemIdTemp);
+String redirect = ParamUtil.getString(request, "redirect");
+PortletURL backUrl = renderResponse.createRenderURL();
+backUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/edit_detail.jsp");
+backUrl.setParameter("tabs1", tabsBack);
+backUrl.setParameter("id", itemIdTemp);
 %>
-<portlet:actionURL var="updateAttachfileUrl" name="updateAttachfile">
+<portlet:actionURL var="updateRemarksUrl" name="updateRemarks">
 </portlet:actionURL>
-<div>
-	<fieldset>
-		  <legend style="font-size:15px;">Thao tác</legend>
-	  </fieldset>
-</div>
-<div>
-	<table>
-		<tr>
-		</tr>
-	</table>
-</div>
-<div style="text-align: center;">
-  	<a href="<%=updateAttachfileUrl.toString() %>"><input type="button"  value="Sửa bản khai" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/></a>
-  	<a href="<%=backAccachfileUrl.toString()%>"><input type="button"  value="Bỏ qua" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/></a> 
- </div>
+<form name='<portlet:namespace/>fm' method="post" action="<%=updateRemarksUrl.toString()%>"> 
+	<div>
+		<input type="hidden" name='<portlet:namespace/>id' value="<%=itemIdTemp %>" />
+		<input type="hidden" name='<portlet:namespace/>redirect' value="<%=backUrl.toString() %>" />
+		<input type="hidden" name='<portlet:namespace/>currentUrl' value="<%=PortalUtil.getCurrentCompleteURL(request)%>" />
+		<aui:input type="text" label="Thông báo" name="remarks"></aui:input>
+	</div>
+	<div style="text-align: center;">
+	  	<input type="submit"  value="Sửa thông báo" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/></a>
+	  	<a href="<%=backUrl.toString()%>"><input type="button"  value="Bỏ qua" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/></a> 
+	 </div>
+ </form>
