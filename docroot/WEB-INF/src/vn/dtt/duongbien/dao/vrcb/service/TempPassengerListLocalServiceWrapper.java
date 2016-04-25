@@ -290,13 +290,14 @@ public class TempPassengerListLocalServiceWrapper
 
 	@Override
 	public vn.dtt.duongbien.dao.vrcb.model.TempPassengerList addTempPassengerList(
-		long documentName, int documentYear, java.lang.String userCreated,
-		int isArrival, java.lang.String nameOfShip,
-		java.lang.String portOfArrivalCode, java.util.Date dateOfArrival,
-		java.lang.String imoNumber, java.lang.String voyageNumber)
+		java.lang.String requestCode, long documentName, int documentYear,
+		java.lang.String userCreated, int isArrival,
+		java.lang.String nameOfShip, java.lang.String portOfArrivalCode,
+		java.util.Date dateOfArrival, java.lang.String imoNumber,
+		java.lang.String voyageNumber)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		return _tempPassengerListLocalService.addTempPassengerList(documentName,
-			documentYear, userCreated, isArrival, nameOfShip,
+		return _tempPassengerListLocalService.addTempPassengerList(requestCode,
+			documentName, documentYear, userCreated, isArrival, nameOfShip,
 			portOfArrivalCode, dateOfArrival, imoNumber, voyageNumber);
 	}
 

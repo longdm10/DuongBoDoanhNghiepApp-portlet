@@ -131,8 +131,8 @@ public class HSPTTDNVaoCangBien extends MVCPortlet {
 				String givenName = ParamUtil.getString(actionRequest, "givenName");
 				String rankCode = ParamUtil.getString(actionRequest, "rankCode");
 				TempGeneralDeclaration tempGD = TempGeneralDeclarationLocalServiceUtil.fetchTempGeneralDeclaration(id);
-				TempCrewList tempCL = TempCrewListLocalServiceUtil.addTemCrewList(tempGD.getDocumentName(), tempGD.getDocumentYear(), tempGD.getUserCreated(), tempGD.getIsArrival(), tempGD.getNameOfShip(), tempGD.getImoNumber(), tempGD.getVoyageNumber(), tempGD.getPortOfArrivalCode(), tempGD.getDateOfArrival(), tempGD.getLastPortOfCallCode());
-				TempCrewDetails tempCD = TempCrewDetailsLocalServiceUtil.addTempCrewDetails(null, familyName, givenName, rankCode);
+				TempCrewList tempCL = TempCrewListLocalServiceUtil.addTemCrewList(tempGD.getDocumentName(), tempGD.getDocumentYear(), tempGD.getUserCreated(), tempGD.getIsArrival(), tempGD.getNameOfShip(), tempGD.getImoNumber(), tempGD.getVoyageNumber(), tempGD.getPortOfArrivalCode(), tempGD.getDateOfArrival(), tempGD.getLastPortOfCallCode(),tempGD.getRequestCode());
+				TempCrewDetails tempCD = TempCrewDetailsLocalServiceUtil.addTempCrewDetails(null, familyName, givenName, rankCode, tempGD.getRequestCode());
 				actionResponse.sendRedirect(currentUrl);
 			}else{
 				actionResponse.sendRedirect(redirect);
@@ -154,8 +154,8 @@ public class HSPTTDNVaoCangBien extends MVCPortlet {
 				String birthPlace = ParamUtil.getString(actionRequest, "birthPlace");;
 				String serialNumberOfIdentity = ParamUtil.getString(actionRequest, "serialNumberOfIdentity");;
 				TempGeneralDeclaration tempGD = TempGeneralDeclarationLocalServiceUtil.fetchTempGeneralDeclaration(id);
-				TempPassengerList tempPL =  TempPassengerListLocalServiceUtil.addTempPassengerList(tempGD.getDocumentName(), tempGD.getDocumentYear(), tempGD.getUserCreated(), tempGD.getIsArrival(), tempGD.getNameOfShip(), tempGD.getPortOfArrivalCode(), tempGD.getDateOfArrival(), tempGD.getImoNumber(), tempGD.getVoyageNumber());
-				TempPassengerDetails tempPD = TempPassengerDetailsLocalServiceUtil.addTempPassengerDetails(null, familyName, givenName,birthDay,birthPlace,serialNumberOfIdentity);
+				TempPassengerList tempPL =  TempPassengerListLocalServiceUtil.addTempPassengerList(tempGD.getRequestCode(),tempGD.getDocumentName(), tempGD.getDocumentYear(), tempGD.getUserCreated(), tempGD.getIsArrival(), tempGD.getNameOfShip(), tempGD.getPortOfArrivalCode(), tempGD.getDateOfArrival(), tempGD.getImoNumber(), tempGD.getVoyageNumber());
+				TempPassengerDetails tempPD = TempPassengerDetailsLocalServiceUtil.addTempPassengerDetails(tempGD.getRequestCode(),null, familyName, givenName,birthDay,birthPlace,serialNumberOfIdentity);
 				actionResponse.sendRedirect(currentUrl);
 			}else{
 				actionResponse.sendRedirect(redirect);

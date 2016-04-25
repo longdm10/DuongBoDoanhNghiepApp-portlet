@@ -118,7 +118,7 @@ public class TempCrewDetailsLocalServiceClpInvoker {
 
 		_methodParameterTypes574 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"java.lang.String"
+				"java.lang.String", "java.lang.String"
 			};
 	}
 
@@ -227,7 +227,7 @@ public class TempCrewDetailsLocalServiceClpInvoker {
 				Arrays.deepEquals(_methodParameterTypes574, parameterTypes)) {
 			return TempCrewDetailsLocalServiceUtil.addTempCrewDetails((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
-				(java.lang.String)arguments[3]);
+				(java.lang.String)arguments[3], (java.lang.String)arguments[4]);
 		}
 
 		throw new UnsupportedOperationException();

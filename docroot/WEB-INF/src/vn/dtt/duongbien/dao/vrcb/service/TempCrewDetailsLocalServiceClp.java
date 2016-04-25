@@ -120,7 +120,7 @@ public class TempCrewDetailsLocalServiceClp
 
 		_methodParameterTypes19 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"java.lang.String"
+				"java.lang.String", "java.lang.String"
 			};
 	}
 
@@ -676,7 +676,8 @@ public class TempCrewDetailsLocalServiceClp
 	@Override
 	public vn.dtt.duongbien.dao.vrcb.model.TempCrewDetails addTempCrewDetails(
 		java.lang.String crewcode, java.lang.String familyName,
-		java.lang.String givenName, java.lang.String rankCode)
+		java.lang.String givenName, java.lang.String rankCode,
+		java.lang.String requestCode)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
@@ -690,7 +691,9 @@ public class TempCrewDetailsLocalServiceClp
 						
 					ClpSerializer.translateInput(givenName),
 						
-					ClpSerializer.translateInput(rankCode)
+					ClpSerializer.translateInput(rankCode),
+						
+					ClpSerializer.translateInput(requestCode)
 					});
 		}
 		catch (Throwable t) {

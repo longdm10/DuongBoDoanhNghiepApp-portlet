@@ -44,9 +44,10 @@ public class TempPassengerListLocalServiceImpl
 	 * Never reference this interface directly. Always use {@link vn.dtt.duongbien.dao.vrcb.service.TempPassengerListLocalServiceUtil} to access the temp passenger list local service.
 	 */
 	
-	public TempPassengerList addTempPassengerList(long documentName, int documentYear, String userCreated, int isArrival, String nameOfShip, String portOfArrivalCode, Date dateOfArrival, String imoNumber, String voyageNumber) throws SystemException{
+	public TempPassengerList addTempPassengerList(String requestCode,long documentName, int documentYear, String userCreated, int isArrival, String nameOfShip, String portOfArrivalCode, Date dateOfArrival, String imoNumber, String voyageNumber) throws SystemException{
 		long itemID = CounterLocalServiceUtil.increment(TempPassengerList.class.getName());
 		TempPassengerList item = tempPassengerListPersistence.create(itemID);
+		item.setRequestCode(requestCode);
 		item.setDocumentName(documentName);
 		item.setDocumentYear(documentYear);
 		item.setUserCreated(userCreated);

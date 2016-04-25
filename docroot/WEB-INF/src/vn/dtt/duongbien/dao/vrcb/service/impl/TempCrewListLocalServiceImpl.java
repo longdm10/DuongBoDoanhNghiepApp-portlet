@@ -44,20 +44,26 @@ public class TempCrewListLocalServiceImpl
 	 *
 	 * Never reference this interface directly. Always use {@link vn.dtt.duongbien.dao.vrcb.service.TempCrewListLocalServiceUtil} to access the temp crew list local service.
 	 */
-	public TempCrewList addTemCrewList(long documentName, int documentYear, String userCreated, int isArrival, String nameOfShip, String imoNumber, String voyageNumber, String portOfArrivalCode, Date dateOfArrival, String lastPortOfCallCode) throws SystemException{
-		long itemId = CounterLocalServiceUtil.increment(TempCrewList.class.getName());
-		TempCrewList item = tempCrewListPersistence.create(itemId);
-		item.setDocumentName(documentName);
-		item.setDocumentYear(documentYear);
-		item.setUserCreated(userCreated);
-		item.setIsArrival(isArrival);
-		item.setNameOfShip(nameOfShip);
-		item.setImoNumber(imoNumber);
-		item.setVoyageNumber(voyageNumber);
-		item.setPortOfArrivalCode(portOfArrivalCode);
-		item.setDateOfArrival(dateOfArrival);
-		item.setLastPortOfCallCode(lastPortOfCallCode);
-		tempCrewListPersistence.update(item);
+	public TempCrewList addTemCrewList(long documentName, int documentYear, String userCreated, int isArrival, String nameOfShip, String imoNumber, String voyageNumber, String portOfArrivalCode, Date dateOfArrival, String lastPortOfCallCode, String requestCode) throws SystemException{
+		TempCrewList item = null;
+		try {
+			long itemId = CounterLocalServiceUtil.increment(TempCrewList.class.getName());
+			item = tempCrewListPersistence.create(itemId);
+			item.setRequestCode(requestCode);
+			item.setDocumentName(documentName);
+			item.setDocumentYear(documentYear);
+			item.setUserCreated(userCreated);
+			item.setIsArrival(isArrival);
+			item.setNameOfShip(nameOfShip);
+			item.setImoNumber(imoNumber);
+			item.setVoyageNumber(voyageNumber);
+			item.setPortOfArrivalCode(portOfArrivalCode);
+			item.setDateOfArrival(dateOfArrival);
+			item.setLastPortOfCallCode(lastPortOfCallCode);
+			tempCrewListPersistence.update(item);
+		} catch (SystemException e) {
+			e.printStackTrace();
+		}
 		return item;
 	}
 }

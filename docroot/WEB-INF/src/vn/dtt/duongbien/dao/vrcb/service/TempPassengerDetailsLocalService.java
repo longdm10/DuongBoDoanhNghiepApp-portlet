@@ -254,8 +254,9 @@ public interface TempPassengerDetailsLocalService extends BaseLocalService,
 		throws java.lang.Throwable;
 
 	public vn.dtt.duongbien.dao.vrcb.model.TempPassengerDetails addTempPassengerDetails(
-		java.lang.String passengerCode, java.lang.String familyName,
-		java.lang.String givenName, java.util.Date birthDay,
-		java.lang.String birthPlace, java.lang.String serialNumberOfIdentity)
+		java.lang.String requestCode, java.lang.String passengerCode,
+		java.lang.String familyName, java.lang.String givenName,
+		java.util.Date birthDay, java.lang.String birthPlace,
+		java.lang.String serialNumberOfIdentity)
 		throws com.liferay.portal.kernel.exception.SystemException;
 }

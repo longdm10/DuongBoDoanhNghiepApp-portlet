@@ -119,7 +119,7 @@ public class TempCrewListLocalServiceClpInvoker {
 		_methodParameterTypes574 = new String[] {
 				"long", "int", "java.lang.String", "int", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"java.util.Date", "java.lang.String"
+				"java.util.Date", "java.lang.String", "java.lang.String"
 			};
 	}
 
@@ -232,7 +232,8 @@ public class TempCrewListLocalServiceClpInvoker {
 				((Integer)arguments[3]).intValue(),
 				(java.lang.String)arguments[4], (java.lang.String)arguments[5],
 				(java.lang.String)arguments[6], (java.lang.String)arguments[7],
-				(java.util.Date)arguments[8], (java.lang.String)arguments[9]);
+				(java.util.Date)arguments[8], (java.lang.String)arguments[9],
+				(java.lang.String)arguments[10]);
 		}
 
 		throw new UnsupportedOperationException();

@@ -42,9 +42,10 @@ public class TempCrewDetailsLocalServiceImpl
 	 *
 	 * Never reference this interface directly. Always use {@link vn.dtt.duongbien.dao.vrcb.service.TempCrewDetailsLocalServiceUtil} to access the temp crew details local service.
 	 */
-	public TempCrewDetails addTempCrewDetails(String crewcode, String familyName, String givenName, String rankCode) throws SystemException{
+	public TempCrewDetails addTempCrewDetails(String crewcode, String familyName, String givenName, String rankCode, String requestCode) throws SystemException{
 		long itemId = CounterLocalServiceUtil.increment(TempCrewDetails.class.getName());
 		TempCrewDetails item = tempCrewDetailsPersistence.create(itemId);
+		item.setRequestCode(requestCode);
 		item.setCrewcode(crewcode);
 		item.setFamilyName(familyName);
 		item.setGivenName(givenName);

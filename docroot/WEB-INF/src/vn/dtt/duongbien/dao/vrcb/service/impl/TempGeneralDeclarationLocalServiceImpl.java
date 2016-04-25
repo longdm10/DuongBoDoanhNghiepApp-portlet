@@ -55,6 +55,7 @@ public class TempGeneralDeclarationLocalServiceImpl
 	 * Never reference this interface directly. Always use {@link vn.dtt.duongbien.dao.vrcb.service.TempGeneralDeclarationLocalServiceUtil} to access the temp general declaration local service.
 	 */
 	public TempGeneralDeclaration addTemGeneralDeclaration(String nameOfShip, String nameOfMaster, String portRegionCode, String portOfArrivalCode, String portHarbourCode, String portWharfCode, int isArrival, String voyageNumber, int numberOfCrew, int numberOfPassengers, String lastPortOfCallCode, Date dateOfArrival, String taxCodeOfShipownersAgents, String nameOfShipownersAgents, String shipAgencyAddress, String shipAgencyPhone, String shipAgencyFax, String shipAgencyEmail, Date signDate) throws SystemException{
+		InterfaceRequest lastIF = InterfaceRequestLocalServiceUtil.addInterfaceRequest(isArrival);
 		long itemId = CounterLocalServiceUtil.increment(TempGeneralDeclaration.class.getName());
 		TempGeneralDeclaration tgd = tempGeneralDeclarationPersistence.create(itemId);
 		tgd.setNameOfShip(nameOfShip);
@@ -76,6 +77,7 @@ public class TempGeneralDeclarationLocalServiceImpl
 		tgd.setShipAgencyFax(shipAgencyFax);
 		tgd.setShipAgencyEmail(shipAgencyEmail);
 		tgd.setSignDate(signDate);
+		tgd.setRequestCode(lastIF.getRequestCode());
 		tempGeneralDeclarationPersistence.update(tgd);
 		return tgd;
 	}

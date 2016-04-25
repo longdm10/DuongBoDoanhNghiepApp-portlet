@@ -14,6 +14,13 @@
 
 package vn.dtt.duongbien.dao.vrcb.service.impl;
 
+import java.util.Date;
+import java.util.UUID;
+
+import com.liferay.counter.service.CounterLocalServiceUtil;
+import com.liferay.portal.kernel.exception.SystemException;
+
+import vn.dtt.duongbien.dao.vrcb.model.InterfaceRequest;
 import vn.dtt.duongbien.dao.vrcb.service.base.InterfaceRequestLocalServiceBaseImpl;
 
 /**
@@ -37,4 +44,20 @@ public class InterfaceRequestLocalServiceImpl
 	 *
 	 * Never reference this interface directly. Always use {@link vn.dtt.duongbien.dao.vrcb.service.InterfaceRequestLocalServiceUtil} to access the interface request local service.
 	 */
+	
+	public InterfaceRequest addInterfaceRequest(int isArrival) throws SystemException{
+		long itemId = CounterLocalServiceUtil.increment(InterfaceRequest.class.getName());
+		InterfaceRequest interfaceRequest= interfaceRequestPersistence.create(itemId);
+		interfaceRequest.setRequestCode(UUID.randomUUID().toString());
+		if(isArrival>0){
+			interfaceRequest.setRequestDirection("IN");
+		}else{
+			interfaceRequest.setRequestDirection("OUT");
+		}
+		interfaceRequest.setRequestDate(new Date());
+		interfaceRequest.setRequestedDate(new Date());
+		interfaceRequest.setRequestResponseTime(new Date());
+		interfaceRequestPersistence.update(interfaceRequest);
+		return interfaceRequest;
+	}
 }
