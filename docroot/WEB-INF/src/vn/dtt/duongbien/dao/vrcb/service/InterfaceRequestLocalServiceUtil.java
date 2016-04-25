@@ -274,6 +274,12 @@ public class InterfaceRequestLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static vn.dtt.duongbien.dao.vrcb.model.InterfaceRequest addInterfaceRequest(
+		int isArrival)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().addInterfaceRequest(isArrival);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

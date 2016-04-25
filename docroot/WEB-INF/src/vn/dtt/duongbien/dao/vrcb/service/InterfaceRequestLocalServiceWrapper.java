@@ -288,6 +288,13 @@ public class InterfaceRequestLocalServiceWrapper
 			arguments);
 	}
 
+	@Override
+	public vn.dtt.duongbien.dao.vrcb.model.InterfaceRequest addInterfaceRequest(
+		int isArrival)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _interfaceRequestLocalService.addInterfaceRequest(isArrival);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

@@ -290,11 +290,13 @@ public class TempCrewListLocalServiceWrapper implements TempCrewListLocalService
 		long documentName, int documentYear, java.lang.String userCreated,
 		int isArrival, java.lang.String nameOfShip, java.lang.String imoNumber,
 		java.lang.String voyageNumber, java.lang.String portOfArrivalCode,
-		java.util.Date dateOfArrival, java.lang.String lastPortOfCallCode)
+		java.util.Date dateOfArrival, java.lang.String lastPortOfCallCode,
+		java.lang.String requestCode)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _tempCrewListLocalService.addTemCrewList(documentName,
 			documentYear, userCreated, isArrival, nameOfShip, imoNumber,
-			voyageNumber, portOfArrivalCode, dateOfArrival, lastPortOfCallCode);
+			voyageNumber, portOfArrivalCode, dateOfArrival, lastPortOfCallCode,
+			requestCode);
 	}
 
 	/**

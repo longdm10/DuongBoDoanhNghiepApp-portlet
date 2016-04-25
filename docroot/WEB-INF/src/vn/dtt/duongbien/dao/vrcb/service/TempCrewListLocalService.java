@@ -256,6 +256,7 @@ public interface TempCrewListLocalService extends BaseLocalService,
 		long documentName, int documentYear, java.lang.String userCreated,
 		int isArrival, java.lang.String nameOfShip, java.lang.String imoNumber,
 		java.lang.String voyageNumber, java.lang.String portOfArrivalCode,
-		java.util.Date dateOfArrival, java.lang.String lastPortOfCallCode)
+		java.util.Date dateOfArrival, java.lang.String lastPortOfCallCode,
+		java.lang.String requestCode)
 		throws com.liferay.portal.kernel.exception.SystemException;
 }

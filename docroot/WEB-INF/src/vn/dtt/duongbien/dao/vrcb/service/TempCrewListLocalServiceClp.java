@@ -120,7 +120,7 @@ public class TempCrewListLocalServiceClp implements TempCrewListLocalService {
 		_methodParameterTypes19 = new String[] {
 				"long", "int", "java.lang.String", "int", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"java.util.Date", "java.lang.String"
+				"java.util.Date", "java.lang.String", "java.lang.String"
 			};
 	}
 
@@ -677,7 +677,8 @@ public class TempCrewListLocalServiceClp implements TempCrewListLocalService {
 		long documentName, int documentYear, java.lang.String userCreated,
 		int isArrival, java.lang.String nameOfShip, java.lang.String imoNumber,
 		java.lang.String voyageNumber, java.lang.String portOfArrivalCode,
-		java.util.Date dateOfArrival, java.lang.String lastPortOfCallCode)
+		java.util.Date dateOfArrival, java.lang.String lastPortOfCallCode,
+		java.lang.String requestCode)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
@@ -703,7 +704,9 @@ public class TempCrewListLocalServiceClp implements TempCrewListLocalService {
 						
 					ClpSerializer.translateInput(dateOfArrival),
 						
-					ClpSerializer.translateInput(lastPortOfCallCode)
+					ClpSerializer.translateInput(lastPortOfCallCode),
+						
+					ClpSerializer.translateInput(requestCode)
 					});
 		}
 		catch (Throwable t) {

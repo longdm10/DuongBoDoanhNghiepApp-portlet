@@ -119,9 +119,9 @@ public class TempPassengerListLocalServiceClp
 		_methodName19 = "addTempPassengerList";
 
 		_methodParameterTypes19 = new String[] {
-				"long", "int", "java.lang.String", "int", "java.lang.String",
-				"java.lang.String", "java.util.Date", "java.lang.String",
-				"java.lang.String"
+				"java.lang.String", "long", "int", "java.lang.String", "int",
+				"java.lang.String", "java.lang.String", "java.util.Date",
+				"java.lang.String", "java.lang.String"
 			};
 	}
 
@@ -679,10 +679,11 @@ public class TempPassengerListLocalServiceClp
 
 	@Override
 	public vn.dtt.duongbien.dao.vrcb.model.TempPassengerList addTempPassengerList(
-		long documentName, int documentYear, java.lang.String userCreated,
-		int isArrival, java.lang.String nameOfShip,
-		java.lang.String portOfArrivalCode, java.util.Date dateOfArrival,
-		java.lang.String imoNumber, java.lang.String voyageNumber)
+		java.lang.String requestCode, long documentName, int documentYear,
+		java.lang.String userCreated, int isArrival,
+		java.lang.String nameOfShip, java.lang.String portOfArrivalCode,
+		java.util.Date dateOfArrival, java.lang.String imoNumber,
+		java.lang.String voyageNumber)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
@@ -690,7 +691,9 @@ public class TempPassengerListLocalServiceClp
 			returnObj = _invokableLocalService.invokeMethod(_methodName19,
 					_methodParameterTypes19,
 					new Object[] {
-						documentName,
+						ClpSerializer.translateInput(requestCode),
+						
+					documentName,
 						
 					documentYear,
 						

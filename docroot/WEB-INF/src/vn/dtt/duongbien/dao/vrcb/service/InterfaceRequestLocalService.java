@@ -252,4 +252,8 @@ public interface InterfaceRequestLocalService extends BaseLocalService,
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
+
+	public vn.dtt.duongbien.dao.vrcb.model.InterfaceRequest addInterfaceRequest(
+		int isArrival)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

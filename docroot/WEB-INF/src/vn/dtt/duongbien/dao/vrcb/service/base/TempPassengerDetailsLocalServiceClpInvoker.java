@@ -118,7 +118,8 @@ public class TempPassengerDetailsLocalServiceClpInvoker {
 
 		_methodParameterTypes574 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"java.util.Date", "java.lang.String", "java.lang.String"
+				"java.lang.String", "java.util.Date", "java.lang.String",
+				"java.lang.String"
 			};
 	}
 
@@ -227,8 +228,8 @@ public class TempPassengerDetailsLocalServiceClpInvoker {
 				Arrays.deepEquals(_methodParameterTypes574, parameterTypes)) {
 			return TempPassengerDetailsLocalServiceUtil.addTempPassengerDetails((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
-				(java.util.Date)arguments[3], (java.lang.String)arguments[4],
-				(java.lang.String)arguments[5]);
+				(java.lang.String)arguments[3], (java.util.Date)arguments[4],
+				(java.lang.String)arguments[5], (java.lang.String)arguments[6]);
 		}
 
 		throw new UnsupportedOperationException();

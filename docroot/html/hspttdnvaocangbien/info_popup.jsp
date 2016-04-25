@@ -38,7 +38,7 @@ backUrl.setParameter("id", itemIdTemp);
 		<aui:input type="text" label="Thông báo" name="remarks"></aui:input>
 	</div>
 	<div style="text-align: center;">
-	  	<input type="submit"  value="Sửa thông báo" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/></a>
+	  	<input type="submit"  value="Sửa thông báo" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/>
 	  	<a href="<%=backUrl.toString()%>"><input type="button"  value="Bỏ qua" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/></a> 
 	 </div>
  </form>

@@ -37,7 +37,15 @@ portletURL.setParameter("tabs1", tabs1);
 portletURL.setParameter("id", itemId);
 String tabsNames = "Thông báo,Thông tin chung,Danh sách thuyền viên,Danh sách hành khách,Gán quyền khai bổ sung,Danh sách tài liệu đính kèm";
 String tabsValues = "Thông báo,Thông tin chung,Danh sách thuyền viên,Danh sách hành khách,Gán quyền khai bổ sung,Danh sách tài liệu đính kèm";
+List listPortHabour = DmPortHarbourLocalServiceUtil.findByPortHarbourCode(tempGD.getPortHarbourCode());
+DmPortHarbour tempPortHabour = null;
+if(listPortHabour.size()>0)
+	tempPortHabour = (DmPortHarbour)listPortHabour.get(0);
 
+List listPortWharf = DmPortWharfLocalServiceUtil.findByPortWharfCode(tempGD.getPortWharfCode());
+DmPortWharf tempPortWharf = null;
+if(listPortWharf.size()>0)
+	tempPortWharf = (DmPortWharf)listPortWharf.get(0);
 %>
 <form action="<%= portletURL.toString() %>" method="post" name="<portlet:namespace />fm">
 <table width="100%">
@@ -58,11 +66,11 @@ String tabsValues = "Thông báo,Thông tin chung,Danh sách thuyền viên,Danh
 					<td>Cảng đến/rời :</td>
 					<td><%=((DmPort)DmPortLocalServiceUtil.findByPortCode(tempGD.getPortOfArrivalCode()).get(0)).getPortName() %></td>
 					<td>Bến cảng :</td>
-					<td></td>
+					<td><%=(tempPortHabour !=null) ? tempPortHabour.getPortHarbourNameVN() : "" %></td>
 				</tr>
 				<tr>
 					<td style="padding:10px 10px;">Cầu cảng neo đậu :</td>
-					<td></td>
+					<td><%=(tempPortWharf !=null) ? tempPortWharf.getPortWharfNameVN() : "" %></td>
 					<td>Thời gian đến/rời :</td>
 					<td><%=tempGD.getDateOfArrival() %></td>
 					<td>Thời gian khai :</td>

@@ -117,9 +117,9 @@ public class TempPassengerListLocalServiceClpInvoker {
 		_methodName574 = "addTempPassengerList";
 
 		_methodParameterTypes574 = new String[] {
-				"long", "int", "java.lang.String", "int", "java.lang.String",
-				"java.lang.String", "java.util.Date", "java.lang.String",
-				"java.lang.String"
+				"java.lang.String", "long", "int", "java.lang.String", "int",
+				"java.lang.String", "java.lang.String", "java.util.Date",
+				"java.lang.String", "java.lang.String"
 			};
 	}
 
@@ -226,13 +226,14 @@ public class TempPassengerListLocalServiceClpInvoker {
 
 		if (_methodName574.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes574, parameterTypes)) {
-			return TempPassengerListLocalServiceUtil.addTempPassengerList(((Long)arguments[0]).longValue(),
-				((Integer)arguments[1]).intValue(),
-				(java.lang.String)arguments[2],
-				((Integer)arguments[3]).intValue(),
-				(java.lang.String)arguments[4], (java.lang.String)arguments[5],
-				(java.util.Date)arguments[6], (java.lang.String)arguments[7],
-				(java.lang.String)arguments[8]);
+			return TempPassengerListLocalServiceUtil.addTempPassengerList((java.lang.String)arguments[0],
+				((Long)arguments[1]).longValue(),
+				((Integer)arguments[2]).intValue(),
+				(java.lang.String)arguments[3],
+				((Integer)arguments[4]).intValue(),
+				(java.lang.String)arguments[5], (java.lang.String)arguments[6],
+				(java.util.Date)arguments[7], (java.lang.String)arguments[8],
+				(java.lang.String)arguments[9]);
 		}
 
 		throw new UnsupportedOperationException();

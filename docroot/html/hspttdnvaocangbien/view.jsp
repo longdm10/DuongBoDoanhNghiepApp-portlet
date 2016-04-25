@@ -168,12 +168,13 @@ for (int i = 0; i < results.size(); i++) {
 	
 	//cang vu hang hai
 	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
-	rowTextEntry.setName("");
+	List listPortWharf = DmPortWharfLocalServiceUtil.findByPortWharfCode(item.getPortWharfCode());
+	rowTextEntry.setName( ((DmPortRegion)DmPortRegionLocalServiceUtil.findByPortRegionCode(item.getPortRegionCode()).get(0)).getPortRegionNameVN());
 	row.addText(rowTextEntry);
 	
 	//thong bao
 	rowTextEntry =(TextSearchEntry)rowTextEntry.clone();
-	rowTextEntry.setName("");
+	rowTextEntry.setName(item.getRemarks());
 	row.addText(rowTextEntry);
 	
 	//gui ho so
