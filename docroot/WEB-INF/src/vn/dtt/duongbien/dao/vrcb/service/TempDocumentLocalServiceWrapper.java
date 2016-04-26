@@ -285,6 +285,21 @@ public class TempDocumentLocalServiceWrapper implements TempDocumentLocalService
 			arguments);
 	}
 
+	@Override
+	public vn.dtt.duongbien.dao.vrcb.model.TempDocument addTempDocument(
+		java.lang.String requestCode, long documentName, int documentYear,
+		java.lang.String documentTypeCode, java.lang.String userCreated,
+		java.lang.String shipAgencyCode, java.lang.String shipName,
+		java.lang.String shipTypeCode, java.lang.String shipCaptain,
+		java.lang.String imo, java.util.Date shipDateFrom,
+		java.util.Date shipDateTo)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _tempDocumentLocalService.addTempDocument(requestCode,
+			documentName, documentYear, documentTypeCode, userCreated,
+			shipAgencyCode, shipName, shipTypeCode, shipCaptain, imo,
+			shipDateFrom, shipDateTo);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

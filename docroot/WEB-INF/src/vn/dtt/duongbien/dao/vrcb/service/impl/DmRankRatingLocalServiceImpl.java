@@ -18,6 +18,7 @@ import java.util.List;
 
 import com.liferay.portal.kernel.exception.SystemException;
 
+import vn.dtt.duongbien.dao.vrcb.model.DmRankRating;
 import vn.dtt.duongbien.dao.vrcb.service.base.DmRankRatingLocalServiceBaseImpl;
 
 /**
@@ -43,5 +44,9 @@ public class DmRankRatingLocalServiceImpl
 	 */
 	public List getAllDmRankRating() throws SystemException{
 		return dmRankRatingPersistence.findAll();
+	}
+	
+	public List<DmRankRating> findByRankCode(String rankCode) throws SystemException{
+		return dmRankRatingPersistence.findByRankCode(rankCode);
 	}
 }

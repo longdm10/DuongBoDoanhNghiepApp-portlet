@@ -2,6 +2,7 @@ package vn.dtt.duongbien.hspttndvaocangbien;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
@@ -23,6 +24,10 @@ import vn.dtt.duongbien.dao.vrcb.service.TempPassengerListLocalServiceUtil;
 import vn.dtt.duongbien.qlhsphuongtientndvaoracangbien.QLHSPhuongTienTNDVaoRaCangBien;
 
 import com.liferay.portal.NoSuchModelException;
+import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
+import com.liferay.portal.kernel.dao.orm.ProjectionFactoryUtil;
+import com.liferay.portal.kernel.dao.orm.PropertyFactoryUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.log.Log;
@@ -30,6 +35,7 @@ import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.util.JavaConstants;
 import com.liferay.portal.kernel.util.ParamUtil;
+import com.liferay.portal.kernel.util.PortalClassLoaderUtil;
 import com.liferay.portlet.PortletPreferencesFactoryUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 
@@ -119,6 +125,7 @@ public class HSPTTDNVaoCangBien extends MVCPortlet {
 	}
 
 	public void updateAttachfile(ActionRequest actionRequest, ActionResponse actionResponse) {
+		
 	}
 
 	public void updateCrew(ActionRequest actionRequest, ActionResponse actionResponse) {
@@ -131,7 +138,7 @@ public class HSPTTDNVaoCangBien extends MVCPortlet {
 				String givenName = ParamUtil.getString(actionRequest, "givenName");
 				String rankCode = ParamUtil.getString(actionRequest, "rankCode");
 				TempGeneralDeclaration tempGD = TempGeneralDeclarationLocalServiceUtil.fetchTempGeneralDeclaration(id);
-				TempCrewList tempCL = TempCrewListLocalServiceUtil.addTemCrewList(tempGD.getDocumentName(), tempGD.getDocumentYear(), tempGD.getUserCreated(), tempGD.getIsArrival(), tempGD.getNameOfShip(), tempGD.getImoNumber(), tempGD.getVoyageNumber(), tempGD.getPortOfArrivalCode(), tempGD.getDateOfArrival(), tempGD.getLastPortOfCallCode(),tempGD.getRequestCode());
+				//TempCrewList tempCL = TempCrewListLocalServiceUtil.addTemCrewList(tempGD.getDocumentName(), tempGD.getDocumentYear(), tempGD.getUserCreated(), tempGD.getIsArrival(), tempGD.getNameOfShip(), tempGD.getImoNumber(), tempGD.getVoyageNumber(), tempGD.getPortOfArrivalCode(), tempGD.getDateOfArrival(), tempGD.getLastPortOfCallCode(),tempGD.getRequestCode());
 				TempCrewDetails tempCD = TempCrewDetailsLocalServiceUtil.addTempCrewDetails(null, familyName, givenName, rankCode, tempGD.getRequestCode());
 				actionResponse.sendRedirect(currentUrl);
 			}else{
@@ -154,7 +161,7 @@ public class HSPTTDNVaoCangBien extends MVCPortlet {
 				String birthPlace = ParamUtil.getString(actionRequest, "birthPlace");;
 				String serialNumberOfIdentity = ParamUtil.getString(actionRequest, "serialNumberOfIdentity");;
 				TempGeneralDeclaration tempGD = TempGeneralDeclarationLocalServiceUtil.fetchTempGeneralDeclaration(id);
-				TempPassengerList tempPL =  TempPassengerListLocalServiceUtil.addTempPassengerList(tempGD.getRequestCode(),tempGD.getDocumentName(), tempGD.getDocumentYear(), tempGD.getUserCreated(), tempGD.getIsArrival(), tempGD.getNameOfShip(), tempGD.getPortOfArrivalCode(), tempGD.getDateOfArrival(), tempGD.getImoNumber(), tempGD.getVoyageNumber());
+				//TempPassengerList tempPL =  TempPassengerListLocalServiceUtil.addTempPassengerList(tempGD.getRequestCode(),tempGD.getDocumentName(), tempGD.getDocumentYear(), tempGD.getUserCreated(), tempGD.getIsArrival(), tempGD.getNameOfShip(), tempGD.getPortOfArrivalCode(), tempGD.getDateOfArrival(), tempGD.getImoNumber(), tempGD.getVoyageNumber());
 				TempPassengerDetails tempPD = TempPassengerDetailsLocalServiceUtil.addTempPassengerDetails(tempGD.getRequestCode(),null, familyName, givenName,birthDay,birthPlace,serialNumberOfIdentity);
 				actionResponse.sendRedirect(currentUrl);
 			}else{

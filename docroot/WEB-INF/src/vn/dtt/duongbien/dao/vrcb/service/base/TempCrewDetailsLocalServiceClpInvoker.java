@@ -120,6 +120,18 @@ public class TempCrewDetailsLocalServiceClpInvoker {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String"
 			};
+
+		_methodName575 = "findByRequestCode";
+
+		_methodParameterTypes575 = new String[] { "java.lang.String" };
+
+		_methodName576 = "countByRequestCode";
+
+		_methodParameterTypes576 = new String[] { "java.lang.String" };
+
+		_methodName577 = "findByRequestCode";
+
+		_methodParameterTypes577 = new String[] { "java.lang.String", "int", "int" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -230,6 +242,23 @@ public class TempCrewDetailsLocalServiceClpInvoker {
 				(java.lang.String)arguments[3], (java.lang.String)arguments[4]);
 		}
 
+		if (_methodName575.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes575, parameterTypes)) {
+			return TempCrewDetailsLocalServiceUtil.findByRequestCode((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName576.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes576, parameterTypes)) {
+			return TempCrewDetailsLocalServiceUtil.countByRequestCode((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName577.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes577, parameterTypes)) {
+			return TempCrewDetailsLocalServiceUtil.findByRequestCode((java.lang.String)arguments[0],
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -271,4 +300,10 @@ public class TempCrewDetailsLocalServiceClpInvoker {
 	private String[] _methodParameterTypes569;
 	private String _methodName574;
 	private String[] _methodParameterTypes574;
+	private String _methodName575;
+	private String[] _methodParameterTypes575;
+	private String _methodName576;
+	private String[] _methodParameterTypes576;
+	private String _methodName577;
+	private String[] _methodParameterTypes577;
 }

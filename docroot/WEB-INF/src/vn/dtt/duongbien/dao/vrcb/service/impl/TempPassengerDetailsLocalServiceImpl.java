@@ -15,6 +15,7 @@
 package vn.dtt.duongbien.dao.vrcb.service.impl;
 
 import java.util.Date;
+import java.util.List;
 
 import com.liferay.counter.service.CounterLocalServiceUtil;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -56,5 +57,17 @@ public class TempPassengerDetailsLocalServiceImpl
 		item.setSerialNumberOfIdentity(serialNumberOfIdentity);
 		tempPassengerDetailsPersistence.update(item);
 		return item;
+	}
+	
+	public List findByRequestCode(String requestCode) throws SystemException{
+		return tempPassengerDetailsPersistence.findByRequestCode(requestCode);
+	}
+	
+	public int countByRequestCode(String requestCode) throws SystemException{
+		return tempPassengerDetailsPersistence.countByRequestCode(requestCode);
+	}
+	
+	public List findByRequestCode(String requestCode,int start,int end) throws SystemException{
+		return tempPassengerDetailsPersistence.findByRequestCode(requestCode,start,end);
 	}
 }

@@ -274,6 +274,20 @@ public class TempDocumentLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static vn.dtt.duongbien.dao.vrcb.model.TempDocument addTempDocument(
+		java.lang.String requestCode, long documentName, int documentYear,
+		java.lang.String documentTypeCode, java.lang.String userCreated,
+		java.lang.String shipAgencyCode, java.lang.String shipName,
+		java.lang.String shipTypeCode, java.lang.String shipCaptain,
+		java.lang.String imo, java.util.Date shipDateFrom,
+		java.util.Date shipDateTo)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .addTempDocument(requestCode, documentName, documentYear,
+			documentTypeCode, userCreated, shipAgencyCode, shipName,
+			shipTypeCode, shipCaptain, imo, shipDateFrom, shipDateTo);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

@@ -285,6 +285,22 @@ public class TempPassengerDetailsLocalServiceUtil {
 			familyName, givenName, birthDay, birthPlace, serialNumberOfIdentity);
 	}
 
+	public static java.util.List findByRequestCode(java.lang.String requestCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().findByRequestCode(requestCode);
+	}
+
+	public static int countByRequestCode(java.lang.String requestCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().countByRequestCode(requestCode);
+	}
+
+	public static java.util.List findByRequestCode(
+		java.lang.String requestCode, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().findByRequestCode(requestCode, start, end);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

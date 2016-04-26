@@ -14,6 +14,10 @@
 
 package vn.dtt.duongbien.dao.vrcb.service.impl;
 
+import java.util.List;
+
+import com.liferay.portal.kernel.exception.SystemException;
+
 import vn.dtt.duongbien.dao.vrcb.service.base.DmDocTypeLocalServiceBaseImpl;
 
 /**
@@ -36,4 +40,11 @@ public class DmDocTypeLocalServiceImpl extends DmDocTypeLocalServiceBaseImpl {
 	 *
 	 * Never reference this interface directly. Always use {@link vn.dtt.duongbien.dao.vrcb.service.DmDocTypeLocalServiceUtil} to access the dm doc type local service.
 	 */
+	public List getALlDocType() throws SystemException{
+		return dmDocTypePersistence.findAll();
+	}
+	
+	public List findByDocType(String documentTypeCode) throws SystemException{
+		return dmDocTypePersistence.findByDocumentTypeCode(documentTypeCode);
+	}
 }

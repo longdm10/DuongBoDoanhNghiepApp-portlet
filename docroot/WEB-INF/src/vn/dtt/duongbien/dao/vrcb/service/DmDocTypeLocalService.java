@@ -249,4 +249,11 @@ public interface DmDocTypeLocalService extends BaseLocalService,
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List getALlDocType()
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public java.util.List findByDocType(java.lang.String documentTypeCode)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

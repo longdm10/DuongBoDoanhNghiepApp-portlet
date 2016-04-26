@@ -251,4 +251,13 @@ public interface TempDocumentLocalService extends BaseLocalService,
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
+
+	public vn.dtt.duongbien.dao.vrcb.model.TempDocument addTempDocument(
+		java.lang.String requestCode, long documentName, int documentYear,
+		java.lang.String documentTypeCode, java.lang.String userCreated,
+		java.lang.String shipAgencyCode, java.lang.String shipName,
+		java.lang.String shipTypeCode, java.lang.String shipCaptain,
+		java.lang.String imo, java.util.Date shipDateFrom,
+		java.util.Date shipDateTo)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

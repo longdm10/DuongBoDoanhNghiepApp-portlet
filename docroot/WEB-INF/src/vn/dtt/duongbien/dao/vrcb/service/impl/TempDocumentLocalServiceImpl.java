@@ -14,6 +14,12 @@
 
 package vn.dtt.duongbien.dao.vrcb.service.impl;
 
+import java.util.Date;
+
+import com.liferay.counter.service.CounterLocalServiceUtil;
+import com.liferay.portal.kernel.exception.SystemException;
+
+import vn.dtt.duongbien.dao.vrcb.model.TempDocument;
 import vn.dtt.duongbien.dao.vrcb.service.base.TempDocumentLocalServiceBaseImpl;
 
 /**
@@ -37,4 +43,23 @@ public class TempDocumentLocalServiceImpl
 	 *
 	 * Never reference this interface directly. Always use {@link vn.dtt.duongbien.dao.vrcb.service.TempDocumentLocalServiceUtil} to access the temp document local service.
 	 */
+	public TempDocument addTempDocument(String requestCode, long documentName, int documentYear, String documentTypeCode, String userCreated, String shipAgencyCode, String shipName, String shipTypeCode, String shipCaptain, String imo, Date shipDateFrom, Date shipDateTo) throws SystemException{
+		long itemId = CounterLocalServiceUtil.increment(TempDocument.class.getName());
+		TempDocument item = tempDocumentPersistence.create(itemId);
+		item.setRequestCode(requestCode);
+		item.setDocumentName(documentName);
+		item.setDocumentYear(documentYear);
+		item.setDocumentTypeCode(documentTypeCode);
+		item.setUserCreated(userCreated);
+		item.setShipAgencyCode(shipAgencyCode);
+		item.setShipName(shipName);
+		item.setShipTypeCode(shipTypeCode);
+		item.setShipCaptain(shipCaptain);
+		item.setImo(imo);
+		item.setCreatedDate(new Date());
+		item.setShipDateFrom(shipDateFrom);
+		item.setShipDateTo(shipDateTo);
+		tempDocumentPersistence.update(item);
+		return item;
+	}
 }

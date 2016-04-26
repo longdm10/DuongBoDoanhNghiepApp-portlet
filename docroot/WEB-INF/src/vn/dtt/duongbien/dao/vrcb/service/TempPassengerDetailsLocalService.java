@@ -259,4 +259,14 @@ public interface TempPassengerDetailsLocalService extends BaseLocalService,
 		java.util.Date birthDay, java.lang.String birthPlace,
 		java.lang.String serialNumberOfIdentity)
 		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public java.util.List findByRequestCode(java.lang.String requestCode)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public int countByRequestCode(java.lang.String requestCode)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public java.util.List findByRequestCode(java.lang.String requestCode,
+		int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

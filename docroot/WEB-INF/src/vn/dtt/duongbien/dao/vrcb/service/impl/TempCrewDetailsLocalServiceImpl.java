@@ -14,11 +14,19 @@
 
 package vn.dtt.duongbien.dao.vrcb.service.impl;
 
+import java.util.List;
+
 import com.liferay.counter.service.CounterLocalServiceUtil;
+import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
+import com.liferay.portal.kernel.dao.orm.ProjectionFactoryUtil;
+import com.liferay.portal.kernel.dao.orm.PropertyFactoryUtil;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.PortalClassLoaderUtil;
 
 import vn.dtt.duongbien.dao.vrcb.model.TempCrewDetails;
 import vn.dtt.duongbien.dao.vrcb.model.TempCrewList;
+import vn.dtt.duongbien.dao.vrcb.service.TempCrewDetailsLocalServiceUtil;
 import vn.dtt.duongbien.dao.vrcb.service.base.TempCrewDetailsLocalServiceBaseImpl;
 
 /**
@@ -53,4 +61,16 @@ public class TempCrewDetailsLocalServiceImpl
 		tempCrewDetailsPersistence.update(item);
 		return item;
 	}
+	
+	public List findByRequestCode(String requestCode) throws SystemException{
+		return tempCrewDetailsPersistence.findByRequestCode(requestCode);
+	}
+	
+	public int countByRequestCode(String requestCode) throws SystemException{
+		return tempCrewDetailsPersistence.countByRequestCode(requestCode);
+	}
+	
+	public List findByRequestCode(String requestCode,int start,int end) throws SystemException{
+		return tempCrewDetailsPersistence.findByRequestCode(requestCode,start,end);
+	} 
 }

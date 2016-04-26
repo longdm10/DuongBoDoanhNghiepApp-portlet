@@ -282,6 +282,18 @@ public class DmDocTypeLocalServiceWrapper implements DmDocTypeLocalService,
 			arguments);
 	}
 
+	@Override
+	public java.util.List getALlDocType()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _dmDocTypeLocalService.getALlDocType();
+	}
+
+	@Override
+	public java.util.List findByDocType(java.lang.String documentTypeCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _dmDocTypeLocalService.findByDocType(documentTypeCode);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

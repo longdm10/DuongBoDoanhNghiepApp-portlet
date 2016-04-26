@@ -1,3 +1,7 @@
+<%@page import="java.util.List"%>
+<%@page import="vn.dtt.duongbien.dao.vrcb.service.DmDocTypeLocalServiceUtil"%>
+<%@page import="vn.dtt.duongbien.dao.vrcb.model.DmDocType"%>
+<%@page import="java.util.Calendar"%>
 <%@page import="javax.portlet.PortletURL"%>
 <%@page import="vn.dtt.duongbien.dao.vrcb.service.TempGeneralDeclarationLocalServiceUtil"%>
 <%@page import="vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration"%>
@@ -25,15 +29,47 @@ PortletURL backAttachfileUrl = renderResponse.createRenderURL();
 backAttachfileUrl.setParameter("jspPage", "/html/hspttdnvaocangbien/edit_detail.jsp");
 backAttachfileUrl.setParameter("tabs1", tabsBack);
 backAttachfileUrl.setParameter("id", itemIdTemp);
+
+Calendar today = Calendar.getInstance();
+List<DmDocType> listDocType = DmDocTypeLocalServiceUtil.getALlDocType();
+
 %>
 <portlet:actionURL var="updateAttachfileUrl" name="updateAttachfile">
 </portlet:actionURL>
-<aui:form method="post" action="<%=updateAttachfileUrl.toString() %>"></aui:form>
+<aui:form method="post" action="<%=updateAttachfileUrl.toString() %>">
 <div>
 	<aui:input name="redirect" value="<%=backAttachfileUrl.toString() %>" type="hidden"></aui:input>
 	<aui:input name="id" type="hidden" value="<%=itemIdTemp %>"></aui:input>
+	<aui:select name="documentTypeCode" label="Chức danh">
+			<%for (DmDocType docType : listDocType ){%>
+				<aui:option value="<%=docType.getDocumentTypeCode() %>"><%=docType.getDocumentTypeName() %></aui:option>
+			<%}%>
+	</aui:select>
+	<aui:field-wrapper label="Ngày cấp">
+		<liferay-ui:input-date name="dateOfArrival"
+						disableNamespace="<%=false%>" disabled="false"
+						dayValue="<%=today.get(Calendar.DAY_OF_MONTH)%>" dayParam="dobDay"
+						monthValue="<%=today.get(Calendar.MONTH)%>" monthParam="dobMonth"
+						yearValue="<%=today.get(Calendar.YEAR)%>" yearParam="dobYear" />
+	</aui:field-wrapper>
+	<aui:field-wrapper label="Ngày hết hạn">
+		<liferay-ui:input-date name="dateOfArrival"
+						disableNamespace="<%=false%>" disabled="false"
+						dayValue="<%=today.get(Calendar.DAY_OF_MONTH)%>" dayParam="dobDay"
+						monthValue="<%=today.get(Calendar.MONTH)%>" monthParam="dobMonth"
+						yearValue="<%=today.get(Calendar.YEAR)%>" yearParam="dobYear" />
+	</aui:field-wrapper>
+	<aui:field-wrapper label="Ngày kiểm tra định kì gần nhất">
+		<liferay-ui:input-date name="dateOfArrival"
+						disableNamespace="<%=false%>" disabled="false"
+						dayValue="<%=today.get(Calendar.DAY_OF_MONTH)%>" dayParam="dobDay"
+						monthValue="<%=today.get(Calendar.MONTH)%>" monthParam="dobMonth"
+						yearValue="<%=today.get(Calendar.YEAR)%>" yearParam="dobYear" />
+	</aui:field-wrapper>
+	<aui:input name="" label="Số giấy phép" type="text"></aui:input>
 </div>
 <div style="text-align: center;">
-  	<a href="<%=updateAttachfileUrl.toString() %>"><input type="button"  value="Sửa bản khai" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/></a>
+  	<input type="submit"  value="Thêm tài liệu" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/>
   	<a href="<%=backAttachfileUrl.toString()%>"><input type="button"  value="Bỏ qua" style="font-size:15px;color:white;background-color:#337ab7;height:30px;width: 150px;"/></a> 
  </div>
+ </aui:form>

@@ -298,6 +298,26 @@ public class TempCrewDetailsLocalServiceWrapper
 			familyName, givenName, rankCode, requestCode);
 	}
 
+	@Override
+	public java.util.List findByRequestCode(java.lang.String requestCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _tempCrewDetailsLocalService.findByRequestCode(requestCode);
+	}
+
+	@Override
+	public int countByRequestCode(java.lang.String requestCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _tempCrewDetailsLocalService.countByRequestCode(requestCode);
+	}
+
+	@Override
+	public java.util.List findByRequestCode(java.lang.String requestCode,
+		int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _tempCrewDetailsLocalService.findByRequestCode(requestCode,
+			start, end);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

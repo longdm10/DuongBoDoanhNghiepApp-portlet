@@ -273,6 +273,17 @@ public class DmDocTypeLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static java.util.List getALlDocType()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getALlDocType();
+	}
+
+	public static java.util.List findByDocType(
+		java.lang.String documentTypeCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().findByDocType(documentTypeCode);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

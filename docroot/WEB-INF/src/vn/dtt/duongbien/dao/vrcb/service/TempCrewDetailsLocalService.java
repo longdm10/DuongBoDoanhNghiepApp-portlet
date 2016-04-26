@@ -258,4 +258,14 @@ public interface TempCrewDetailsLocalService extends BaseLocalService,
 		java.lang.String givenName, java.lang.String rankCode,
 		java.lang.String requestCode)
 		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public java.util.List findByRequestCode(java.lang.String requestCode)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public int countByRequestCode(java.lang.String requestCode)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public java.util.List findByRequestCode(java.lang.String requestCode,
+		int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

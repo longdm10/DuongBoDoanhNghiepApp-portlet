@@ -301,6 +301,26 @@ public class TempPassengerDetailsLocalServiceWrapper
 			serialNumberOfIdentity);
 	}
 
+	@Override
+	public java.util.List findByRequestCode(java.lang.String requestCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _tempPassengerDetailsLocalService.findByRequestCode(requestCode);
+	}
+
+	@Override
+	public int countByRequestCode(java.lang.String requestCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _tempPassengerDetailsLocalService.countByRequestCode(requestCode);
+	}
+
+	@Override
+	public java.util.List findByRequestCode(java.lang.String requestCode,
+		int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _tempPassengerDetailsLocalService.findByRequestCode(requestCode,
+			start, end);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

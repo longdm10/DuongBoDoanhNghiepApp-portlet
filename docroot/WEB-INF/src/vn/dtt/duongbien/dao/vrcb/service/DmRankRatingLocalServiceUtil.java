@@ -279,6 +279,12 @@ public class DmRankRatingLocalServiceUtil {
 		return getService().getAllDmRankRating();
 	}
 
+	public static java.util.List<vn.dtt.duongbien.dao.vrcb.model.DmRankRating> findByRankCode(
+		java.lang.String rankCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().findByRankCode(rankCode);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

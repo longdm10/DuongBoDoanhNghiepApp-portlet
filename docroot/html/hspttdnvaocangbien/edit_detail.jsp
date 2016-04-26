@@ -1,3 +1,10 @@
+<%@page import="vn.dtt.duongbien.dao.vrcb.service.TempCrewDetailsLocalServiceUtil"%>
+<%@page import="com.liferay.portal.kernel.dao.orm.ProjectionFactoryUtil"%>
+<%@page import="com.liferay.portal.kernel.dao.orm.PropertyFactoryUtil"%>
+<%@page import="com.liferay.portal.kernel.util.PortalClassLoaderUtil"%>
+<%@page import="vn.dtt.duongbien.dao.vrcb.model.TempCrewDetails"%>
+<%@page import="com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil"%>
+<%@page import="com.liferay.portal.kernel.dao.orm.DynamicQuery"%>
 <%@page import="com.liferay.portal.kernel.portlet.LiferayWindowState"%>
 <%@page import="javax.portlet.WindowState"%>
 <%@page import="com.liferay.portal.kernel.util.StringUtil"%>

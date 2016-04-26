@@ -255,4 +255,8 @@ public interface DmRankRatingLocalService extends BaseLocalService,
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List getAllDmRankRating()
 		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public java.util.List<vn.dtt.duongbien.dao.vrcb.model.DmRankRating> findByRankCode(
+		java.lang.String rankCode)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }
