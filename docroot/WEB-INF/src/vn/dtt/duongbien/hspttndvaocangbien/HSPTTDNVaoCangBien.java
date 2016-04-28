@@ -11,6 +11,7 @@ import javax.portlet.PortletPreferences;
 
 import vn.dtt.duongbien.dao.vrcb.model.TempCrewDetails;
 import vn.dtt.duongbien.dao.vrcb.model.TempCrewList;
+import vn.dtt.duongbien.dao.vrcb.model.TempDocument;
 import vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration;
 import vn.dtt.duongbien.dao.vrcb.model.TempPassengerDetails;
 import vn.dtt.duongbien.dao.vrcb.model.TempPassengerList;
@@ -18,6 +19,7 @@ import vn.dtt.duongbien.dao.vrcb.service.DmPortRegionLocalServiceUtil;
 import vn.dtt.duongbien.dao.vrcb.service.TempAnimalQuarantineLocalServiceUtil;
 import vn.dtt.duongbien.dao.vrcb.service.TempCrewDetailsLocalServiceUtil;
 import vn.dtt.duongbien.dao.vrcb.service.TempCrewListLocalServiceUtil;
+import vn.dtt.duongbien.dao.vrcb.service.TempDocumentLocalServiceUtil;
 import vn.dtt.duongbien.dao.vrcb.service.TempGeneralDeclarationLocalServiceUtil;
 import vn.dtt.duongbien.dao.vrcb.service.TempPassengerDetailsLocalServiceUtil;
 import vn.dtt.duongbien.dao.vrcb.service.TempPassengerListLocalServiceUtil;
@@ -125,7 +127,21 @@ public class HSPTTDNVaoCangBien extends MVCPortlet {
 	}
 
 	public void updateAttachfile(ActionRequest actionRequest, ActionResponse actionResponse) {
-		
+		try {
+			long id = ParamUtil.getLong(actionRequest, "id");
+			String redirect = ParamUtil.getString(actionRequest, "redirect");
+			if(id>0){
+				Date shipDateFrom = ParamUtil.getDate(actionRequest, "shipDateFrom", new SimpleDateFormat("dd/MM/yyyy"));
+				Date shipDateTo = ParamUtil.getDate(actionRequest, "shipDateTo", new SimpleDateFormat("dd/MM/yyyy"));
+				Date shipDateLastCheck = ParamUtil.getDate(actionRequest, "shipDateLastCheck", new SimpleDateFormat("dd/MM/yyyy"));
+				String documentTypeCode = ParamUtil.getString(actionRequest, "documentTypeCode");
+				TempGeneralDeclaration tempGD = TempGeneralDeclarationLocalServiceUtil.fetchTempGeneralDeclaration(id);
+				TempDocumentLocalServiceUtil.addTempDocument(tempGD.getRequestCode(), tempGD.getDocumentName(), tempGD.getDocumentYear(), documentTypeCode, tempGD.getUserCreated(), tempGD.getShipAgencyEmail(),tempGD.getNameOfShip(),tempGD.getShipTypeCode(), tempGD.getNameOfMaster(), tempGD.getImoNumber(), shipDateFrom, shipDateTo, shipDateLastCheck);
+				actionResponse.sendRedirect(redirect);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void updateCrew(ActionRequest actionRequest, ActionResponse actionResponse) {

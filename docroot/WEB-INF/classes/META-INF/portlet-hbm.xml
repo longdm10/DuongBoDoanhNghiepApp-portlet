@@ -1850,6 +1850,7 @@
 		<property name="departureShipAgency" type="com.liferay.portal.dao.orm.hibernate.StringType" column="DepartureShipAgency" />
 		<property name="shipDateFrom" type="org.hibernate.type.TimestampType" column="ShipDateFrom" />
 		<property name="shipDateTo" type="org.hibernate.type.TimestampType" column="ShipDateTo" />
+		<property name="shipDateLastCheck" type="org.hibernate.type.TimestampType" column="ShipDateLastCheck" />
 	</class>
 	<class name="vn.dtt.duongbien.dao.vrcb.model.impl.TempGeneralDeclarationImpl" table="TEMP_GENERAL_DECLARATION">
 		<id name="id" column="ID" type="long">

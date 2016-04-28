@@ -280,12 +280,29 @@ public class TempDocumentLocalServiceUtil {
 		java.lang.String shipAgencyCode, java.lang.String shipName,
 		java.lang.String shipTypeCode, java.lang.String shipCaptain,
 		java.lang.String imo, java.util.Date shipDateFrom,
-		java.util.Date shipDateTo)
+		java.util.Date shipDateTo, java.util.Date shipDateLastCheck)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getService()
 				   .addTempDocument(requestCode, documentName, documentYear,
 			documentTypeCode, userCreated, shipAgencyCode, shipName,
-			shipTypeCode, shipCaptain, imo, shipDateFrom, shipDateTo);
+			shipTypeCode, shipCaptain, imo, shipDateFrom, shipDateTo,
+			shipDateLastCheck);
+	}
+
+	public static java.util.List findByRequestCode(java.lang.String requestCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().findByRequestCode(requestCode);
+	}
+
+	public static java.util.List findByRequestCode(
+		java.lang.String requestCode, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().findByRequestCode(requestCode, start, end);
+	}
+
+	public static int countByRequestCode(java.lang.String requestCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().countByRequestCode(requestCode);
 	}
 
 	public static void clearService() {

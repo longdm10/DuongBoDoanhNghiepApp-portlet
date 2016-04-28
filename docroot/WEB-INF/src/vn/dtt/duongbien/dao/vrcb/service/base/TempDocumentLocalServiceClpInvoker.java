@@ -120,8 +120,20 @@ public class TempDocumentLocalServiceClpInvoker {
 				"java.lang.String", "long", "int", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"java.util.Date", "java.util.Date"
+				"java.util.Date", "java.util.Date", "java.util.Date"
 			};
+
+		_methodName575 = "findByRequestCode";
+
+		_methodParameterTypes575 = new String[] { "java.lang.String" };
+
+		_methodName576 = "findByRequestCode";
+
+		_methodParameterTypes576 = new String[] { "java.lang.String", "int", "int" };
+
+		_methodName577 = "countByRequestCode";
+
+		_methodParameterTypes577 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -234,7 +246,24 @@ public class TempDocumentLocalServiceClpInvoker {
 				(java.lang.String)arguments[5], (java.lang.String)arguments[6],
 				(java.lang.String)arguments[7], (java.lang.String)arguments[8],
 				(java.lang.String)arguments[9], (java.util.Date)arguments[10],
-				(java.util.Date)arguments[11]);
+				(java.util.Date)arguments[11], (java.util.Date)arguments[12]);
+		}
+
+		if (_methodName575.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes575, parameterTypes)) {
+			return TempDocumentLocalServiceUtil.findByRequestCode((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName576.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes576, parameterTypes)) {
+			return TempDocumentLocalServiceUtil.findByRequestCode((java.lang.String)arguments[0],
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName577.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes577, parameterTypes)) {
+			return TempDocumentLocalServiceUtil.countByRequestCode((java.lang.String)arguments[0]);
 		}
 
 		throw new UnsupportedOperationException();
@@ -278,4 +307,10 @@ public class TempDocumentLocalServiceClpInvoker {
 	private String[] _methodParameterTypes569;
 	private String _methodName574;
 	private String[] _methodParameterTypes574;
+	private String _methodName575;
+	private String[] _methodParameterTypes575;
+	private String _methodName576;
+	private String[] _methodParameterTypes576;
+	private String _methodName577;
+	private String[] _methodParameterTypes577;
 }

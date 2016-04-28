@@ -67,6 +67,7 @@ public class TempDocumentSoap implements Serializable {
 		soapModel.setDepartureShipAgency(model.getDepartureShipAgency());
 		soapModel.setShipDateFrom(model.getShipDateFrom());
 		soapModel.setShipDateTo(model.getShipDateTo());
+		soapModel.setShipDateLastCheck(model.getShipDateLastCheck());
 
 		return soapModel;
 	}
@@ -407,6 +408,14 @@ public class TempDocumentSoap implements Serializable {
 		_shipDateTo = shipDateTo;
 	}
 
+	public Date getShipDateLastCheck() {
+		return _shipDateLastCheck;
+	}
+
+	public void setShipDateLastCheck(Date shipDateLastCheck) {
+		_shipDateLastCheck = shipDateLastCheck;
+	}
+
 	private long _id;
 	private String _requestCode;
 	private int _requestState;
@@ -443,4 +452,5 @@ public class TempDocumentSoap implements Serializable {
 	private String _departureShipAgency;
 	private Date _shipDateFrom;
 	private Date _shipDateTo;
+	private Date _shipDateLastCheck;
 }

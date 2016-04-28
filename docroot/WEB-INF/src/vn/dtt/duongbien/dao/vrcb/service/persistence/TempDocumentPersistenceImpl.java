@@ -2106,6 +2106,7 @@ public class TempDocumentPersistenceImpl extends BasePersistenceImpl<TempDocumen
 		tempDocumentImpl.setDepartureShipAgency(tempDocument.getDepartureShipAgency());
 		tempDocumentImpl.setShipDateFrom(tempDocument.getShipDateFrom());
 		tempDocumentImpl.setShipDateTo(tempDocument.getShipDateTo());
+		tempDocumentImpl.setShipDateLastCheck(tempDocument.getShipDateLastCheck());
 
 		return tempDocumentImpl;
 	}
@@ -2439,7 +2440,7 @@ public class TempDocumentPersistenceImpl extends BasePersistenceImpl<TempDocumen
 				"locationCode", "maritimeCode", "portRegionCode", "portCode",
 				"lastPortCode", "shipPosition", "shipOwnerCode",
 				"arrivalShipAgency", "departureShipAgency", "shipDateFrom",
-				"shipDateTo"
+				"shipDateTo", "shipDateLastCheck"
 			});
 	private static TempDocument _nullTempDocument = new TempDocumentImpl() {
 			@Override

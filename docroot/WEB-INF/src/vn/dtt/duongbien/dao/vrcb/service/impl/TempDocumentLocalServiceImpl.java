@@ -15,6 +15,7 @@
 package vn.dtt.duongbien.dao.vrcb.service.impl;
 
 import java.util.Date;
+import java.util.List;
 
 import com.liferay.counter.service.CounterLocalServiceUtil;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -43,7 +44,7 @@ public class TempDocumentLocalServiceImpl
 	 *
 	 * Never reference this interface directly. Always use {@link vn.dtt.duongbien.dao.vrcb.service.TempDocumentLocalServiceUtil} to access the temp document local service.
 	 */
-	public TempDocument addTempDocument(String requestCode, long documentName, int documentYear, String documentTypeCode, String userCreated, String shipAgencyCode, String shipName, String shipTypeCode, String shipCaptain, String imo, Date shipDateFrom, Date shipDateTo) throws SystemException{
+	public TempDocument addTempDocument(String requestCode, long documentName, int documentYear, String documentTypeCode, String userCreated, String shipAgencyCode, String shipName, String shipTypeCode, String shipCaptain, String imo, Date shipDateFrom, Date shipDateTo, Date shipDateLastCheck) throws SystemException{
 		long itemId = CounterLocalServiceUtil.increment(TempDocument.class.getName());
 		TempDocument item = tempDocumentPersistence.create(itemId);
 		item.setRequestCode(requestCode);
@@ -59,7 +60,20 @@ public class TempDocumentLocalServiceImpl
 		item.setCreatedDate(new Date());
 		item.setShipDateFrom(shipDateFrom);
 		item.setShipDateTo(shipDateTo);
+		item.setShipDateLastCheck(shipDateLastCheck);
 		tempDocumentPersistence.update(item);
 		return item;
+	}
+	
+	public List findByRequestCode(String requestCode) throws SystemException{
+		return tempDocumentPersistence.findByRequestCode(requestCode);
+	}
+	
+	public List findByRequestCode(String requestCode,int start, int end) throws SystemException{
+		return tempDocumentPersistence.findByRequestCode(requestCode,start,end);
+	}
+	
+	public int countByRequestCode(String requestCode) throws SystemException{
+		return tempDocumentPersistence.countByRequestCode(requestCode);
 	}
 }

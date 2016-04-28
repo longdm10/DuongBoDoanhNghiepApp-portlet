@@ -585,6 +585,20 @@ public interface TempDocumentModel extends BaseModel<TempDocument> {
 	 */
 	public void setShipDateTo(Date shipDateTo);
 
+	/**
+	 * Returns the ship date last check of this temp document.
+	 *
+	 * @return the ship date last check of this temp document
+	 */
+	public Date getShipDateLastCheck();
+
+	/**
+	 * Sets the ship date last check of this temp document.
+	 *
+	 * @param shipDateLastCheck the ship date last check of this temp document
+	 */
+	public void setShipDateLastCheck(Date shipDateLastCheck);
+
 	@Override
 	public boolean isNew();
 

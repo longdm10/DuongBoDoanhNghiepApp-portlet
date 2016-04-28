@@ -258,6 +258,16 @@ public interface TempDocumentLocalService extends BaseLocalService,
 		java.lang.String shipAgencyCode, java.lang.String shipName,
 		java.lang.String shipTypeCode, java.lang.String shipCaptain,
 		java.lang.String imo, java.util.Date shipDateFrom,
-		java.util.Date shipDateTo)
+		java.util.Date shipDateTo, java.util.Date shipDateLastCheck)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public java.util.List findByRequestCode(java.lang.String requestCode)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public java.util.List findByRequestCode(java.lang.String requestCode,
+		int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public int countByRequestCode(java.lang.String requestCode)
 		throws com.liferay.portal.kernel.exception.SystemException;
 }

@@ -86,6 +86,7 @@ public class TempDocumentWrapper implements TempDocument,
 		attributes.put("departureShipAgency", getDepartureShipAgency());
 		attributes.put("shipDateFrom", getShipDateFrom());
 		attributes.put("shipDateTo", getShipDateTo());
+		attributes.put("shipDateLastCheck", getShipDateLastCheck());
 
 		return attributes;
 	}
@@ -308,6 +309,12 @@ public class TempDocumentWrapper implements TempDocument,
 
 		if (shipDateTo != null) {
 			setShipDateTo(shipDateTo);
+		}
+
+		Date shipDateLastCheck = (Date)attributes.get("shipDateLastCheck");
+
+		if (shipDateLastCheck != null) {
+			setShipDateLastCheck(shipDateLastCheck);
 		}
 	}
 
@@ -1049,6 +1056,26 @@ public class TempDocumentWrapper implements TempDocument,
 	@Override
 	public void setShipDateTo(java.util.Date shipDateTo) {
 		_tempDocument.setShipDateTo(shipDateTo);
+	}
+
+	/**
+	* Returns the ship date last check of this temp document.
+	*
+	* @return the ship date last check of this temp document
+	*/
+	@Override
+	public java.util.Date getShipDateLastCheck() {
+		return _tempDocument.getShipDateLastCheck();
+	}
+
+	/**
+	* Sets the ship date last check of this temp document.
+	*
+	* @param shipDateLastCheck the ship date last check of this temp document
+	*/
+	@Override
+	public void setShipDateLastCheck(java.util.Date shipDateLastCheck) {
+		_tempDocument.setShipDateLastCheck(shipDateLastCheck);
 	}
 
 	@Override

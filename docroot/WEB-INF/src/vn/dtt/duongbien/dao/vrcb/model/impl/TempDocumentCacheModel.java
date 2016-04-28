@@ -38,7 +38,7 @@ public class TempDocumentCacheModel implements CacheModel<TempDocument>,
 	Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(73);
+		StringBundler sb = new StringBundler(75);
 
 		sb.append("{id=");
 		sb.append(id);
@@ -112,6 +112,8 @@ public class TempDocumentCacheModel implements CacheModel<TempDocument>,
 		sb.append(shipDateFrom);
 		sb.append(", shipDateTo=");
 		sb.append(shipDateTo);
+		sb.append(", shipDateLastCheck=");
+		sb.append(shipDateLastCheck);
 		sb.append("}");
 
 		return sb.toString();
@@ -318,6 +320,13 @@ public class TempDocumentCacheModel implements CacheModel<TempDocument>,
 			tempDocumentImpl.setShipDateTo(new Date(shipDateTo));
 		}
 
+		if (shipDateLastCheck == Long.MIN_VALUE) {
+			tempDocumentImpl.setShipDateLastCheck(null);
+		}
+		else {
+			tempDocumentImpl.setShipDateLastCheck(new Date(shipDateLastCheck));
+		}
+
 		tempDocumentImpl.resetOriginalValues();
 
 		return tempDocumentImpl;
@@ -361,6 +370,7 @@ public class TempDocumentCacheModel implements CacheModel<TempDocument>,
 		departureShipAgency = objectInput.readUTF();
 		shipDateFrom = objectInput.readLong();
 		shipDateTo = objectInput.readLong();
+		shipDateLastCheck = objectInput.readLong();
 	}
 
 	@Override
@@ -539,6 +549,7 @@ public class TempDocumentCacheModel implements CacheModel<TempDocument>,
 
 		objectOutput.writeLong(shipDateFrom);
 		objectOutput.writeLong(shipDateTo);
+		objectOutput.writeLong(shipDateLastCheck);
 	}
 
 	public long id;
@@ -577,4 +588,5 @@ public class TempDocumentCacheModel implements CacheModel<TempDocument>,
 	public String departureShipAgency;
 	public long shipDateFrom;
 	public long shipDateTo;
+	public long shipDateLastCheck;
 }

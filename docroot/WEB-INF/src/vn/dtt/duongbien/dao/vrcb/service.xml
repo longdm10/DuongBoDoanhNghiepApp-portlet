@@ -2996,6 +2996,7 @@
 		<column name="departureShipAgency" db-name="DepartureShipAgency" type="String" />
 		<column name="shipDateFrom" db-name="ShipDateFrom" type="Date" />
 		<column name="shipDateTo" db-name="ShipDateTo" type="Date" />
+		<column name="shipDateLastCheck" db-name="ShipDateLastCheck" type="Date" />
 
 		<!-- Order -->
 		<order by="asc">

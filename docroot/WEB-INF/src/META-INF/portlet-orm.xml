@@ -4833,6 +4833,10 @@
 				<column name="SHIPDATETO" />
 				<temporal>TIMESTAMP</temporal>
 			</basic>
+			<basic name="shipDateLastCheck">
+				<column name="SHIPDATELASTCHECK" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />

@@ -121,8 +121,20 @@ public class TempDocumentLocalServiceClp implements TempDocumentLocalService {
 				"java.lang.String", "long", "int", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"java.util.Date", "java.util.Date"
+				"java.util.Date", "java.util.Date", "java.util.Date"
 			};
+
+		_methodName20 = "findByRequestCode";
+
+		_methodParameterTypes20 = new String[] { "java.lang.String" };
+
+		_methodName21 = "findByRequestCode";
+
+		_methodParameterTypes21 = new String[] { "java.lang.String", "int", "int" };
+
+		_methodName22 = "countByRequestCode";
+
+		_methodParameterTypes22 = new String[] { "java.lang.String" };
 	}
 
 	@Override
@@ -680,7 +692,7 @@ public class TempDocumentLocalServiceClp implements TempDocumentLocalService {
 		java.lang.String shipAgencyCode, java.lang.String shipName,
 		java.lang.String shipTypeCode, java.lang.String shipCaptain,
 		java.lang.String imo, java.util.Date shipDateFrom,
-		java.util.Date shipDateTo)
+		java.util.Date shipDateTo, java.util.Date shipDateLastCheck)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
@@ -710,7 +722,9 @@ public class TempDocumentLocalServiceClp implements TempDocumentLocalService {
 						
 					ClpSerializer.translateInput(shipDateFrom),
 						
-					ClpSerializer.translateInput(shipDateTo)
+					ClpSerializer.translateInput(shipDateTo),
+						
+					ClpSerializer.translateInput(shipDateLastCheck)
 					});
 		}
 		catch (Throwable t) {
@@ -730,6 +744,100 @@ public class TempDocumentLocalServiceClp implements TempDocumentLocalService {
 		}
 
 		return (vn.dtt.duongbien.dao.vrcb.model.TempDocument)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.util.List findByRequestCode(java.lang.String requestCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName20,
+					_methodParameterTypes20,
+					new Object[] { ClpSerializer.translateInput(requestCode) });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.util.List findByRequestCode(java.lang.String requestCode,
+		int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName21,
+					_methodParameterTypes21,
+					new Object[] {
+						ClpSerializer.translateInput(requestCode),
+						
+					start,
+						
+					end
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public int countByRequestCode(java.lang.String requestCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName22,
+					_methodParameterTypes22,
+					new Object[] { ClpSerializer.translateInput(requestCode) });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return ((Integer)returnObj).intValue();
 	}
 
 	private InvokableLocalService _invokableLocalService;
@@ -771,4 +879,10 @@ public class TempDocumentLocalServiceClp implements TempDocumentLocalService {
 	private String[] _methodParameterTypes17;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
+	private String _methodName20;
+	private String[] _methodParameterTypes20;
+	private String _methodName21;
+	private String[] _methodParameterTypes21;
+	private String _methodName22;
+	private String[] _methodParameterTypes22;
 }

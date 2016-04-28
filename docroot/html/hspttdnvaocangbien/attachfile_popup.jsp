@@ -46,21 +46,21 @@ List<DmDocType> listDocType = DmDocTypeLocalServiceUtil.getALlDocType();
 			<%}%>
 	</aui:select>
 	<aui:field-wrapper label="Ngày cấp">
-		<liferay-ui:input-date name="dateOfArrival"
+		<liferay-ui:input-date name="shipDateFrom"
 						disableNamespace="<%=false%>" disabled="false"
 						dayValue="<%=today.get(Calendar.DAY_OF_MONTH)%>" dayParam="dobDay"
 						monthValue="<%=today.get(Calendar.MONTH)%>" monthParam="dobMonth"
 						yearValue="<%=today.get(Calendar.YEAR)%>" yearParam="dobYear" />
 	</aui:field-wrapper>
 	<aui:field-wrapper label="Ngày hết hạn">
-		<liferay-ui:input-date name="dateOfArrival"
+		<liferay-ui:input-date name="shipDateTo"
 						disableNamespace="<%=false%>" disabled="false"
 						dayValue="<%=today.get(Calendar.DAY_OF_MONTH)%>" dayParam="dobDay"
 						monthValue="<%=today.get(Calendar.MONTH)%>" monthParam="dobMonth"
 						yearValue="<%=today.get(Calendar.YEAR)%>" yearParam="dobYear" />
 	</aui:field-wrapper>
 	<aui:field-wrapper label="Ngày kiểm tra định kì gần nhất">
-		<liferay-ui:input-date name="dateOfArrival"
+		<liferay-ui:input-date name="shipDateLastCheck"
 						disableNamespace="<%=false%>" disabled="false"
 						dayValue="<%=today.get(Calendar.DAY_OF_MONTH)%>" dayParam="dobDay"
 						monthValue="<%=today.get(Calendar.MONTH)%>" monthParam="dobMonth"

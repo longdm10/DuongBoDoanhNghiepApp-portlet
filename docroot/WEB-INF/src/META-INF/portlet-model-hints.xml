@@ -1565,6 +1565,7 @@
 		<field name="departureShipAgency" type="String" />
 		<field name="shipDateFrom" type="Date" />
 		<field name="shipDateTo" type="Date" />
+		<field name="shipDateLastCheck" type="Date" />
 	</model>
 	<model name="vn.dtt.duongbien.dao.vrcb.model.TempGeneralDeclaration">
 		<field name="id" type="long" />

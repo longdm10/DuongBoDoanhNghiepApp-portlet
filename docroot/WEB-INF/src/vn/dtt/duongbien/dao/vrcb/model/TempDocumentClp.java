@@ -110,6 +110,7 @@ public class TempDocumentClp extends BaseModelImpl<TempDocument>
 		attributes.put("departureShipAgency", getDepartureShipAgency());
 		attributes.put("shipDateFrom", getShipDateFrom());
 		attributes.put("shipDateTo", getShipDateTo());
+		attributes.put("shipDateLastCheck", getShipDateLastCheck());
 
 		return attributes;
 	}
@@ -332,6 +333,12 @@ public class TempDocumentClp extends BaseModelImpl<TempDocument>
 
 		if (shipDateTo != null) {
 			setShipDateTo(shipDateTo);
+		}
+
+		Date shipDateLastCheck = (Date)attributes.get("shipDateLastCheck");
+
+		if (shipDateLastCheck != null) {
+			setShipDateLastCheck(shipDateLastCheck);
 		}
 	}
 
@@ -1171,6 +1178,30 @@ public class TempDocumentClp extends BaseModelImpl<TempDocument>
 		}
 	}
 
+	@Override
+	public Date getShipDateLastCheck() {
+		return _shipDateLastCheck;
+	}
+
+	@Override
+	public void setShipDateLastCheck(Date shipDateLastCheck) {
+		_shipDateLastCheck = shipDateLastCheck;
+
+		if (_tempDocumentRemoteModel != null) {
+			try {
+				Class<?> clazz = _tempDocumentRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setShipDateLastCheck",
+						Date.class);
+
+				method.invoke(_tempDocumentRemoteModel, shipDateLastCheck);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
 	public BaseModel<?> getTempDocumentRemoteModel() {
 		return _tempDocumentRemoteModel;
 	}
@@ -1276,6 +1307,7 @@ public class TempDocumentClp extends BaseModelImpl<TempDocument>
 		clone.setDepartureShipAgency(getDepartureShipAgency());
 		clone.setShipDateFrom(getShipDateFrom());
 		clone.setShipDateTo(getShipDateTo());
+		clone.setShipDateLastCheck(getShipDateLastCheck());
 
 		return clone;
 	}
@@ -1334,7 +1366,7 @@ public class TempDocumentClp extends BaseModelImpl<TempDocument>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(73);
+		StringBundler sb = new StringBundler(75);
 
 		sb.append("{id=");
 		sb.append(getId());
@@ -1408,6 +1440,8 @@ public class TempDocumentClp extends BaseModelImpl<TempDocument>
 		sb.append(getShipDateFrom());
 		sb.append(", shipDateTo=");
 		sb.append(getShipDateTo());
+		sb.append(", shipDateLastCheck=");
+		sb.append(getShipDateLastCheck());
 		sb.append("}");
 
 		return sb.toString();
@@ -1415,7 +1449,7 @@ public class TempDocumentClp extends BaseModelImpl<TempDocument>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(112);
+		StringBundler sb = new StringBundler(115);
 
 		sb.append("<model><model-name>");
 		sb.append("vn.dtt.duongbien.dao.vrcb.model.TempDocument");
@@ -1565,6 +1599,10 @@ public class TempDocumentClp extends BaseModelImpl<TempDocument>
 			"<column><column-name>shipDateTo</column-name><column-value><![CDATA[");
 		sb.append(getShipDateTo());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>shipDateLastCheck</column-name><column-value><![CDATA[");
+		sb.append(getShipDateLastCheck());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -1607,6 +1645,7 @@ public class TempDocumentClp extends BaseModelImpl<TempDocument>
 	private String _departureShipAgency;
 	private Date _shipDateFrom;
 	private Date _shipDateTo;
+	private Date _shipDateLastCheck;
 	private BaseModel<?> _tempDocumentRemoteModel;
 	private Class<?> _clpSerializerClass = vn.dtt.duongbien.dao.vrcb.service.ClpSerializer.class;
 }

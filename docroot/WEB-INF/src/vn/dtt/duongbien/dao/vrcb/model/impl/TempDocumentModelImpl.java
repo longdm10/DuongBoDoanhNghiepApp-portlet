@@ -99,9 +99,10 @@ public class TempDocumentModelImpl extends BaseModelImpl<TempDocument>
 			{ "ArrivalShipAgency", Types.VARCHAR },
 			{ "DepartureShipAgency", Types.VARCHAR },
 			{ "ShipDateFrom", Types.TIMESTAMP },
-			{ "ShipDateTo", Types.TIMESTAMP }
+			{ "ShipDateTo", Types.TIMESTAMP },
+			{ "ShipDateLastCheck", Types.TIMESTAMP }
 		};
-	public static final String TABLE_SQL_CREATE = "create table TEMP_DOCUMENT (ID LONG not null primary key,RequestCode VARCHAR(75) null,RequestState INTEGER,DocumentName LONG,DocumentYear INTEGER,DocumentTypeCode VARCHAR(75) null,UserCreated VARCHAR(75) null,ShipAgencyCode VARCHAR(75) null,ShipName VARCHAR(75) null,ShipTypeCode VARCHAR(75) null,StateCode VARCHAR(75) null,ShipCaptain VARCHAR(75) null,IMO VARCHAR(75) null,GRT DOUBLE,NT DOUBLE,DWT DOUBLE,UnitGRT VARCHAR(75) null,UnitNT VARCHAR(75) null,UnitDWT VARCHAR(75) null,CallSign VARCHAR(75) null,PreDocumentName VARCHAR(75) null,CreatedDate DATE null,LastModifiedDate DATE null,FlowFlag INTEGER,DocumentStatusCode INTEGER,LocationCode VARCHAR(75) null,MaritimeCode VARCHAR(75) null,PortRegionCode VARCHAR(75) null,PortCode VARCHAR(75) null,LastPortCode VARCHAR(75) null,ShipPosition INTEGER,ShipOwnerCode VARCHAR(75) null,ArrivalShipAgency VARCHAR(75) null,DepartureShipAgency VARCHAR(75) null,ShipDateFrom DATE null,ShipDateTo DATE null)";
+	public static final String TABLE_SQL_CREATE = "create table TEMP_DOCUMENT (ID LONG not null primary key,RequestCode VARCHAR(75) null,RequestState INTEGER,DocumentName LONG,DocumentYear INTEGER,DocumentTypeCode VARCHAR(75) null,UserCreated VARCHAR(75) null,ShipAgencyCode VARCHAR(75) null,ShipName VARCHAR(75) null,ShipTypeCode VARCHAR(75) null,StateCode VARCHAR(75) null,ShipCaptain VARCHAR(75) null,IMO VARCHAR(75) null,GRT DOUBLE,NT DOUBLE,DWT DOUBLE,UnitGRT VARCHAR(75) null,UnitNT VARCHAR(75) null,UnitDWT VARCHAR(75) null,CallSign VARCHAR(75) null,PreDocumentName VARCHAR(75) null,CreatedDate DATE null,LastModifiedDate DATE null,FlowFlag INTEGER,DocumentStatusCode INTEGER,LocationCode VARCHAR(75) null,MaritimeCode VARCHAR(75) null,PortRegionCode VARCHAR(75) null,PortCode VARCHAR(75) null,LastPortCode VARCHAR(75) null,ShipPosition INTEGER,ShipOwnerCode VARCHAR(75) null,ArrivalShipAgency VARCHAR(75) null,DepartureShipAgency VARCHAR(75) null,ShipDateFrom DATE null,ShipDateTo DATE null,ShipDateLastCheck DATE null)";
 	public static final String TABLE_SQL_DROP = "drop table TEMP_DOCUMENT";
 	public static final String ORDER_BY_JPQL = " ORDER BY tempDocument.id ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY TEMP_DOCUMENT.ID ASC";
@@ -172,6 +173,7 @@ public class TempDocumentModelImpl extends BaseModelImpl<TempDocument>
 		model.setDepartureShipAgency(soapModel.getDepartureShipAgency());
 		model.setShipDateFrom(soapModel.getShipDateFrom());
 		model.setShipDateTo(soapModel.getShipDateTo());
+		model.setShipDateLastCheck(soapModel.getShipDateLastCheck());
 
 		return model;
 	}
@@ -272,6 +274,7 @@ public class TempDocumentModelImpl extends BaseModelImpl<TempDocument>
 		attributes.put("departureShipAgency", getDepartureShipAgency());
 		attributes.put("shipDateFrom", getShipDateFrom());
 		attributes.put("shipDateTo", getShipDateTo());
+		attributes.put("shipDateLastCheck", getShipDateLastCheck());
 
 		return attributes;
 	}
@@ -494,6 +497,12 @@ public class TempDocumentModelImpl extends BaseModelImpl<TempDocument>
 
 		if (shipDateTo != null) {
 			setShipDateTo(shipDateTo);
+		}
+
+		Date shipDateLastCheck = (Date)attributes.get("shipDateLastCheck");
+
+		if (shipDateLastCheck != null) {
+			setShipDateLastCheck(shipDateLastCheck);
 		}
 	}
 
@@ -1051,6 +1060,17 @@ public class TempDocumentModelImpl extends BaseModelImpl<TempDocument>
 		_shipDateTo = shipDateTo;
 	}
 
+	@JSON
+	@Override
+	public Date getShipDateLastCheck() {
+		return _shipDateLastCheck;
+	}
+
+	@Override
+	public void setShipDateLastCheck(Date shipDateLastCheck) {
+		_shipDateLastCheck = shipDateLastCheck;
+	}
+
 	public long getColumnBitmask() {
 		return _columnBitmask;
 	}
@@ -1118,6 +1138,7 @@ public class TempDocumentModelImpl extends BaseModelImpl<TempDocument>
 		tempDocumentImpl.setDepartureShipAgency(getDepartureShipAgency());
 		tempDocumentImpl.setShipDateFrom(getShipDateFrom());
 		tempDocumentImpl.setShipDateTo(getShipDateTo());
+		tempDocumentImpl.setShipDateLastCheck(getShipDateLastCheck());
 
 		tempDocumentImpl.resetOriginalValues();
 
@@ -1430,12 +1451,21 @@ public class TempDocumentModelImpl extends BaseModelImpl<TempDocument>
 			tempDocumentCacheModel.shipDateTo = Long.MIN_VALUE;
 		}
 
+		Date shipDateLastCheck = getShipDateLastCheck();
+
+		if (shipDateLastCheck != null) {
+			tempDocumentCacheModel.shipDateLastCheck = shipDateLastCheck.getTime();
+		}
+		else {
+			tempDocumentCacheModel.shipDateLastCheck = Long.MIN_VALUE;
+		}
+
 		return tempDocumentCacheModel;
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(73);
+		StringBundler sb = new StringBundler(75);
 
 		sb.append("{id=");
 		sb.append(getId());
@@ -1509,6 +1539,8 @@ public class TempDocumentModelImpl extends BaseModelImpl<TempDocument>
 		sb.append(getShipDateFrom());
 		sb.append(", shipDateTo=");
 		sb.append(getShipDateTo());
+		sb.append(", shipDateLastCheck=");
+		sb.append(getShipDateLastCheck());
 		sb.append("}");
 
 		return sb.toString();
@@ -1516,7 +1548,7 @@ public class TempDocumentModelImpl extends BaseModelImpl<TempDocument>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(112);
+		StringBundler sb = new StringBundler(115);
 
 		sb.append("<model><model-name>");
 		sb.append("vn.dtt.duongbien.dao.vrcb.model.TempDocument");
@@ -1666,6 +1698,10 @@ public class TempDocumentModelImpl extends BaseModelImpl<TempDocument>
 			"<column><column-name>shipDateTo</column-name><column-value><![CDATA[");
 		sb.append(getShipDateTo());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>shipDateLastCheck</column-name><column-value><![CDATA[");
+		sb.append(getShipDateLastCheck());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -1719,6 +1755,7 @@ public class TempDocumentModelImpl extends BaseModelImpl<TempDocument>
 	private String _departureShipAgency;
 	private Date _shipDateFrom;
 	private Date _shipDateTo;
+	private Date _shipDateLastCheck;
 	private long _columnBitmask;
 	private TempDocument _escapedModel;
 }
